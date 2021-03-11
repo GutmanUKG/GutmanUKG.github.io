@@ -52,6 +52,15 @@
       autoplay:true,
       arrows:false,
     });
+    $('.carousel__inner').slick({
+      infinite: true,
+      slidesToShow: 3,
+      autoplay:true,
+      arrows:false,
+      vertical:true,
+
+    });
+    
     $('.wraper_item_slide_team').slick({
       infinite: true,
       slidesToShow: 1,
