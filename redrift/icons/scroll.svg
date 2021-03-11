@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="215" height="235" viewBox="0 0 215 235">
+  <defs>
+    <filter id="button" x="0" y="0" width="215" height="235" filterUnits="userSpaceOnUse">
+      <feOffset dy="15" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="27.5" result="blur"/>
+      <feFlood flood-color="#dc322a" flood-opacity="0"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="скролл" transform="translate(-161.5 -883.5)">
+    <g transform="matrix(1, 0, 0, 1, 161.5, 883.5)" filter="url(#button)">
+      <rect id="button-2" data-name="button" width="70" height="50" rx="25" transform="translate(132.5 67.5) rotate(90)" fill="#dc322a"/>
+    </g>
+    <path id="mouse-alt" d="M12,22a7,7,0,0,1-7-7V9A7,7,0,0,1,19,9v6A7,7,0,0,1,12,22Z" transform="translate(257 974)" fill="#fff"/>
+    <rect id="Прямоугольник_39" data-name="Прямоугольник 39" width="2" height="4" rx="1" transform="translate(268 988)" fill="#dc322a"/>
+  </g>
+</svg>
