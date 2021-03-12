@@ -1,29 +1,25 @@
 
 window.addEventListener('DOMContentLoaded' , function () {
 let   vacanciesItemWraper = document.querySelectorAll('.vacancies__item_wraper');
-
-
-
-    // vacancies Tabs
-    vacanciesItemWraper.forEach(function(item){
-        item.addEventListener('click', function(event){
-            let target = event.target;
-            if(target && target.classList.contains('vacancies__item')){
-                if(!item.classList.contains('vacancies__item_wraper_active')){
-                  item.classList.add('vacancies__item_wraper_active');
-                }else{
-                  item.classList.remove('vacancies__item_wraper_active');
-                }
-                
-            }
-        })
-      })
+let clickBlock = document.querySelectorAll('.click_block');
+// Открытие таба
+   function showItem(a){
+        if(!vacanciesItemWraper[a].classList.contains('vacancies__item_wraper_active')){
+            vacanciesItemWraper[a].classList.add('vacancies__item_wraper_active')
+        }else{
+            vacanciesItemWraper[a].classList.remove('vacancies__item_wraper_active')
+        }
+   }
+//    перебор табов и присвоение индекса таба
+   function addIndex(){
+       for(let b = 0; b < clickBlock.length; b++){
+           clickBlock[b].addEventListener('click', function(){
+               showItem(b)
+           })
+       }
+   }
+   addIndex()
   
-
-
-
-
-
 
     let formWrap = document.querySelector('.form');
     function eventDelegate (parent, event, selector, handler, negative = false) {
