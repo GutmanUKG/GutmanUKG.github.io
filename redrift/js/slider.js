@@ -1,4 +1,4 @@
-
+window.addEventListener('DOMContentLoaded' , function () {
     $('.slide-inner').slick({
       infinite: true,
       slidesToShow: 1,
@@ -47,10 +47,12 @@
     
 
     $('.body_slid').slick({
-      infinite: true,
+      infinite: false,
       slidesToShow: 1,
-      autoplay:true,
+      autoplay:false,
       arrows:false,
+      swipe:false,
+      allowTouchMove: false,
     });
     $('.carousel__inner').slick({
       infinite: true,
@@ -106,7 +108,9 @@
       ]
     });
 
-
+ 
+   
+   
     $('.clients_footer').slick({
       infinite: true,
       slidesToShow: 4,
@@ -116,6 +120,13 @@
    
     
      
-   
-    
+    $('.mobile_slider_client').slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows:false,
+    });
+});
   
