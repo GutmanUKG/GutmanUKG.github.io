@@ -60,6 +60,8 @@ window.addEventListener('DOMContentLoaded' , function () {
       autoplay:true,
       arrows:false,
       vertical:true,
+      swipe:false,
+      allowTouchMove: false,
 
     });
     
