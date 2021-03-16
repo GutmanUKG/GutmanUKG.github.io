@@ -130,4 +130,6 @@ let clickBlock = document.querySelectorAll('.click_block');
     Visible (element);
 
 
+    
+
 })
