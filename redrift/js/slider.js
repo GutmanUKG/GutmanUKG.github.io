@@ -47,12 +47,14 @@ window.addEventListener('DOMContentLoaded' , function () {
     
 
     $('.body_slid').slick({
-      infinite: false,
+      infinite: true,
       slidesToShow: 1,
-      autoplay:false,
+      autoplay:true,
       arrows:false,
       swipe:false,
       allowTouchMove: false,
+      centerMode: true,
+      centerPadding: '60px',
     });
     $('.carousel__inner').slick({
       infinite: true,
