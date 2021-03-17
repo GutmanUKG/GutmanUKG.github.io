@@ -56,14 +56,17 @@ window.addEventListener('DOMContentLoaded' , function () {
       centerMode: true,
       centerPadding: '60px',
     });
+    // вертикальный слайдер
     $('.carousel__inner').slick({
       infinite: true,
       slidesToShow: 3,
       autoplay:true,
       arrows:false,
       vertical:true,
-      swipe:false,
-      allowTouchMove: false,
+      // swipe:false,
+      // allowTouchMove: false,
+      speed: 300,
+      verticalSwiping:true
 
     });
     
@@ -114,16 +117,17 @@ window.addEventListener('DOMContentLoaded' , function () {
 
  
    
-   
+  //  Сладйер логотипов 
     $('.clients_footer').slick({
       infinite: true,
       slidesToShow: 4,
       autoplay:true,
       arrows:false,
+      centerMode:true,
     });
    
     
-     
+    //  Мобильный слайдер отзывов клиентов
     $('.mobile_slider_client').slick({
       dots: false,
       infinite: true,
