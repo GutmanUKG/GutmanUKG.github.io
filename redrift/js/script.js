@@ -185,7 +185,31 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
   let image = document.querySelectorAll('.img_mini');
-  let closeBlock = document.querySelector('.close_block')
+  let closeBlock = document.querySelector('.close_block');
+  let opacityBlock = document.querySelectorAll('.opacity_block');
 
 
+  image.forEach(function(item){
+    item.addEventListener('mousedown', function(){
+      for(let i = 0; i < opacityBlock.length; i++){
+        opacityBlock[i].style.opacity = 0
+      }
+      
+    });
+    item.addEventListener('mouseup', function(){
+      for(let i = 0; i < opacityBlock.length; i++){
+        opacityBlock[i].style.opacity = 0.5;
+      }
+    })
+    item.addEventListener('touchstart', function(){
+      for(let i = 0; i < opacityBlock.length; i++){
+        opacityBlock[i].style.opacity = 0
+      }
+    })
+    item.addEventListener('touchend', function(){
+      for(let i = 0; i < opacityBlock.length; i++){
+        opacityBlock[i].style.opacity = 0.5;
+      }
+    })
+  });
 });

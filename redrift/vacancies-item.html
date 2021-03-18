@@ -141,7 +141,7 @@
                     Back
                 </a>
             </div>
-           
+
         </div>
     </header>
 
@@ -198,10 +198,52 @@
                 </ul>
 
                 <div class="vacancie_descr_item_footer">
-                    <button class="button">
+                    <button class="button button_form">
                         apply for job
                     </button>
+
+                    <a href="./vacancies.html" class="link_back">Back</a>
                 </div>
+                <form enctype="multipart/form-data" method="post" class="feed-form close">
+                    <div class="form_title">
+                        Lorem
+                    </div>
+                    <div class="form_header">
+                        <label for="first_name">
+                            <input type="text" required placeholder="First Name" name='first_name'>
+                        </label>
+                        <label for="last_name">
+                            <input type="text" required placeholder="Last Name" name='first_name'>
+                        </label>
+                    </div>
+
+                    <div class="form_body">
+                        <label for="mail">
+                            <input type="email" required name="mail" placeholder="Emai">
+                        </label>
+                        <div class="input__wrapper">
+                            <input name="file" type="file" name="file" id="input__file" class="input input__file"
+                                multiple>
+                            <label for="input__file" class="input__file-button">
+                                <span class="input__file-icon-wrapper">
+                                    <img class="input__file-icon" src="./icons/download.svg"alt="Выбрать файл" width="25"></span>
+                                <span class="input__file-button-text">Chosse file</span>
+                            </label>
+                        </div>
+                        <label for="letter">
+                            <textarea name="letter" id="" cols="30" rows="10">
+
+                            </textarea>
+                        </label>
+                    </div>
+
+
+
+
+                    <button class="button button_subbmit">
+                        apply
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -275,6 +317,7 @@
     <script src="./js/headroom.js"></script>
     <script src="./js/slick.min.js"></script>
     <script src="./js/slider.js"></script>
+    <script src="./js/form.js"></script>
     <script src="./js/burger.js"></script>
 </body>
 
