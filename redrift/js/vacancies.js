@@ -130,6 +130,73 @@ window.addEventListener('DOMContentLoaded', function () {
     Visible(element);
 
 
+    const btnForm = document.querySelectorAll('.button_form'),
+        form = document.querySelector('.feed-form'),
+        statusMessage = document.createElement('div'),
+        input = form.getElementsByTagName('input');
+        btnClose = form.querySelector('.close_icon');
 
+        let message = {
+            loading: 'Loading',
+            success: 'Thank you, we will contact you soon',
+            failure: 'Something went wrong'
+        };
+        statusMessage.classList.add('status')
+  
+        form.style.opacity = 0;
+    
+
+    btnForm.forEach(function (item, id) {
+        item.addEventListener('click', function () {
+            form.style.opacity = 1;
+            form.style.display = 'block'
+            btnForm[id].style.opacity = 0;
+            document.body.style.overflow = 'hidden'
+        })
+    })
+
+    function closeBlock(){
+        form.style.opacity = 0;
+        form.style.display = 'none';
+    }
+    
+    btnClose.addEventListener('click', function(){
+        form.style.opacity = 0;
+        form.style.display = 'none';
+        document.body.style.overflow = ''
+    })
+
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        form.appendChild(statusMessage);
+
+        // Запрос
+        let request = new XMLHttpRequest();
+        request.open('POST', 'server.php');
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        let formData = new FormData(form);
+        request.send(formData);
+
+
+        request.addEventListener('readystatechange', function () {
+            if (request.readyState < 4) {
+                statusMessage.textContent = message.loading;
+            } else if (request.readyState === 4 && request.status == 200) {
+                statusMessage.textContent = message.success;
+                btnSubmit.disabled();
+                setTimeout(closeBlock, 1500);
+                document.body.style.overflow = ''
+            } else {
+                statusMessage.textContent = message.failure;
+                setTimeout(closeBlock, 1500);
+                document.body.style.overflow = ''
+            }
+        });
+        for (let i = 0; i < input.length; i++) {
+            input[i].value = '';
+        }
+    });
 
 })

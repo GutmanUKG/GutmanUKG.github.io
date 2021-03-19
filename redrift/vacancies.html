@@ -264,7 +264,7 @@
                                         <a href="./vacancies-item.html" class="button button_opacity">
                                             more info
                                         </a>
-                                        <button class="button">
+                                        <button class="button button_form">
                                             apply for job
                                         </button>
                                     </div>
@@ -352,7 +352,7 @@
                                         <a href="./vacancies-item.html" class="button button_opacity">
                                             more info
                                         </a>
-                                        <button class="button">
+                                        <button class="button button_form">
                                             apply for job
                                         </button>
                                     </div>
@@ -439,10 +439,11 @@
                                         <a href="./vacancies-item.html" class="button button_opacity">
                                             more info
                                         </a>
-                                        <button class="button">
+                                        <button class="button button_form">
                                             apply for job
                                         </button>
                                     </div>
+                                   
                                 </div>
                             </div>
                             <!--  -->
@@ -527,10 +528,11 @@
                                         <a href="./vacancies-item.html" class="button button_opacity">
                                             more info
                                         </a>
-                                        <button class="button">
+                                        <button class="button button_form">
                                             apply for job
                                         </button>
                                     </div>
+                                    
                                 </div>
                             </div>
                             <!--  -->
@@ -614,7 +616,7 @@
                                         <a href="./vacancies-item.html" class="button button_opacity">
                                             more info
                                         </a>
-                                        <button class="button">
+                                        <button class="button button_form">
                                             apply for job
                                         </button>
                                     </div>
@@ -684,6 +686,57 @@
             </div>
         </div>
     </section>
+
+    <form enctype="multipart/form-data" method="post" class="feed-form vacancies_form">
+        <div class="close_icon">
+            <div class="wraper_icon">
+                <span></span>
+                <span></span>
+            </div>
+           
+        </div>
+        <div class="form_title">
+            Lorem
+        </div>
+        <div class="form_header">
+            <label for="first_name">
+                <input type="text" required placeholder="First Name" name='first_name'>
+            </label>
+            <label for="last_name">
+                <input type="text" required placeholder="Last Name" name='first_name'>
+            </label>
+        </div>
+
+        <div class="form_body">
+            <label for="mail">
+                <input type="email" required name="mail" placeholder="Emai">
+            </label>
+            <div class="input__wrapper">
+                <input name="file" type="file" name="file" id="input__file" class="input input__file"
+                    multiple>
+                <label for="input__file" class="input__file-button">
+                    <span class="input__file-icon-wrapper">
+                        <img class="input__file-icon" src="./icons/download.svg"alt="Выбрать файл" width="25"></span>
+                    <span class="input__file-button-text">Chosse file</span>
+                </label>
+            </div>
+            <label for="letter">
+                <textarea name="letter" id="" cols="" rows="">
+
+                </textarea>
+            </label>
+        </div>
+
+
+
+
+        <button class="button button_subbmit">
+            apply
+        </button>
+    </form>
+
+
+
     <footer class="footer" id="contacts" name='contacts'>
         <div class="container">
             <div class="footer__wraper">
