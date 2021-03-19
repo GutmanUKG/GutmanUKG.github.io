@@ -149,21 +149,22 @@ window.addEventListener('DOMContentLoaded', function () {
     btnForm.forEach(function (item, id) {
         item.addEventListener('click', function () {
             form.style.opacity = 1;
-            form.style.display = 'block'
+            form.style.display = 'block';
             btnForm[id].style.opacity = 0;
-            document.body.style.overflow = 'hidden'
+            document.body.style.overflow = 'hidden';
         })
     })
 
     function closeBlock(){
         form.style.opacity = 0;
         form.style.display = 'none';
+       
     }
     
     btnClose.addEventListener('click', function(){
         form.style.opacity = 0;
         form.style.display = 'none';
-        document.body.style.overflow = ''
+        document.body.style.overflow = '';
     })
 
 
