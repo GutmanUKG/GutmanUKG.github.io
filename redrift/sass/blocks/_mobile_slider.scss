@@ -1,0 +1,149 @@
+.mobile_slider{
+    position: relative;
+    display: none;
+    padding: 56px 10px 50px 10px;
+    background: url(../img/bg_jobs_mobile.png)center (center/cover) no-repeat;
+    .title_mobile{
+        font-family: Poppins;
+        font-weight: bold;
+        font-size: 44px;
+        line-height: 62px;
+        text-align: left;
+        color: #fff;
+
+    }
+    .slider_item_mobile{
+        .header_slid{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            img{
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+                margin-right: 10px;
+            }
+            .header_title{
+                font-family: Poppins;
+                .title{
+                   
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 40px;
+                    text-align: left;
+                    color: #fff;
+                    
+                }
+                .descr{
+                   
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-align: left;
+                    color: #afafaf;
+                    
+                }
+            }
+        }
+        .points{
+            padding: 8px;
+            border-radius: 20px;
+            background: transparent;
+            box-shadow: 0px 15px 55px rgba(220, 50, 42, 0);
+            /* Note: currently only Safari supports backdrop-filter */
+            backdrop-filter: blur(30px);
+            --webkit-backdrop-filter: blur(30px);
+            background-color: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .body_slid{
+            margin-top: 33px;
+        }
+        .descr_slid{
+            p{
+                font-family: Poppins;
+                font-weight: normal;
+                font-size: 16px;
+                text-align: left;
+                color: #afafaf;
+                margin-top: 33px;
+            }
+        }
+        .footer_slid{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 33px;
+            padding-bottom: 40px;
+            img{
+                display: block;
+            }
+            .item_img{
+                padding: 10px 16px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px;
+                background: transparent;
+                /* Note: currently only Safari supports backdrop-filter */
+                backdrop-filter: blur(30px);
+                --webkit-backdrop-filter: blur(30px);
+                background-color: rgba(255, 255, 255, 0.15);
+
+            }
+        }
+    }
+    .arrow_slid{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
+
+.current_slide_mobile,
+.slide_counts_mobile{
+    color: #fff;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: left;
+}
+.current_slide,
+.slide_counts{
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: left;
+    
+
+}
+.slide_counts_mobile,
+.slide_counts{
+    color: #d1d1d1;
+    font-size: 16px;
+}
+
+.mobile_prev,
+        .mobile_next{
+            position: absolute;
+            display: block;
+            padding: 15px;
+            border-radius: 20px;
+            background:url(../icons/arrow.png) center (center) no-repeat, #ffffff;
+            box-shadow: 0px 15px 55px rgba(220, 50, 42, 0);
+            outline: none;
+            border: none;
+
+        }
+        .mobile_prev{
+            transform: rotate(180deg);
+            top: 100%;
+        }
+
+        .mobile_next{
+            left: 90%;
+        }
+

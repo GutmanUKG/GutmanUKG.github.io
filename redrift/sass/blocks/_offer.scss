@@ -1,0 +1,138 @@
+.offer{
+    transition: 1s all;
+    padding-top: 157px;
+    &__wraper{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px;
+    }
+    &__content__left{
+        
+     
+        img{
+            max-width: 447px;
+            width: 100%;
+            margin-top: 22px;
+            margin-left: 41px;
+        }
+    }
+    &__content__right{
+        background: url(../icons/bg_right.png)center bottom no-repeat;
+        width: 936px;
+        .items{
+
+            .item{
+                .click_block_item{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    bottom: 0;
+                    z-index: 2;
+                }
+                position: relative;
+                transition: 0.5s all;
+                position: relative;
+                z-index: 2;
+                cursor: pointer;
+                .active{
+                border-radius: 15px;
+                background: #fff;
+                box-shadow: 0px 15px 45px rgba(0, 0, 0, 0.07);
+                    .plus{
+                        background:#DC322A !important;
+                        span{
+                            background: #fff;
+                            &:last-child{
+                                display: none;
+                            }
+                        }
+                    }
+
+                }
+                .list_item{
+                    padding: 37px 63px;
+                    display: flex;
+                    
+                    max-width: 846px;
+                    width: 100%;
+                    align-items:center;
+                    font-family: Poppins;
+                    font-weight: 600;
+                    font-size: 24px;
+                    text-align: left;
+                    color: #212022;
+                    position: relative;
+                    z-index: -20;
+                    .plus{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        position: absolute;
+                        right: 32px;
+                        background: #f3f3f3;
+                        transition: 0.5s all;
+                        span{
+                            width: 16px;
+                            height: 2px;
+                            display: block;
+                            background: #AFAFAF;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            transition: 0.5s all;
+                            &:last-child{
+
+                                height: 16px;
+                                width: 2px;
+                                
+                            }
+                        }
+                    }
+                    span{
+                        font-family: Poppins;
+                        font-weight: 600;
+                        font-size: 24px;
+                        text-align: left;
+                        color: #dc322a;
+                        margin-right: 18px;
+                        transition: 0.5s all;
+                    }
+                }
+                .descr{
+                    display: none;
+                    margin-top: 32px;
+                    position: relative;
+                    transition: 0.5s all;
+                    margin-bottom: 30px;
+                    img{
+                        position: absolute;
+                        top: -7px;
+                        left: 56%;
+                        z-index: 1;
+                      
+                        transform: translateY(-50%);
+                    }
+                    span{
+                        max-width: 530px;
+                        width: 100%;
+                        display: block;
+                        padding-left: 64px;
+                        padding-right: 10px;
+                        box-sizing: border-box;
+                        font-family: Poppins;
+                        font-weight: 500;
+                        margin-top: -15px;
+                    }
+                }
+                &_active{
+                    .descr{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
