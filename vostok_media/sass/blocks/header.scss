@@ -1,0 +1,17 @@
+header{
+    .toggle_head{
+        padding: 20px 0;
+    }
+    .main_menu{
+        display: flex;
+        justify-content: space-between;
+        li{
+            list-style: none;
+        }
+    }
+    .links_header{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 80px;
+    }
+}

@@ -1,0 +1,62 @@
+.main__block{
+    background: url(../img/about_bg2.png) center (center/contain), #000;
+    color: #fff;
+    padding: 200px 0;
+    margin-top: 20px;
+    .content{
+
+    }
+    .row{
+        position: relative;
+    }
+
+    h1{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .subheader{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+}
+
+.block{
+    
+    width: 100%;
+    padding: 10px;
+    .title{
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .block_img{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .img{
+            width: 110px;
+            height: 100px;
+            background: #c82d8e;
+            margin: 0.5rem;
+            position: relative;
+            transition: .4s all;
+            &:hover{
+                transform: translateZ(50px);
+            }
+            .img_bg{
+                position: absolute;
+                top: 2px;
+                left: 5px;
+                width: 100%;
+                background: #c82d8e;
+                height: 100%;
+             
+            }
+        }
+    }
+    .level--2{
+        background: #ccc;
+        width: 100%;
+        height: 100%;
+    }
+}
