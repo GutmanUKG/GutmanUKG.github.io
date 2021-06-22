@@ -30,5 +30,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
             duration:100
         }
     )
+
+    new Vivus(
+        'word',
+        {
+            type: 'sync',
+            duration:800
+        }
+    )
+    
 })
 
