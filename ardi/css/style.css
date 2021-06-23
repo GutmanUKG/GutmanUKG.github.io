@@ -51,7 +51,7 @@
 }
 
 .text_banner h1 {
-  font-family: "Montserrat_Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 50px;
@@ -72,7 +72,7 @@
 }
 
 .text_banner .subtitle span {
-  font-family: "Montserrat_Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -87,7 +87,7 @@
 }
 
 .text_banner .banner_text_content {
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -98,7 +98,7 @@
 }
 
 .about .title {
-  font-family: "Montserrat_Light", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 45px;
@@ -133,7 +133,7 @@
 
 .about .items .list_item span {
   display: block;
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -169,7 +169,7 @@
 }
 
 .green_content .title {
-  font-family: "Montserrat_Light", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 45px;
@@ -188,7 +188,7 @@
 }
 
 .green_content .list_item .item span {
-  font-family: "Montserrat_Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 60px;
@@ -218,7 +218,7 @@
   border-radius: 4px;
   padding: 15px 30px;
   margin-bottom: 0;
-  font-family: "Montserrat_Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -227,7 +227,7 @@
 }
 
 .item_one {
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -257,7 +257,7 @@
 
 .item_list_arrows span {
   display: block;
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -327,13 +327,14 @@
 }
 
 .components .title {
-  font-family: "Montserrat_Light", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 45px;
   line-height: 55px;
   text-transform: uppercase;
   color: #C4C4C4;
+  margin-bottom: 99px;
 }
 
 .components .subitle {
@@ -349,8 +350,18 @@
       align-self: flex-end;
 }
 
+.components .sub_content p {
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  color: #333333;
+  margin-bottom: 40px;
+}
+
 .components .sub_content span {
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -360,7 +371,7 @@
 }
 
 .components .sub_content span:last-child {
-  font-family: "Montserrat_Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   margin-bottom: 0;
 }
@@ -372,9 +383,35 @@
           flex-direction: column;
 }
 
+.link_items {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .link_items a {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-right: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.link_items a span {
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #333333;
+  margin-top: 27px;
+  display: block;
 }
 
 .link_items a:last-child {
@@ -413,7 +450,7 @@
 }
 
 .menu ul span {
-  font-family: "Montserrat-Medium", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -425,7 +462,7 @@
 
 .menu ul li {
   list-style: none;
-  font-family: "Montserrat-Medium", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -518,7 +555,7 @@
 .footer_banner span {
   width: 100%;
   display: block;
-  font-family: "Montserrat_Light", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 50px;
