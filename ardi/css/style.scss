@@ -296,6 +296,12 @@ $roboto_regular: 'Roboto',sans-serif;
     padding-top: 127px;
     padding-bottom: 238px;
     position: relative;
+    .book{
+        padding-right: 0;
+    }
+    .book_col{
+        padding-left: 0;
+    }
     .title{
         font-family: $mons_light;
         font-style: normal;

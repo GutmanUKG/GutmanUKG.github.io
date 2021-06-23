@@ -327,6 +327,14 @@
   position: relative;
 }
 
+.components .book {
+  padding-right: 0;
+}
+
+.components .book_col {
+  padding-left: 0;
+}
+
 .components .title {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
