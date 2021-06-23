@@ -450,6 +450,8 @@ $roboto_regular: 'Roboto-Regular',sans-serif;
     justify-content: flex-end;
     padding-bottom: 184px;
     box-sizing: border-box;
+    background-size: cover;
+    // justify-content: space-between;
     span{
         width: 100%;
         display: block;
@@ -461,4 +463,8 @@ $roboto_regular: 'Roboto-Regular',sans-serif;
         text-transform: uppercase;
         color: #FFFFFF;
     }
+}
+
+#svg_anim{
+    width: 98%;
 }
