@@ -50,6 +50,9 @@
 }
 
 @media (max-width: 1280px) {
+  #svg_anim {
+    width: 98%;
+  }
   #svg_animation {
     width: 98%;
   }
