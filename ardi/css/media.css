@@ -10,6 +10,15 @@
   }
 }
 
+@media (max-width: 1603px) {
+  .relative_group img {
+    max-width: 890px;
+  }
+  .link_items a {
+    margin-right: 20px;
+  }
+}
+
 @media (max-width: 1584px) {
   .relative_group img {
     max-width: 750px;
@@ -191,9 +200,6 @@
   }
   .text_banner .subtitle span {
     font-size: 14px;
-  }
-  #svg_animation {
-    max-width: 96%;
   }
   .relative_group .form {
     top: 95%;

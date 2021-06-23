@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap-reboot.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
     <title>Ardi</title>
@@ -59,15 +60,15 @@
                     </div>
 
                     <div class="list_item">
-                        <div class="item">
+                        <div class="item wow animate__animated animate__bounceIn" data-wow-duration="1s" data-wow-delay="0s">
                             <span>1</span>
                             <p>Планирование расписания врачей, кабинетов</p>
                         </div>
-                        <div class="item">
+                        <div class="item  wow animate__animated animate__bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
                             <span>2</span>
                             <p>Запись на прием к врачу</p>
                         </div>
-                        <div class="item">
+                        <div class="item  wow animate__animated animate__bounceIn" data-wow-duration="1s" data-wow-delay="0.3s">
                             <span>3</span>
                             <p>Ведение справочников (внутренних реестров, карточек 
                             пациентов, описание кабинетов)</p>
@@ -98,7 +99,7 @@
                 </div>
             </div>
             <div class="row align-items-center justify-content-md-center">
-                <div class="col col-lg-3 col-md-5 offset-2 offset-sm-0">
+                <div class="col  col-lg-3 col-md-5 offset-2">
                     <div class="subitle">
                        <!-- <img src="./img/Aa.png" alt=""> -->
                        <object data="./img/Aa.svg" type="image/svg+xml" id="word"></object>
@@ -109,22 +110,22 @@
                     <span>Bold</span>
                 </div>
                 <div class="col col-lg-5 col-md-12 d-flex link_items">
-                    <a href="#">
+                    <a href="#" class="wow animate__animated animate__backInUp" data-wow-duration="1s" data-wow-delay="0s">
                         <img src="./img/icon_1.png" alt="icon">
                     </a>
-                    <a href="#">
+                    <a href="#" class="wow animate__animated animate__backInUp" data-wow-duration="1s" data-wow-delay="0.1s">
                         <img src="./img/icon_2.png" alt="icon">
                     </a>
-                    <a href="#">
+                    <a href="#" class="wow animate__animated animate__backInUp" data-wow-duration="1s" data-wow-delay="0.2s">
                         <img src="./img/icon_3.png" alt="icon">
                     </a>
-                    <a href="#">
+                    <a href="#" class="wow animate__animated animate__backInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                         <img src="./img/icon_4.png" alt="icon">
                     </a>
-                    <a href="#">
+                    <a href="#" class="wow animate__animated animate__backInUp" data-wow-duration="1s" data-wow-delay="0.4s">
                         <img src="./img/icon_5.png" alt="icon">
                     </a>
-                    <a href="#">
+                    <a href="#" class="wow animate__animated animate__backInUp" data-wow-duration="1s" data-wow-delay="0.5s">
                         <img src="./img/icon_6.png" alt="icon">
                     </a>
                 </div>
@@ -236,6 +237,10 @@
         </div>
     </div>
     <script src="./js/vivus.min.js"></script>
+    <script src="./js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     <script src="./js/script.js"></script>
 </body>
 </html>
