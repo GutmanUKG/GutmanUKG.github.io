@@ -93,16 +93,6 @@
             max-width: 60px;
         }
     }
-    .components{
-        .row{
-            .subitle{
-
-            }
-            .sub_content{
-                // max-width: 70px;
-            }
-        }
-    }
 }
 
 @media(max-width:1269px){
@@ -139,9 +129,7 @@
     .components .sub_content{
         margin-left: 2rem;
     }
-    #svg_animation{
-        // max-width: 99%;
-    }
+   
 }
 
 @media (max-width:1024px){
@@ -207,9 +195,7 @@
     .text_banner .subtitle span{
         font-size: 14px;
     }
-    #svg_animation{
-        // max-width: 96%;
-    }
+    
     .relative_group .form{
         top: 95%;
     }

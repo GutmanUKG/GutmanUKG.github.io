@@ -181,6 +181,11 @@ $roboto_regular: 'Roboto',sans-serif;
         .item{
             display: flex;
             align-items: center;
+            height: max-content;
+            // margin-bottom: 1rem;
+            &:nth-child(2){
+                margin-top: -0.5rem;
+            }
             span{
                 font-family: $mons_bold;
                 font-style: normal;
@@ -192,6 +197,7 @@ $roboto_regular: 'Roboto',sans-serif;
                 color: #FFFFFF;
                 text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 24px 48px rgba(95, 189, 170, 0.2);
                 margin-right: 36px;
+                min-width: 36px;
             }
 
             p{
@@ -354,12 +360,16 @@ $roboto_regular: 'Roboto',sans-serif;
 
 .link_items{ 
     align-items: flex-start;
+    transition: 0.4s all;
     a{
         display: flex;
         margin-right: 30px;
         flex-direction: column;
         justify-content: center;
-        
+        transition: 0.4s all;
+        &:hover{
+            text-decoration: none;
+        }
 
         span{
             font-family: 'Montserrat',sans-serif;
@@ -515,7 +525,7 @@ $roboto_regular: 'Roboto',sans-serif;
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 54%;
+    left: 53%;
     top: 18%;
     span{
         display: flex;
@@ -533,5 +543,5 @@ $roboto_regular: 'Roboto',sans-serif;
 }
 
 #svg_anim{
-    // width: 100%;
+    width: auto;
 }
