@@ -125,9 +125,6 @@
   .components .sub_content {
     margin-left: 2rem;
   }
-  #svg_animation {
-    max-width: 90%;
-  }
 }
 
 @media (max-width: 1024px) {
@@ -207,6 +204,13 @@
 }
 
 @media (max-width: 425px) {
+  .menu ul {
+    padding: 0;
+    margin-top: 5rem;
+  }
+  .menu ul span {
+    margin-right: 10px;
+  }
   .text_banner h1 {
     font-size: 24px;
   }
@@ -266,11 +270,11 @@
     margin-top: 2rem;
   }
   .menu ul li .sub_menu {
-    top: 82px;
+    top: 50px;
     left: -12rem;
   }
   .menu ul li {
-    margin-right: 0;
+    margin-right: 10px;
   }
   .menu ul li::after {
     display: none;
@@ -282,9 +286,29 @@
     margin-left: 0;
     padding: 0 10px;
   }
+  .components .sub_content {
+    margin-left: 5rem;
+  }
+  .w-full {
+    width: 100%;
+    max-width: 100%;
+  }
+  .mt_section {
+    margin-top: 5rem;
+  }
 }
 
 @media (max-width: 320px) {
+  #svg_animation {
+    width: 102%;
+  }
+  .menu ul li .sub_menu {
+    top: 72px;
+    left: -8rem;
+  }
+  .components .sub_content {
+    margin-left: 3rem;
+  }
   .components .title {
     font-size: 28px;
   }
@@ -296,6 +320,9 @@
   }
   .components .offset-2 {
     margin-left: 0;
+  }
+  .components {
+    padding-top: 5rem;
   }
 }
 /*# sourceMappingURL=media.css.map */
