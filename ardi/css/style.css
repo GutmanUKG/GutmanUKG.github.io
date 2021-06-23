@@ -324,6 +324,7 @@
   background: url(../img/0.jpg);
   padding-top: 127px;
   padding-bottom: 238px;
+  position: relative;
 }
 
 .components .title {
@@ -338,7 +339,7 @@
 }
 
 .components .subitle {
-  font-family: "Roboto-Bold", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 240px;
@@ -504,7 +505,7 @@
 
 .menu ul li .sub_menu ul p {
   color: #5FBDAA;
-  font-family: "Roboto-Bold", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -520,7 +521,7 @@
 }
 
 .menu ul li .sub_menu ul li {
-  font-family: "Roboto-Regular", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -562,5 +563,52 @@
   line-height: 61px;
   text-transform: uppercase;
   color: #FFFFFF;
+}
+
+.add_link {
+  background: -webkit-gradient(linear, left bottom, left top, from(#5FBDAA), to(#5FBDAA)), #FFFFFF;
+  background: linear-gradient(0deg, #5FBDAA, #5FBDAA), #FFFFFF;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 24px 48px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 24px 48px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  width: 240px;
+  height: 80px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 54%;
+  top: 18%;
+}
+
+.add_link span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add_link span::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/plus.png) center no-repeat;
+  margin-right: 10px;
 }
 /*# sourceMappingURL=style.css.map */
