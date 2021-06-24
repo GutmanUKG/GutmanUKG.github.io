@@ -3,17 +3,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
     new Vivus(
         'svg_anim',
         {
-            type: 'sync',
+            type: 'delayed',
             duration:100
         }
     )
-    new Vivus(
-        'svg_animation',
-        {
-            type: 'sync',
-            duration:100
-        }
-    )
+    // new Vivus(
+    //     'svg_animation',
+    //     {
+    //         type: 'sync',
+    //         duration:100
+    //     }
+    // )
 
     new Vivus(
         'word',
@@ -22,6 +22,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
             duration:800
         }
     )
+
+
+     new Vivus(
+            'svg_test',
+            {
+                type: 'sync',
+                duration:200
+            }
+        )
+
+
     
 })
 

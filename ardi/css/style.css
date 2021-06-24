@@ -251,6 +251,7 @@
 
 .mt_section {
   margin-top: 138px;
+  overflow-x: hidden;
 }
 
 .item_list_arrows {
@@ -638,5 +639,287 @@
 
 #svg_anim {
   width: auto;
+}
+
+@-webkit-keyframes animSvg {
+  0% {
+    transform: translateX(0) skewX(10deg);
+    -webkit-transform: translateX(0) skewX(10deg);
+    -moz-transform: translateX(0) skewX(10deg);
+    -ms-transform: translateX(0) skewX(10deg);
+    -o-transform: translateX(0) skewX(10deg);
+  }
+  100% {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    display: none;
+  }
+}
+
+@keyframes animSvg {
+  0% {
+    transform: translateX(0) skewX(10deg);
+    -webkit-transform: translateX(0) skewX(10deg);
+    -moz-transform: translateX(0) skewX(10deg);
+    -ms-transform: translateX(0) skewX(10deg);
+    -o-transform: translateX(0) skewX(10deg);
+  }
+  100% {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    display: none;
+  }
+}
+
+.w-full {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.w-full .white_obj {
+  position: absolute;
+  background: #ffff;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  -webkit-animation-name: animSvg;
+          animation-name: animSvg;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.logo_2 {
+  display: none;
+}
+
+.descr_modile {
+  display: none;
+}
+
+.descr_modile .about_mobile,
+.descr_modile .tasks {
+  padding: 0 15px;
+}
+
+.descr_modile .about_mobile .title,
+.descr_modile .tasks .title {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #C4C4C4;
+}
+
+.descr_modile .about_mobile .descr,
+.descr_modile .tasks .descr {
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #333333;
+  margin-bottom: 35px;
+}
+
+.descr_modile .tasks .title {
+  color: #5FBDAA;
+  margin-bottom: 21px;
+}
+
+.descr_modile .tasks .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 16px;
+}
+
+.descr_modile .tasks .item p {
+  display: block;
+  margin-bottom: 0;
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #333333;
+}
+
+.descr_modile .tasks .item span {
+  display: block;
+  min-width: 24px;
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #AFDED5;
+}
+
+.about_mobile {
+  display: none;
+}
+
+.component_modile {
+  display: none;
+}
+
+.component_modile .title {
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #5FBDAA;
+  margin-top: 41px;
+  margin-bottom: 30px;
+}
+
+.component_modile .wrapper_word {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.component_modile .word_mini {
+  margin-left: 41px;
+}
+
+.component_modile .word_mini p,
+.component_modile .word_mini span {
+  display: block;
+}
+
+.component_modile .word_mini p {
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  color: #333333;
+}
+
+.component_modile .word_mini span {
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 24px;
+  color: #333333;
+}
+
+.component_modile .word_mini span:last-child {
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.wrapper_link_mini {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.wrapper_link_mini a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper_link_mini a img {
+  max-width: 39.6px;
+  width: 100%;
+}
+
+.wrapper_link_mini a span {
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #333333;
+}
+
+.books_section {
+  display: none;
+}
+
+.footer_mini {
+  display: none;
+  height: 590px;
+  background: url(../img/bg_footer.png) no-repeat;
+  background-size: cover;
+  padding-bottom: 56px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer_mini span {
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
