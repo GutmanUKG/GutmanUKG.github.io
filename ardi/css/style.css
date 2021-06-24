@@ -853,8 +853,9 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 50px;
   margin-bottom: 50px;
 }
@@ -870,14 +871,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 60px;
 }
 
 .wrapper_link_mini a img {
   max-width: 39.6px;
   width: 100%;
+  margin-right: 20px;
 }
 
 .wrapper_link_mini a span {
