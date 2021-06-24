@@ -923,4 +923,12 @@
   text-transform: uppercase;
   color: #fff;
 }
+
+.wrapper_map {
+  min-width: 320px;
+}
+
+.svg_2 {
+  height: 300px;
+}
 /*# sourceMappingURL=style.css.map */
