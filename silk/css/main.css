@@ -10046,6 +10046,12 @@ a.cb-splitshow-preview {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 400px 0;
+  -webkit-transition: 2s all;
+  transition: 2s all;
+}
+
+.silk_bg:hover {
+  background: #266B88;
 }
 
 .min_img {

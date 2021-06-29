@@ -10074,8 +10074,10 @@ a.cb-splitshow-preview {
     display: flex;
     justify-content: center;
     padding: 400px 0;
+    transition: 2s all;
     &:hover{
-
+        background: #266B88;
+      
     }
 }
 
