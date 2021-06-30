@@ -9992,9 +9992,9 @@ a.cb-splitshow-preview {
     position: relative;
 }
 .menu_custom{
-    position: absolute;
-    left: 80%;
-    top: 320px;
+    position: fixed;
+    left: 78%;
+    top: 50%;
     transform: rotate(90deg) translateY(80%);
     -webkit-transform: rotate(90deg) translateY(80%);
     -moz-transform: rotate(90deg) translateY(80%);
@@ -10127,4 +10127,106 @@ a.cb-splitshow-preview {
             padding-top: 40px;
         }
     }
+}
+
+.content_text_wrap{
+    
+    .wrapper{
+        display: flex;
+        justify-content: space-around;
+        padding: 200px 0;
+        .title{
+            font-family: 'Inter',sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 48px;
+            color: #3F4158;
+            max-width: 400px;
+            width: 100%;
+        }
+        .content_text{
+            font-family: 'Inter',sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 32px;
+            color: #3F4158;
+        }
+    }
+}
+
+.footer{
+    background: url(../img/footer.png) center no-repeat;
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+*{
+    // cursor: none;
+}
+
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 200ms ease-out;
+    position: fixed;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    transform: translate(calc(-50% + 15px), -50%);
+    // transition: 0.2s all;
+    span{
+        display: none;
+    }
+  }
+  
+  .cursor2 {
+    cursor:progress
+  }
+
+
+
+  .hover {
+    width: 80px;
+    height: 80px;
+    opacity: .5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
+    span{
+        display: block;
+        color: #fff;
+    }
+  }
+
+  .cb-btn_menu-box{
+      &:hover{
+          &::before{
+            //   background: #000;
+            //   border-radius: 50%;
+            //   width: 40px;
+            //   height: 40px;
+          }
+      }
+  }
+
+.blue{
+    background:rgba(38, 109, 136, 0.8);
+    opacity: 1;
+}
+.orange{
+    background: rgba(246, 105, 94, 0.8);
+    opacity: 1;
+   
 }

@@ -9942,9 +9942,9 @@ a.cb-splitshow-preview {
 }
 
 .menu_custom {
-  position: absolute;
-  left: 80%;
-  top: 320px;
+  position: fixed;
+  left: 78%;
+  top: 50%;
   transform: rotate(90deg) translateY(80%);
   -webkit-transform: rotate(90deg) translateY(80%);
   -moz-transform: rotate(90deg) translateY(80%);
@@ -10106,5 +10106,99 @@ a.cb-splitshow-preview {
   color: #3F4158;
   display: block;
   padding-top: 40px;
+}
+
+.content_text_wrap .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 200px 0;
+}
+
+.content_text_wrap .wrapper .title {
+  font-family: 'Inter',sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  color: #3F4158;
+  max-width: 400px;
+  width: 100%;
+}
+
+.content_text_wrap .wrapper .content_text {
+  font-family: 'Inter',sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 32px;
+  color: #3F4158;
+}
+
+.footer {
+  background: url(../img/footer.png) center no-repeat;
+  width: 1920px;
+  height: 1080px;
+  margin: 0 auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  -webkit-transform: translate(calc(-50% + 15px), -50%);
+          transform: translate(calc(-50% + 15px), -50%);
+}
+
+.cursor span {
+  display: none;
+}
+
+.cursor2 {
+  cursor: progress;
+}
+
+.hover {
+  width: 80px;
+  height: 80px;
+  opacity: .5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.hover span {
+  display: block;
+  color: #fff;
+}
+
+.blue {
+  background: rgba(38, 109, 136, 0.8);
+  opacity: 1;
+}
+
+.orange {
+  background: rgba(246, 105, 94, 0.8);
+  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */
