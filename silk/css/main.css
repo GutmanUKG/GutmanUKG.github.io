@@ -10219,7 +10219,7 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0;
-  height: 1204px;
+  height: 900px;
   position: relative;
 }
 
@@ -10229,6 +10229,17 @@ body {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
 }
 
 @media (max-width: 768px) {
