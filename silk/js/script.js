@@ -106,7 +106,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
     var circles = [];
 
     var colorPicker = (function() {
-    var colors = ["#FF6138", "#FFBE53", "#2980B9", "#282741"];
+    // var colors = ["#FF6138", "#FFBE53", "#2980B9", "#282741"];
+    var colors = ["#1A455E", "#266B88", "#2980B9", "#F44336"];
     var index = 0;
     function next() {
         index = index++ < colors.length-1 ? index : 0;
@@ -242,24 +243,24 @@ window.addEventListener('DOMContentLoaded', ()=>{
     }
 
     var animate = anime({
-    duration: Infinity,
-    update: function() {
-        ctx.fillStyle = bgColor;
-        ctx.fillRect(0, 0, cW, cH);
-        animations.forEach(function(anim) {
-        anim.animatables.forEach(function(animatable) {
+        duration: Infinity,
+        update: function() {
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, cW, cH);
+            animations.forEach(function(anim) {
+            anim.animatables.forEach(function(animatable) {
             animatable.target.draw();
+            });
         });
-        });
-    }
+     }
     });
 
     var resizeCanvas = function() {
-    cW = window.innerWidth;
-    cH = window.innerHeight;
-    c.width = cW * devicePixelRatio;
-    c.height = cH * devicePixelRatio;
-    ctx.scale(devicePixelRatio, devicePixelRatio);
+        cW = window.innerWidth;
+        cH = window.innerHeight;
+        c.width = cW * devicePixelRatio;
+        c.height = cH * devicePixelRatio;
+        ctx.scale(devicePixelRatio, devicePixelRatio);
     };
 
     (function init() {

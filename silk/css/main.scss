@@ -10276,6 +10276,9 @@ canvas {
     left: 0;
   }
 @media (max-width:768px) {
+    .cursor{
+        display: none;
+    }
     .about_custom{
         padding: 5rem 0;
     }
