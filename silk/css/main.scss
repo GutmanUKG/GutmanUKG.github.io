@@ -10070,13 +10070,13 @@ a.cb-splitshow-preview {
 }
 
 .silk_bg{
-    background: linear-gradient(0deg, #1A455E, #1A455E), #127387;
+    // background: linear-gradient(0deg, #1A455E, #1A455E), #127387;
     display: flex;
     // justify-content: center;
     // padding: 400px 0;
     transition: 2s all;
     &:hover{
-        background: #266B88;
+        // background: #266B88;
       
     }
 }
@@ -10245,7 +10245,7 @@ body{
 
 .silk_bg{
     overflow: hidden;
-    background: #266B88;
+    // background: #266B88;
     display: flex;
     flex-wrap: wrap;
     // flex-direction: column;
@@ -10313,5 +10313,14 @@ canvas {
     }
     .silk_bg .silk_img{
         width: 220px;
+    }
+    .cb-splitshow-item{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cb-splitshow-preview{
+        width: 90%;
     }
 }

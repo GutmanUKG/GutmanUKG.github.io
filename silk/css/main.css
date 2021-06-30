@@ -10037,17 +10037,11 @@ a.cb-splitshow-preview {
 }
 
 .silk_bg {
-  background: -webkit-gradient(linear, left bottom, left top, from(#1A455E), to(#1A455E)), #127387;
-  background: linear-gradient(0deg, #1A455E, #1A455E), #127387;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-transition: 2s all;
   transition: 2s all;
-}
-
-.silk_bg:hover {
-  background: #266B88;
 }
 
 .min_img {
@@ -10212,7 +10206,6 @@ body {
 
 .silk_bg {
   overflow: hidden;
-  background: #266B88;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10282,6 +10275,24 @@ canvas {
   }
   .silk_bg .silk_img {
     width: 220px;
+  }
+  .cb-splitshow-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .cb-splitshow-preview {
+    width: 90%;
   }
 }
 /*# sourceMappingURL=main.css.map */
