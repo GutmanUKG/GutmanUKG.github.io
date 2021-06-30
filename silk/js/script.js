@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
            
 
 
-               let activePos =  `${translatePos}, ${calcPos}) ${rotatePos}) ${scalePos})`;
+               let activePos =  `${translatePos}, ${calcPos}) ${rotatePos})`;
               
                
                let test = activePos.match(/scale/);
