@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     function stopVideoPlay(id){
         let videoPlay = document.querySelectorAll('.video_palyer');
-        console.log(id)
         for(let i = 0; i < videoPlay.length; i++){
             videoPlay[i].pause();
         }

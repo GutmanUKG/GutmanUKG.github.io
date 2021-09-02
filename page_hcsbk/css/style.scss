@@ -235,9 +235,9 @@
               
             }
             .playing{
-              background:url(../img/pause.svg);
-              width: 70px;
-              height: 70px;
+              background:url(../img/pause.png) center no-repeat;
+              width: 150px;
+              height: 150px;
               border:none;
               border-radius: 0%;
               animation: pauseShow 1s;
@@ -527,4 +527,11 @@
   100%{
     opacity: 0;
   }
+}
+
+.faq_content_wrapper .faq_content .nav_bar ul li a img{
+  max-width: 50px;
+  width: 100%;
+  object-fit: contain;
+  height: 50px;
 }

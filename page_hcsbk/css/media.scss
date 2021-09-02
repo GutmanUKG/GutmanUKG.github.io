@@ -1,0 +1,143 @@
+@media (max-width:420px) {
+    .search_panel{
+        margin-bottom: 26px;
+         form{
+
+            .wrapper_form_group{
+                label{
+                    padding-top: 20px;
+                    .line{
+                        display: none;
+                    }
+                    #search_text{
+                        font-size: 18px ;
+                        padding-left: 40px ;
+                        
+                    }
+                }
+                .btn_search{
+                    display: none;
+                }
+            }
+         }
+    }
+    .faq_content_wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .title{
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 30px;
+            
+        }
+    }
+    .faq_content{
+        justify-content: center;
+        .content_result{
+            display: none;
+        }
+        .nav_bar{
+
+            nav{
+                ul{
+                    margin-bottom: 0;
+                     li{
+                        border-top: none !important;
+                        border-left: none !important;
+                        border-right: none !important;
+                        &:first-child{
+                            border-top: none !important;
+                            a{
+                                padding-top: 0;
+                            }
+                        }
+                        &:last-child{
+                            a{}
+                        }
+                        a{
+                            padding-left: 16px !important;
+                            font-size: 18px !important;
+                            display: flex;
+                            position: relative;
+                           &::before{
+                               content: '';
+                               display: block;
+                               width: 11px;
+                               height: 11px;
+                               background:url(../img/arrow_right.png) center no-repeat;
+                               position: absolute;
+                               left: 90%;
+                           }
+                        }
+                     }
+                }
+            }
+        }
+    }
+
+    .faq_content_wrapper .faq_content{
+        width: 100%;
+    }
+
+    .faq_content_wrapper_inner{
+        .title{
+            display: none;
+        }
+        .nav_bar_inner{
+
+            nav{
+
+                ul{
+
+                    li{
+                        &:first-child{
+                            display: none !important;
+                        }
+
+                        .active{
+                            padding: 0px 16px 30px 16px !important;
+                        }
+                        a{
+                            padding-right: 16px;
+                        }
+                    }
+                    .active_link{
+                        a{
+                            text-align: center;
+                            justify-content: center;
+                            position: relative;
+                            &::after{
+                                content: '';
+                                display: block;
+                                width: 12px;
+                                height: 24px;
+                                background:url(../img/arrow_back.svg) center no-repeat;
+                                background-size: contain;
+                                position: absolute;
+                                left: 16px;
+                            }
+                            img{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .faq_content_wrapper .faq_content_inner .nav_bar_inner nav ul li .top:before{
+        width: 30px;
+        height: 30px;
+    }
+    .faq_content_wrapper .faq_content_inner .nav_bar_inner nav ul li .top::after{
+        content: '';
+        display: block;
+        background:url(../img/arrow_right.png) center no-repeat;
+        width: 11px;
+        height: 11px;
+        background-size: contain;
+    }
+}
