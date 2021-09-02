@@ -230,7 +230,7 @@
               left: 50%;
               transform: translate(-50%,-50%);
               z-index: 2;
-              border:1px solid #008B8A;
+              border:2px solid #008B8A;
               border-radius: 50%;
               
             }
@@ -240,8 +240,8 @@
               height: 70px;
               border:none;
               border-radius: 0%;
-              // animation: pauseShow 1s;
-              // opacity: 0;
+              animation: pauseShow 1s;
+              opacity: 0;
               background-size: contain;
               &:hover{
                 opacity: 1;
@@ -332,6 +332,9 @@
         }
         .video_inner{
           padding: 0;
+          .btns_group{
+            padding: 0px 40px 30px 40px;
+          }
         }
       }
     }

@@ -269,7 +269,7 @@
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 2;
-  border: 1px solid #008B8A;
+  border: 2px solid #008B8A;
   border-radius: 50%;
 }
 
@@ -279,6 +279,9 @@
   height: 70px;
   border: none;
   border-radius: 0%;
+  -webkit-animation: pauseShow 1s;
+          animation: pauseShow 1s;
+  opacity: 0;
   background-size: contain;
 }
 
@@ -384,6 +387,10 @@
 
 .faq_content_wrapper .content_result .acordion_items .item_acordion .video_inner {
   padding: 0;
+}
+
+.faq_content_wrapper .content_result .acordion_items .item_acordion .video_inner .btns_group {
+  padding: 0px 40px 30px 40px;
 }
 
 .faq_content_wrapper .faq_content_inner {

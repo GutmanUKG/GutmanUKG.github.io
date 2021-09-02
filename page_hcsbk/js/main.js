@@ -2,20 +2,27 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let trigger = document.querySelectorAll('.title_acordion');
 
 
-    trigger.forEach(item=>{
+    trigger.forEach((item, id)=>{
         item.addEventListener('click',(event)=>{
             let target = event.target;
-            clearClass();
+            // clearClass();
             item.parentNode.classList.toggle('active')    
         })
     })
 
-    function clearClass(){
-        for(let i = 0; i <trigger.length; i++){
-            trigger[i].parentNode.classList.remove('active');
+    // function clearClass(){
+    //     for(let i = 0; i <trigger.length; i++){
+    //         trigger[i].parentNode.classList.remove('active');
+    //     }
+    //     stopVideoPlay();
+    // }
+
+    function stopVideoPlay(){
+        let videoPlay = document.querySelectorAll('.video_palyer');
+        for(let i = 0; i < videoPlay.length; i++){
+            videoPlay[i].pause();
         }
     }
-
     let tabs = document.querySelectorAll('.tab_link');
     let tab_content = document.querySelectorAll('.wrapper_items_tabs_content');
     
@@ -26,7 +33,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 event.preventDefault();
                 showContentTab(id);
                 for(let i = 0; i < tabs.length; i++){
-                    tabs[i].classList.remove('active')
+                    tabs[i].classList.remove('active');
                 }
                 item.classList.add('active');
             })
