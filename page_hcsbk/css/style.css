@@ -175,6 +175,10 @@
   margin-bottom: 42px;
 }
 
+.faq_content_wrapper .content_result .banner_img img {
+  width: 100%;
+}
+
 .faq_content_wrapper .content_result .banner_text {
   font-family: 'Ubuntu-regular',sans-serif;
   font-style: normal;
@@ -628,5 +632,13 @@
   -o-object-fit: contain;
      object-fit: contain;
   height: 50px;
+}
+
+ul #tabs_menu {
+  background: rgba(182, 182, 182, 0.2);
+}
+
+ul #tabs_menu li {
+  display: block !important;
 }
 /*# sourceMappingURL=style.css.map */

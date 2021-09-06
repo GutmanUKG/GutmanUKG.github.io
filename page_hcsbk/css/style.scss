@@ -143,6 +143,9 @@
     margin-top: -90px;
     .banner_img{
       margin-bottom: 42px;
+      img{
+        width: 100%;
+      }
     }
     .banner_text{
       font-family: 'Ubuntu-regular',sans-serif;
@@ -534,4 +537,18 @@
   width: 100%;
   object-fit: contain;
   height: 50px;
+}
+
+ul #tabs_menu{
+  background: rgba(182, 182, 182, 0.2);
+  li{
+    display: block !important;
+    a{
+
+
+      &:before{
+        
+      }
+    }
+  }
 }

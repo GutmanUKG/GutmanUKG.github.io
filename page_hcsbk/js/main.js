@@ -1,37 +1,43 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-    let trigger = document.querySelectorAll('.title_acordion');
+    function accordionTabs(element){
+        let trigger = document.querySelectorAll(element);
 
-
-    trigger.forEach((item, id)=>{
-        item.addEventListener('click',(event)=>{
-            let target = event.target;
-          
+        trigger.forEach((item, id)=>{
+            item.addEventListener('click',(event)=>{
+                let target = event.target;
+              
+                if(!item.parentNode.classList.contains('active')){
+                    clearClass(id);
+                    item.parentNode.classList.add('active');
+                }else{
+                    item.parentNode.classList.remove('active');
+                    stopVideoPlay(id);
+                }
+            })
             if(!item.parentNode.classList.contains('active')){
-                clearClass(id);
-                item.parentNode.classList.add('active');
-            }else{
-                item.parentNode.classList.remove('active');
                 stopVideoPlay(id);
             }
         })
-        if(!item.parentNode.classList.contains('active')){
+        
+        function clearClass(id){
+            for(let i = 0; i <trigger.length; i++){
+                trigger[i].parentNode.classList.remove('active');
+            }
             stopVideoPlay(id);
         }
-    })
-
-    function clearClass(id){
-        for(let i = 0; i <trigger.length; i++){
-            trigger[i].parentNode.classList.remove('active');
-        }
-        stopVideoPlay(id);
-    }
-
-    function stopVideoPlay(id){
-        let videoPlay = document.querySelectorAll('.video_palyer');
-        for(let i = 0; i < videoPlay.length; i++){
-            videoPlay[i].pause();
+    
+        function stopVideoPlay(id){
+            let videoPlay = document.querySelectorAll('.video_palyer');
+            for(let i = 0; i < videoPlay.length; i++){
+                videoPlay[i].pause();
+            }
         }
     }
+   
+    accordionTabs('.title_acordion');
+    accordionTabs('.accordion');
+
+
     let tabs = document.querySelectorAll('.tab_link');
     let tab_content = document.querySelectorAll('.wrapper_items_tabs_content');
     
