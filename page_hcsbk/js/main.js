@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         async function playVideo(){
             try{
                 await videoPlayer.play();
+                console.log('play')
             }catch(err){
                 console.log('err')
             }

@@ -17,7 +17,14 @@
     margin: 0 auto;
     // padding: 0 20px;
 }
-
+@keyframes showIcon {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 .content{
     margin-top: 20px;
     .title{
@@ -304,4 +311,84 @@
             }
         }
     }
+
+    .nav_bar_modile_inner{
+        nav{
+            ul{
+
+                li{
+                    &:first-child{
+                        a{
+                            &::before{
+                                display: none;
+                            }
+                        }
+                    }
+
+                    a{  
+                        &::before{
+                            content: '';
+                            display: block;
+                            background:url(../img/circle.svg) center no-repeat;
+                            width: 20px;
+                            height: 20px;
+                            background-size: contain;
+                        }
+                       
+                    }
+                    .sub_menu{
+                        background: rgba(182, 182, 182, 0.2);
+                        display: none;
+                        li{
+                            a{
+                                &::before{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .active{
+                    .sub_menu{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    .video_inner{
+        background:transparent !important;
+        .video{
+            position: relative;
+            .play_icon{
+                background: url(../img/play_icon.png) center no-repeat ;
+                width: 90px;
+                height: 88px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                background-size: contain;
+                z-index: 20;
+            }
+            .playing{
+                background:url(../img/pause.png) center no-repeat;
+                background-size: contain;
+                width: 90px;
+                height: 88px;
+                animation: showIcon 1s;
+                opacity: 0;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+        .content_text{
+            .title{
+                padding: 20px 20px 20px 20px !important;
+                margin-bottom: 0;
+            }
+        }
+    }
 }
+
