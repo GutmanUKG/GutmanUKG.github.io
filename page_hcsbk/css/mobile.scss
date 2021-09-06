@@ -154,8 +154,31 @@
                             &::after{
                                 display: none;
                             }
+                            &::before{
+                                display: none;
+                            }
                         }
                     }
+                }
+            }
+        }
+    }
+    .inner_sub_menu{
+        li{
+            a{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &:before{
+                    display: none !important;
+                }
+                &::after{
+                    display: none!important;
+                }
+                span{
+                    width: 15px;
+                    height: 3px;
+                    background:#008B8A;
                 }
             }
         }
@@ -308,6 +331,14 @@
         .active{
             .content_item{
                 display: block;
+            }
+            .title{
+                span{
+                    &::before{
+                        display: none;
+
+                    }
+                }
             }
         }
     }
