@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   
 
 
+ 
+  
 
     //   Позиция элемента исходя из даты начала и окончания активности
 
@@ -93,9 +95,54 @@ document.addEventListener('DOMContentLoaded', ()=>{
             eventItem[b].style.width = elWidth + 20 + 'px';      
 
         //    раположение элемента относительно высоты задач расположенных слева
-            eventItem[b].style.top = eventTitle[b].getBoundingClientRect().y -155 + 'px';           
+            eventItem[b].style.top = eventTitle[b].getBoundingClientRect().y - 105 + 'px';           
         }
     }
     positionDay()
 
+    let triggerWidth = document.querySelectorAll('.width_el');
+    let width_event = [];
+    var lock = true;
+    let newPosition = ''
+  
+    function addWidthEl(){
+        triggerWidth.forEach((item,id)=>{
+          
+            item.addEventListener('click',(event)=>{
+                let target = event.target;
+                
+                
+                if(!target.classList.contains('move')){
+                    target.classList.add('move');
+                    lock = false;
+                    document.body.addEventListener('mousemove',()=>{
+                        movePosition(id);
+                    })
+                }
+                else{
+                    lock = true;
+                    target.classList.remove('move')
+                }
+               
+                
+            })
+        
+        })
+    }
+
+    addWidthEl();
+        function movePosition(id){
+                document.body.addEventListener('mousemove',(event)=>{
+                    if(lock == false){
+                    
+                    width_event.push(event.clientX);
+                    let oldPosition = width_event[width_event.length - 2];
+                    let currentPosition =width_event[width_event.length - 1];
+                    newPosition = currentPosition - oldPosition;
+                    eventItem[id].style.width =  parseInt(eventItem[id].style.width) + newPosition + 'px';
+                    }else{
+                        return
+                    }
+                })
+            }
 })
