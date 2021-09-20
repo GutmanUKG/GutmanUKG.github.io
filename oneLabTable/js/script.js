@@ -100,49 +100,51 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
     positionDay()
 
-    let triggerWidth = document.querySelectorAll('.width_el');
-    let width_event = [];
-    var lock = true;
-    let newPosition = ''
-  
-    function addWidthEl(){
-        triggerWidth.forEach((item,id)=>{
-          
-            item.addEventListener('click',(event)=>{
-                let target = event.target;
-                
-                
-                if(!target.classList.contains('move')){
-                    target.classList.add('move');
-                    lock = false;
-                    document.body.addEventListener('mousemove',()=>{
-                        movePosition(id);
-                    })
-                }
-                else{
-                    lock = true;
-                    target.classList.remove('move')
-                }
-               
-                
-            })
-        
-        })
-    }
+    let dragLink = document.querySelectorAll('.event');
+    let addWidth = document.querySelectorAll('.width_el');
+    let calendar = document.querySelector('.calendar');
+    // перетаскивание 
+    dragLink.forEach(item=>{
+        item.onmousedown = function(event){
+            item.style.position = 'absolute';
+            item.style.zIndex = 1000;
+            calendar.append(item);
+            moveAt(event.pageX, event.pageY);
 
-    addWidthEl();
-        function movePosition(id){
-                document.body.addEventListener('mousemove',(event)=>{
-                    if(lock == false){
-                    
-                    width_event.push(event.clientX);
-                    let oldPosition = width_event[width_event.length - 2];
-                    let currentPosition =width_event[width_event.length - 1];
-                    newPosition = currentPosition - oldPosition;
-                    eventItem[id].style.width =  parseInt(eventItem[id].style.width) + newPosition + 'px';
-                    }else{
-                        return
-                    }
-                })
+            function moveAt(pageX, pageY) {
+                item.style.left = pageX - item.offsetWidth / 2 + 'px';
+                item.style.top = pageY - item.offsetHeight / 2 + 'px';
+                item.classList.add('drop');
+                item.classList.add('active_event')
+              }
+
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
             }
+
+            calendar.addEventListener('mousemove', onMouseMove);
+
+            item.onmouseup = function() {
+                calendar.removeEventListener('mousemove', onMouseMove);
+                item.onmouseup = null;
+                item.classList.remove('active_event')
+              };
+            item.ondragstart = function() {
+                return false;
+              };
+        }
+    })
+    // Увеличение ширины
+    addWidth.forEach((item,id)=>{
+        item.onmousedown = function(event){
+            addWidth(item,id)
+        }
+        function addWidth(id){
+            for(let i = 0; i < dragLink.length; i++){
+                
+                // console.log(item)
+            }
+        }
+    })
 })
+

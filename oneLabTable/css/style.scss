@@ -15,6 +15,8 @@
         height: 36px;
         padding-right: 10px;
         box-sizing: border-box;
+        position: relative;
+        z-index: 500;
         &:hover{
             cursor: col-resize;
         }
@@ -43,6 +45,7 @@
         background: url(../img/icon.png) center no-repeat;
         width: 24px;
         height: 24px;
+        background-size: contain;
     }
 }
 
@@ -63,8 +66,10 @@
                 border-radius: 2px;
                 font-family: 'Roboto',sans-serif;
                 font-size: 13px;
-                padding: 10px;
+                 
                 color: #535C69;
+                height: 28px;
+                box-sizing: border-box;
             }
         }
         select{
@@ -256,9 +261,37 @@
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     overflow: hidden;
+                    box-sizing: border-box;
                 }
             }
         }
     }
 
+}
+
+
+.drop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-left: 10px;
+    border-radius: 4px;
+    font-family: 'Roboto',sans-serif;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 36px;
+  
+}
+.active_event{
+    transform: scale(0.9);
+}
+
+.drop_el{
+    width: 100%;
+    padding-left: 10px;
 }
