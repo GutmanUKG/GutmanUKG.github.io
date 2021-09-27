@@ -214,6 +214,7 @@
                 display: flex;
                justify-content: space-between;
                 position: relative;
+                margin-top: -15px;
                 .line{
                     position: absolute;
                     height: 40px;
@@ -221,7 +222,7 @@
                     display: block;
                     width: 100%;
                     opacity: 0.5;
-                    top: -18px;
+                    top: -1px;
                 }
                 .day{
                     // background-color: #c4c4c4;
@@ -232,11 +233,12 @@
                     width: 100%;
                     text-align: center;
                     background: #fff;
+                    padding-top: 10px;
                     &:last-child{
                         border-right: 1px solid #E8E8E8; 
                     }
                 }
-
+                
                 .active{
                     background-color: red;
                 }
@@ -245,7 +247,7 @@
                     justify-content: space-between;
                     position: absolute;
                     top: 1rem;
-                    width: 100%;
+                   
                     border-radius: 4px;
                     font-family: 'Roboto',sans-serif;
                     font-style: normal;
@@ -255,12 +257,12 @@
                     color:#FFFFFF;
                     // padding: 10px;
                     height: 36px;
-                    display: flex;
+                  
                     align-items: center;
                     padding-left: 10px;
                     text-overflow: ellipsis;
-                    white-space: nowrap;
-                    overflow: hidden;
+                    // white-space: nowrap;
+                    // overflow: hidden;
                     box-sizing: border-box;
                 }
             }
@@ -287,11 +289,15 @@
     height: 36px;
   
 }
-.active_event{
-    transform: scale(0.9);
-}
+// .active_event{
+//     transform: scale(0.9);
+// }
 
 .drop_el{
     width: 100%;
     padding-left: 10px;
+}
+.weekend{
+    background: rgba(139, 139, 139, 0.15) !important;
+    border: 1px solid #E5E5E5;
 }

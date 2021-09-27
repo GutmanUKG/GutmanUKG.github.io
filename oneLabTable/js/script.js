@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let currentDate = date.getDate();
     let fullMonthDays =  getDaysInMonth(currentMonth,currentYear);
 
+ 
     // формирование календаря
     let monthList = [
         'Январь',
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
           date.setDate(date.getDate() + 1);
         }
         return days;
+      
       }
 
 
@@ -42,7 +44,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
           element.classList.add('day')
           element.textContent = item.getDate();
           daysWrapper.appendChild(element);
-
+          if(item.getDay() == 0 || item.getDay() == 6){
+              element.classList.add('weekend')
+          }
           if(element.textContent == currentDate){
             //   element.classList.add('active')
           }
@@ -55,10 +59,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
       }
 
   
+    //   Выходные дни
 
+    function checkDate(days){
+        let [day, month, year] = days.split('.');
 
- 
-  
+        let date = new Date(year, month - 1, day);
+
+        return (date.getDate() == 0 || date.getDate() == 6);
+    }
+    
+    
 
     //   Позиция элемента исходя из даты начала и окончания активности
 
@@ -92,10 +103,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
             // eventItem[b].classList.add('active')
             eventItem[b].style.left = obj[c].positionStart -560 + 'px';
             let elWidth = obj[dataEnd[2]].positionStart -  obj[c].positionStart;
-            eventItem[b].style.width = elWidth + 20 + 'px';      
-
+            // eventItem[b].style.maxWidth = elWidth + 20 + 'px';      
+            eventItem[b].style.width = elWidth + 20 + 'px';    
         //    раположение элемента относительно высоты задач расположенных слева
-            eventItem[b].style.top = eventTitle[b].getBoundingClientRect().y - 105 + 'px';           
+            eventItem[b].style.top = eventTitle[b].getBoundingClientRect().y - 130 + 'px';           
         }
     }
     positionDay()
@@ -104,47 +115,106 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let addWidth = document.querySelectorAll('.width_el');
     let calendar = document.querySelector('.calendar');
     // перетаскивание 
-    dragLink.forEach(item=>{
-        item.onmousedown = function(event){
-            item.style.position = 'absolute';
-            item.style.zIndex = 1000;
-            calendar.append(item);
-            moveAt(event.pageX, event.pageY);
+     // Перетаскивание
 
-            function moveAt(pageX, pageY) {
-                item.style.left = pageX - item.offsetWidth / 2 + 'px';
-                item.style.top = pageY - item.offsetHeight / 2 + 'px';
-                item.classList.add('drop');
-                item.classList.add('active_event')
-              }
+     let dropElements = document.querySelectorAll('.event');
 
-            function onMouseMove(event) {
-                moveAt(event.pageX, event.pageY);
-            }
+     dropElements.forEach((item,id)=>{
+         let dropEl = item.querySelector('.drop_el');
+         
+         dropEl.onmousedown = function(event){
+ 
+             dropEl.parentNode.style.zIndex = 1000;
+             dropEl.parentNode.style.position = 'absolute';
+            calendar.append(dropEl.parentNode);
+ 
+             moveAt(event.pageX, event.pageY);
+             
+             function moveAt(pageX,pageY){
+                 dropEl.parentNode.style.left = pageX - (dropEl.parentNode.offsetWidth / 2) + 'px';
+                 dropEl.parentNode.style.top = pageY - dropEl.parentNode.offsetHeight / 2  + 'px';
+                 item.classList.add('drop');
+                 item.classList.add('active_event');
+                 parseElements();
+             }
+ 
+             function onmouseMove(event){
+                 moveAt(event.pageX, event.pageY);
+             }
+ 
+             calendar.addEventListener('mousemove',onmouseMove);
+ 
+             dropEl.parentNode.onmouseup = function (){
+                 calendar.removeEventListener('mousemove',onmouseMove);
+                 dropEl.parentNode.onmouseup = null;
+                 item.classList.remove('active_event');
+                 parseElements();
+             }
+ 
+             dropEl.parentNode.ondragstart = function(){
+                 return false;
+             }
+         }
+     })
 
-            calendar.addEventListener('mousemove', onMouseMove);
-
-            item.onmouseup = function() {
-                calendar.removeEventListener('mousemove', onMouseMove);
-                item.onmouseup = null;
-                item.classList.remove('active_event')
-              };
-            item.ondragstart = function() {
-                return false;
-              };
-        }
-    })
     // Увеличение ширины
-    addWidth.forEach((item,id)=>{
-        item.onmousedown = function(event){
-            addWidth(item,id)
-        }
-        function addWidth(id){
-            for(let i = 0; i < dragLink.length; i++){
-                
-                // console.log(item)
-            }
-        }
+    
+    let elementWidth = document.querySelectorAll('.width_el');
+    let box = document.querySelector('.calendar');
+    let arrayPositionMouse = [];
+    let unlock = false;
+    
+    dragLink.forEach(item =>{
+        item.addEventListener('mousedown',(event)=>{
+            event.preventDefault();
+        })
     })
+        
+    
+    function parseElements(){
+        elementWidth.forEach((item,id)=>{
+            item.addEventListener('mousedown', ()=>{
+                let currentWidth = item.parentNode.getBoundingClientRect().x + parseInt(item.parentNode.style.width);
+                unlock = true;
+                widthElem(currentWidth, id);
+                console.log(unlock)
+            })
+    
+            item.addEventListener('mouseup', ()=>{
+                unlock = false;
+                console.log(unlock)
+                id = null
+            })
+            item.parentNode.addEventListener('mouseup', ()=>{
+                unlock = false;
+                console.log(unlock)
+                id = null
+            })
+        })
+    }
+    parseElements();
+    function widthElem(currentWidth, id){
+        i = id;
+        let curWidth = parseInt(dragLink[i].style.width);
+        document.addEventListener('mousemove', (event)=>{
+            let change = event.clientX - Math.ceil(currentWidth);
+            
+            if(unlock){
+               
+                console.log(i)
+                dragLink[i].style.width =  curWidth + change + 'px';
+                
+            }else{
+               
+            }
+        })
+    
+       }
+      
+    document.addEventListener('mouseup',()=>{
+        unlock = false;
+    })
+
+   
 })
 
