@@ -177,17 +177,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 let currentWidth = item.parentNode.getBoundingClientRect().x + parseInt(item.parentNode.style.width);
                 unlock = true;
                 widthElem(currentWidth, id);
-                console.log(unlock)
             })
     
             item.addEventListener('mouseup', ()=>{
-                unlock = false;
-                console.log(unlock)
+                unlock = false; 
                 id = null
             })
             item.parentNode.addEventListener('mouseup', ()=>{
                 unlock = false;
-                console.log(unlock)
                 id = null
             })
         })
@@ -200,8 +197,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
             let change = event.clientX - Math.ceil(currentWidth);
             
             if(unlock){
-               
-                console.log(i)
                 dragLink[i].style.width =  curWidth + change + 'px';
                 
             }else{
