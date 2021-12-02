@@ -120,16 +120,18 @@
 
         <div class="wrapper_filter">
             <div>
-                <select class="city selector" id="city">
-                    <option value="all">Все</option>
-                    <option value="Almaty">Алматы</option>
-                    <option value="Ust-Kamenogorsk">Усть-Каменогорск</option>
-                </select>
-                <select class="job selector" id="job">
-                    <option value="all">Все</option>
-                    <option value="Менеджеры отдела продаж">Менеджер по продажам</option>
-                    <option value="Водитель">Водитель</option>
-                </select>
+                <form action="" id="select_filter">
+                    <select class="city selector" id="city">
+                        <option value="all">Все</option>
+                        <option value="Almaty">Алматы</option>
+                        <option value="Ust-Kamenogorsk">Усть-Каменогорск</option>
+                    </select>
+                    <select class="job selector" id="job">
+                        <option value="all">Все</option>
+                        <option value="Менеджеры отдела продаж">Менеджер по продажам</option>
+                        <option value="Водитель">Водитель</option>
+                    </select>
+                </form>
             </div>
 
             <input type="text" class="search_section" placeholder="Найти" id="search_job">
@@ -153,9 +155,9 @@
                     Подробнее
                 </button>
             </div>
-            <div class="item" data-city="Ust-Kamenogorsk">
+            <div class="item" data-city="Almaty">
                 <h5>
-                  Водитель фуры
+                  Водитель фуры Almaty
                 </h5>
                 <button class="btn btn_gold">
                     Подробнее
@@ -257,8 +259,8 @@
                     Найдите свою цель и используйте свои сильные стороны, чтобы достичь ее!
                 </div>
                 <div class="txt">
-                    Причина, почему вы работаете.
-                    Чтобы внести свой вклад и повысить
+                    Причина, почему вы работаете. <br>
+                    Чтобы внести свой вклад и повысить <br>
                     ценность чего-то или кого-то.
 
                 </div>
@@ -338,40 +340,68 @@
 <script src="js/slick.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', ()=>{
-//    city filter
-    const citySelect = document.querySelector('#city');
-    let wrapperAllElement = document.querySelector('.list_result'),
-        arrElements = wrapperAllElement.querySelectorAll('.item');
+        let selectCity = document.querySelector('#city'),
+            selectJob = document.querySelector('#job'),
+            itemWrapper = document.querySelector('.list_result'),
+            items = itemWrapper.querySelectorAll('.item');
 
-    citySelect.addEventListener('change', (e)=>{
-        for(let i = 0; i < arrElements.length; i++){
-            if(arrElements[i].dataset.city != citySelect.value){
-                arrElements[i].classList.add('disable')
-            }else {
-                arrElements[i].classList.remove('disable')
-            }
-            if(citySelect.value == 'all'){
-                arrElements[i].classList.remove('disable')
-            }
-        }
-    })
+        let arr = items;
 
-//    jobs filter
-    const jobSelect = document.querySelector('#job');
-    jobSelect.addEventListener('change', ()=>{
-       for(let i = 0; i < arrElements.length; i++){
-           arrElements[i].classList.remove('disable');
-           let resutl = arrElements[i].innerText.toLowerCase().indexOf(jobSelect.value.toLowerCase());
-           if(resutl){
-               arrElements[i].classList.add('disable');
-           }else {
-               arrElements[i].classList.remove('disable');
-           }
-           if(jobSelect.value == 'all'){
-               arrElements[i].classList.remove('disable');
-           }
-       };
-    });
+        selectCity.addEventListener('change', ()=>{
+            let value = selectCity.value;
+            if(arr != null){
+                for(let i = 0; i < arr.length; i++){
+
+                    if(value != arr[i].dataset.city){
+                        arr[i].classList.add('disable')
+                    }else{
+                        arr[i].classList.remove('disable')
+                    }
+                    if(value == 'all'){
+                        arr[i].classList.remove('disable')
+                    }
+                    items = arr;
+
+                }
+            }
+            if(arr == null){
+                for(let i = 0; i < items.length; i++){
+
+                    if(value != items[i].dataset.city){
+                        items[i].classList.add('disable')
+                    }else{
+                        items[i].classList.remove('disable')
+                    }
+                    if(value == 'all'){
+                        items[i].classList.remove('disable')
+                    }
+                    arr = items;
+                }
+            }
+        })
+        selectJob.addEventListener('change', ()=>{
+            let valueJob = selectJob.value;
+            let text;
+            if(arr != null){
+
+                for(let i = 0; i < arr.length; i++){
+                    text = arr[i].textContent.toLowerCase().indexOf(valueJob.toLowerCase());
+                    console.log()
+                    if(text == -1){
+                        arr[i].classList.add('disable')
+                    }else{
+                        arr[i].classList.remove('disable')
+                    }
+
+                    if(valueJob == 'all'){
+                        arr[i].classList.remove('disable')
+                    }
+                }
+
+            }
+        })
+
+
 //    search
 //     console.log(arrElements);
     const search = document.querySelector('#search_job');
