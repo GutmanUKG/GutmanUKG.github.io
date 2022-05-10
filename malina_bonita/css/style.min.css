@@ -30,6 +30,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+a {
+  outline: none;
+}
+
 .section {
   padding-top: 100px;
 }
@@ -547,7 +551,7 @@ header .logo a {
   box-sizing: border-box;
   position: fixed;
   top: 0px;
-  transform: translateY(calc(0% + 90px)) scale(0);
+  transform: translateY(calc(-200% + 90px)) scale(1);
   transition: 0.3s all;
   z-index: 100;
   left: 0;
