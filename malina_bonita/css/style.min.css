@@ -209,6 +209,8 @@ header .logo a {
 .hit-slider-item .imgs img {
   height: 100%;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hit-slider-item .imgs .hover_img {
   opacity: 0;
@@ -219,6 +221,8 @@ header .logo a {
   right: 0;
   bottom: 0;
   z-index: 50;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hit-slider-item .imgs .size_list {
   opacity: 0;
