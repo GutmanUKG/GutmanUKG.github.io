@@ -80,30 +80,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     })
     //конец функционала каталог меню
 
-    //Функционал смены картинки в секции Хит продаж
-    const hitSliderItem = document.querySelectorAll('.hit-slider-item');
 
-
-
-    hitSliderItem.forEach((item,id)=>{
-        item.addEventListener('mouseenter',()=>{
-            let imgBox = item.querySelector('.imgs');
-            let hoverImg = item.querySelector('.hover_img')
-            item.classList.add('hit-slider-item-active')
-            imgBox.style.background = imgBox.dataset.img
-            hoverImg.src = imgBox.dataset.img;
-            hoverImg.style.opacity = '1'
-        })
-        item.addEventListener('mouseleave', ()=>{
-            let imgBox = item.querySelector('.imgs');
-            let hoverImg = item.querySelector('.hover_img')
-            imgBox.style.background = imgBox.dataset.img
-            hoverImg.src = imgBox.dataset.img;
-            hoverImg.style.opacity = '0'
-            item.classList.remove('hit-slider-item-active')
-        })
-    })
-    //Конец функционала смены картинки
 
 
 
