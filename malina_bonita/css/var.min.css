@@ -1,3 +1,24 @@
+.link_back {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+}
+.link_back:hover:before {
+  border: 1px solid #1E1E1E;
+  border-radius: 50%;
+}
+.link_back:before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 42px;
+  background: url("../img/back_icon.svg") center no-repeat;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: 0.3s all;
+}
+
 input {
   outline: none;
 }

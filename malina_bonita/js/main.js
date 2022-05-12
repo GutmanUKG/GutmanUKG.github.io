@@ -6,8 +6,9 @@ document.addEventListener('DOMContentLoaded',()=>{
     //настройка слайдеров
     $('.banner').owlCarousel({
         loop:true,
-        nav:true,
-        items:1
+        nav:false,
+        items:1,
+        dots:false
 
     })
 
@@ -81,9 +82,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     //конец функционала каталог меню
 
 
-
-
-
     //Функционал смены картинок в разделе коллекции
 
     const selectorItems = document.querySelector('.selector_items');
@@ -133,4 +131,32 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     //конец функционла смены картинок в разделе коллеции
 
+
+    //Смена фона header при появлении темного слайда
+
+    let bannerSliderWrapper = document.querySelector('.banner');
+    let bannerItems = bannerSliderWrapper.querySelectorAll('.item');
+
+    bannerItems.forEach(item=>{
+        if(item.classList.contains('dark')){
+            item.parentNode.classList.add('dark_slider')
+        }
+    })
+
+    let bannerOwl = $('.banner');
+    let owlItem = bannerSliderWrapper.querySelectorAll('.owl-item')
+    bannerOwl.on('changed.owl.carousel', function(event) {
+        if(owlItem[event.item.index].classList.contains('dark_slider')){
+            body.classList.add('dark_theme')
+        }else{
+            body.classList.remove('dark_theme')
+        }
+    })
+
+    document.addEventListener('scroll', function() {
+        if (window.pageYOffset > 500){
+            body.classList.remove('dark_theme')
+        }
+    });
+    //
 })
