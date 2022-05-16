@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/media.min.css">
+    <link rel="stylesheet" href="./css/catalog_media.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -57,7 +58,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="info">
                             Скидки
                         </a>
                     </li>
@@ -85,7 +86,13 @@
                         Алматы
                     </div>
                     <div class="trigger_icons d-flex">
-                        <a href="#">
+                        <form action="" class="serach_input">
+                            <input type="text" placeholder="Поиск...">
+                            <div class="close_serach_btn">
+
+                            </div>
+                        </form>
+                        <a href="#" id="serach">
                             <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -94,7 +101,6 @@
                                 <path d="M17.1274 15.3064C16.867 15.0461 16.4449 15.0461 16.1846 15.3064C15.9242 15.5668 15.9242 15.9889 16.1846 16.2492L19.74 19.8047C20.0004 20.0651 20.4225 20.0651 20.6828 19.8047C20.9432 19.5444 20.9432 19.1223 20.6828 18.8619L17.1274 15.3064Z"
                                       fill="#1E1E1E"/>
                             </svg>
-
                         </a>
                         <a href="#">
                             <svg width="16" height="20" viewBox="0 0 16 20" fill="none"
@@ -193,10 +199,10 @@
                         <form action="" class="price_filter_form">
                             <div class="price-range-block">
                                 <div class="wrapper_inputs">
-                                    <input type="text" min=0 max="9900" oninput="validity.valid||(value='0 ');" id="min_price" class="price-range-field" />
-                                    <input type="text" min=0 max="10000" oninput="validity.valid||(value='100000');" id="max_price" class="price-range-field" />
+                                    <input type="text" min=0 max="9900" oninput="validity.valid||(value='0 ');" class="min_price" class="price-range-field" />
+                                    <input type="text" min=0 max="10000" oninput="validity.valid||(value='100000');" class="max_price" class="price-range-field" />
                                 </div>
-                                <div id="slider-range" class="price-filter-range" name="rangeInput"></div>
+                                <div class="slider-range" class="price-filter-range" name="rangeInput"></div>
                             </div>
                         </form>
                         <!--end price filter-->
@@ -263,15 +269,118 @@
                     <!--end colors filter-->
                 </div>
                 <div class="col-9">
-                    <div class="fillter " id="sort_fillter">
-                        <span>По умолчанию</span>
-                        <div class="filter_list">
-                            <ul>
-                                <li class="active">Сначала Новые</li>
-                                <li>Сначала Дешевле</li>
-                                <li>Сначала Дороже</li>
-                                <li>По размеру скидки</li>
-                            </ul>
+                    <div class="fillters">
+                        <div class="fillter " id="sort_fillter">
+                            <span>По умолчанию</span>
+                            <div class="filter_list">
+                                <ul>
+                                    <li class="active">Сначала Новые</li>
+                                    <li>Сначала Дешевле</li>
+                                    <li>Сначала Дороже</li>
+                                    <li>По размеру скидки</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="popup_fillters">
+                            Фильтры
+                        </div>
+                        <div class="popup_fillters_list">
+                            <div class="container">
+                                <div class="popup_fillters_list_header">
+                                   <div class="row align-items-center d-flex">
+                                       <div class="col-6 d-flex align-items-center gap-30">
+                                           <div class="close_btn">
+
+                                           </div>
+                                           <span>
+                                               Фильтры
+                                           </span>
+                                       </div>
+                                       <div class="col-6">
+                                           <button>
+                                               Сбросить
+                                           </button>
+                                       </div>
+                                   </div>
+                                    <form action="" class="wrapper_mobile_fillters">
+                                    <div class="price_filter filter_wrapper price_filter_form">
+                                        <h6>
+                                            цена
+                                        </h6>
+                                        <!--price filter-->
+                                        <div class="price-range-block">
+                                                <div class="wrapper_inputs">
+                                                    <input type="text" min=0 max="9900" oninput="validity.valid||(value='0 ');" class="min_price" class="price-range-field" />
+                                                    <input type="text" min=0 max="10000" oninput="validity.valid||(value='100000');" class="max_price" class="price-range-field" />
+                                                </div>
+                                                <div class="slider-range" class="price-filter-range" name="rangeInput"></div>
+                                            </div>
+
+                                        <!--end price filter-->
+                                    </div>
+                                    <!--size filter-->
+                                    <div class="filter_wrapper size_filter_from">
+                                        <h6>
+                                            размер
+                                        </h6>
+
+                                            <div class="form-group">
+                                                <label for="size_40">
+                                                    40
+                                                    <input type="checkbox" value="40"  id="size_40">
+                                                </label>
+                                                <label for="size_42">
+                                                    42
+                                                    <input type="checkbox" value="42"  id="size_42">
+                                                </label>
+                                                <label for="size_44">
+                                                    44
+                                                    <input type="checkbox" value="44"  id="size_44">
+                                                </label>
+                                                <label for="size_46">
+                                                    46
+                                                    <input type="checkbox" value="46"  id="size_46">
+                                                </label>
+                                                <label for="size_48">
+                                                    48
+                                                    <input type="checkbox" value="48"  id="size_48">
+                                                </label>
+                                            </div>
+                                        <a href="#" class="size_table_link">
+                                            Таблица размеров
+                                        </a>
+                                    </div>
+                                    <!--end size filter-->
+                                    <!--colors filter-->
+                                    <div class="filter_wrapper colors_filter_from">
+                                        <h6>
+                                            цвет
+                                            <span>
+                                            / Белый
+                                            </span>
+                                        </h6>
+                                            <div class="form-group">
+                                                <label for="color_white" style="background-color:#fff;" class="active">
+                                                    <input type="checkbox" value="Белый"  id="color_white">
+                                                </label>
+                                                <label for="color_red" style="background-color:#D20000;">
+                                                    <input type="checkbox" value="Красный"  id="color_red">
+                                                </label>
+                                                <label for="color_black" style="background-color:#1E1E1E;">
+                                                    <input type="checkbox" value="Черный"  id="color_black">
+                                                </label>
+                                            </div>
+
+
+                                    </div>
+                                    <!--end colors filter-->
+                                        <button class="btn " id="btn-form_submit">
+                                            Показать (23 товара)
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="catalog_list">
@@ -773,7 +882,125 @@
     </div>
 </div>
 <!--Конец меню каталога-->
+<!--Меню каталога для мобилок-->
+<div class="catalog_menu_mobile">
+    <div class="container">
+        <div class="row">
+            <div class="col-11 wrapper_menu">
+                <div class="catalog_menu_mobile_content">
+                    <div class="catalog_menu_mobile_title">
+                        <span>
+                            Каталог
+                        </span>
+                        <div class="selector_city">
+                            Алматы
+                        </div>
+                    </div>
+                    <nav class="catalog_menu_mobile_list">
+                        <ul>
+                            <li>
+                                <a href="#">платья</a>
+                            </li>
+                            <li>
+                                <a href="#">блузки</a>
+                            </li>
+                            <li>
+                                <a href="#">боди</a>
+                            </li>
+                            <li>
+                                <a href="#">брюки</a>
+                            </li>
+                            <li>
+                                <a href="#">вечер</a>
+                            </li>
+                            <li>
+                                <a href="#">выпускной</a>
+                            </li>
+                            <li>
+                                <a href="#">кардиганы</a>
+                            </li>
+                            <li>
+                                <a href="#">комбинезоны</a>
+                            </li>
+                            <li>
+                                <a href="#">костюмы</a>
+                            </li>
+                            <li>
+                                <a href="#">куртки</a>
+                            </li>
+                            <li>
+                                <a href="#">пальто</a>
+                            </li>
+                            <li>
+                                <a href="#">пиджаки</a>
+                            </li>
+                            <li>
+                                <a href="#">свадьба</a>
+                            </li>
+                            <li>
+                                <a href="#">свитеры</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="catalog_menu_mobile_list_fixed">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#" class="collection_link link">
+                                        Коллекции
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="contact_link link">
+                                        Контакты
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </div>
+</div>
+<!--Конец меню каталога-->
+<!--Меню бар для мобилок-->
+<div class="menu_bar_mobile">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="list_link">
+                    <a href="#">
+                        <img src="./img/user_icon.svg" alt="">
+                        <span>
+                            Кабинет
+                        </span>
+                    </a>
+                    <a href="#">
+                        <img src="./img/box_icon.svg" alt="">
+                        <span>
+                            Акции
+                            </span>
+                    </a>
+                    <a href="#">
+                        <img src="./img/sale_icon.svg" alt="">
+                        <span>
+                            Скидки
+                        </span>
+                    </a>
+                    <a href="#">
+                        <img src="./img/cart_icon.svg" alt="">
+                        <span>
+                           Корзина
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Конец меню бар для мобилок-->
 <footer class="footer">
     <div class="container">
         <div class="footer_logo">

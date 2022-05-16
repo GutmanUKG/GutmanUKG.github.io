@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded',()=>{
         loop:true,
         nav:false,
         items:1,
-        dots:false
+        dots:false,
+
 
     })
 
@@ -16,6 +17,22 @@ document.addEventListener('DOMContentLoaded',()=>{
         loop:true,
         items: 3,
         margin:30,
+        dots:false,
+        responsive: {
+            810:{
+                items: 3
+            },
+            640:{
+                items: 2
+            },
+            0:{
+                items: 1,
+                autoWidth: true,
+                margin:32,
+            },
+
+
+        }
 
     })
     let owl = $('.hit-slider')
@@ -35,6 +52,18 @@ document.addEventListener('DOMContentLoaded',()=>{
         margin:30,
         dots: false,
         // autoWidth:true,
+        responsive: {
+            810:{
+                items: 3
+            },
+            640:{
+                items: 2
+            },
+            0:{
+                items: 1
+            }
+
+        }
 
     })
     let owl_news = $('.news_list')
@@ -52,9 +81,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         loop:true,
         items: 1,
         margin:0,
-
         dots: false
-
     })
     let owl_about = $('.about_slider')
     $(".about_owl_next").click(function(){
@@ -68,16 +95,28 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     //Функционла каталог меню
     const catalogBtn = document.querySelector('.catalog_btn'),
-        catalogMenu = document.querySelector('.catalog_menu');
+        catalogMenu = document.querySelector('.catalog_menu'),
+        catalogMenuMobile = document.querySelector('.catalog_menu_mobile');
     catalogBtn.addEventListener('click', (e) =>{
         e.preventDefault()
-        if(!body.classList.contains('active_catalog_menu')){
-            body.classList.add('active_catalog_menu');
-            catalogMenu.classList.add('catalog_menu_active');
+        if(document.body.clientWidth <= 790){
+            if(!body.classList.contains('active_catalog_menu')){
+                body.classList.add('active_catalog_menu');
+                catalogMenuMobile.classList.add('catalog_menu_mobile_active');
+            }else{
+                body.classList.remove('active_catalog_menu');
+                catalogMenuMobile.classList.remove('catalog_menu_mobile_active');
+            }
         }else{
-            body.classList.remove('active_catalog_menu');
-            catalogMenu.classList.remove('catalog_menu_active');
+            if(!body.classList.contains('active_catalog_menu')){
+                body.classList.add('active_catalog_menu');
+                catalogMenu.classList.add('catalog_menu_active');
+            }else{
+                body.classList.remove('active_catalog_menu');
+                catalogMenu.classList.remove('catalog_menu_active');
+            }
         }
+
     })
     //конец функционала каталог меню
 
@@ -102,7 +141,7 @@ document.addEventListener('DOMContentLoaded',()=>{
          imgLeft.src = element.dataset.img_left;
          animateElement(imgLeft)
      }else{
-         imgLeft.src = './img/default_selector_img.png';
+         imgLeft.src = 'local/templates/main_template/img/default_selector_img.png';
          animateElement(imgLeft)
      }
 
@@ -111,7 +150,7 @@ document.addEventListener('DOMContentLoaded',()=>{
          imgRight.src = element.dataset.img_right;
          animateElement(imgRight)
      }else{
-         imgRight.src = './img/default_selector_img.png';
+         imgRight.src = 'local/templates/main_template/img/default_selector_img.png';
          animateElement(imgRight)
      }
 
@@ -158,5 +197,40 @@ document.addEventListener('DOMContentLoaded',()=>{
             body.classList.remove('dark_theme')
         }
     });
+    //
+
+    //вывод поля поиска
+        const serachBtn = document.querySelector('#serach');
+        let serachForm = document.querySelector('.serach_input');
+        let closeSerachBtn = document.querySelector('.close_serach_btn');
+        serachBtn.addEventListener('click', (e)=>{
+            e.preventDefault();
+            serachForm.classList.add('serach_input_active')
+            if(!serachForm.classList.contains('serach_input_active')){
+                serachForm.animate([
+                    {transform: 'translateX(-100%) scale(0)'},
+                    {transform: 'translateX(-100%) scale(1)'},
+
+                ], {
+                    duration: 900,
+                    easing: 'linear'
+                })
+            }
+
+        })
+
+        closeSerachBtn.addEventListener('click', ()=>{
+            console.log('click')
+            if(serachForm.classList.contains('serach_input_active')){
+                serachForm.classList.remove('serach_input_active')
+                serachForm.animate([
+                    {transform: 'translateX(-100%)  scale(0)'},
+
+                ], {
+                    duration: 900,
+                    easing: 'linear'
+                })
+            }
+        })
     //
 })
