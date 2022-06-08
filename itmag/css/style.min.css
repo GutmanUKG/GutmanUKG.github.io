@@ -615,13 +615,13 @@ header .menu_wrapper .info_menu ul li a:hover {
 }
 #catalog_btn .icon svg .active_line {
   transition: 0.3s all;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scaleX(0);
 }
 #catalog_btn:hover .icon svg path {
   fill: #3BB200;
 }
 #catalog_btn:hover .icon svg .active_line {
-  transform: translateX(0%);
+  transform: translateX(0%) scaleX(1);
 }
 
 .left_menu_catalog {
