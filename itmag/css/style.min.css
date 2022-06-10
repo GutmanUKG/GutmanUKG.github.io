@@ -475,7 +475,7 @@ header .menu_col ul li a:hover:after {
   transform: translateX(-50%) scale(1);
 }
 header .header_info {
-  margin-bottom: 16px;
+  margin-bottom: 28px;
 }
 header .header_info .col-6 {
   padding: 0;
@@ -2246,6 +2246,7 @@ footer .copy {
   background: #F2F2F2;
   align-items: center;
   gap: 40px;
+  margin-bottom: 16px;
 }
 .fixed_menu_active .trigger_icons {
   width: -webkit-max-content;
@@ -2276,7 +2277,7 @@ footer .copy {
 .fixed_menu_active .fixed_left .logo_fixed {
   position: fixed;
   left: 50%;
-  transform: translateX(-100%);
+  transform: translateX(-50%);
 }
 .fixed_menu_active .fixed_left .action_menu_fixed {
   margin-left: 20px;
