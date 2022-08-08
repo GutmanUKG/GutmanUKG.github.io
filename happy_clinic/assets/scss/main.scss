@@ -453,3 +453,72 @@ section.team{
 
  }
 }
+
+footer{
+ margin-top: 130px;
+ background: #4F4E4A;
+ padding: 48px 0;
+ box-sizing: border-box;
+ .footer_menus{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+ }
+ .item{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  li{
+   list-style: none;
+   a{
+    text-decoration: none;
+    font-family: $manrope;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    &:hover{
+     color: #FFFFFF;
+    }
+   }
+  }
+  span{
+   font-family: $manrope;
+   font-style: normal;
+   font-weight: 700;
+   font-size: 16px;
+   letter-spacing: 0.02em;
+   color: #FFFFFF;
+  }
+  a{
+   text-decoration: none;
+   font-family: $manrope;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 16px;
+   letter-spacing: 0.02em;
+   color: rgba(255, 255, 255, 0.75);
+  }
+  .adress{
+   font-family: $manrope;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 16px;
+   letter-spacing: 0.02em;
+   color: rgba(255, 255, 255, 0.75);
+  }
+  .social_link{
+   margin-top: 100px;
+  }
+ }
+ .copy{
+  margin-top: 48px;
+  font-family: $manrope;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.5);
+ }
+}
