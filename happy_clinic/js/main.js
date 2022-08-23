@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
       formChild.style.display = 'block';
     }
   });
+<<<<<<< HEAD
 
   function closeElement(btnClass, elementClass) {
     var element = document.querySelector(elementClass);
@@ -68,5 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
   } catch (e) {
     console.error(e);
   }
+=======
+>>>>>>> 663e6d33db055f2d8c793856c241eedf8f5ccf96
 });
 //# sourceMappingURL=main.js.map
