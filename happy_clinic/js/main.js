@@ -52,10 +52,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (isError === true) {
           popup.classList.add('error');
-          popup.style.cssText = "\n                        width: 736px;\n                        height: 334px;\n                        display: block;\n                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;\n                    ";
+          popup.style.cssText = "\n                        width: 736px;\n                        height: 334px;\n                        display: block;\n                        background: #FFF url(./assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;\n                    ";
         } else {
           popup.classList.remove('error');
-          popup.style.cssText = "\n                        width: 736px;\n                        height: 334px;\n                        display: block;\n                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;\n                    ";
+          popup.style.cssText = "\n                        width: 736px;\n                        height: 334px;\n                        display: block;\n                        background: #FFF url(./assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;\n                    ";
         }
       }
     });

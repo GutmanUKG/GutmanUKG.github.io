@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         width: 736px;
                         height: 334px;
                         display: block;
-                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;
+                        background: #FFF url(./assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;
                     `
                 }else{
                     popup.classList.remove('error')
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         width: 736px;
                         height: 334px;
                         display: block;
-                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;
+                        background: #FFF url(./assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;
                     `
                 }
             }
