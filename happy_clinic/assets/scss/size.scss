@@ -1,12 +1,12 @@
 $manrope: 'Manrope', sans-serif;
 $inter: 'Inter', sans-serif;
 $size_16: calc((100vw - 480px) / (1320 - 480) * (16 - 16) + 16px);
-$size_18: calc((100vw - 480px) / (1320 - 480) * (18 - 18) + 18px);
+$size_18: calc((100vw - 360px) / (1920 - 360) * (18 - 14) + 14px);
 $size_60: calc((100vw - 480px) / (1320 - 480) * (60 - 60) + 60px);
 $size_40: calc((100vw - 480px) / (1320 - 480) * (40 - 40) + 40px);
-$size_44: calc((100vw - 480px) / (1320 - 480) * (44 - 44) + 44px);
+$size_44: calc((100vw - 360px) / (1920 - 360) * (44 - 24) + 23px);
 $size_24: calc((100vw - 480px) / (1320 - 480) * (24 - 24) + 24px);
-$size_20: calc((100vw - 480px) / (1320 - 480) * (20 - 20) + 20px);
+$size_20: calc((100vw - 360px) / (1920 - 360) * (20 - 14) + 14px);
 
 
 section {
@@ -316,4 +316,29 @@ input{
   -webkit-transition: 0.3s all;
   -o-transition: 0.3s all;
   transition: 0.3s all;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: rgba(152, 205, 16, 0.4) transparent rgba(152, 205, 16, 0.4) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
