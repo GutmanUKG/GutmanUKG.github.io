@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var days = [];
   var loader = document.querySelector('#loader');
   var isLoad = true;
-  var url = "/days.json";
+  var url = "/happy_clinic/days.json";
   fetch("".concat(url)).then(function (res) {
     return res.json();
   }).then(function (data) {
