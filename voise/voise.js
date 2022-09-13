@@ -67,17 +67,14 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     window.URL.createObjectURL = window.URL.createObjectURL || window.URL.webkitCreateObjectURL || window.URL.mozCreateObjectURL || window.URL.msCreateObjectURL;
 
     // запрашиваем разрешение на доступ к поточному видео камеры
-    navigator.getUserMedia({video: true}, function (stream) {
-        // разрешение от пользователя получено
-        // скрываем подсказку
-        allow.style.display = "none";
-        // получаем url поточного видео
-        video.srcObject=stream;
-        video.play();
-    }, function () {
-        alert('что-то не так с видеостримом или пользователь запретил его использовать :P');
-    });
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+        .then(function(stream) {
+            video.srcObject = stream;
+            video.play();
+        })
+        .catch(function(err) {
+            console.log("An error occurred: " + err);
+        });
 
-    context.translate(canvas.width, 0);
-    context.scale(-1, 1);
-} )
+
+})
