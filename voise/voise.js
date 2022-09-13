@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         });
 
 
-
+    //Видос
     var canvas = document.getElementById('canvas');
     var video = document.getElementById('video');
     var button = document.getElementById('button');
@@ -76,6 +76,6 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         // устанавливаем как источник для video
         video.src = videoStreamUrl;
     }, function () {
-        console.log('что-то не так с видеостримом или пользователь запретил его использовать :P');
+        alert('что-то не так с видеостримом или пользователь запретил его использовать :P');
     });
 } )
