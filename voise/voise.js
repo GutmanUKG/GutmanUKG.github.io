@@ -75,6 +75,6 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         video.srcObject=stream;
         video.play();
     }, function () {
-        alert('что-то не так с видеостримом или пользователь запретил его использовать :P');
+        console.log('что-то не так с видеостримом или пользователь запретил его использовать :P');
     });
 } )
