@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', (e)=>{
+    let status = document.querySelector('.status')
     navigator.mediaDevices.getUserMedia({
         audio: true,
     })
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
             document.querySelector('#start').addEventListener('click', function(){
                 mediaRecorder.start();
+                status.textContent = 'Запись начата'
             });
             var audioChunks = [];
             mediaRecorder.addEventListener("dataavailable",function(event) {
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             });
             document.querySelector('#stop').addEventListener('click', function(){
                 mediaRecorder.stop();
+                status.textContent = 'Запись остановлена'
             });
         });
 
