@@ -72,10 +72,8 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         // скрываем подсказку
         allow.style.display = "none";
         // получаем url поточного видео
-        videoStreamUrl = window.URL.createObjectURL(stream);
-        // устанавливаем как источник для video
-        video.src = videoStreamUrl;
-        alert(video.src)
+        video.srcObject=stream;
+        video.play();
     }, function () {
         alert('что-то не так с видеостримом или пользователь запретил его использовать :P');
     });
