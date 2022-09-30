@@ -45,6 +45,7 @@ body{
   display: grid;
   bottom: 0;
   gap: 70px;
+  overflow-y: scroll;
   //align-content: space-between;
   //justify-items: stretch;
   &.active{
