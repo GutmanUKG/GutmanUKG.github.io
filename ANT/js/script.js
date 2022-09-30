@@ -319,7 +319,5 @@ document.addEventListener('DOMContentLoaded', function () {
     removeAnimation();
   } //--------------------
 
-
-  alert(body.clientWidth);
 });
 //# sourceMappingURL=script.js.map

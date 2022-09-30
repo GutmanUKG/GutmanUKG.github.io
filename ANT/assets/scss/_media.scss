@@ -179,11 +179,12 @@
   .form_grid .wrapper_info{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 40px;
     .footer_menu{
       grid-column-start: 1;
       grid-column-end: 2;
       grid-row-start: 1;
-      grid-row-end: 4;
+      grid-row-end: 2;
       order: 1;
     }
     .descr{
@@ -268,6 +269,12 @@
 
 }
 @media(max-width: 559px){
+  .location .top .subtitle{
+    margin-bottom: 60px;
+  }
+  .burger_menu{
+    padding: 26px 24px;
+  }
   header .uk-position-relative{
     background: url($path + 'header_bg_mob.png')top/contain no-repeat;
   }
@@ -340,4 +347,8 @@
   .burger_menu{
     width: calc(80% + 40px);
   }
+}
+
+@media (max-width: 420px){
+
 }
