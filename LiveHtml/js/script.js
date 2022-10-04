@@ -35,6 +35,12 @@ document.addEventListener('DOMContentLoaded', function () {
     return RelocateNodeElement;
   }();
 
+  function clearClass(nodeList, activeClass) {
+    for (var i = 0; i < nodeList.length; i++) {
+      nodeList[i].classList.remove(activeClass);
+    }
+  }
+
   var relocateUserTop = new RelocateNodeElement({
     selectElement: '.header_top_info_user',
     finalElement: '.modal-content'
@@ -104,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
       overflow = document.querySelector('.overflow');
   headerTopPopupUserBtn.addEventListener('click', function () {
     modalUser.classList.add('show');
-    modalUser.style.zIndex = '50';
+    modalUser.style.zIndex = '52';
     modalUser.style.display = 'block';
     overflow.style.display = 'block';
   });
@@ -129,12 +135,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     disableAllMenu();
-    burgerMenuContent.children[0].style.display = 'block';
+    burgerMenuContent.children[0].style.display = 'flex';
+    burgerMenuTopItems[0].classList.add('active');
     burgerMenuTopItems[0].classList.add('active');
     burgerMenuTopItems.forEach(function (item, id) {
+      // item.classList.remove('active')
       item.addEventListener('click', function () {
+        clearClass(burgerMenuTopItems, 'active');
+        item.classList.add('active');
         disableAllMenu();
-        burgerMenuContent.children[id].style.display = 'block';
+        burgerMenuContent.children[id].style.display = 'flex';
       });
     });
     closeBtn.addEventListener('click', function () {

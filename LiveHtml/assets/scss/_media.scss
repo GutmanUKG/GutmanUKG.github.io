@@ -58,9 +58,32 @@
   }
   .header_top .header_top_info_wrapper{
     gap: 0;
+    border-top: 1px solid #D7D7D7;
+    padding-top: 0;
+  }
+
+}
+@media (max-width: 768px){
+  .burger_menu{
+    width: calc(100% / 2);
   }
 }
 
-@media (max-width: 767px){
-
+@media (max-width: 575px){
+  .header_top_popup_user_btn{
+   margin-right: 30px;
+  }
+  .header_top{
+    gap: 10px;
+    align-items: flex-end;
+    .header_top_logo{
+      max-width: 150px;
+    }
+    .header_top_info{
+      width: calc(100% - 150px - 20px);
+    }
+  }
+  .scroll_bar .user_basket_info_list a{
+    font-size: $size_12;
+  }
 }

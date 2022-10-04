@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
             this.finalElement.appendChild(this.selectElement)
         }
     }
+
+    function clearClass(nodeList, activeClass){
+        for(let i = 0; i < nodeList.length; i++){
+            nodeList[i].classList.remove(activeClass)
+        }
+    }
     const relocateUserTop = new RelocateNodeElement({
         selectElement: '.header_top_info_user',
         finalElement: '.modal-content',
@@ -78,7 +84,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         overflow = document.querySelector('.overflow');
     headerTopPopupUserBtn.addEventListener('click', ()=>{
         modalUser.classList.add('show')
-        modalUser.style.zIndex = '50'
+        modalUser.style.zIndex = '52'
         modalUser.style.display = 'block'
         overflow.style.display = 'block'
     })
@@ -100,13 +106,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 burgerMenuContent.children[i].style.display = 'none'
             }
         }
+
         disableAllMenu()
-        burgerMenuContent.children[0].style.display = 'block'
+        burgerMenuContent.children[0].style.display = 'flex'
+        burgerMenuTopItems[0].classList.add('active')
         burgerMenuTopItems[0].classList.add('active')
         burgerMenuTopItems.forEach((item,id)=>{
+
+            // item.classList.remove('active')
             item.addEventListener('click', ()=>{
+                clearClass(burgerMenuTopItems, 'active')
+                item.classList.add('active')
                 disableAllMenu()
-                burgerMenuContent.children[id].style.display = 'block'
+                burgerMenuContent.children[id].style.display = 'flex'
             })
         })
 
