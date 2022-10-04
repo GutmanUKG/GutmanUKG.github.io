@@ -658,6 +658,9 @@ header {
   }
 }
 @media (max-width: 575px) {
+  .burger_menu {
+    width: 80%;
+  }
   .header_top_popup_user_btn {
     margin-right: 30px;
   }
