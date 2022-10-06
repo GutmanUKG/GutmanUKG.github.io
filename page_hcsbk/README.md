@@ -1,1 +1,0 @@
-# otbasi_bank
