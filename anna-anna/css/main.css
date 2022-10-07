@@ -548,6 +548,16 @@ header .header_wrapper .header_panel .header_user_info{
       }
 
 
+.product_item .product_item_content .text .product_item_info .atr{
+          font-family: 'Lato',sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 17px;
+          color: #888888;
+        }
+
+
 .product_item .product_item_content .text .product_item_info .product_item_colors{
           display: -webkit-box;
           display: -ms-flexbox;

@@ -337,6 +337,14 @@ header{
         align-items: center;
         gap: 20px;
         margin-bottom: 20px;
+        .atr{
+          font-family: 'Lato',sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 17px;
+          color: #888888;
+        }
         .product_item_colors{
           display: flex;
           gap: 14px;
