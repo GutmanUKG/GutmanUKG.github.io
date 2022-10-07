@@ -1,5 +1,5 @@
-@import "variables";
-$path: '../assets/imgs/';
+$link_color: rgba(255, 255, 255, 1);
+$dir: '../assets/imgs/';
 header{
   padding-top: 25px;
   padding-bottom: 25px;
@@ -22,12 +22,12 @@ header{
           list-style: none;
           a{
             text-decoration: none;
-            font-family: $Lato;
+            font-family: 'Lato',sans-serif;
             font-style: normal;
             font-weight: 500;
             font-size: 18px;
             line-height: 10px;
-            color: rgba(255, 255, 255, 1);
+            color: $link_color;
           }
         }
       }
@@ -51,7 +51,7 @@ header{
           display: block;
           width: 20px;
           height: 20px;
-          background: url($path + "icons/search_ico_white.png") center/cover no-repeat;
+          background: url("../assets/imgs/icons/search_ico_white.png") center/cover no-repeat;
           position: absolute;
           top: 50%;
           right: 20px;
@@ -93,7 +93,7 @@ header{
     .btn{
       display: block;
       cursor: pointer;
-      background:url($path + "icons/ar_ico.png") center no-repeat, rgba(255, 255, 255, 0.5);
+      background:url("../assets/imgs/icons/ar_ico.png") center no-repeat, rgba(255, 255, 255, 0.5);
       border-radius: 50px;
       width: 60px;
       height: 60px;
@@ -114,7 +114,7 @@ header{
       transform: translate(-50%, -50%);
       display: flex;
       flex-direction: column;
-      font-family: $Lato;
+      font-family: 'Lato',sans-serif;;
       font-style: normal;
       font-weight: 300;
       font-size: 100px;
@@ -124,7 +124,7 @@ header{
       color: #FFFFFF;
       gap: 56px;
       a{
-        font-family: $Lato;
+        font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -181,7 +181,7 @@ header{
       .header_panel{
         label{
           &:after{
-            background: url($path + 'icons/search_ico_dark.png') center/cover no-repeat;
+            background: url('../assets/imgs/icons/search_ico_dark.png') center/cover no-repeat;
 
           }
           input{
@@ -222,7 +222,7 @@ header{
     .btn{
       width: 60px;
       height: 60px;
-      background: url($path + 'icons/ar_ico.png') center no-repeat, rgba(255, 255, 255, 0.5);
+      background: url('../assets/imgs/icons/ar_ico.png') center no-repeat, rgba(255, 255, 255, 0.5);
       border-radius: 50px;
     }
     .product_items_list_btn_prev{
@@ -267,7 +267,7 @@ header{
     }
   }
   .product_info{
-    font-family: $Lato;
+    font-family: 'Lato',sans-serif;;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -285,7 +285,7 @@ header{
   .product_like_btn{
     width: 36px;
     height: 36px;
-    background: url($path + 'icons/favorite_ico_default.png') center no-repeat;
+    background: url('../assets/imgs/icons/favorite_ico_default.png') center no-repeat;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -310,7 +310,7 @@ header{
       text-align: center;
       display: flex;
       justify-content: center;
-      ont-family: $Lato;
+      ont-family: 'Lato';
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -325,7 +325,7 @@ header{
     gap: 8px;
     .text{
       h3{
-        font-family: $Lato;
+        font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
@@ -355,14 +355,14 @@ header{
         align-items: flex-end;
         margin-top: 20px;
         span{
-          font-family: $Lato;
+          font-family: 'Lato',sans-serif;;
           font-style: normal;
           font-weight: 400;
           font-size: 20px;
           line-height: 24px;
           color: #2A2929;
           &.old_price{
-            font-family: $Lato;
+            font-family: 'Lato',sans-serif;;
             font-style: normal;
             font-weight: 400;
             font-size: 16px;
@@ -376,7 +376,7 @@ header{
     .btn_buy{
       width: 66px;
       height: 66px;
-      background: url($path + 'icons/btn_buy.png') center/contain no-repeat, #2A2929;
+      background: url('../assets/imgs/icons/btn_buy.png') center/contain no-repeat, #2A2929;
       border: none;
       outline: none;
       transform: scale(0);
@@ -406,10 +406,10 @@ section.section{
   margin-bottom: 40px;
 }
 .section_title{
-  font-family: $Lato;
+  font-family: 'Lato',sans-serif;;
   font-style: normal;
   font-weight: 500;
-  font-size: $size30;
+  font-size: 30px;
   line-height: 10px;
   display: flex;
   align-items: center;
@@ -418,7 +418,7 @@ section.section{
 }
 .section_link{
   text-decoration: none;
-  font-family: $Lato;
+  font-family: 'Lato',sans-serif;;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -430,7 +430,7 @@ section.section{
   &:after{
     content: '';
     display: block;
-    background: url($path + 'icons/ar_ico_dark.png') center no-repeat;
+    background: url('../assets/imgs/icons/ar_ico_dark.png') center no-repeat;
     width: 8px;
     height: 16px;
   }
@@ -457,7 +457,7 @@ section.section{
       bottom: 0;
     }
     .name{
-      font-family: $Lato;
+      font-family: 'Lato',sans-serif;;
       font-style: normal;
       font-weight: 500;
       font-size: 16px;
@@ -490,7 +490,7 @@ section.section{
   text-decoration: none;
   width: 42px;
   height: 42px;
-  background: url($path + 'icons/ar_ico_dark.png') center no-repeat, transparent;
+  background: url('../assets/imgs/icons/ar_ico_dark.png') center no-repeat, transparent;
 }
 .btn_prev_slider{
   transform: rotate(180deg);
@@ -518,7 +518,7 @@ section.section{
       align-items: center;
       justify-content: space-between;
       .name{
-        font-family: $Lato;
+        font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 700;
         font-size: 18px;
@@ -526,7 +526,7 @@ section.section{
         color: #2A2929;
       }
       .price{
-        font-family: $Lato;
+        font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
@@ -548,7 +548,7 @@ section.section{
     .info{
       margin-top: 30px;
       .name{
-        font-family: $Lato;
+        font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
@@ -557,7 +557,7 @@ section.section{
         margin-bottom: 20px;
       }
       .descr{
-        font-family: $Lato;
+        font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -577,7 +577,7 @@ footer.footer{
     gap: 30px;
     a{
       text-decoration: none;
-      font-family: $Lato;
+      font-family: 'Lato',sans-serif;;
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -591,7 +591,7 @@ footer.footer{
     justify-content: space-between;
     .menu{
       span{
-        font-family: $Lato;
+        font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 700;
         font-size: 16px;
@@ -610,7 +610,7 @@ footer.footer{
         li{
           list-style: none;
           a{
-            font-family: $Lato;
+            font-family: 'Lato',sans-serif;;
             font-style: normal;
             font-weight: 400;
             font-size: 14px;
@@ -625,7 +625,7 @@ footer.footer{
       display: flex;
       flex-direction: column;
       span{
-        font-family: $Lato;
+        font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 700;
         font-size: 16px;
@@ -642,7 +642,7 @@ footer.footer{
         button{
           width: 40px;
           height: 40px;
-          background: url($path + 'icons/btn_footer_sub.png') center no-repeat;
+          background: url('../assets/imgs/icons/btn_footer_sub.png') center no-repeat;
           border: none;
           outline: none;
         }
@@ -656,7 +656,7 @@ footer.footer{
         height: 40px;
       }
       .copy{
-        font-family: $Lato;
+        font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -671,9 +671,10 @@ footer.footer{
 .inner{
   header{
     margin-bottom: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
   h1{
-    font-family: $Lato;
+    font-family: 'Lato',sans-serif;;
     font-style: normal;
     font-weight: 500;
     font-size: 30px;
@@ -696,7 +697,7 @@ footer.footer{
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-family: $Lato;
+      font-family: 'Lato',sans-serif;;
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -709,7 +710,7 @@ footer.footer{
         display: block;
         width: 6px;
         height: 10px;
-        background: url($path + 'icons/ar_ico.png') center/cover no-repeat;
+        background: url('../assets/imgs/icons/ar_ico.png') center/cover no-repeat;
       }
       &:last-child{
         &:after{
@@ -718,7 +719,7 @@ footer.footer{
       }
 
       a{
-        font-family: $Lato;
+        font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -736,6 +737,8 @@ footer.footer{
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  position: relative;
+  z-index: 100;
   .product_item{
     width: calc(100% / 3 - 20px);
     margin: 0;
@@ -752,13 +755,15 @@ footer.footer{
       margin: 0;
       li{
         list-style: none;
-        font-family: $Lato;
+        font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
         text-transform: uppercase;
         color: #2A2929;
+        position: relative;
+
         &.name{
           padding: 14px 20px;
           background: linear-gradient(0deg, #F7F7F7, #F7F7F7), #FFFFFF;
@@ -767,7 +772,7 @@ footer.footer{
         a{
           display: block;
           text-decoration: none;
-          font-family: $Lato;
+          font-family: 'Lato',sans-serif;;
           font-style: normal;
           font-weight: 400;
           font-size: 18px;
@@ -777,7 +782,46 @@ footer.footer{
           padding: 14px 20px;
           background: #FFFFFF;
           border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+          position: relative;
+          &:after{
+            content: '';
+            display: block;
+            background: url("../assets/imgs/icons/ar_ico_dark.png") center/contain no-repeat;
+            width: 10px;
+            height: 10px;
+            transform: rotate(90deg) translateX(-50%);
+            position: absolute;
+            right: 22px;
+            top: 50%;
 
+          }
+
+        }
+        &.active_drop{
+          a{
+            &:after{
+              transform: rotate(-90deg) translateX(-50%);
+            }
+          }
+          ul{
+            display: block;
+          }
+        }
+        ul{
+          display: none;
+          background: linear-gradient(0deg, #F4F3F6, #F4F3F6), #FFFFFF;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+          li{
+
+            a{
+              background: transparent;
+              border: none;
+              padding: 14px 30px;
+              &:after{
+                display: none;
+              }
+            }
+          }
         }
       }
     }
@@ -785,14 +829,13 @@ footer.footer{
 }
 
 .product_wrapper{
-
   .fillters{
     padding: 16px 0;
     margin-bottom: 22px;
     display: grid;
     grid-template-columns: 0.4fr 1fr;
     span{
-      font-family: $Lato;
+      font-family: 'Lato',sans-serif;;
       font-style: normal;
       font-weight: 700;
       font-size: 14px;
@@ -806,8 +849,10 @@ footer.footer{
       align-items: center;
       justify-content: space-between;
       .item{
+        cursor: pointer;
+        position: relative;
         span{
-          font-family: $Lato;
+          font-family: 'Lato',sans-serif;;
           font-style: normal;
           font-weight: 500;
           font-size: 14px;
@@ -815,8 +860,84 @@ footer.footer{
           display: flex;
           align-items: center;
           color: #333333;
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          &:after{
+            content: '';
+            display: block;
+            background: url('../assets/imgs/icons/ar_ico_dark.png')center/contain no-repeat;
+            width: 11px;
+            height: 10px;
+            transform: rotate(90deg);
+          }
+        }
+        .drop{
+          top: calc(100% + 10px);
+
+          position: absolute;
+          z-index: 150;
+          background: #FFFFFF;
+          box-shadow: 0px 2px 20px 2px rgba(0, 0, 0, 0.1);
+          border-radius: 3px;
+          padding: 10px 16px;
+          width: max-content;
+          min-width: 205px;
+          ul{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            li{
+              list-style: none;
+              a{
+                text-decoration: none;
+                font-family: 'Lato',sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0.25px;
+                color: #333333;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                &:after{
+                  content: '';
+                  display: block;
+                  width: 14px;
+                  height: 14px;
+                  border: 1px solid #888888;
+                  border-radius: 50%;
+                }
+                &:before{
+                  content: '';
+                  display: block;
+                  background: #2A2929;
+                  width: 8px;
+                  height: 8px;
+                  border-radius: 50%;
+                  position: absolute;
+                  right: calc(16px - 13px);
+                  transform: scale(0);
+                }
+                &.select{
+                  &:before{
+                    transform: scale(1);
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 }
+
+
+
+
