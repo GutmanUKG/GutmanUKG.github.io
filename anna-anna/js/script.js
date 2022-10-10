@@ -13,7 +13,14 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var body = document.body; //Основной слайдер
+  var body = document.body;
+
+  function clearClass(elements, classActive) {
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].classList.remove(classActive);
+    }
+  } //Основной слайдер
+
 
   try {
     var bannerSlider = document.querySelector('.banner_slider'),
@@ -169,6 +176,87 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
       item.init();
+    });
+  } catch (e) {
+    console.error(e);
+  } //Меню каталога
+
+
+  try {
+    var leftMenu = document.querySelector('.left_menu');
+    var liElements = leftMenu.querySelectorAll('li');
+    liElements.forEach(function (item) {
+      if (item.querySelector('ul')) {
+        item.classList.add('is_dropdown');
+      }
+    });
+    leftMenu.addEventListener('click', function (e) {
+      var target = e.target;
+      e.preventDefault();
+      e.stopPropagation();
+      clearClass(liElements, 'active_drop');
+
+      if (target.parentNode.classList.contains('is_dropdown')) {
+        target.parentNode.classList.add('active_drop');
+      }
+    });
+  } catch (e) {
+    console.error(e);
+  } //Выпадашки фильтров
+
+
+  try {
+    var filterList = document.querySelector('.filter_list'),
+        filterItems = filterList.querySelectorAll('.item');
+    filterItems.forEach(function (item) {
+      var filterDropVariant = item.querySelector('.drop');
+
+      if (filterDropVariant != null) {
+        var elementsDropVariant = filterDropVariant.querySelectorAll('a');
+        console.log(elementsDropVariant.length);
+
+        if (elementsDropVariant.length >= 10) {
+          filterDropVariant.classList.add('grid_template');
+        }
+      }
+
+      item.addEventListener('click', function () {
+        clearClass(filterItems, 'active');
+        item.classList.add('active');
+      });
+    });
+  } catch (e) {
+    console.error(e);
+  } //Выпадашки информации
+
+
+  try {
+    var infoListItems = document.querySelector('.info_list_items'),
+        infoItems = infoListItems.querySelectorAll('.item');
+    infoItems.forEach(function (item) {
+      item.addEventListener('click', function () {
+        clearClass(infoItems, 'active');
+        item.classList.add('active');
+      });
+    });
+  } catch (e) {
+    console.error(e);
+  } //Смена основной картинки при клике
+
+
+  try {
+    var imgMainWrapper = document.querySelector('.img_main'),
+        imgMain = imgMainWrapper.querySelector('img'),
+        imgsList = document.querySelector('.imgs_list'),
+        imgInList = imgsList.querySelectorAll('img');
+    imgInList[0].classList.add('active');
+    imgMain.src = imgInList[0].src;
+    imgInList.forEach(function (item) {
+      item.addEventListener('click', function () {
+        clearClass(imgInList, 'active');
+        item.classList.add('active');
+        imgMain.src = item.src;
+      });
     });
   } catch (e) {
     console.error(e);

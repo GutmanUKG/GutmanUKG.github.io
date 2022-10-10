@@ -2,8 +2,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let body = document.body
 
 
-    //Основной слайдер
 
+    function clearClass(elements, classActive){
+        for(let i = 0; i < elements.length; i++){
+            elements[i].classList.remove(classActive)
+        }
+    }
+    //Основной слайдер
     try{
         let bannerSlider = document.querySelector('.banner_slider'),
             bannerItem = bannerSlider.querySelectorAll('.item');
@@ -52,7 +57,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }catch(e){
         console.error(e)
     }
-
     //Основной слайдер
 
     //Инициализация и настройка слайдеров для всех товаров
@@ -155,5 +159,88 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 
 
+    //Меню каталога
+    try{
+        const leftMenu = document.querySelector('.left_menu')
+        const liElements = leftMenu.querySelectorAll('li')
 
+        liElements.forEach(item=>{
+            if(item.querySelector('ul')){
+                item.classList.add('is_dropdown')
+            }
+        })
+        leftMenu.addEventListener('click', (e)=>{
+            let target = e.target
+            e.preventDefault()
+            e.stopPropagation()
+            clearClass(liElements, 'active_drop')
+            if(target.parentNode.classList.contains('is_dropdown')){
+                target.parentNode.classList.add('active_drop')
+            }
+        })
+    }catch(e){
+        console.error(e)
+    }
+
+
+    //Выпадашки фильтров
+
+    try{
+        const filterList = document.querySelector('.filter_list'),
+            filterItems = filterList.querySelectorAll('.item');
+        filterItems.forEach(item=>{
+            let filterDropVariant = item.querySelector('.drop');
+            if(filterDropVariant != null){
+                let  elementsDropVariant = filterDropVariant.querySelectorAll('a');
+                console.log(elementsDropVariant.length)
+                if(elementsDropVariant.length >= 10){
+                    filterDropVariant.classList.add('grid_template')
+                }
+            }
+
+
+
+                item.addEventListener('click', ()=>{
+                clearClass(filterItems, 'active')
+                item.classList.add('active')
+            })
+        })
+    }catch(e){
+        console.error(e)
+    }
+
+    //Выпадашки информации
+   try{
+       const infoListItems = document.querySelector('.info_list_items'),
+           infoItems = infoListItems.querySelectorAll('.item');
+
+       infoItems.forEach(item=>{
+           item.addEventListener('click', ()=>{
+               clearClass(infoItems, 'active')
+               item.classList.add('active')
+           })
+       })
+   }catch(e){
+        console.error(e)
+   }
+
+    //Смена основной картинки при клике
+
+    try{
+        const imgMainWrapper = document.querySelector('.img_main'),
+            imgMain = imgMainWrapper.querySelector('img'),
+            imgsList = document.querySelector('.imgs_list'),
+            imgInList = imgsList.querySelectorAll('img');
+        imgInList[0].classList.add('active')
+        imgMain.src  = imgInList[0].src
+        imgInList.forEach(item=>{
+            item.addEventListener('click', ()=>{
+                clearClass(imgInList, 'active')
+                item.classList.add('active')
+                imgMain.src = item.src;
+            })
+        })
+    }catch (e) {
+        console.error(e)
+    }
 });

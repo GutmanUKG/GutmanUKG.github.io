@@ -84,8 +84,6 @@
 //
 
 const gulp = require('gulp');
-
-
 //Плагины для postcss
 const postcss = require('gulp-postcss')
 //Переименование файла
@@ -106,7 +104,7 @@ const postcssAnimation = require('postcss-animation')
 const pfm = require('postcss-font-magician');
 //Включение поддержки импортов
 const atImport = require('postcss-import')
-
+//Включение переменных
 const pav = require('postcss-advanced-variables')
 //Компил JS ES6 в ES5
 const babel = require('gulp-babel')
@@ -152,7 +150,9 @@ gulp.task('buildSass', function () {
         Nested(),
         postcssPresetEnv(),
         postcssAnimation(),
-        pfm(),
+        pfm({
+            hosted: ['./fonts']
+        }),
     ];
     return gulp.src(pathScss)
         .pipe(postcss(plugins))
