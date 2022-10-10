@@ -14,22 +14,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
     mobileMenu.appendChild(mobileMenuContainer)
     document.body.appendChild(mobileMenu)
 
-    const burgerBtn = document.querySelector('.burger_btn')
-    burgerBtn.addEventListener('click', (e)=>{
-        burgerBtn.classList.toggle('active_menu')
+    try{
+        const burgerBtn = document.querySelector('.burger_btn')
+        burgerBtn.addEventListener('click', (e)=>{
+            burgerBtn.classList.toggle('active_menu')
 
-        if(burgerBtn.classList.contains('active_menu')){
-            mobileMenu.style.left = '0'
-            document.body.style.overflow = 'hidden'
-            overlay.style.display = 'block'
-        }else{
-            mobileMenu.style.cssText = `left: -400%;
+            if(burgerBtn.classList.contains('active_menu')){
+                mobileMenu.style.left = '0'
+                document.body.style.overflow = 'hidden'
+                overlay.style.display = 'block'
+            }else{
+                mobileMenu.style.cssText = `left: -400%;
             transition: 0.3s all;
             transition-duration: 0.5s;`
-            document.body.style.overflow = ''
-            overlay.style.display = ''
-        }
-    })
+                document.body.style.overflow = ''
+                overlay.style.display = ''
+            }
+        })
+    }catch(){
+
+    }
 
     let liList  = mobileMenu.querySelectorAll('li')
     liList.forEach(item =>{
