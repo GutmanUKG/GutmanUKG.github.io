@@ -114,7 +114,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 nextButton:nextBtn,
                 prevButton:prevButton,
                 nav:false,
-                gutter:30
+                gutter:30,
+                responsive: {
+                    1024: {
+                        items: 4
+                    },
+                  996:{
+                      items: 3
+                  },
+                    700: {
+                        items:2.3
+                    }
+                }
             })
         })
     }catch (e) {
@@ -141,7 +152,29 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }catch (e) {
 
     }
+    //Слайдер коллекций
+    try{
+        let collectionListSlider = tns({
+            container: '.collection_list',
+            items: 6,
+            gutter: 30,
+            nav: false,
+            controls:false,
+            responsive: {
+                1024: {
+                    items: 6
+                },
+                1023: {
+                    items: 4
+                },
+                700: {
+                    items:3
+                }
+            }
+        })
+    }catch (e) {
 
+    }
     //Cлайдер капсул и новостей
     try{
         const sliderList = document.querySelectorAll('.slider_list')
@@ -157,6 +190,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     nav:false,
                     items:3,
                     dots:false,
+                    responsive: {
+                        1024: {
+                            items: 3
+                        },
+                        1023: {
+                            items: 3
+                        },
+                        700: {
+                            items:1.3
+                        }
+                    }
                 }
             })
             item.init();
@@ -314,11 +358,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
         burgerBtn.addEventListener('click', ()=>{
             burgerMenu.classList.toggle('fadeInLeft')
             if(burgerMenu.classList.contains('fadeInLeft')){
-                body.classList.add('white_theme')
+                body.classList.add('white_theme', 'active_burger')
                 burgerBtn.classList.add('active')
                 body.style.overflow = 'hidden'
             }else{
-                body.classList.remove('white_theme')
+                body.classList.remove('white_theme', 'active_burger')
                 burgerBtn.classList.remove('active')
                 clearClass(burgerLiElements, 'is_dropdown')
                 body.style.overflow = ''
@@ -345,5 +389,39 @@ document.addEventListener('DOMContentLoaded', ()=>{
             }
         })
     }
+
+    if(body.clientWidth < 1200){
+        const popupFilterBottom = document.querySelector('.popup_filter_bottom'),
+            popupFilterList = popupFilterBottom.querySelector('.popup_filter_list'),
+            topFilterList = document.querySelector('.filter_list'),
+            topFilterListItem = topFilterList.querySelectorAll('.item'),
+            filltersWrapper = document.querySelector('.fillters'),
+            filterBtn = filltersWrapper.querySelector('span'),
+            closeBtn = popupFilterBottom.querySelector('.close_btn');
+
+        filterBtn.addEventListener('click', ()=>{
+            popupFilterBottom.style.display = 'block'
+        })
+        closeBtn.addEventListener('click', ()=>{
+            popupFilterBottom.style.display = ''
+        })
+        console.log(popupFilterList)
+        popupFilterList.appendChild(topFilterList)
+
+        topFilterListItem.forEach(item=>{
+            let elementInTopFilterListItem = item.querySelector('ul');
+            if(elementInTopFilterListItem != null){
+                if(elementInTopFilterListItem.children.length > 10){
+                    elementInTopFilterListItem.classList.add('grid_three_column')
+                }
+            }
+
+            item.addEventListener('click', ()=>{
+                clearClass(topFilterListItem, 'active')
+                item.classList.add('active')
+            })
+        })
+    }
+
 
 });
