@@ -12,12 +12,16 @@
 
     <link rel="stylesheet" href="./css/owl.theme.default.min.css">
     <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/tiny-slider.css">
+
 
     <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/media.css">
 
+    <script src="./js/tiny-slider.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="./js/owl.carousel.min.js"></script>
     <title>Anna-Anna</title>
@@ -27,9 +31,12 @@
     <div class="container">
         <div class="header_wrapper">
             <div class="header_menu">
-                <ul>
+                <div class="burger_btn">
+
+                </div>
+                <ul class="main_menu">
                     <li>
-                        <a href="#">
+                        <a href="#" id="catalog">
                             Каталог
                         </a>
                     </li>
@@ -71,6 +78,97 @@
                     </a>
                 </div>
             </div>
+            <div class="header_drop_menu">
+                <i class="material-icons close_drop_menu">close</i>
+                <div class="container">
+                    <div class="wrapper">
+                        <ul class="catalog_menu">
+                            <li>
+                                <a href="#">
+                                    Платья
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Рубашки, блузки
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    юбки
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Костюмы
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    кардиганы
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Футболки
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Свитера
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    комбинезоны
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Рубашки, блузки
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Брюки
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    костюмы
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Толстовки
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    куртки
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="header_drop_info">
+                            <div class="feedback">
+                                <h4>
+                                    Новости и бонусы
+                                </h4>
+                                <label for="">
+                                    <input type="text">
+                                    <button></button>
+                                </label>
+                                <span>
+                                        *Мы обеспечим <a href="#">сохранность</a> данных согласно
+                                    </span>
+                            </div>
+                            <div class="image">
+                                <img src="./assets/imgs/drop_img.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </header>
@@ -93,7 +191,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-7 imgs">
-                    <div class="imgs_list">
+                    <div class="imgs_list" id="dots_imgs_list">
                         <div class="item">
                             <img src="./assets/imgs/detail_img_1.png" alt="">
                         </div>
@@ -106,9 +204,13 @@
                         <div class="item">
                             <img src="./assets/imgs/detail_img_2.png" alt="">
                         </div>
+                       
                     </div>
-                    <div class="img_main">
+                    <div class="img_main slider_vertical">
                         <img src="./assets/imgs/detail_img_1.png" alt="">
+                        <img src="./assets/imgs/detail_img_2.png" alt="">
+                        <img src="./assets/imgs/detail_img_1.png" alt="">
+                        <img src="./assets/imgs/detail_img_2.png" alt="">
                     </div>
                 </div>
                 <div class="col-5 catalog_detail_info">

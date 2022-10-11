@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             nav:false,
             items:1,
             dots:true,
+            autoplay:true,
+            autoplayTimeout: 4000
         })
 
 
@@ -61,51 +63,59 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     //Инициализация и настройка слайдеров для всех товаров
     class OwlSlider{
-        constructor({item = null, options = {}, customBtn = false,
-                    btnNext = null, btnPrev = null, bannerOwl= null}){
-            this.item = item
+        constructor({itemEl = null, options = {}, customBtn = false,
+                    btnNext = null, btnPrev = null, bannerOwl= null,
+                    hoverTrigger = false}){
+            this.itemEl = itemEl
             this.options = options
             this.customBtn = customBtn
             this.btnNext = document.querySelector(btnNext)
             this.btnPrev = document.querySelector(btnPrev)
             this.bannerOwl = bannerOwl
+            this.hoverTrigger = hoverTrigger
         }
         init(){
-            this.item.classList.add('owl-carousel' , 'owl-theme')
-            $(this.item).owlCarousel({
+            this.itemEl.classList.add('owl-carousel' , 'owl-theme')
+            $(this.itemEl).owlCarousel({
                 ...this.options
             })
             if(this.customBtn === true){
-                let bannerOwl = $(this.item),
+                let bannerOwl = $(this.itemEl),
                     nextPrev = ['prev','next'];
-                this.item.parentNode.querySelectorAll('.btn').forEach((item, id)=>{
+                this.itemEl.parentNode.querySelectorAll('.btn').forEach((item, id)=>{
                     item.addEventListener('click', ()=>{
                         bannerOwl.trigger(nextPrev[id]+ '.owl.carousel')
+                    })
+                })
+            }
+            if(this.hoverTrigger === true){
+                let dots = this.itemEl.querySelectorAll('.owl-dot')
+                let bannerOwl = $(this.itemEl)
+                dots.forEach((item, id)=>{
+                    item.addEventListener('mouseenter', (e)=>{
+                        this.itemEl.trigger('to.owl.carousel' ,[id, 300])
                     })
                 })
             }
         }
     }
 
+
     //Слайдер списка товаров
     try{
         const productItemsList = document.querySelectorAll('.product_item_slider')
         productItemsList.forEach(item=>{
-            item = new OwlSlider({
-                item: item,
-                customBtn: true,
-                btnNext: '.product_items_list_btn_next',
-                btnPrev: '.product_items_list_btn_prev',
-                options: {
-                    loop:false,
-                    margin:30,
-                    nav:false,
-                    items:4,
-                    dots:false,
-                    mouseDrag: false
-                }
+            let nextBtn = item.parentNode.querySelector('.product_items_list_btn_next')
+            let prevButton = item.parentNode.querySelector('.product_items_list_btn_prev')
+
+            let slider = tns({
+                container: item,
+                items: 4,
+                nextButton:nextBtn,
+                prevButton:prevButton,
+                nav:false,
+                gutter:30
             })
-            item.init();
         })
     }catch (e) {
         console.error(e)
@@ -113,26 +123,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     //Слайдер картинок в товаре
     try{
-        const prodItemImgs = document.querySelectorAll('.product_item_imgs')
-        prodItemImgs.forEach(item=>{
-            item = new OwlSlider({
-                item: item,
-                options: {
-                    loop:true,
-                    margin:30,
-                    nav:false,
-                    items:1,
-                    dots:true,
-                    autoplay:false,
-                    // center:true,
-                    customBtn:false
-                    // autoWidth: true
-                }
+        const TproductItemsList = document.querySelectorAll('.product_item_imgs')
+        TproductItemsList.forEach(item=>{
+            let slider = tns({
+                container: item,
+                items: 1,
+                controls:false,
+                nav: true
             })
-            item.init();
+            let dots = item.parentNode.parentNode.parentNode.querySelectorAll('button')
+            dots.forEach((item,id)=>{
+                item.addEventListener('mouseenter', ()=>{
+                    slider.goTo(id)
+                })
+            })
         })
-    }catch(e){
-        console.error(e)
+    }catch (e) {
+
     }
 
     //Cлайдер капсул и новостей
@@ -140,7 +147,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const sliderList = document.querySelectorAll('.slider_list')
         sliderList.forEach(item=>{
             item = new OwlSlider({
-                item:item,
+                itemEl:item,
                 customBtn:true,
                 btnNext: '.btn_next_slider',
                 btnPrev: '.btn_prev_slider',
@@ -227,20 +234,116 @@ document.addEventListener('DOMContentLoaded', ()=>{
     //Смена основной картинки при клике
 
     try{
-        const imgMainWrapper = document.querySelector('.img_main'),
-            imgMain = imgMainWrapper.querySelector('img'),
-            imgsList = document.querySelector('.imgs_list'),
-            imgInList = imgsList.querySelectorAll('img');
-        imgInList[0].classList.add('active')
-        imgMain.src  = imgInList[0].src
-        imgInList.forEach(item=>{
-            item.addEventListener('click', ()=>{
-                clearClass(imgInList, 'active')
-                item.classList.add('active')
-                imgMain.src = item.src;
+       const dotsImgsList = document.querySelector('#dots_imgs_list'),
+           dotsImgsListItem = dotsImgsList.querySelectorAll('.item'),
+           sliderVertical = document.querySelector('.slider_vertical');
+       let verticalSlider = tns({
+           container: '.slider_vertical',
+           nav: false,
+           controls: false,
+           axis: true,
+           mouseDrag: true,
+
+       })
+        dotsImgsListItem[0].classList.add('active')
+        dotsImgsListItem.forEach((i, id)=>{
+            i.addEventListener('click', ()=>{
+                clearClass(dotsImgsListItem, 'active')
+                i.classList.add('active')
+                verticalSlider.goTo(id)
             })
         })
     }catch (e) {
         console.error(e)
     }
+
+
+    //Все для адаптива
+
+    class RelocateElement{
+        constructor({element = null, lastElement = null, appendClass = null, isClone = false}){
+            this.element = document.querySelector(element)
+            this.lastElement = document.querySelector(lastElement)
+            this.appendClass = appendClass
+            this.isClone = isClone
+        }
+        relocate(){
+            if(this.isClone === true){
+                this.lastElement.appendChild(this.element.cloneNode(true))
+            }else{
+                this.lastElement.appendChild(this.element)
+            }
+        }
+    }
+
+    //Меню каталога
+    const headerDropMenu = document.querySelector('.header_drop_menu'),
+        catalogBtn = document.querySelector('#catalog'),
+        closeDropMenu = document.querySelector('.close_drop_menu');
+    //Пк версия
+    if(body.clientWidth > 1340){
+        catalogBtn.addEventListener('click', (e)=>{
+            e.preventDefault()
+
+            if(headerDropMenu.classList.contains('active')){
+                headerDropMenu.classList.remove('active')
+            }else{
+                headerDropMenu.classList.add('active')
+            }
+        })
+        closeDropMenu.addEventListener('click', ()=>{
+            headerDropMenu.classList.remove('active')
+        })
+    }
+
+    const relocateMainMenu = new RelocateElement({
+        element: '.main_menu',
+        lastElement: '.burger_menu',
+
+    })
+    const relocateDropMenu = new RelocateElement({
+        element: '.catalog_menu',
+        lastElement: '.catalog_drop'
+    })
+    if(body.clientWidth <= 1340){
+        relocateDropMenu.relocate()
+        relocateMainMenu.relocate()
+        const burgerMenu = document.querySelector('.burger_menu'),
+            burgerBtn = document.querySelector('.burger_btn'),
+            burgerLiElements = burgerMenu.querySelectorAll('li');
+        burgerBtn.addEventListener('click', ()=>{
+            burgerMenu.classList.toggle('fadeInLeft')
+            if(burgerMenu.classList.contains('fadeInLeft')){
+                body.classList.add('white_theme')
+                burgerBtn.classList.add('active')
+                body.style.overflow = 'hidden'
+            }else{
+                body.classList.remove('white_theme')
+                burgerBtn.classList.remove('active')
+                clearClass(burgerLiElements, 'is_dropdown')
+                body.style.overflow = ''
+            }
+        })
+
+        burgerLiElements.forEach(item=>{
+            if(item.querySelector('ul')){
+                item.classList.add('is_dropdown')
+                item.addEventListener('click', (e)=>{
+                    let target = e.target
+                    if(item.classList.contains('is_dropdown')
+                        || target.parentNode.classList.contains('is_dropdown')){
+                        e.preventDefault()
+                        item.classList.add('active_dropdown')
+                    }
+                    if(!target.parentNode.classList.contains('is_dropdown')
+                        && !target.classList.contains('is_dropdown')
+                        && !target.classList.contains('#catalog'))
+                    {
+                        document.location.href = target.href;
+                    }
+                })
+            }
+        })
+    }
+
 });
