@@ -21,5 +21,44 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   } catch (e) {}
+
+  function relocate(element, targetElement) {
+    targetElement.appendChild(element);
+  }
+
+  var headerLangs = document.querySelector('.header_langs');
+  var headerMenu = document.querySelector('.header_menu');
+  var burgerMenu = document.querySelector('.burger_menu');
+  var burgerBtn = document.querySelector('.burger_btn');
+
+  if (document.body.clientWidth < 1000) {
+    relocate(headerLangs, burgerMenu);
+    relocate(headerMenu, burgerMenu);
+  }
+
+  burgerBtn.addEventListener('click', function () {
+    burgerMenu.classList.toggle('active');
+
+    if (burgerMenu.classList.contains('active')) {
+      burgerBtn.classList.add('active');
+    } else {
+      burgerBtn.classList.remove('active');
+    }
+  });
+  var progSlide = tns({
+    container: '.prog_items',
+    items: 3.2,
+    nav: false,
+    controls: false,
+    gutter: 30
+  });
+  var photo_list = tns({
+    container: '.photo_list',
+    items: 1.2,
+    nav: false,
+    controls: false,
+    gutter: 20,
+    autoWidth: true
+  });
 });
 //# sourceMappingURL=scripts.js.map

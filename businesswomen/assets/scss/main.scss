@@ -1016,4 +1016,49 @@ footer{
 .section_banner--inner{
   padding-bottom: 150px;
 }
+.burger_btn{
+  display: none;
+  width: 36px;
+  height: 36px;
+  background: url("../assets/imgs/optimize_imgs/icons/b_ico.png") center no-repeat;
+  &.active{
+    background: url("../assets/imgs/optimize_imgs/icons/b_close.png") center no-repeat;
+
+  }
+}
+
+.burger_menu{
+    position: absolute;
+    top: 132px;
+    background: #FFFFFF;
+    border-top: 1px solid #ECECEC;
+    padding: 50px 85px;
+    left: 0;
+    right: 0;
+    display: none;
+  &.active{
+    display: block;
+  }
+  .header_langs{
+    position: absolute;
+    right: 85px;
+    display: flex;
+    gap: 10px;
+    a{
+      font-family: $Raleway;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: #464646;
+      text-decoration: none;
+    }
+  }
+  .header_menu{
+    ul{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
 @import "media";
