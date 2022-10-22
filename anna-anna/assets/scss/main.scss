@@ -1,8 +1,10 @@
 $link_color: rgba(255, 255, 255, 1);
 $dir: '../assets/imgs/';
+@import "variables";
 body{
   font-family: "Material Icons";
 }
+
 header{
   padding-top: 25px;
   padding-bottom: 25px;
@@ -2008,5 +2010,183 @@ footer.footer{
   border-radius: 3px;
   &:hover{
     color: #2A2929;
+  }
+}
+.cabinet_banner{
+  background: url('../assets/imgs/cabinet_bg.png');
+}
+
+.user_wrapper{
+  height: 430px;
+  padding-top: 63px;
+  padding-bottom: 67px;
+  .user_wrapper-grid{
+    display: grid;
+    grid-template-columns: 255px 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+    .grid_item{
+      ul{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        li{
+          list-style: none;
+          a{
+            text-decoration: none;
+            font-family: 'Lato',sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            text-transform: capitalize;
+            color: #FFFFFF;
+            &.active{
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+    .grid_item-user{
+      .grid_item-user--top{
+        display: flex;
+        align-items: center;
+        margin-bottom: 22px;
+        justify-content: space-between;
+        a{
+          font-family: 'Lato',sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          color: #FFFFFF;
+          display: block;
+        }
+      }
+      .name{
+        font-family: 'Lato',sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 36px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+      }
+      .grid_item-user--info{
+        padding: 70px 40px;
+        background: rgba(0, 0, 0, 0.14);
+        border-radius: 3px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        justify-items: end;
+        .item{
+          .title{
+            font-family: 'Lato',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+          }
+          a{
+            text-decoration: none;
+            font-family: 'Lato',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            display: block;
+          }
+          ul{
+            padding: 0;
+            margin: 0;
+            li{
+              list-style: none;
+              font-family: 'Lato',sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 17px;
+              display: flex;
+              align-items: center;
+
+              color: #FFFFFF;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+}
+.user_bounce{
+  padding-top: 54px;
+  .info--top{
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .user_bounce-info{
+    h3{
+      font-family: 'Lato',sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 36px;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      color: #2A2929;
+    }
+    hr{
+      background: rgba(42, 41, 41, 0.1);
+      border-top: 1px solid rgba(42, 41, 41, 0.1);
+      margin-top: 30px;
+    }
+  }
+  .info--body{
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 150px;
+    .item{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p,
+      span{
+        display: block;
+      }
+      p{
+        font-family: 'Lato',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;;
+        text-transform: uppercase;
+        color: #2A2929;
+        padding: 0;
+        margin: 0;
+      }
+      span{
+        font-family: 'Lato',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #2A2929;
+      }
+    }
   }
 }

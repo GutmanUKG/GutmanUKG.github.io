@@ -106,6 +106,9 @@ const pfm = require('postcss-font-magician');
 const atImport = require('postcss-import')
 //Включение переменных
 const pav = require('postcss-advanced-variables')
+//calc
+const calc = require('postcss-calc')
+
 //Компил JS ES6 в ES5
 const babel = require('gulp-babel')
 
@@ -150,6 +153,7 @@ gulp.task('buildSass', function () {
         Nested(),
         postcssPresetEnv(),
         postcssAnimation(),
+        calc(),
         pfm({
             hosted: ['./fonts']
         }),
