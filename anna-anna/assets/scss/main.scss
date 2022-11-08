@@ -1,8 +1,7 @@
-$link_color: rgba(255, 255, 255, 1);
-$dir: '../assets/imgs/';
 @import "variables";
 body{
-  font-family: "Material Icons";
+  //font-family: "Material Icons";
+
 }
 
 header{
@@ -175,7 +174,7 @@ header{
           background: rgba(217, 217, 217, 0.6) !important;
           width: 21px;
           &:before{
-           animation-name: fullWidth;
+            animation-name: fullWidth;
             animation-duration: 5s;
           }
         }
@@ -225,13 +224,13 @@ header{
             background: rgba(42, 41, 41, 0.04);
           }
         }
-      .header_user_info{
-        a{
-          img{
-            filter: invert(1);
+        .header_user_info{
+          a{
+            img{
+              filter: invert(1);
+            }
           }
         }
-      }
       }
     }
   }
@@ -283,7 +282,7 @@ header{
       }
     }
     .header_drop_info{
-     display: grid;
+      display: grid;
       grid-template-columns: 320px 1fr;
       gap: 90px;
       .feedback{
@@ -718,11 +717,11 @@ section.section{
 .news_item_list{
   .item{
     text-decoration: none;
-      .imgs{
-        img{
-          width: 100%;
-        }
+    .imgs{
+      img{
+        width: 100%;
       }
+    }
     .info{
       margin-top: 30px;
       .name{
@@ -1160,6 +1159,7 @@ footer.footer{
 
 
 .catalog_detail{
+  padding-top: 0 !important;
   .imgs{
     display: flex;
     align-items: flex-start;
@@ -1329,7 +1329,7 @@ footer.footer{
         background: #F4F4F4;
       }
       .btn{
-       display: block;
+        display: block;
         height: 39px;
         &.decrement{
           background: url("../assets/imgs/icons/decrement.png") center no-repeat;
@@ -1558,18 +1558,18 @@ footer.footer{
             }
           }
           .top{
-              display: flex;
-              gap: 40px;
-              align-items: center;
-              span{
-                font-family: 'Lato',sans-serif;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 40px;
-                line-height: 48px;
-                text-transform: capitalize;
-                color: #2A2929;
-              }
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            span{
+              font-family: 'Lato',sans-serif;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 40px;
+              line-height: 48px;
+              text-transform: capitalize;
+              color: #2A2929;
+            }
             a{
               font-family: 'Lato',sans-serif;
               font-style: normal;
@@ -1848,7 +1848,7 @@ footer.footer{
     background: url("../assets/imgs/icons/burger_ico.png") center no-repeat;
   }
   .search_btn{
-      background: url("../assets/imgs/icons/s_ico_d.png") center no-repeat;
+    background: url("../assets/imgs/icons/s_ico_d.png") center no-repeat;
   }
 }
 .popup_filter_bottom{
@@ -2187,6 +2187,359 @@ footer.footer{
         line-height: 19px;
         color: #2A2929;
       }
+    }
+  }
+}
+
+
+section.basket{
+  padding-top: 55px;
+}
+.basket__list{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  .basket__item{
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(42, 41, 41, 0.1);
+    img{
+      width: 70px;
+      margin-right: 30px;
+    }
+    .basket__item-info{
+      flex-grow: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      h3{
+        font-family: $Lato;
+        font-style: normal;
+        font-weight: 700;
+        font-size: $size20;
+        line-height: 24px;
+        color: #2A2929;
+      }
+      .basket__item-info-art{
+        font-family: $Lato;
+        font-style: normal;
+        font-weight: 700;
+        font-size: $size14;
+        line-height: 17px;
+        color: #888888;
+      }
+      .basket__item-info--color{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        i{
+          display: block;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .basket__item-size{
+      flex-grow: 1;
+      select{
+        font-family: $Lato;
+        font-style: normal;
+        font-weight: 400;
+        font-size: $size16;
+        line-height: 10px;
+        text-transform: uppercase;
+        color: #2A2929;
+        outline: none;
+        border: none;
+        padding: 0 10px;
+        background: rgba(42, 41, 41, 0.05);
+        border-radius: 3px;
+        box-sizing: border-box;
+        width: 80px;
+        height: 40px;
+      }
+    }
+
+    .basket__item-counter{
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      span{
+        background: #F4F4F4;
+        padding: 10px;
+        box-sizing: border-box;
+        font-family: $Inter;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        color: #333333;
+      }
+
+      .btn{
+        width: 16px;
+        height: 16px;
+        display: block;
+        background-size: cover;
+        cursor: pointer;
+        &.decrement{
+          background: url("../assets/imgs/icons/decrement.png") center no-repeat;
+        }
+        &.increment{
+          background: url("../assets/imgs/icons/increment.png") center/contain no-repeat;
+        }
+      }
+    }
+
+    .basket__item-price{
+      margin-right: 24px;
+      font-family: $Lato;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+      color: #2A2929;
+    }
+    .basket__item-del_trigger{
+      width: 24px;
+      height: 24px;
+      background: url("../assets/imgs/icons/del_ico.png") center/contain no-repeat;
+    }
+  }
+}
+
+
+.basket-grid{
+  padding-top: 80px;
+  display: grid;
+  grid-column-gap: 117px;
+  grid-template-columns: 1fr 450px;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  .form_title{
+    font-family: $Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: $size20;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #2A2929;
+    margin-bottom: 40px;
+  }
+  label{
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: 223px 1fr;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    span{;
+      font-family: $Lato;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+
+
+    }
+    &:has(input[type='radio']){
+      display: flex;
+      gap: 20px;
+    }
+    input{
+      background: #F7F7F7;
+      border-radius: 3px;
+      border: none;
+      outline: none;
+      width: 100%;
+      flex-grow: 1;
+      height: 40px;
+      padding: 10px;
+      box-sizing: border-box;
+      font-family: $Lato;
+        &[type="radio"]{
+          max-width: 20px;
+          width: 100%;
+          height: 20px;
+        }
+    }
+    .text{
+      font-family: $Lato;
+      font-style: normal;
+      font-weight: 400;
+      font-size: $size14;
+      line-height: 17px;
+      color: #2A2929;
+    }
+  }
+  .slecetor_position{
+    display: grid;
+    grid-template-columns: 223px 1fr;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    span{
+      font-family: $Lato;
+      font-style: normal;
+      font-weight: 700;
+      font-size: $size16;
+    }
+    .selectors{
+      display: flex;
+      gap: 30px;
+      select{
+        width: calc(50% - 15px);
+        font-family: $Lato;
+        font-style: normal;
+        font-weight: 400;
+        font-size: $size14;
+        line-height: 17px;
+        color: #000000;
+        border: 1px solid #DFDFDF;
+        border-radius: 3px;
+        padding: 10px;
+        outline: none;
+      }
+    }
+    .input-group{
+      display: grid;
+      grid-template-columns: 1fr 86px 86px;
+      gap: 30px;
+      label{
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        span{
+          font-family: $Lato;
+          font-style: normal;
+          font-weight: 400;
+          font-size: $size14;
+          line-height: 17px;
+          white-space: nowrap;
+        }
+      }
+    }
+    textarea{
+     resize: none;
+      padding: 10px;
+      box-sizing: border-box;
+      background: #F7F7F7;
+      border-radius: 3px;
+      height: 80px;
+      outline: none;
+    }
+
+  }
+}
+.basket-info{
+  .info_list_items{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    .item{
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(42, 41, 41, 0.05);
+      cursor: pointer;
+      &.active{
+        .item-top{
+          &:after{
+            background: url(../assets/imgs/icons/decrement.png) center no-repeat;
+          }
+        }
+        .drop_info{
+          display: block;
+        }
+      }
+      .item-top{
+        font-family: $Lato;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: #2A2929;
+        position: relative;
+        &:after{
+          content: '';
+          display: block;
+          position: absolute;
+          width: 9px;
+          height: 9px;
+          background: url(../assets/imgs/icons/increment.png) center no-repeat;
+          top: 50%;
+          right: 20px;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+      }
+      .drop_info{
+        display: none;
+        margin-top: 20px;
+        ul{
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          li{
+            list-style: none;
+            font-family: $Lato;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            color: #2A2929;
+          }
+        }
+      }
+    }
+  }
+  .info_list_result{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    div{
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Montserrat',sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 10px;
+      color: #2A2929;
+      &:last-child{
+        font-size: 38px;
+      }
+      span{
+        font-family: $Lato;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+  }
+  .default_btn{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin-top: 60px;
+  }
+  .descr{
+    font-family: $Lato;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $size14;
+    line-height: 17px;
+    color: #2A2929;
+    margin-top: 30px;
+    a{
+      color: inherit;
     }
   }
 }

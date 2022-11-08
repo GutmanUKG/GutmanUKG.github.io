@@ -106,9 +106,8 @@ const pfm = require('postcss-font-magician');
 const atImport = require('postcss-import')
 //Включение переменных
 const pav = require('postcss-advanced-variables')
-//calc
-const calc = require('postcss-calc')
-
+//Использование БЭМ
+const bem = require('postcss-bem')
 //Компил JS ES6 в ES5
 const babel = require('gulp-babel')
 
@@ -116,11 +115,10 @@ const babel = require('gulp-babel')
 
 const pathJs = './assets/js/**/*'
 const pathJsOut = './js'
-const pathScss = './assets/scss/main.scss'
+const pathScss = './assets/scss/**/*.scss'
 const pathScssOut = './css'
 const pathImg = './assets/imgs/full_imgs/**/*'
 const pathImgOut = './assets/imgs/optimize_imgs'
-
 
 gulp.task('serve',  ()=> {
     browserSync.init({
@@ -152,11 +150,9 @@ gulp.task('buildSass', function () {
         require('postcss-import')(),
         Nested(),
         postcssPresetEnv(),
+        atImport(),
         postcssAnimation(),
-        calc(),
-        pfm({
-            hosted: ['./fonts']
-        }),
+        pfm()
     ];
     return gulp.src(pathScss)
         .pipe(postcss(plugins))
@@ -174,6 +170,7 @@ gulp.task('watch', ()=>{
     gulp.watch(pathJs, gulp.series('buildJs'))
     gulp.watch(pathJs, gulp.series('serve'))
     gulp.watch(pathScss, gulp.series('serve'))
+
 })
 gulp.task('default', gulp.series('buildSass', 'buildJs',  'watch'))
 

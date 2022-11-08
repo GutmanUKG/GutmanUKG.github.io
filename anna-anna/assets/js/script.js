@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         console.error(e)
     }
 
-    //Выпадашки информации
+    //Выпадашки информации + Выпадашки в корзине
    try{
        const infoListItems = document.querySelector('.info_list_items'),
            infoItems = infoListItems.querySelectorAll('.item');
@@ -328,7 +328,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     if(body.clientWidth > 1340){
         catalogBtn.addEventListener('click', (e)=>{
             e.preventDefault()
-
             if(headerDropMenu.classList.contains('active')){
                 headerDropMenu.classList.remove('active')
             }else{
@@ -345,10 +344,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
         lastElement: '.burger_menu',
 
     })
+
     const relocateDropMenu = new RelocateElement({
         element: '.catalog_menu',
         lastElement: '.catalog_drop'
     })
+
     if(body.clientWidth <= 1340){
         relocateDropMenu.relocate()
         relocateMainMenu.relocate()
@@ -398,16 +399,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
             filltersWrapper = document.querySelector('.fillters'),
             filterBtn = filltersWrapper.querySelector('span'),
             closeBtn = popupFilterBottom.querySelector('.close_btn');
-
         filterBtn.addEventListener('click', ()=>{
             popupFilterBottom.style.display = 'block'
         })
         closeBtn.addEventListener('click', ()=>{
             popupFilterBottom.style.display = ''
         })
-        console.log(popupFilterList)
         popupFilterList.appendChild(topFilterList)
-
         topFilterListItem.forEach(item=>{
             let elementInTopFilterListItem = item.querySelector('ul');
             if(elementInTopFilterListItem != null){
@@ -415,7 +413,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     elementInTopFilterListItem.classList.add('grid_three_column')
                 }
             }
-
             item.addEventListener('click', ()=>{
                 clearClass(topFilterListItem, 'active')
                 item.classList.add('active')

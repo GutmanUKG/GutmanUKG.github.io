@@ -1,7 +1,11 @@
+$dir: '../assets/imgs/';
 $Lato: 'Lato', sans-serif;
-
-$size30 : '30px';
-
+$link_color: rgba(255, 255, 255, 1);
+$Inter: 'Inter',sans-serif;
+$size30 : 30px;
+$size20: 20px;
+$size14: 14px;
+$size16: 16px;
 .info_link{
   font-family: 'Lato',sans-serif;
   font-style: normal;
@@ -13,6 +17,7 @@ $size30 : '30px';
   color: #2A2929;
   display: flex;
   align-items: center;
+
   gap: 10px;
   &:before{
     content: '';
@@ -20,5 +25,45 @@ $size30 : '30px';
     width: 20px;
     height: 20px;
     background: url("../assets/imgs/icons/info_ico.png") center/contain no-repeat;
+  }
+}
+.link-back{
+  text-decoration: none;
+  font-family: $Lato;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 10px;
+  color: #2A2929;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &:before{
+    content: '';
+    display: block;
+    background: url("../assets/imgs/icons/back_ico.svg") center no-repeat;
+    width: 42px;
+    height: 42px;
+    transition: .3s all;
+    border-radius: 50%;
+  }
+  &:hover{
+    color: rgba(42, 41, 41, 1);
+    &:before{
+      border: 1px solid;
+      border-radius: 50%;
+    }
+  }
+}
+.btn_promo{
+  font-family: $Lato;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $size14;
+  line-height: 17px;
+  color: rgba(42, 41, 41, 1);
+  transition: .3s all;
+  &:hover{
+    color: rgba(136, 136, 136, 1);
   }
 }
