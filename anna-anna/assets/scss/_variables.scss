@@ -41,11 +41,12 @@ $size16: 16px;
   &:before{
     content: '';
     display: block;
-    background: url("../assets/imgs/icons/back_ico.svg") center no-repeat;
+    background: url("../assets/sprite/sprite.svg#back_ico") center/cover no-repeat;
     width: 42px;
     height: 42px;
     transition: .3s all;
     border-radius: 50%;
+    border: 1px solid transparent;
   }
   &:hover{
     color: rgba(42, 41, 41, 1);
@@ -65,5 +66,27 @@ $size16: 16px;
   transition: .3s all;
   &:hover{
     color: rgba(136, 136, 136, 1);
+  }
+}
+
+
+.btn-large{
+  padding: 20px 70px;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  font-family: $Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  width: max-content;
+  transition: .3s all;
+  &:hover{
+    background: rgba(42, 41, 41, 1);
+    color: rgba(255, 255, 255, 1);
   }
 }

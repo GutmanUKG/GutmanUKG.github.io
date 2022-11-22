@@ -108,6 +108,9 @@ const atImport = require('postcss-import')
 const pav = require('postcss-advanced-variables')
 //Использование БЭМ
 const bem = require('postcss-bem')
+
+//SVG sprite
+const svgSprite = require('gulp-svg-sprite')
 //Компил JS ES6 в ES5
 const babel = require('gulp-babel')
 
@@ -119,7 +122,20 @@ const pathScss = './assets/scss/**/*.scss'
 const pathScssOut = './css'
 const pathImg = './assets/imgs/full_imgs/**/*'
 const pathImgOut = './assets/imgs/optimize_imgs'
+const pathSVG = './assets/imgs/svg/*.svg'
+const pathSVGOut = './assets/sprite/'
 
+gulp.task('svg', ()=>{
+    return gulp.src(pathSVG)
+        .pipe(svgSprite({
+            mode: {
+                stack:{
+                    sprite: "../sprite.svg"
+                }
+            }
+        }))
+        .pipe(gulp.dest(pathSVGOut))
+})
 gulp.task('serve',  ()=> {
     browserSync.init({
         server: {

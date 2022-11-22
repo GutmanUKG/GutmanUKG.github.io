@@ -102,12 +102,13 @@
 .link-back:before{
     content: '';
     display: block;
-    background: url("../assets/imgs/icons/back_ico.svg") center no-repeat;
+    background: url("../assets/sprite/sprite.svg#back_ico") center/cover no-repeat;
     width: 42px;
     height: 42px;
     -webkit-transition: .3s all;
     transition: .3s all;
     border-radius: 50%;
+    border: 1px solid transparent;
   }
 .link-back:hover{
     color: rgba(42, 41, 41, 1);
@@ -128,4 +129,31 @@
 }
 .btn_promo:hover{
     color: rgba(136, 136, 136, 1);
+  }
+.btn-large{
+  padding: 20px 70px;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+.btn-large:hover{
+    background: rgba(42, 41, 41, 1);
+    color: rgba(255, 255, 255, 1);
   }
