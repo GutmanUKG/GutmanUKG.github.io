@@ -426,7 +426,7 @@ header .header_wrapper .header_panel .header_user_info a img{
           }
 .section_banner{
   position: relative;
-  margin-top: -90px;
+  margin-top: -117px;
 }
 .section_banner .arrows{
     position: absolute;
@@ -1397,7 +1397,6 @@ footer.footer .footer_body .info .copy{
               position: absolute;
               right: 22px;
               top: 50%;
-              
             }
 .catalog_wrapper .left_menu ul li.is_dropdown ul li a:after{
                   display: none;

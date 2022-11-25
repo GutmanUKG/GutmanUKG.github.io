@@ -125,6 +125,12 @@
 
 
 @media(max-width: 1199px){
+  .basket-grid{
+    grid-column-gap: 50px;
+  }
+  form label{
+    grid-template-columns: 130px 1fr;
+  }
   .popup_filter_bottom{
     //display: block;
   }
@@ -154,6 +160,9 @@
 
 
 @media(max-width: 1023px){
+  .basket-grid{
+    grid-template-columns: 1fr;
+  }
   .section_title{
 
     font-style: normal;
@@ -237,3 +246,41 @@
 }
 
 
+@media(max-width: 768px){
+  .basket__list .basket__item{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+
+  }
+
+    .basket__list .basket__item .img{
+      grid-area: 1 / 1 / 4 / 2;
+      width: 100%;
+      max-width: 120px;
+      -o-object-fit: cover;
+         object-fit: cover;
+      background-repeat: no-repeat;
+    }
+    .basket__list .basket__item .basket__item-info{
+      grid-area: 1 / 2 / 2 / 4;
+    }
+    .basket__list .basket__item .basket__item-size{
+      grid-area: 2 / 2 / 3 / 3;
+    }
+    .basket__list .basket__item .basket__item-counter{
+      grid-area: 2 / 3 / 3 / 4;
+    }
+    .basket__list .basket__item .basket__item-price{
+      grid-area: 3 / 2 / 4 / 3;
+      width: 100%;
+    }
+    .basket__list .basket__item .basket__item-del_trigger{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+}
