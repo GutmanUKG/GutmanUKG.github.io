@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     let body = document.body
 
-
+    //media функция
+    function handleTabletChange(e) {
+        if (e.matches) {
+            return true
+        }
+    }
 
     function clearClass(elements, classActive){
         for(let i = 0; i < elements.length; i++){
@@ -20,8 +25,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
             nav:false,
             items:1,
             dots:true,
-            autoplay:true,
-            autoplayTimeout: 4000
+            autoplay:false,
+            autoplayTimeout: 4000,
+            responsive: {
+                768: {
+                    arrows:true,
+                },
+                 0: {
+                    arrows:false,
+                     nav: false
+                 }
+            }
         })
 
 
@@ -123,7 +137,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
                       items: 3
                   },
                     700: {
-                        items:2.3
+                        items:2
+                    },
+                    0: {
+                        items: 1.2
                     }
                 }
             })
@@ -169,6 +186,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 },
                 700: {
                     items:3
+                },
+                0: {
+                    items: 2.5
                 }
             }
         })
@@ -199,6 +219,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         },
                         700: {
                             items:1.3
+                        },
+                        0: {
+                            items: 1.5
                         }
                     }
                 }
@@ -325,6 +348,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         catalogBtn = document.querySelector('#catalog'),
         closeDropMenu = document.querySelector('.close_drop_menu');
     //Пк версия
+
+
     if(body.clientWidth > 1340){
         catalogBtn.addEventListener('click', (e)=>{
             e.preventDefault()
@@ -391,34 +416,53 @@ document.addEventListener('DOMContentLoaded', ()=>{
         })
     }
 
-    if(body.clientWidth < 1200){
-        const popupFilterBottom = document.querySelector('.popup_filter_bottom'),
-            popupFilterList = popupFilterBottom.querySelector('.popup_filter_list'),
-            topFilterList = document.querySelector('.filter_list'),
-            topFilterListItem = topFilterList.querySelectorAll('.item'),
-            filltersWrapper = document.querySelector('.fillters'),
-            filterBtn = filltersWrapper.querySelector('span'),
-            closeBtn = popupFilterBottom.querySelector('.close_btn');
-        filterBtn.addEventListener('click', ()=>{
-            popupFilterBottom.style.display = 'block'
-        })
-        closeBtn.addEventListener('click', ()=>{
-            popupFilterBottom.style.display = ''
-        })
-        popupFilterList.appendChild(topFilterList)
-        topFilterListItem.forEach(item=>{
-            let elementInTopFilterListItem = item.querySelector('ul');
-            if(elementInTopFilterListItem != null){
-                if(elementInTopFilterListItem.children.length > 10){
-                    elementInTopFilterListItem.classList.add('grid_three_column')
-                }
-            }
-            item.addEventListener('click', ()=>{
-                clearClass(topFilterListItem, 'active')
-                item.classList.add('active')
-            })
-        })
+   try{
+       if(body.clientWidth < 1200){
+           const popupFilterBottom = document.querySelector('.popup_filter_bottom'),
+               popupFilterList = popupFilterBottom.querySelector('.popup_filter_list'),
+               topFilterList = document.querySelector('.filter_list'),
+               topFilterListItem = topFilterList.querySelectorAll('.item'),
+               filltersWrapper = document.querySelector('.fillters'),
+               filterBtn = filltersWrapper.querySelector('span'),
+               closeBtn = popupFilterBottom.querySelector('.close_btn');
+           filterBtn.addEventListener('click', ()=>{
+               popupFilterBottom.style.display = 'block'
+           })
+           closeBtn.addEventListener('click', ()=>{
+               popupFilterBottom.style.display = ''
+           })
+           popupFilterList.appendChild(topFilterList)
+           topFilterListItem.forEach(item=>{
+               let elementInTopFilterListItem = item.querySelector('ul');
+               if(elementInTopFilterListItem != null){
+                   if(elementInTopFilterListItem.children.length > 10){
+                       elementInTopFilterListItem.classList.add('grid_three_column')
+                   }
+               }
+               item.addEventListener('click', ()=>{
+                   clearClass(topFilterListItem, 'active')
+                   item.classList.add('active')
+               })
+           })
+       }
+   }catch (e){
+
+
+   }
+
+
+
+
+    //Тестирование media in js
+
+    const mediaQuery = window.matchMedia('(max-width: 767px)')
+
+    function handleTabletChange(e) {
+        if (e.matches) {
+
+        }
     }
 
-
+    mediaQuery.addListener(handleTabletChange)
+    handleTabletChange(mediaQuery)
 });

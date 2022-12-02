@@ -13,7 +13,13 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var body = document.body;
+  var body = document.body; //media функция
+
+  function handleTabletChange(e) {
+    if (e.matches) {
+      return true;
+    }
+  }
 
   function clearClass(elements, classActive) {
     for (var i = 0; i < elements.length; i++) {
@@ -32,8 +38,17 @@ document.addEventListener('DOMContentLoaded', function () {
       nav: false,
       items: 1,
       dots: true,
-      autoplay: true,
-      autoplayTimeout: 4000
+      autoplay: false,
+      autoplayTimeout: 4000,
+      responsive: {
+        768: {
+          arrows: true
+        },
+        0: {
+          arrows: false,
+          nav: false
+        }
+      }
     }); // Go to the next item
 
     $('.btn_next_banner').click(function () {
@@ -150,7 +165,10 @@ document.addEventListener('DOMContentLoaded', function () {
             items: 3
           },
           700: {
-            items: 2.3
+            items: 2
+          },
+          0: {
+            items: 1.2
           }
         }
       });
@@ -195,6 +213,9 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         700: {
           items: 3
+        },
+        0: {
+          items: 2.5
         }
       }
     });
@@ -224,6 +245,9 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             700: {
               items: 1.3
+            },
+            0: {
+              items: 1.5
             }
           }
         }
@@ -422,35 +446,47 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  if (body.clientWidth < 1200) {
-    var popupFilterBottom = document.querySelector('.popup_filter_bottom'),
-        popupFilterList = popupFilterBottom.querySelector('.popup_filter_list'),
-        topFilterList = document.querySelector('.filter_list'),
-        topFilterListItem = topFilterList.querySelectorAll('.item'),
-        filltersWrapper = document.querySelector('.fillters'),
-        filterBtn = filltersWrapper.querySelector('span'),
-        closeBtn = popupFilterBottom.querySelector('.close_btn');
-    filterBtn.addEventListener('click', function () {
-      popupFilterBottom.style.display = 'block';
-    });
-    closeBtn.addEventListener('click', function () {
-      popupFilterBottom.style.display = '';
-    });
-    popupFilterList.appendChild(topFilterList);
-    topFilterListItem.forEach(function (item) {
-      var elementInTopFilterListItem = item.querySelector('ul');
-
-      if (elementInTopFilterListItem != null) {
-        if (elementInTopFilterListItem.children.length > 10) {
-          elementInTopFilterListItem.classList.add('grid_three_column');
-        }
-      }
-
-      item.addEventListener('click', function () {
-        clearClass(topFilterListItem, 'active');
-        item.classList.add('active');
+  try {
+    if (body.clientWidth < 1200) {
+      var popupFilterBottom = document.querySelector('.popup_filter_bottom'),
+          popupFilterList = popupFilterBottom.querySelector('.popup_filter_list'),
+          topFilterList = document.querySelector('.filter_list'),
+          topFilterListItem = topFilterList.querySelectorAll('.item'),
+          filltersWrapper = document.querySelector('.fillters'),
+          filterBtn = filltersWrapper.querySelector('span'),
+          closeBtn = popupFilterBottom.querySelector('.close_btn');
+      filterBtn.addEventListener('click', function () {
+        popupFilterBottom.style.display = 'block';
       });
-    });
+      closeBtn.addEventListener('click', function () {
+        popupFilterBottom.style.display = '';
+      });
+      popupFilterList.appendChild(topFilterList);
+      topFilterListItem.forEach(function (item) {
+        var elementInTopFilterListItem = item.querySelector('ul');
+
+        if (elementInTopFilterListItem != null) {
+          if (elementInTopFilterListItem.children.length > 10) {
+            elementInTopFilterListItem.classList.add('grid_three_column');
+          }
+        }
+
+        item.addEventListener('click', function () {
+          clearClass(topFilterListItem, 'active');
+          item.classList.add('active');
+        });
+      });
+    }
+  } catch (e) {} //Тестирование media in js
+
+
+  var mediaQuery = window.matchMedia('(max-width: 767px)');
+
+  function handleTabletChange(e) {
+    if (e.matches) {}
   }
+
+  mediaQuery.addListener(handleTabletChange);
+  handleTabletChange(mediaQuery);
 });
 //# sourceMappingURL=script.js.map

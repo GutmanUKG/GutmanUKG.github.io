@@ -2,10 +2,12 @@ $dir: '../assets/imgs/';
 $Lato: 'Lato', sans-serif;
 $link_color: rgba(255, 255, 255, 1);
 $Inter: 'Inter',sans-serif;
-$size30 : 30px;
-$size20: 20px;
+$size30 : calc((100vw - 375px) / (1920 - 375) * (30 - 22) + 22px);
+$size20:  calc((100vw - 375px) / (1920 - 375) * (20 - 16) + 16px);
 $size14: 14px;
 $size16: 16px;
+$size100:  calc((100vw - 375px) / (1920 - 375) * (100 - 40) + 40px);
+$size50: calc((100vw - 375px) / (1920 - 375) * (50 - 34) + 34px);
 .info_link{
   font-family: 'Lato',sans-serif;
   font-style: normal;
@@ -17,7 +19,6 @@ $size16: 16px;
   color: #2A2929;
   display: flex;
   align-items: center;
-
   gap: 10px;
   &:before{
     content: '';
@@ -89,4 +90,17 @@ $size16: 16px;
     background: rgba(42, 41, 41, 1);
     color: rgba(255, 255, 255, 1);
   }
+}
+
+.close_btn{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: url("../assets/sprite/sprite.svg#close_ico") center/cover no-repeat;
+}
+.reset_btn{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: url("../assets/sprite/sprite.svg#res_ico") center/cover no-repeat;
 }

@@ -135,7 +135,7 @@ header{
       font-family: 'Lato',sans-serif;;
       font-style: normal;
       font-weight: 300;
-      font-size: 100px;
+      font-size: $size100;
       line-height: 120px;
       align-items: center;
       text-transform: uppercase;
@@ -155,6 +155,7 @@ header{
         padding: 20px 70px;
         border: 1px solid #2A2929;
         border-radius: 3px;
+
       }
     }
   }
@@ -264,7 +265,7 @@ header{
     position: absolute;
     top: 25px;
     right: 25px;
-    font-size: 20px;
+    font-size: $size20;
     cursor: pointer;
   }
   .wrapper{
@@ -511,7 +512,7 @@ header{
         font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
+        font-size: $size20;
         line-height: 24px;
         color: #2A2929;
       }
@@ -549,7 +550,7 @@ header{
           font-family: 'Lato',sans-serif;;
           font-style: normal;
           font-weight: 400;
-          font-size: 20px;
+          font-size: $size20;
           line-height: 24px;
           color: #2A2929;
           &.old_price{
@@ -600,7 +601,7 @@ section.section{
   font-family: 'Lato',sans-serif;;
   font-style: normal;
   font-weight: 500;
-  font-size: 30px;
+  font-size: $size30;
   line-height: 10px;
   display: flex;
   align-items: center;
@@ -682,7 +683,11 @@ section.section{
   background: url('../assets/sprite/sprite.svg#ar_ico_dark') center no-repeat, transparent;
 }
 .btn_prev_slider{
-  transform: rotate(180deg);
+  transform: rotate(90deg);
+}
+.btn_next_slider{
+  transform: rotate(-90deg);
+
 }
 .cap_list{
   .item{
@@ -718,7 +723,7 @@ section.section{
         font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
+        font-size: $size20;
         line-height: 24px;
         color: #2A2929;
       }
@@ -740,7 +745,7 @@ section.section{
         font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
+        font-size: $size20;
         line-height: 24px;
         color: #2A2929;
         margin-bottom: 20px;
@@ -878,7 +883,7 @@ footer.footer{
     font-family: 'Lato',sans-serif;;
     font-style: normal;
     font-weight: 500;
-    font-size: 30px;
+    font-size: $size30;
     line-height: 10px;
     text-transform: uppercase;
     color: #2A2929;
@@ -1223,7 +1228,7 @@ footer.footer{
       font-family: 'Lato',sans-serif;
       font-style: normal;
       font-weight: 500;
-      font-size: 30px;
+      font-size: $size30;
       line-height: 24px;
       text-transform: uppercase;
       color: #2A2929;
@@ -1329,7 +1334,7 @@ footer.footer{
           font-style: normal;
           font-weight: 400;
           line-height: 20px;
-          font-size: 20px;
+          font-size: $size20;
           text-decoration-line: line-through;
           color: #949494;
         }
@@ -1796,7 +1801,7 @@ footer.footer{
         font-style: normal;
         padding: 20px 15px;
         font-weight: 700;
-        font-size: 20px;
+        font-size: $size20;
         line-height: 24px;
         /* or 120% */
         display: flex;
@@ -1878,7 +1883,7 @@ footer.footer{
 .popup_filter_bottom{
   display: none;
   overflow-y: scroll;
-  max-height: calc(100% / 3);
+  max-height: calc(100% / 2);
   background: #fff;
   position: fixed;
   border-top-right-radius: 40px;
@@ -1888,6 +1893,7 @@ footer.footer{
   left: 0;
   right: 0;
   z-index: 50;
+  padding-bottom: 64px;
   .top{
     display: flex;
     align-items: center;
@@ -1895,13 +1901,13 @@ footer.footer{
     padding: 28px 0;
 
     i{
-      font-size: 20px;
+      font-size: $size20;
     }
     span{
       font-family: 'Lato',sans-serif;
       font-style: normal;
       font-weight: 700;
-      font-size: 20px;
+      font-size: $size20;
       line-height: 24px;
       letter-spacing: -0.02em;
       color: #333333;
@@ -2094,7 +2100,7 @@ footer.footer{
         font-family: 'Lato',sans-serif;
         font-style: normal;
         font-weight: 500;
-        font-size: 30px;
+        font-size: $size30;
         line-height: 36px;
         text-transform: uppercase;
         color: #FFFFFF;
@@ -2166,7 +2172,7 @@ footer.footer{
       font-family: 'Lato',sans-serif;
       font-style: normal;
       font-weight: 500;
-      font-size: 30px;
+      font-size: $size30;
       line-height: 36px;
       display: flex;
       align-items: center;
@@ -2254,19 +2260,20 @@ section.basket{
         line-height: 17px;
         color: #888888;
       }
-      .basket__item-info--color{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        i{
-          display: block;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-        }
+
+    }
+    .basket__item-info--color{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      i{
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
       }
     }
-
     .basket__item-size{
       flex-grow: 1;
       select{
@@ -2325,7 +2332,7 @@ section.basket{
       font-family: $Lato;
       font-style: normal;
       font-weight: 400;
-      font-size: 20px;
+      font-size: $size20;
       line-height: 24px;
       color: #2A2929;
     }
@@ -2623,7 +2630,7 @@ form{
     font-family: $Lato;
     font-style: normal;
     font-weight: 500;
-    font-size: 30px;
+    font-size: $size30;
     line-height: 36px;
     text-transform: uppercase;
     color: #2A2929;
@@ -2644,7 +2651,7 @@ form{
       font-family: $Lato;
       font-style: normal;
       font-weight: 700;
-      font-size: 50px;
+      font-size: $size50;
       line-height: 60px;
       color: #2A2929;
       margin-bottom: 20px;
@@ -2728,6 +2735,38 @@ form{
         margin-bottom: 16px;
         display: block;
       }
+    }
+  }
+}
+.fixed_menu{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  padding: 12px 16px;
+
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5000;
+  a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    font-family: $Lato;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(42, 41, 41, 1);
+    img{
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
     }
   }
 }
