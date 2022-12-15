@@ -3177,7 +3177,6 @@ form .slecetor_position textarea{
     }
 .basket-info .info_list_result div:last-child{
         font-size: calc((100vw - 375px) / (1920 - 375) * (38 - 30) + 30px);
-
       }
 .basket-info .info_list_result div span{
         font-family: 'Lato', sans-serif;
