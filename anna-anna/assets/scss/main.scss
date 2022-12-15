@@ -303,7 +303,7 @@ header{
           font-family: 'Lato',sans-serif;
           font-style: normal;
           font-weight: 700;
-          font-size: 16px;
+          font-size: $size16;
           line-height: 19px;
           text-transform: uppercase;
           color: #2A2929;
@@ -557,7 +557,7 @@ header{
             font-family: 'Lato',sans-serif;;
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
+            font-size: $size16;
             line-height: 19px;
             text-decoration-line: line-through;
             color: #949494;
@@ -613,7 +613,7 @@ section.section{
   font-family: 'Lato',sans-serif;;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: $size18;
   line-height: 10px;
   color: rgba(42, 41, 41, 1);
   display: flex;
@@ -650,7 +650,7 @@ section.section{
       font-family: 'Lato',sans-serif;;
       font-style: normal;
       font-weight: 500;
-      font-size: 16px;
+      font-size: $size16;
       line-height: 19px;
       text-transform: uppercase;
       color: #FFFFFF;
@@ -800,7 +800,7 @@ footer.footer{
         font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: $size16;
         line-height: 19px;
         text-transform: uppercase;
         color: #2A2929;
@@ -834,7 +834,7 @@ footer.footer{
         font-family: 'Lato',sans-serif;;
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: $size16;
         line-height: 19px;
         text-transform: uppercase;
         color: #2A2929;
@@ -1246,7 +1246,7 @@ footer.footer{
         font-family: 'Lato',sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
+        font-size: $size16;
         line-height: 10px;
         text-transform: uppercase;
         color: #2A2929;
@@ -1270,7 +1270,7 @@ footer.footer{
         font-family: 'Lato',sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
+        font-size: $size16;
         line-height: 19px;
         color: #1E1E1E;
       }
@@ -1325,7 +1325,7 @@ footer.footer{
         font-family: 'Montserrat',sans-serif;
         font-style: normal;
         font-weight: 700;
-        font-size: 38px;
+        font-size: $size38;
         line-height: 30px;
         display: flex;
         color: #1E1E1E;
@@ -1350,7 +1350,7 @@ footer.footer{
         font-family: 'Inter',sans-serif;
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: $size16;
         line-height: 19px;
         color: #333333;
         padding: 10px 12px;
@@ -1421,7 +1421,7 @@ footer.footer{
           font-family: 'Lato',sans-serif;
           font-style: normal;
           font-weight: 700;
-          font-size: 16px;
+          font-size: $size16;
           line-height: 19px;
           display: flex;
           align-items: center;
@@ -1469,7 +1469,7 @@ footer.footer{
             font-family: Lato, sans-serif;
             font-style: normal;
             font-weight: 600;
-            font-size: 16px;
+            font-size: $size16;
             line-height: 19px;
             display: flex;
             align-items: center;
@@ -1894,6 +1894,7 @@ footer.footer{
   right: 0;
   z-index: 50;
   padding-bottom: 64px;
+
   .top{
     display: flex;
     align-items: center;
@@ -2070,7 +2071,7 @@ footer.footer{
             font-family: 'Lato',sans-serif;
             font-style: normal;
             font-weight: 500;
-            font-size: 16px;
+            font-size: $size16;
             line-height: 19px;
             text-transform: capitalize;
             color: #FFFFFF;
@@ -2091,7 +2092,7 @@ footer.footer{
           font-family: 'Lato',sans-serif;
           font-style: normal;
           font-weight: 500;
-          font-size: 16px;
+          font-size: $size16;
           color: #FFFFFF;
           display: block;
         }
@@ -2118,7 +2119,7 @@ footer.footer{
             font-family: 'Lato',sans-serif;
             font-style: normal;
             font-weight: 700;
-            font-size: 16px;
+            font-size: $size16;
             line-height: 19px;
             display: flex;
             align-items: center;
@@ -2202,7 +2203,7 @@ footer.footer{
         font-family: 'Lato',sans-serif;
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: $size16;
         line-height: 19px;;
         text-transform: uppercase;
         color: #2A2929;
@@ -2213,7 +2214,7 @@ footer.footer{
         font-family: 'Lato',sans-serif;
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: $size16;
         line-height: 19px;
         color: #2A2929;
       }
@@ -2307,7 +2308,7 @@ section.basket{
         font-family: $Inter;
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: $size16;
         color: #333333;
       }
 
@@ -2375,7 +2376,7 @@ form{
       font-family: $Lato;
       font-style: normal;
       font-weight: 700;
-      font-size: 16px;
+      font-size: $size16;
       line-height: 19px;
 
 
@@ -2491,7 +2492,7 @@ form{
         font-family: $Lato;
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: $size16;
         line-height: 19px;
         text-transform: uppercase;
         color: #2A2929;
@@ -2545,13 +2546,14 @@ form{
       line-height: 10px;
       color: #2A2929;
       &:last-child{
-        font-size: 38px;
+        font-size: $size38;
+
       }
       span{
         font-family: $Lato;
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: $size16;
         line-height: 19px;
       }
     }
@@ -2641,7 +2643,7 @@ form{
     font-family: $Lato;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: $size16;
     line-height: 19px;
     display: flex;
     align-items: center;
@@ -2675,7 +2677,7 @@ form{
         font-family: $Lato;
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: $size16;
         line-height: 19px;
         margin-bottom: 10px;
       }
@@ -2729,7 +2731,7 @@ form{
         font-family: $Lato;
         font-style: normal;
         font-weight: 500;
-        font-size: 16px;
+        font-size: $size16;
         line-height: 19px;
         color: #2A2929;
         margin-bottom: 16px;
