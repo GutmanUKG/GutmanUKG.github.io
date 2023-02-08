@@ -65,14 +65,14 @@
   font-family: 'Inter',sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: calc(0.125vw + 13.6px);
   line-height: 24px;
   color: #FFFFFF;
   padding: 12px 32px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: #2258C4;
-  border-radius: 4px;
+  border-radius: 48px;
   -webkit-transition: .3s all;
   transition: .3s all;
 }
@@ -103,7 +103,7 @@
   font-family: 'Inter',sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: calc(0.125vw + 13.6px);
   line-height: 24px;
   color: #FFFFFF;
 }
@@ -117,7 +117,7 @@
   font-family: 'Inter',sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 40px;
+  font-size: calc(0.5vw + 30.4px);
   line-height: 52px;
   text-align: center;
   letter-spacing: -0.6px;
@@ -128,11 +128,11 @@
 html,
 body{
   font-family: 'Inter',sans-serif;
+
 }
 
 .header-row{
-  padding-top: 48px ;
-  padding-bottom: 48px;
+  padding: 48px 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,7 +174,7 @@ body{
         font-family: 'Inter',sans-serif;
         font-style: normal;
         font-weight: 500;
-        font-size: 16px;
+        font-size: calc(0.125vw + 13.6px);
         line-height: 24px;
         color: #FFFFFF;
         position: relative;
@@ -227,7 +227,7 @@ body{
           font-family: 'Inter',sans-serif;
           font-style: normal;
           font-weight: 500;
-          font-size: 16px;
+          font-size: calc(0.125vw + 13.6px);
           line-height: 24px;
           color: #FFFFFF;
           position: relative;
@@ -270,7 +270,7 @@ section.banner .banner-text h1{
       font-family: 'Inter',sans-serif;
       font-style: normal;
       font-weight: 600;
-      font-size: 52px;
+      font-size: calc(1.25vw + 28px);
       line-height: 64px;
       text-align: center;
       letter-spacing: -0.6px;
@@ -282,7 +282,7 @@ section.banner .banner-text h2{
       font-family: 'Inter',sans-serif;
       font-style: normal;
       font-weight: 400;
-      font-size: 16px;
+      font-size: calc(0.125vw + 13.6px);
       line-height: 27px;
       text-align: center;
       letter-spacing: 0.18px;
@@ -306,7 +306,7 @@ section.banner .banner-text h2{
   }
 
 .cards .cards-list .cards-list-item{
-      background: rgba(247, 247, 248, 0.92);
+      background: rgba(247, 247, 248, 1);
       border-radius: 12px;
       padding: 32px;
       width: 33.33333%;
@@ -411,7 +411,7 @@ section.products .products-list .products-item .products-item-text h3 a{
             font-family: 'Inter',sans-serif;
             font-style: normal;
             font-weight: 600;
-            font-size: 40px;
+            font-size: calc(0.5vw + 30.4px);
             line-height: 48px;
             letter-spacing: -0.6px;
             color: #223A65;
@@ -425,7 +425,7 @@ section.products .products-list .products-item .products-item-text p{
           font-family: 'Inter',sans-serif;
           font-style: normal;
           font-weight: 400;
-          font-size: 16px;
+          font-size: calc(0.125vw + 13.6px);
           line-height: 28px;
           letter-spacing: 0.18px;
           color: #696969;
@@ -487,7 +487,7 @@ section.news .news-list .news-item .news-descr{
         font-family: 'Inter',sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
+        font-size: calc(0.125vw + 13.6px);
         line-height: 32px;
         letter-spacing: 0.18px;
         color: #696969;
@@ -522,8 +522,8 @@ footer .footer-menu ul li{
 footer .footer-menu ul li a{
           font-family: 'Inter',sans-serif;
           font-style: normal;
-          font-weight: 600;
-          font-size: 16px;
+          font-weight: 500;
+          font-size: calc(0.125vw + 13.6px);
           line-height: 24px;
           color: #FFFFFF;
           text-decoration: none;
@@ -549,7 +549,7 @@ footer .footer-info{
     font-family: 'Inter',sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: calc(0.125vw + 13.6px);
     line-height: 32px;
     letter-spacing: 0.18px;
     color: rgba(255, 255, 255, 0.5);
@@ -559,7 +559,7 @@ footer .footer-info span{
       font-family: 'Inter',sans-serif;
       font-style: normal;
       font-weight: 700;
-      font-size: 16px;
+      font-size: calc(0.125vw + 13.6px);
       line-height: 24px;
       letter-spacing: -0.6px;
       color: #FFFFFF;
@@ -572,7 +572,7 @@ footer .footer-info a{
       font-style: normal;
       text-decoration: none;
       font-weight: 400;
-      font-size: 16px;
+      font-size: calc(0.125vw + 13.6px);
       line-height: 32px;
       letter-spacing: 0.18px;
       color: rgba(255, 255, 255, 0.5);
@@ -583,7 +583,7 @@ footer .footer-copy{
     font-family: 'Inter',sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: calc(0.125vw + 13.6px);
     letter-spacing: 0.18px;
     color: rgba(255, 255, 255, 0.75);
   }

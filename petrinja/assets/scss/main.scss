@@ -1,17 +1,17 @@
-
-@import "variable";
+@import "variable.scss";
 html,
 body{
   font-family: 'Inter',sans-serif;
+
 }
 
 .header-row{
-  padding-top: 48px ;
-  padding-bottom: 48px;
+  padding: 48px 60px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
   justify-content: space-between;
+
   .header-logo{
     height: 48px;
     display: block;
@@ -133,7 +133,7 @@ section.banner{
     position: absolute;
     margin-top: calc(-280px / 2);
     .cards-list-item{
-      background: rgba(247, 247, 248, 0.92);
+      background: rgba(247, 247, 248, 1);
       border-radius: 12px;
       padding: 32px;
       width: calc(100% / 3 );
@@ -307,7 +307,7 @@ footer{
         a{
           font-family: 'Inter',sans-serif;
           font-style: normal;
-          font-weight: 600;
+          font-weight: 500;
           font-size: $size_16;
           line-height: 24px;
           color: #FFFFFF;
