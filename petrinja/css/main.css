@@ -128,7 +128,7 @@
 html,
 body{
   font-family: 'Inter',sans-serif;
-
+  overflow-x: hidden;
 }
 
 .header-row{
@@ -248,6 +248,14 @@ body{
             -webkit-transform: translateY(-100%);
                     transform: translateY(-100%);
           }
+
+.header-row .header-burger{
+    width: 44px;
+    height: 44px;
+    background: url("../assets/sprite/sprite.svg#b-btn") center/cover no-repeat;
+    cursor: pointer;
+    display: none;
+  }
 
 section.banner{
   background: url("../assets/imgs/header_bg.png")top/cover no-repeat;
@@ -587,3 +595,163 @@ footer .footer-copy{
     letter-spacing: 0.18px;
     color: rgba(255, 255, 255, 0.75);
   }
+
+.burger-menu{
+  padding: 100px 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #101D33;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  width: 33.33333%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 500;
+}
+
+.burger-menu.active{
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+
+.burger-menu .top{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+.burger-menu .top .burger-lang{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      gap: 27px;
+    }
+
+.burger-menu .top .burger-lang a{
+        display: block;
+        text-decoration: none;
+        font-family: 'Inter',sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.burger-menu .top .burger-lang a.active{
+          color: #FFFFFF;
+        }
+
+.burger-menu .top .burger-close{
+      display: block;
+      width: 44px;
+      height: 44px;
+      background: url("../assets/sprite/sprite.svg#c-btn") center/cover no-repeat;
+    }
+
+.burger-menu ul{
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 24px;
+  }
+
+.burger-menu ul li{
+      list-style: none;
+    }
+
+.burger-menu ul li a{
+        text-decoration: none;
+        font-family: 'Inter',sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        color: #FFFFFF;
+      }
+
+.burger-menu .btn-more{
+    background: #2258C4;
+    color: #fff;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 12px 80px;
+    border-radius: 48px;
+    margin: 0 auto;
+  }
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 499;
+  display: none;
+}
+
+.overlay.active{
+    display: block;
+  }
+
+@media (max-width: 1200px){
+  .header-row{
+    padding: 48px 0;
+  }
+}
+
+@media (max-width: 1000px){
+    .header-row .header-toggle{
+      display: none;
+    }
+    .header-row .header-menu{
+      display: none;
+    }
+    .header-row .header-burger{
+      display: block;
+    }
+        section.products .products-list .products-item .products-item-text{
+          padding: 30px 40px;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+        }
+          section.products .products-list .products-item .products-item-text h3{
+            margin-bottom: 20px;
+            //margin-top: 30px;
+          }
+          section.products .products-list .products-item .products-item-text p{
+            line-height: 24px;
+          }
+        section.products .products-list .products-item .products-item-img{
+          height: 410px;
+        }
+}

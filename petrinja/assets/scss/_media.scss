@@ -1,0 +1,39 @@
+@media (max-width: 1200px){
+  .header-row{
+    padding: 48px 0;
+  }
+}
+@media (max-width: 1000px) {
+  .header-row{
+    .header-toggle{
+      display: none;
+    }
+    .header-menu{
+      display: none;
+    }
+    .header-burger{
+      display: block;
+    }
+  }
+  section.products{
+    .products-list {
+      .products-item{
+        .products-item-text{
+          padding: 30px 40px;
+          box-sizing: border-box;
+          h3{
+            margin-bottom: 20px;
+            //margin-top: 30px;
+          }
+          p{
+            line-height: 24px;
+          }
+        }
+        .products-item-img{
+          height: 410px;
+        }
+      }
+    }
+  }
+
+}
