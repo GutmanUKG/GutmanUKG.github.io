@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
 
     const overlay = document.querySelector('.overlay');
+    const body = document.body;
     const burgerBtn = document.querySelector('.header-burger'),
         burgerMenu = document.querySelector('.burger-menu'),
         burgerClose = burgerMenu.querySelector('.burger-close');
@@ -49,12 +50,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
     burgerBtn.addEventListener('click', ()=>{
         burgerMenu.classList.add('active')
         overlay.classList.add('active')
+        body.style.overflow = 'hidden'
+        body.style.position = 'fixed'
     })
     burgerClose.addEventListener('click', ()=>{
         burgerMenu.classList.remove('active')
+        body.style.overflow = ''
+        body.style.position = ''
     })
     overlay.addEventListener('click', ()=>{
         burgerMenu.classList.remove('active')
         overlay.classList.remove('active')
+        body.style.overflow = ''
+        body.style.position = ''
     })
 });

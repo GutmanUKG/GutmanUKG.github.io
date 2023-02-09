@@ -37,3 +37,74 @@
   }
 
 }
+
+@media (max-width: 767px){
+  .footer-row{
+    gap: 30px;
+    .footer-menu{
+      width: calc(50% - 15px);
+    }
+    .footer-info{
+      width: calc(50% - 15px);
+    }
+  }
+  .products-list{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    .products-item{
+      .products-item-text{
+        width: 100%;
+        order: 1;
+        padding: 32px 15px !important;
+      }
+      .products-item-img{
+        width: 100%;
+        order: 0;
+      }
+    }
+  }
+  section.news {
+    .news-list {
+      .news-item {
+        img{
+          height: 250px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 520px){
+  .cards{
+    .cards-list{
+      .cards-list-item{
+        height: 100vw;
+        display: flex !important;
+      }
+    }
+  }
+  .burger-menu{
+    width: 80%;
+  }
+  .section-title{
+    padding-bottom: 40px;
+  }
+  section.news{
+    margin-top: 80px;
+    padding-top: 52px;
+   .news-list{
+     .news-item{
+       .news-descr{
+         line-height: 28px;
+       }
+     }
+   }
+  }
+  section.banner{
+    .banner-text{
+      h1{
+      line-height: 40px;
+      }
+    }
+  }
+}
