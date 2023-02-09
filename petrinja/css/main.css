@@ -797,6 +797,9 @@ footer .footer-copy{
 }
 
 @media (max-width: 520px){
+  .header-row{
+    padding: 26px 0;
+  }
       .cards .cards-list .cards-list-item{
         display: -webkit-box !important;
         display: -ms-flexbox !important;
