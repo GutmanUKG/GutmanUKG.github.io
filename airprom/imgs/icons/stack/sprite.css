@@ -1,9 +1,19 @@
+.svg-arrow-menu-dims {
+    width: 24px;
+    height: 24px;
+}
+
 .svg-burger-dims {
     width: 44px;
     height: 44px;
 }
 
 .svg-cart_ico-dims {
+    width: 24px;
+    height: 24px;
+}
+
+.svg-close_icon-dims {
     width: 24px;
     height: 24px;
 }
