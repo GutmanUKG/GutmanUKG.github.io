@@ -3,9 +3,19 @@
     height: 24px;
 }
 
+.svg-box-dims {
+    width: 41px;
+    height: 40px;
+}
+
 .svg-burger-dims {
     width: 44px;
     height: 44px;
+}
+
+.svg-car-dims {
+    width: 41px;
+    height: 40px;
 }
 
 .svg-cart_ico-dims {
@@ -31,6 +41,11 @@
 .svg-logo-dims {
     width: 95px;
     height: 24px;
+}
+
+.svg-option-dims {
+    width: 41px;
+    height: 40px;
 }
 
 .svg-search-ico-dims {
