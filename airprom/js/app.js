@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesToScroll: 1,
     dots: true
   });
+
+  //Популярные товары
+  $('.slider-list').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    dots: false,
+    prevArrow: $('.slider-btn--prev'),
+    nextArrow: $('.slider-btn--next')
+  });
   function clearClass(elements, activeClass) {
     console.log(elements);
     var i = elements.length;
