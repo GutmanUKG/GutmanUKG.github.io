@@ -21,6 +21,22 @@ document.addEventListener('DOMContentLoaded', function () {
     prevArrow: $('.slider-btn--prev'),
     nextArrow: $('.slider-btn--next')
   });
+  //Работы
+  $('.works-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
+    prevArrow: $('.slider-work--prev'),
+    nextArrow: $('.slider-work--next')
+  });
+  //Новости
+  $('.news-list').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
+    prevArrow: $('.slider-news--prev'),
+    nextArrow: $('.slider-news--next')
+  });
   function clearClass(elements, activeClass) {
     console.log(elements);
     var i = elements.length;
