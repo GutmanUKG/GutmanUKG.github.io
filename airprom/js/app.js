@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', function () {
     prevArrow: $('.slider-news--prev'),
     nextArrow: $('.slider-news--next')
   });
+  //Брэнды
+  $('.brands-list').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    dots: false,
+    prevArrow: $('.slider-brands--prev'),
+    nextArrow: $('.slider-brands--next')
+  });
   function clearClass(elements, activeClass) {
     console.log(elements);
     var i = elements.length;
@@ -102,5 +110,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   //Показать еще в меню
   ShowMore('.sidebar-menu', 'li', '.show-more', 'sidebar-menu--active', 4);
+
+  //Переключение типа формы
+
+  var formFooter = document.querySelector('.form_footer'),
+    formSelector = formFooter.querySelector('.form-selector'),
+    inputSelector = formSelector.querySelectorAll('input'),
+    inputNoIp = formFooter.querySelector('.no_ip');
+  inputSelector.forEach(function (item) {
+    item.addEventListener('click', function () {
+      console.log(item.id);
+      if (item.id == 'ur') {
+        inputNoIp.style.display = 'block';
+      } else {
+        inputNoIp.style.display = 'none';
+      }
+    });
+  });
 });
 //# sourceMappingURL=app.js.map
