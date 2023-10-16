@@ -1449,6 +1449,40 @@ footer {
     font-weight: 350;
     line-height: 24px; /* 150% */
   }
+.inner_banner {
+  transform: translateY(calc(-100px - 4.7vh - 4.7vw));
+  transform: translateY(calc(-100px - var(--index)*4.7));
+  height: calc(22vh + 22vw);
+  height: calc(22vh + 22vw);
+  height: calc(var(--index)*22);
+}
+.inner_banner .inner_banner-text {
+    color: rgba(0, 0, 0, 0.75);
+    font-family: Inter, sans-serif;
+    font-size: calc(0.78125vw + 6px);
+    font-style: normal;
+    font-weight: 350;
+    line-height: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-right: 8.33333%;
+    padding-right: 8.33333%;
+    padding-right: calc(var(--col-rs));
+  }
+.inner_banner .inner_banner-image img {
+      width: 100%;
+      height: calc(22vh + 22vw);
+      height: calc(22vh + 22vw);
+      height: calc(var(--index)*22);
+    }
+.title-inner--relative {
+  position: relative;
+  z-index: 5;
+  font-size: calc(4.14747vw + 73.82488px);
+}
 @keyframes bounceInUp {from, 60%, 75%, 90%, to {animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);}from {opacity: 0;transform: translate3d(0, 3000px, 0);}60% {opacity: 1;transform: translate3d(0, -20px, 0);}75% {transform: translate3d(0, 10px, 0);}90% {transform: translate3d(0, -5px, 0);}to {transform: translate3d(0, 0, 0);}}
 @keyframes bounceOutUp {20% {transform: translate3d(0, -10px, 0);}40%, 45% {opacity: 1;transform: translate3d(0, 20px, 0);}to {opacity: 0;transform: translate3d(0, -2000px, 0);}}
 @keyframes fadeOut {from {opacity: 1;}to {opacity: 0;}}
