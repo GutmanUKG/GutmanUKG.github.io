@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/app.js"></script>
     <script src="js/sliderBanner.js"></script>
+    <script src="js/form-footer.js"></script>
+    <script src="js/toggleClass.js"></script>
+    <script src="js/burger_menu.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +38,7 @@
 
 <body>
     <header>
-        <div class="container-rs">
+        <div class="container-rs position-relative">
             <div class="row d-flex align-items-center">
                 <div class="col-3">
                     <a href="/rs/public" class="header-logo">
@@ -75,6 +78,9 @@
                         </a>
                     </li>
                 </ul>
+                <button class="burger_menu--open">
+
+                </button>
             </div>
         </div>
     </header>
@@ -90,7 +96,7 @@
             </h1>
             <div class="main_banner-btns">
                 <div class="main_banner-btns--wrapper d-flex align-items-center">
-                    <a href="#" class="btn-default">
+                    <a href="#" class="btn-default" id="btn-trigger_main_form">
                         <span text="Стоимость и сроки">
                             Стоимость и сроки
                         </span>
@@ -833,6 +839,64 @@
 
     <div id="projects-frame" class=" ">
         <iframe src="" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <div class="modal-form">
+        <form action="" id="main_form" class="form_main">
+            <div class="row">
+                <div class=" form-inputs">
+                    <div class="form-title">
+                        Приветствуем!
+                    </div>
+                    <div class="form-descr">
+                        С Вами свяжется наш эксперт для <br> уточнения подробностей, он рассчитает стоимость и сроки
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="text" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-main</label>
+                        <input type="text" id="email">
+                    </div>
+                    <button href="#" class="btn-default" type="submit">
+                        <span text="Отправить">
+                            Отправить
+                        </span>
+                    </button>
+                    <div class="form-info">
+                        * Нажимая на кнопку отправить вы соглашаетесь на обработку персональных данных
+                    </div>
+                </div>
+                <div class="form-media">
+                    <img src="./imgs/form-media.png" alt="">
+                </div>
+            </div>
+            <button class="close"></button>
+        </form>
+    </div>
+    <div class="overlay"></div>
+    <div class="burger_menu">
+        <div class="close">
+
+        </div>
+        <div class="burger_menu-lang">
+            <a href="/" class="active">Рус</a>
+            <a href="/kz/">Каз</a>
+        </div>
+        <nav class="burger_menu-nav">
+            <ul>
+                <li><a href="#" class="active">Главная</a></li>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Производство</a></li>
+                <li><a href="#">Портфолио</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
     </div>
     <footer>
         <div class="container-rs">
