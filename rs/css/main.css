@@ -468,6 +468,10 @@ header {
         -webkit-text-decoration: none;
         text-decoration: none;
       }
+.header-menu li.active:before {
+        transform: scaleX(1);
+        left: 0;
+      }
 .header-lang {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -961,7 +965,6 @@ header {
           }
 .steps {
   position: relative;
-  padding-bottom: 200px;
 }
 .steps .container-rs {
     overflow: visible;
@@ -1018,12 +1021,14 @@ header {
     margin-bottom: 60px;
   }
 .steps .steps-row .steps-elements {
-      padding-top: 220px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       align-items: flex-end;
     }
+.steps .steps-row .steps-elements:first-child {
+        margin-bottom: 200px;
+      }
 .steps .steps-row .steps-elements .steps-text {
         color: rgba(0, 0, 0, 0.75);
         font-family: Inter, sans-serif;
@@ -1082,21 +1087,6 @@ header {
           position: relative;
         }
 .steps .steps-row:last-child .steps-elements .steps-items_list:after {
-            width: 129.16667% !important;
-            width: calc(var(--col-rs)*15.5) !important;
-          }
-.steps .steps-row:last-child .steps-elements .steps-items_list:after {
-            content: "";
-            background: url("../imgs/steps-bg2.svg") no-repeat;
-            background-size: cover;
-            height: calc(100% + 50px);
-            display: block;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: -40px;
-            bottom: 0;
-            z-index: -1;
           }
 .top-section {
   display: -webkit-box;
@@ -1965,9 +1955,7 @@ footer {
   position: fixed;
   top: -500%;
   left: 50%;
-  height: calc(24.5vh + 24.5vw);
-  height: calc(24.5vh + 24.5vw);
-  height: calc(var(--index)*24.5);
+
   transform: translate(-50%, -50%);
   border-radius: 2px;
   overflow: hidden;
@@ -2017,7 +2005,7 @@ footer {
       width: 100%;
     }
 #main_form .form-inputs {
-    padding: 80px;
+    padding: 80px 80px 0 80px;
     box-sizing: border-box;
   }
 #main_form .form-inputs .form-title {
@@ -2089,7 +2077,7 @@ footer {
   display: block;
 }
 .burger_menu {
-  width: 50%;
+  width: 75%;
   position: fixed;
   top: 0;
   right: -100%;
@@ -2226,6 +2214,22 @@ footer {
 .burger_menu--open:focus {
     outline: none;
   }
+#popup_success {
+  position: fixed;
+  bottom: 0;
+  right: -200%;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #000;
+  background: #f1b705;
+  border-radius: 25px;
+  text-align: center;
+  transition: 0.3s all;
+  z-index: 600;
+}
+#popup_success.active {
+  right: 0;
+}
 @keyframes bounceInUp {from, 60%, 75%, 90%, to {animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);}from {opacity: 0;transform: translate3d(0, 3000px, 0);}60% {opacity: 1;transform: translate3d(0, -20px, 0);}75% {transform: translate3d(0, 10px, 0);}90% {transform: translate3d(0, -5px, 0);}to {transform: translate3d(0, 0, 0);}}
 @keyframes bounceOutUp {20% {transform: translate3d(0, -10px, 0);}40%, 45% {opacity: 1;transform: translate3d(0, 20px, 0);}to {opacity: 0;transform: translate3d(0, -2000px, 0);}}
 @keyframes fadeOut {from {opacity: 1;}to {opacity: 0;}}
