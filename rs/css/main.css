@@ -1813,6 +1813,9 @@ footer {
   margin-bottom: -170px;
   margin-top: 200px;
 }
+.grey-section h2 {
+    margin: 0;
+  }
 .form-footer .form-group, .form_main .form-group {
     position: relative;
   }
@@ -1979,6 +1982,7 @@ footer {
     right: 32px;
     transition: 0.3s all;
     outline: none;
+    transform: rotate(-45deg);
   }
 #main_form .close:hover {
       transform: rotate(45deg);
@@ -2230,6 +2234,34 @@ footer {
 #popup_success.active {
   right: 0;
 }
+.icons-list {
+  display: grid;
+
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  gap: 16px;
+}
+.icons-list .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+.icons-list .item embed {
+      width: 40px;
+    }
+.icons-list .item,
+  .icons-list p {
+    color: rgba(0, 0, 0, 0.75);
+    font-family: Inter, sans-serif;
+    font-size: calc(0.78125vw + 6px);
+    font-size: var(--size16);
+    font-style: normal;
+    font-weight: 350;
+    line-height: 24px; /* 150% */
+  }
 @keyframes bounceInUp {from, 60%, 75%, 90%, to {animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);}from {opacity: 0;transform: translate3d(0, 3000px, 0);}60% {opacity: 1;transform: translate3d(0, -20px, 0);}75% {transform: translate3d(0, 10px, 0);}90% {transform: translate3d(0, -5px, 0);}to {transform: translate3d(0, 0, 0);}}
 @keyframes bounceOutUp {20% {transform: translate3d(0, -10px, 0);}40%, 45% {opacity: 1;transform: translate3d(0, 20px, 0);}to {opacity: 0;transform: translate3d(0, -2000px, 0);}}
 @keyframes fadeOut {from {opacity: 1;}to {opacity: 0;}}
