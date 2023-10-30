@@ -2262,6 +2262,89 @@ footer {
     font-weight: 350;
     line-height: 24px; /* 150% */
   }
+.column-list {
+  margin-top: 160px;
+  margin-bottom: 160px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.column-list .item-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    border-left: 1px solid;
+  }
+.column-list .item-list:first-child {
+      border-color: transparent;
+    }
+.column-list .item-list .item {
+      color: rgba(0, 0, 0, 0.75);
+      font-family: Inter, sans-serif;
+      font-size: calc(0.78125vw + 6px);
+      font-size: var(--size16);
+      font-style: normal;
+      font-weight: 350;
+      line-height: 24px;
+      padding: 0 16px;
+      line-height: 110%;
+    }
+.column-list .item-list .item span {
+        color: #000;
+        display: block;
+        margin-bottom: 60px;
+        font-feature-settings: lining-nums proportional-nums;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: Montserrat, sans-serif;
+        font-size: 4.6875vw;
+        font-size: var(--size60);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 64px; /* 106.667% */
+      }
+.form-group--radio span {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-size: calc(0.78125vw + 6px);
+    font-size: var(--size16);
+    font-style: normal;
+    font-weight: 350;
+    line-height: 24px;
+    display: block;
+  }
+.form-group--radio .form-group--row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 40px;
+    margin-top: 24px;
+  }
+.form-group--radio .form-group--row div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+.form-group--radio .form-group--row input[type="radio"] {
+      border-radius: 24px;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+    }
+.form-group--radio .form-group--row label {
+      color: rgba(0, 0, 0, 0.5);
+      font-variant-numeric: stacked-fractions;
+      font-feature-settings: "dlig" on, "afrc", "afrc", "afrc";
+      font-family: Inter, sans-serif;
+      font-size: calc(0.78125vw + 6px);
+      font-size: var(--size16);
+      font-style: normal;
+      font-weight: 350;
+      line-height: 24px; /* 150% */
+    }
 @keyframes bounceInUp {from, 60%, 75%, 90%, to {animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);}from {opacity: 0;transform: translate3d(0, 3000px, 0);}60% {opacity: 1;transform: translate3d(0, -20px, 0);}75% {transform: translate3d(0, 10px, 0);}90% {transform: translate3d(0, -5px, 0);}to {transform: translate3d(0, 0, 0);}}
 @keyframes bounceOutUp {20% {transform: translate3d(0, -10px, 0);}40%, 45% {opacity: 1;transform: translate3d(0, 20px, 0);}to {opacity: 0;transform: translate3d(0, -2000px, 0);}}
 @keyframes fadeOut {from {opacity: 1;}to {opacity: 0;}}
