@@ -4,9 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/app.js"></script>
+    <meta name="description" content="Национальный горный консалтинг">
+
     <!-- В файле импортирован bootstrap и два файла стилей для мобильной и планшетной версии -->
     <link rel="stylesheet" href="./css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+        integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./js/app.js"></script>
     <title>НГК</title>
 </head>
 
@@ -14,7 +28,7 @@
     <header>
         <div class="container-fluid">
             <div class="header-row">
-                <a href="/" class="header-logo">
+                <a href="/" class="header-logo" aria-label="logo">
                     <embed src="./imgs/icons/logo.svg" type="">
                 </a>
                 <div class="header-langs">
@@ -42,17 +56,17 @@
                         <a href="mailto:info@nmc-consulting.ru">info@nmc-consulting.ru</a>
                     </div>
                 </div>
-                <button class="btn btn-burger">
+                <button class="btn btn-burger" name="btn-burger" aria-label="btn burger">
 
                 </button>
             </div>
         </div>
     </header>
     <section class="section-banner ">
-        <video autoplay>
-            <source src="./video/main.mp4" type="video/mp4">
+        <video autoplay loop>
+            <source src="./video/main.mp4">
         </video>
-        <div class="container-fluid">
+        <div class="container">
             <div class="banner-text">
                 <h1 class="banner-title">
                     Стратегия.
@@ -78,7 +92,308 @@
             </div>
         </div>
     </section>
-    <section class="section-adv"></section>
+    <section class="section-adv">
+        <div class="container">
+            <h2 class="section_name">
+                компетенции
+            </h2>
+            <h3 class="section_title">
+                Чем мы будем
+                вам полезны?
+            </h3>
+            <div class="section-descr">
+                Мы
+                подберем
+                рабочую группу специалистов, которые помогут вам достичь следующих целей:
+            </div>
+
+            <div class="adv-list">
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/plus_icon.svg" type="">
+                    </div>
+                    <div>
+                        Провести независимый технический аудит горно-геологического проекта и
+                        добывающего предприятия
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/plus_icon.svg" type="">
+                    </div>
+                    <div>
+                        Выявить критические недостатки и оптимизировать производство
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/plus_icon.svg" type="">
+                    </div>
+                    <div>
+                        Прирастить
+                        ресурсную базу
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/plus_icon.svg" type="">
+                    </div>
+                    <div>
+                        Сделать проект более привлекательным для инвестиций
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/plus_icon.svg" type="">
+                    </div>
+                    <div>
+                        Оценить жизнеспособность и прибыльность проекта
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/plus_icon.svg" type="">
+                    </div>
+                    <div>
+                        Внедрить передовые отраслевые практики
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/plus_icon.svg" type="">
+                    </div>
+                    <div>
+                        Повысить компетенции технического персонала
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/plus_icon.svg" type="">
+                    </div>
+                    <div>
+                        Подготовить публичную отчетность по раскрытию технических и
+                        нефинансовых данных
+                    </div>
+                </div>
+            </div>
+            <embed src="./imgs/adv-bg.svg" class="adv-bg" type="">
+        </div>
+    </section>
+
+    <section class="section-dark section-advantages">
+        <div class="container">
+            <h2 class="section_name text-center">
+                ПРЕИМУЩЕСТВА
+            </h2>
+            <h3 class="section_title text-center">
+                Ваш успех — наша миссия!
+            </h3>
+
+            <div class="advantages-list">
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/adv-icon-1.svg" type="">
+                    </div>
+                    <h3>
+                        Глобальный
+                        опыт
+                    </h3>
+                    <p>
+                        География нашей деятельности охватывает множество стран, включая страны Европы, Африканского
+                        континента, Центральной Азии, Австралию и Канаду
+                    </p>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/adv-icon-2.svg" type="">
+                    </div>
+                    <h3>
+                        Уникальное
+                        сочетание
+                        компетенций
+                    </h3>
+                    <p>
+                        Мы обладаем обширным опытом работы на производстве, в управлении и консалтинге и хорошо знакомы
+                        как с передовыми отраслевыми практиками и международными стандартами, так и с требованиями
+                        законодательства и особенностями рынков стран СНГ
+                    </p>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/adv-icon-3.svg" type="">
+                    </div>
+                    <h3>
+                        Полная
+                        независимость
+                    </h3>
+                    <p>
+                        Мы независимая компания с ограниченной ответственностью, управляемая директорами, не имеющими
+                        личной заинтересованности в продвижении определенных технологий, подрядчиков или поставщиков
+                    </p>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/adv-icon-4.svg" type="">
+                    </div>
+                    <h3>
+                        Конкурентоспособная
+                        стоимость
+                    </h3>
+                    <p>
+                        Работа, организованная по принципу «гибкого штата», позволяет исключить затраты на содержание
+                        большого офиса, сделав тем самым стоимость услуг более привлекательной, сохраняя высокое
+                        качество
+                    </p>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <embed src="./imgs/icons/adv-icon-5.svg" type="">
+                    </div>
+                    <h3>
+                        Гибкость и мобильность
+                    </h3>
+                    <p>
+                        Мы готовы подстроиться под индивидуальные требования и предпочтения каждого заказчика, чтобы
+                        обеспечить наилучший результат на любой стадии реализации проекта
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="section-services">
+        <div class="container">
+            <h2 class="section_name text-center">
+                УСЛУГИ
+            </h2>
+            <h3 class="section_title text-center">
+                От поиска до реализации
+            </h3>
+            <div class="section-descr">
+                Профессиональные услуги в сфере геологии, добычи, переработки и охраны окружающей среды для
+                горнодобывающей промышленности, с центральным офисом в Москве.
+            </div>
+
+        </div>
+        <div class="services-wrapper">
+            <div class="services-info ">
+                <span>
+                    Профессиональные услуги в сфере геологии, добычи, переработки и охраны окружающей среды для
+                    горнодобывающей промышленности, с центральным офисом в Москве.
+                </span>
+                <div class="services-arr">
+                    <embed src="./imgs/icons/arrow_bg.svg" type="">
+                </div>
+            </div>
+            <div class="services-list owl-carousel owl-theme">
+
+                <div class="item">
+                    <div class="img">
+                        <img src="./imgs/ser-1.webp" alt="">
+                    </div>
+                    <h2>
+                        Геологоразведка и минеральные ресурсы
+                    </h2>
+                    <div class="item-descr">
+                        <ul>
+                            <li>
+                                Подбор и анализ перспективных территорий для поисков;
+                            </li>
+                            <li>
+                                Разработка и
+                                сопровождение программ геологоразведочного бурения;
+                            </li>
+                            <li>
+                                Внедрение процедур
+                                обеспечения и контроля качества работ по опробованию и анализу;
+                            </li>
+                            <li>
+                                Аудит баз данных;
+                            </li>
+                            <li>
+                                Геологическое моделирование;
+                            </li>
+                            <li>
+                                Оценка минеральных ресурсов в соответствии с кодексами JORC, NI 43 101 KAZRC.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img">
+                        <img src="./imgs/ser-2.webp" alt="">
+                    </div>
+                    <h2>
+                        Геологоразведка и минеральные ресурсы
+                    </h2>
+                    <div class="item-descr">
+                        <ul>
+                            <li>
+                                Подбор и анализ перспективных территорий для поисков;
+                            </li>
+                            <li>
+                                Разработка и
+                                сопровождение программ геологоразведочного бурения;
+                            </li>
+                            <li>
+                                Внедрение процедур
+                                обеспечения и контроля качества работ по опробованию и анализу;
+                            </li>
+                            <li>
+                                Аудит баз данных;
+                            </li>
+                            <li>
+                                Геологическое моделирование;
+                            </li>
+                            <li>
+                                Оценка минеральных ресурсов в соответствии с кодексами JORC, NI 43 101 KAZRC.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img">
+                        <img src="./imgs/ser-3.webp" alt="">
+                    </div>
+                    <h2>
+                        Геологоразведка и минеральные ресурсы
+                    </h2>
+                    <div class="item-descr">
+                        <ul>
+                            <li>
+                                Подбор и анализ перспективных территорий для поисков;
+                            </li>
+                            <li>
+                                Разработка и
+                                сопровождение программ геологоразведочного бурения;
+                            </li>
+                            <li>
+                                Внедрение процедур
+                                обеспечения и контроля качества работ по опробованию и анализу;
+                            </li>
+                            <li>
+                                Аудит баз данных;
+                            </li>
+                            <li>
+                                Геологическое моделирование;
+                            </li>
+                            <li>
+                                Оценка минеральных ресурсов в соответствии с кодексами JORC, NI 43 101 KAZRC.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section style="padding:200px 0 ; min-height: 100vh;">
+        <div class="container">
+            <h3 class="section_title">
+                Дальше нечего смотреть
+            </h3>
+        </div>
+    </section>
 </body>
 
 </html>
