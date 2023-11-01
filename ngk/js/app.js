@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // Используем viewport как корневой элемент
         rootMargin: "0px",
         // Может быть настроено для марджинов
-        threshold: 0.59 // Порог видимости (от 0 до 1)
+        threshold: 0.7 // Порог видимости (от 0 до 1)
       };
 
       var observer = new IntersectionObserver(this.handleIntersection, options);
       observer.observe(this.$refs.sectionToTrack);
-      document.addEventListener("wheel", this.onScroll);
+      document.body.clientWidth > 767 ? document.addEventListener("wheel", this.onScroll) : "";
     },
     methods: {
       handleIntersection: function handleIntersection(entries) {
