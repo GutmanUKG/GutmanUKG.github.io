@@ -5,96 +5,83 @@ document.addEventListener("DOMContentLoaded", function () {
     burgerBtn = document.querySelector(".btn-burger"),
     burgerMenu = document.querySelector(".header-info"),
     closeBurgerMenuBtn = burgerMenu.querySelector(".header-btn--close");
-  var scrollVertical = true;
-
-  // Получаем нужный элемент
-  var element = document.querySelector(".services-wrapper");
-  var Visible = function Visible(target) {
-    // Все позиции элемента
-    var targetPosition = {
-        top: window.pageYOffset + target.getBoundingClientRect().top,
-        left: window.pageXOffset + target.getBoundingClientRect().left,
-        right: window.pageXOffset + target.getBoundingClientRect().right,
-        bottom: window.pageYOffset + target.getBoundingClientRect().bottom
-      },
-      // Получаем позиции окна
-      windowPosition = {
-        top: window.pageYOffset,
-        left: window.pageXOffset,
-        right: window.pageXOffset + document.documentElement.clientWidth,
-        bottom: window.pageYOffset + document.documentElement.clientHeight
-      };
-    if (targetPosition.bottom > windowPosition.top &&
-    // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
-    targetPosition.top < windowPosition.bottom &&
-    // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
-    targetPosition.right > windowPosition.left &&
-    // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
-    targetPosition.left < windowPosition.right) {
-      // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
-      // Если элемент полностью видно, то запускаем следующий код
-      // console.clear();
-      // console.log("Вы видите элемент :)");
-      // scrollVertical = true;
-      // if (scrollVertical) {
-      //   body.style.cssText += "overflow: hidden";
-      // }
-    } else {
-      // Если элемент не видно, то запускаем этот код
-      // scrollVertical = false;
-      // body.style.cssText += "overflow: ";
-    }
-  };
-
-  // Запускаем функцию при прокрутке страницы
-  window.addEventListener("scroll", function () {
-    Visible(element);
-  });
-
-  // А также запустим функцию сразу. А то вдруг, элемент изначально видно
-  Visible(element);
   burgerBtn.addEventListener("click", function () {
     burgerMenu.classList.add("active");
   });
   closeBurgerMenuBtn.addEventListener("click", function () {
     burgerMenu.classList.remove("active");
   });
-  var owlMain = $(".services-list");
-  owlMain.owlCarousel({
-    loop: document.body.clientWidth > 768 ? false : false,
-    nav: false,
-    dots: false,
-    margin: 10,
-    onTranslated: function onTranslated(e) {
-      var items = e.item.count;
-      var current = e.item.index + 1;
-      if (current === items) {
-        // scrollVertical = false;
-        console.log("Последний слайд!");
-        // body.style.cssText = "overflow: none";
-        // console.log(scrollVertical);
+  var servicesWrapper = document.querySelector(".services-list--overflow");
+  servicesWrapper.style.cssText = "width:".concat(document.body.clientWidth, "px; \n  min-width: ").concat(document.body.clientWidth, "px; overflow-x: hidden");
+  new Vue({
+    el: "#app_vue",
+    data: function data() {
+      return {
+        sectionInViewport: false,
+        element: document.querySelector(".services-list"),
+        cnt: 0,
+        styleObject: "",
+        isScroll: false
+      };
+    },
+    mounted: function mounted() {
+      var options = {
+        root: null,
+        // Используем viewport как корневой элемент
+        rootMargin: "0px",
+        // Может быть настроено для марджинов
+        threshold: 0.59 // Порог видимости (от 0 до 1)
+      };
+
+      var observer = new IntersectionObserver(this.handleIntersection, options);
+      observer.observe(this.$refs.sectionToTrack);
+      document.addEventListener("wheel", this.onScroll);
+    },
+    methods: {
+      handleIntersection: function handleIntersection(entries) {
+        // Вызывается при изменении видимости
+        if (entries[0].isIntersecting) {
+          this.sectionInViewport = true;
+          // Секция находится в зоне видимости
+          console.log(this.sectionInViewport);
+          // this.isScroll ? body.classList.add("horizontal") : "";
+        } else {
+          this.sectionInViewport = false;
+          // Секция не находится в зоне видимости
+          console.log(this.sectionInViewport);
+          // body.classList.remove("horizontal");
+          // this.styleObject = "transform: translate(" + 0 + "%)";
+        }
+      },
+      calcMaxDown: function calcMaxDown() {},
+      onScroll: function onScroll(event) {
+        event = event || window.event;
+        var y = event.deltaY || event.detail || event.wheelDelta,
+          val = 0.1,
+          min = 0,
+          max = 100;
+        console.log(this.sectionInViewport ? "видно" : "Не видно");
+        if (y > 0 && this.sectionInViewport && this.cnt >= -55) {
+          this.cnt = this.cnt - 5;
+          console.log("down");
+          body.classList.add("horizontal");
+          this.styleObject = "transform: translate(" + this.cnt + "%)";
+        }
+        if (y < 0 && this.sectionInViewport && (this.ctn >= 0 || this.cnt != 0)) {
+          this.cnt = this.cnt + 5;
+          console.log("up");
+          this.styleObject = "transform: translate(" + this.cnt + "%)";
+        } else {
+          body.classList.remove("horizontal");
+        }
       }
     },
-
-    responsive: {
-      0: {
-        items: 1
+    watch: {
+      cnt: function cnt(newVal, oldVal) {
+        newVal == 0 ? body.classList.remove("horizontal") : "";
+        newVal == -190 ? body.classList.remove("horizontal") : body.classList.add("horizontal");
       }
     }
-  });
-  if (document.body.clientWidth > 768) {
-    owlMain.on("mousewheel", ".owl-stage", function (e) {
-      if (e.originalEvent.deltaY > 0) {
-        owlMain.trigger("next.owl");
-      } else {
-        owlMain.trigger("prev.owl");
-      }
-      e.preventDefault();
-    });
-  }
-  var sectionServices = document.querySelector(".section-services");
-  sectionServices.addEventListener("scroll", function (e) {
-    console.log("scroll");
   });
 });
 //# sourceMappingURL=app.js.map
