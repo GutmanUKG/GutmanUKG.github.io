@@ -132,16 +132,29 @@ header {
 .advantages-list .item p {
       font-size: 16px;
     }
-.services-wrapper .services-info {
+.section-services {
+  padding-top: 120px;
+}
+.section-services .section-descr {
+    display: block;
+  }
+.section-services .section_name {
+    text-align: left !important;
+  }
+.section-services .section_title {
+    text-align: left !important;
+  }
+.section-services .services-arr {
     display: none;
   }
-.services-wrapper .services-list {
-    margin-top: 80px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 12px;
+.section-services .services-wrapper {
+    margin-top: 120px;
   }
-.services-wrapper .services-list .item {
-      width: 288px;
+.section-services .services-wrapper .services-list--overflow {
+      width: 100%;
     }
+.section-services .services-wrapper .services-info {
+      display: none;
+    }
+.section-services .services-wrapper .services-list .item {
+      }

@@ -20,9 +20,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
         integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-    <script src="./js/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/vue.min.js"></script>
     <script src="./js/app.js"></script>
     <title>НГК</title>
 </head>
@@ -279,7 +283,10 @@
                     От поиска до реализации
                 </h3>
 
-
+                <div class="section-descr">
+                    Профессиональные услуги в сфере геологии, добычи, переработки и охраны окружающей среды для
+                    горнодобывающей промышленности, с центральным офисом в Москве.
+                </div>
             </div>
             <div class="services-wrapper">
                 <div class="services-info ">
@@ -390,6 +397,41 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="item">
+                            <div class="img">
+                                <img src="./imgs/ser-3.webp" alt="">
+                            </div>
+                            <h2>
+                                Геологоразведка и минеральные ресурсы
+                            </h2>
+                            <div class="item-descr">
+                                <ul>
+                                    <li>
+                                        Подбор и анализ перспективных территорий для поисков;
+                                    </li>
+                                    <li>
+                                        Разработка и
+                                        сопровождение программ геологоразведочного бурения;
+                                    </li>
+                                    <li>
+                                        Внедрение процедур
+                                        обеспечения и контроля качества работ по опробованию и анализу;
+                                    </li>
+                                    <li>
+                                        Аудит баз данных;
+                                    </li>
+                                    <li>
+                                        Геологическое моделирование;
+                                    </li>
+                                    <li>
+                                        Оценка минеральных ресурсов в соответствии с кодексами JORC, NI 43 101 KAZRC.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -411,6 +453,20 @@
                 </div>
             </div>
         </section>
+
+        <div class="service_popup">
+            <button class="close_btn" aria-label="btn close"></button>
+
+            <div class="service_popup-top">
+                <h2 class="service_popup-title"></h2>
+            </div>
+            <div class="service_popup-body">
+
+            </div>
+        </div>
+        <div class="overlay_body">
+
+        </div>
     </div>
 
 </body>

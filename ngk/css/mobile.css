@@ -129,17 +129,27 @@ section.section-banner .banner-text .banner-btns a {
   padding-top: 80px;
   padding-bottom: 80px;
 }
-.services-wrapper .services-info {
-  }
-.services-wrapper .services-list {
+.section-services .services-wrapper {
     margin-top: 80px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 12px;
-    overflow-x: scroll;
   }
-.services-wrapper .services-list .item h2 {
-        font-size: 20px;
-        margin-top: 20px;
-      }
+.section-services .services-wrapper .services-info {
+    }
+.section-services .services-wrapper .services-list .item h2 {
+          font-size: 20px;
+          margin-top: 20px;
+          position: static;
+          color: #333;
+          -webkit-text-decoration: underline;
+          text-decoration: underline;
+        }
+.section-services .services-wrapper .services-list .item:hover .img {
+            background: transparent;
+            filter: none;
+          }
+.section-services .services-wrapper .services-list .item:hover .item-descr {
+            visibility: hidden;
+            display: none;
+          }
+.section-services .services-wrapper .services-list .item:hover h2 {
+            opacity: 1;
+          }
