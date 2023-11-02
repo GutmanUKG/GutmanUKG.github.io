@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
       margin: 10,
       nav: false,
       dots: false,
+      drag: true,
       responsive: {
         0: {
           items: 1.2

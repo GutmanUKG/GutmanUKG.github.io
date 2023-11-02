@@ -457,7 +457,7 @@
   border-radius: 8px;
   background: #fff;
   z-index: 200;
-
+  overflow: hidden;
   transition: 0.3s all;
   visibility: hidden;
 }.service_popup .close_btn {
@@ -493,7 +493,10 @@
       display: block;
     }.service_popup .service_popup-body {
     padding: 32px 20px;
-  }.service_popup .service_popup-body ul li {
+  }.service_popup .service_popup-body ul {
+      padding: 0 20px 0 20px;
+      margin: 0;
+    }.service_popup .service_popup-body ul li {
         color: rgba(51, 51, 51, 0.75);
         font-variant-numeric: stacked-fractions;
         font-feature-settings: "dlig" on, "afrc", "afrc", "afrc", "afrc";
