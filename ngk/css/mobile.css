@@ -142,6 +142,9 @@ section.section-banner .banner-text .banner-btns a {
           -webkit-text-decoration: underline;
           text-decoration: underline;
         }
+.section-services .services-wrapper .services-list .item .img {
+          height: 288px;
+        }
 .section-services .services-wrapper .services-list .item:hover .img {
             background: transparent;
             filter: none;
