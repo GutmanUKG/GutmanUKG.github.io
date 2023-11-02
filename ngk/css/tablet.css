@@ -158,3 +158,17 @@ header {
     }
 .section-services .services-wrapper .services-list .item {
       }
+.section-form form .group_inputs {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+.section-form form .group_inputs .form-inputs, .section-form form .group_inputs .form-area {
+        width: 100%;
+        max-width: 100%;
+      }
+footer {
+  padding-top: 80px;
+}

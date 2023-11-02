@@ -56,14 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
           if (entries[0].isIntersecting) {
             this.sectionInViewport = true;
             // Секция находится в зоне видимости
-            console.log(this.sectionInViewport);
           } else {
             this.sectionInViewport = false;
             // Секция не находится в зоне видимости
-            console.log(this.sectionInViewport);
           }
         },
-        calcMaxDown: function calcMaxDown() {},
         onScroll: function onScroll(event) {
           event = event || window.event;
           var y = event.deltaY || event.detail || event.wheelDelta,
@@ -80,7 +77,9 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("up");
             this.styleObject = "transform: translate(" + this.cnt + "px)";
           } else {
-            body.classList.remove("horizontal");
+            setTimeout(function () {
+              body.classList.remove("horizontal");
+            }, 100);
           }
         }
       },
@@ -101,6 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
       nav: false,
       dots: false,
       drag: true,
+      autoplay: true,
+      responsiveClass: true,
       responsive: {
         0: {
           items: 1.2
@@ -110,18 +111,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     });
-    items.forEach(function (i) {
-      i.addEventListener("click", function () {
-        var title = i.querySelector("h2"),
-          descr = i.querySelector(".item-descr"),
-          img = i.querySelector(".img img");
-        servicePopup.querySelector(".service_popup-title").textContent = title.textContent;
-        servicePopup.querySelector(".service_popup-top").style.cssText = "background: url(".concat(img.src, ")center/cover no-repeat");
-        servicePopup.querySelector(".service_popup-body").innerHTML = descr.innerHTML;
-        servicePopup.classList.add("active");
-        overlay.classList.add("active");
-        body.style.overflow = "hidden";
-      });
+    $(".owl-stage").on("click", ".owl-item>div", function (e) {
+      var target = e.target;
+      var item = $(this).closest(".item");
+      var title = item.find("h2").text();
+      var descr = item.find(".item-descr").html();
+      var imgSrc = item.find(".img img").attr("src");
+
+      // Обновляем содержимое servicePopup
+      $(".service_popup-title").text(title);
+      $(".service_popup-top").css("background", "url(".concat(imgSrc, ") center/cover no-repeat"));
+      $(".service_popup-body").html(descr);
+
+      // Показываем servicePopup и overlay
+      $(".service_popup").addClass("active");
+      $(".overlay_body").addClass("active");
+      $("body").css("overflow", "hidden");
     });
     servicePopupClose.addEventListener("click", function () {
       servicePopup.classList.remove("active");

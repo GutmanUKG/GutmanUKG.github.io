@@ -156,3 +156,47 @@ section.section-banner .banner-text .banner-btns a {
 .section-services .services-wrapper .services-list .item:hover h2 {
             opacity: 1;
           }
+.section-form {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.section-form .section-descr {
+    width: 100%;
+    max-width: 100%;
+  }
+.section-form .form-footer {
+    margin-top: 80px;
+  }
+.section-form .form-footer .form-selector_list {
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      margin-bottom: 80px;
+    }
+.section-form .form-footer .form-selector_list::-webkit-scrollbar {
+        display: none;
+      }
+.section-form .form-footer .form-selector_list .item {
+        min-width: -moz-max-content;
+        min-width: -webkit-max-content;
+        min-width: max-content;
+      }
+.section-form .form-footer span {
+    }
+.section-form .form-footer .form-area .btns {
+        flex-direction: column;
+        gap: 20px;
+      }
+.section-form .form-footer .form-area .btns > * {
+          width: 100%;
+          max-width: 100%;
+        }
+footer {
+  padding-top: 80px;
+}
+footer .footer-row {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+.footer-copy {
+  margin-top: 80px;
+}
