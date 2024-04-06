@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="./js/app.js"></script>
+    <title>Каталог</title>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="header-phone">
+                <a href="tel:+79873605555" text="+7 (987) 360 55 55">+7 (987) 360 55 55</a>
+            </div>
+            <div class="header-menu">
+                <ul>
+                    <li>
+                        <a href="#" text="О компании">О компании</a>
+                    </li>
+                    <li>
+                        <a href="#" text="Услуги">Услуги</a>
+                    </li>
+                    <li>
+                        <a href="#" text="Доставка">Доставка</a>
+                    </li>
+                    <li>
+                        <a href="#" text="Оплата">Оплата</a>
+                    </li>
+                    <li>
+                        <a href="#" text="Контакты">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-user">
+                <a href="#" text="Войти">Войти</a> / <a href="#" text="Регистрация">Регистрация</a>
+            </div>
+        </div>
+        <div class="header-body">
+            <div class="header-menu">
+                <div class="header-menu--btn">
+
+                </div>
+                <ul class="header-menu--list">
+                    <li><a href="#" text="Каталог">Каталог</a></li>
+                    <li><a href="#" text="Акции">Акции</a></li>
+                </ul>
+            </div>
+            <div class="header-logo">
+                <a href="/">
+                    <svg width="95" height="24" viewBox="0 0 95 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_1601_6058" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="4" width="94" height="16">
+                            <path d="M4.24716 19H0.46875L5.37642 4.45455H10.0568L14.9645 19H11.1861L7.76989 8.11932H7.65625L4.24716 19ZM3.7429 13.2756H11.6406V15.946H3.7429V13.2756ZM20.0462 4.45455V19H16.5305V4.45455H20.0462ZM22.2532 19V4.45455H28.2617C29.3507 4.45455 30.2906 4.65104 31.0813 5.04403C31.8768 5.43229 32.4899 5.991 32.9208 6.72017C33.3517 7.4446 33.5671 8.30398 33.5671 9.2983C33.5671 10.3068 33.3469 11.1638 32.9066 11.8693C32.4663 12.5701 31.8413 13.1051 31.0316 13.4744C30.2219 13.839 29.2631 14.0213 28.1552 14.0213H24.3555V11.2514H27.5018C28.0321 11.2514 28.4748 11.1828 28.8299 11.0455C29.1897 10.9034 29.462 10.6903 29.6467 10.4062C29.8313 10.1174 29.9237 9.74811 29.9237 9.2983C29.9237 8.84848 29.8313 8.4768 29.6467 8.18324C29.462 7.88494 29.1897 7.66241 28.8299 7.51562C28.4701 7.36411 28.0273 7.28835 27.5018 7.28835H25.7688V19H22.2532ZM30.4421 12.3523L34.0643 19H30.229L26.6779 12.3523H30.4421ZM35.4954 19V4.45455H41.5039C42.5929 4.45455 43.5328 4.66761 44.3235 5.09375C45.119 5.51515 45.7321 6.10464 46.163 6.86222C46.5939 7.61506 46.8093 8.491 46.8093 9.49006C46.8093 10.4938 46.5891 11.3722 46.1488 12.125C45.7132 12.8731 45.0906 13.4531 44.2809 13.8651C43.4712 14.277 42.5101 14.483 41.3974 14.483H37.69V11.7131H40.744C41.2743 11.7131 41.717 11.6207 42.0721 11.4361C42.4319 11.2514 42.7042 10.9934 42.8888 10.6619C43.0735 10.3258 43.1658 9.93513 43.1658 9.49006C43.1658 9.04025 43.0735 8.65199 42.8888 8.32528C42.7042 7.99384 42.4319 7.73816 42.0721 7.55824C41.7122 7.37831 41.2695 7.28835 40.744 7.28835H39.011V19H35.4954ZM48.5423 19V4.45455H54.5508C55.6398 4.45455 56.5797 4.65104 57.3704 5.04403C58.1658 5.43229 58.779 5.991 59.2099 6.72017C59.6407 7.4446 59.8562 8.30398 59.8562 9.2983C59.8562 10.3068 59.636 11.1638 59.1957 11.8693C58.7553 12.5701 58.1303 13.1051 57.3207 13.4744C56.511 13.839 55.5522 14.0213 54.4442 14.0213H50.6445V11.2514H53.7908C54.3211 11.2514 54.7638 11.1828 55.119 11.0455C55.4788 10.9034 55.7511 10.6903 55.9357 10.4062C56.1204 10.1174 56.2127 9.74811 56.2127 9.2983C56.2127 8.84848 56.1204 8.4768 55.9357 8.18324C55.7511 7.88494 55.4788 7.66241 55.119 7.51562C54.7591 7.36411 54.3164 7.28835 53.7908 7.28835H52.0579V19H48.5423ZM56.7312 12.3523L60.3533 19H56.5181L52.967 12.3523H56.7312ZM75.5131 11.7273C75.5131 13.3277 75.2054 14.6842 74.5898 15.7969C73.9743 16.9096 73.141 17.7547 72.0898 18.3324C71.0434 18.91 69.8692 19.1989 68.5671 19.1989C67.2603 19.1989 66.0837 18.9077 65.0373 18.3253C63.9909 17.7429 63.1599 16.8977 62.5444 15.7898C61.9336 14.6771 61.6282 13.3229 61.6282 11.7273C61.6282 10.1269 61.9336 8.77036 62.5444 7.65767C63.1599 6.54498 63.9909 5.69981 65.0373 5.12216C66.0837 4.54451 67.2603 4.25568 68.5671 4.25568C69.8692 4.25568 71.0434 4.54451 72.0898 5.12216C73.141 5.69981 73.9743 6.54498 74.5898 7.65767C75.2054 8.77036 75.5131 10.1269 75.5131 11.7273ZM71.9194 11.7273C71.9194 10.7803 71.7844 9.98011 71.5146 9.3267C71.2494 8.67329 70.8659 8.1785 70.364 7.84233C69.8668 7.50615 69.2679 7.33807 68.5671 7.33807C67.8711 7.33807 67.2721 7.50615 66.7702 7.84233C66.2683 8.1785 65.8825 8.67329 65.6126 9.3267C65.3474 9.98011 65.2148 10.7803 65.2148 11.7273C65.2148 12.6742 65.3474 13.4744 65.6126 14.1278C65.8825 14.7812 66.2683 15.276 66.7702 15.6122C67.2721 15.9484 67.8711 16.1165 68.5671 16.1165C69.2679 16.1165 69.8668 15.9484 70.364 15.6122C70.8659 15.276 71.2494 14.7812 71.5146 14.1278C71.7844 13.4744 71.9194 12.6742 71.9194 11.7273ZM77.5657 4.45455H81.9194L85.6126 13.4602H85.783L89.4762 4.45455H93.8299V19H90.4066V10.0653H90.2859L86.7915 18.9077H84.604L81.1097 10.0156H80.989V19H77.5657V4.45455Z" fill="#0D0D0F"/>
+                        </mask>
+                        <g mask="url(#mask0_1601_6058)">
+                            <circle cx="-1" cy="20" r="100" fill="#0D0D0F"/>
+                        </g>
+                    </svg>
+
+                </a>
+            </div>
+            <div class="header-bar">
+                <div class="bar-search">
+                    <input type="text" placeholder="Поиск">
+                    <button></button>
+                </div>
+                <div class="bar-icons">
+                    <a href="#" class="bar-comparisons bar-icon"></a>
+                    <a href="#"  class="bar-favorite bar-icon"></a>
+                    <a href="#"  class="bar-cart bar-icon"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="breadcrumbs">
+        <ul class="breadcrumbs--list">
+            <li>
+                <a href="/">Главная</a>
+            </li>
+            <li>
+                <a href="#">Каталог</a>
+            </li>
+            <li>
+                Компрессоры
+            </li>
+        </ul>
+    </section>
+    <section class="tags">
+       <div class="container">
+           <h1 class="title-page">
+               Компрессоры
+           </h1>
+           <div class="tags-list">
+               <a href="#" class="tag-btn">
+                   Винтовые (16)
+               </a>
+               <a href="#" class="tag-btn">
+                   Двуступенчатые (9)
+               </a>
+               <a href="#" class="tag-btn">
+                   Поршневые (11)
+               </a>
+               <a href="#" class="tag-btn">
+                   Высокого давления, бустеры (53)
+               </a>
+               <a href="#" class="tag-btn">
+                   Бесзмасляные (57)
+               </a>
+               <a href="#" class="tag-btn">
+                   Центробежные (32)
+               </a>
+               <a href="#" class="tag-btn">
+                   Низкого давления, воздуходувки (42)
+               </a>
+               <a href="#" class="tag-btn">
+                   Передвижные (21)
+               </a>
+           </div>
+       </div>
+    </section>
+    <section class="catalog">
+        <div class="container">
+            <div class="catalog-top_filter">
+                <a href="#" class="top_filter--item ">
+                    Мощность, кВт
+                </a>
+                <a href="#" class="top_filter--item">
+                    Производительность, л/мин
+                </a>
+                <a href="#" class="top_filter--item">
+                    Давление, бар
+                </a>
+                <a href="#" class="top_filter--item top_filter--item-active">
+                    Цена
+                </a>
+
+            </div>
+            <div class="row">
+                <div class="col-3 filter-list">
+                    <div class="filter-item">
+                        <div class="filter-toggle ">
+                            <span>
+                                Цена, ₽
+                            </span>
+                        </div>
+                        <div class="filter-wrapper">
+                            <label for="increment" text="от">
+                                <input type="text" class="increment" id="increment" value="100 000" >
+                            </label>
+                            <label for="decrement" text="до">
+                                <input type="text" class="decrement" id="decrement" value="250 000" >
+                            </label>
+
+                        </div>
+                    </div>
+                    <div class="filter-item">
+                        <div class="filter-toggle ">
+                            <span>
+                                Производительность, л/мин
+                            </span>
+                        </div>
+                        <div class="filter-wrapper">
+                            <label for="increment" text="от">
+                                <input type="text" class="increment" id="increment" value="100 000" >
+                            </label>
+                            <label for="decrement" text="до">
+                                <input type="text" class="decrement" id="decrement" value="250 000" >
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9 catalog-list">
+                    <div class="catalog-item">
+                        <div class="item-img">
+                            <img src="./imgs/c-item-1.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-category">
+                                Компрессоры
+                            </div>
+                            <h2>
+                                Передвижной компрессор Dali DLCY-6/8B (XICHAI)
+                            </h2>
+                            <ul>
+                                <li>
+                                    <span>
+                                        Рабочее давление, Бар:
+                                    </span>
+                                    8
+                                </li>
+                                <li>
+                                    <span>
+                                        Производительность, л/мин:
+                                    </span>
+                                    6000
+                                </li>
+                                <li>
+                                    <span>
+                                        Мощность, кВт:
+                                    </span>
+                                    56
+                                </li>
+                            </ul>
+                            <div class="item-price">
+                                1 262 427 р.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="item-img">
+                            <img src="./imgs/c-item-2.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-category">
+                                Компрессоры
+                            </div>
+                            <h2>
+                                Винтовой компрессор CrossAir CA5.5-8RA-500
+                            </h2>
+                            <ul>
+                                <li>
+                                    <span>
+                                        Рабочее давление, Бар:
+                                    </span>
+                                    8
+                                </li>
+                                <li>
+                                    <span>
+                                        Производительность, л/мин:
+                                    </span>
+                                    6000
+                                </li>
+                                <li>
+                                    <span>
+                                        Мощность, кВт:
+                                    </span>
+                                    56
+                                </li>
+                            </ul>
+                            <div class="item-price">
+                                224 700 р.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="item-img">
+                            <img src="./imgs/c-item-1.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-category">
+                                Компрессоры
+                            </div>
+                            <h2>
+                                Передвижной компрессор Dali DLCY-6/8B (XICHAI)
+                            </h2>
+                            <ul>
+                                <li>
+                                    <span>
+                                        Рабочее давление, Бар:
+                                    </span>
+                                    8
+                                </li>
+                                <li>
+                                    <span>
+                                        Производительность, л/мин:
+                                    </span>
+                                    6000
+                                </li>
+                                <li>
+                                    <span>
+                                        Мощность, кВт:
+                                    </span>
+                                    56
+                                </li>
+                            </ul>
+                            <div class="item-price">
+                                1 262 427 р.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="sidebar">
+        <div class="sidebar-top">
+            <button class="sidebar-top-btn active" text="По категориям">
+                По категориям
+            </button>
+            <button class="sidebar-top-btn" text="По брендам">
+                По брендам
+            </button>
+            <span class="btn-close"></span>
+        </div>
+        <div class="sidebar-list sidebar-list--active sidebar-category">
+            <div class="slide-bar-item">
+                <img src="./imgs/siderbar-1.png" alt="" class="sidebar-icon">
+                <h3 class="sidebar-title">
+                    Компрессоры и <br> пневмооборудование
+                </h3>
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="#">
+                            Винтовые
+                            <span>(33)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Двуступенчатые
+                            <span>(9)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Поршневые
+                            <span>(15)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Высокого давления, бустеры
+                            <span>(80)</span>
+                        </a>
+                    </li>
+                    <a href="#" class="show-more">
+                        Показать все
+                    </a>
+                </ul>
+            </div>
+            <div class="slide-bar-item">
+                <img src="./imgs/sidebar-2.png" alt="" class="sidebar-icon">
+                <h3 class="sidebar-title">
+                    Буровые установки <br> и оборудование
+                </h3>
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="#">
+                            Установки для бурения скважин
+                            <span>(15)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Горные буровые станки
+                            <span>(9)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Поршневые
+                            <span>(15)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Высокого давления, бустеры
+                            <span>(80)</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="#">
+                            Высокого давления, бустеры
+                            <span>(80)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Высокого давления, бустеры
+                            <span>(80)</span>
+                        </a>
+                    </li>
+                    <a href="#" class="show-more">
+                        Показать все
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-list sidebar-brands">
+            <ul>
+                <li>
+                    <a href="#">
+                        <picture>
+                            <img src="./imgs/brands-icons/abac-active.png" alt="">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <picture>
+                            <img src="./imgs/brands-icons/airman-active.png" alt="">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <picture>
+                            <img src="./imgs/brands-icons/dali-active.png" alt="">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <picture>
+                            <img src="./imgs/brands-icons/crossair-active.png" alt="">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <picture>
+                            <img src="./imgs/brands-icons/vektor-active.png" alt="">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <picture>
+                            <img src="./imgs/brands-icons/miller-active.png" alt="">
+                        </picture>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="overlay">
+
+    </div>
+    <section class="form-footer">
+    <div class="container">
+        <div class="row footer-top">
+            <div class="col-6">
+                <h2>
+                    Есть вопросы?
+                    <div class="icon">
+                        <figure>
+                            <img src="./imgs/smile.svg" alt="">
+                        </figure>
+                    </div>
+                </h2>
+                <p>
+                    Напишите нам заполнив форму <br>и мы свяжемся с вами!
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <form action="" class="form_footer">
+                <div class="row">
+                    <div class="col-6 form-col">
+                        <input type="text" placeholder="Имя Фамилия">
+                        <input type="text" placeholder="+7 (---) -- --">
+                        <input type="text" placeholder="E-mail">
+                        <div class="form-selector">
+                            <label for="ur">
+                                <input type="radio" id="ur" name="type_user">
+                                <span>
+                                        Юр. лицо
+                                    </span>
+                            </label>
+                            <label for="ip">
+                                <input type="radio" id="ip" name="type_user" checked>
+                                <span>
+                                        ИП
+                                    </span>
+                            </label>
+                        </div>
+                        <div class="ip-info">
+                            <input type="text" placeholder="Компания" class="no_ip">
+                            <input type="text" placeholder="ИНН">
+                        </div>
+                    </div>
+                    <div class="col-6 form-col">
+                        <textarea placeholder="Ваше сообщение"></textarea>
+                        <div class="form-btns">
+                            <input type="file" class="input_file">
+                            <button  class="btn-default-animate">
+                                <span text="Отправить">
+                                    Отправить
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <ul class="footer-menu">
+                        <li>
+                            <a href="">
+                                Каталог
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Услуги
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Акции
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <ul class="footer-menu">
+                        <li>
+                            <a href="">
+                                О компании
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Доставка
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Оплата
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <ul class="footer-menu">
+                        <li>
+                            <a href="">
+                                +7 (987) 360 55 55
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                +7 (905) 750 77 77
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                info@airprom.ru
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <ul class="footer-menu">
+                        <li>
+                            <a href="">
+                                instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                youtube
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

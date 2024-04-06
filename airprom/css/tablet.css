@@ -1,0 +1,186 @@
+@font-face{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 100;
+            src: url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeAZFhjA.eot?#) format("eot"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeAZ9hiA.woff2) format("woff2"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeAZFhjg.woff) format("woff"); 
+}
+@font-face{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 200;
+            src: url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyfAZFhjA.eot?#) format("eot"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyfAZ9hiA.woff2) format("woff2"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyfAZFhjg.woff) format("woff"); 
+}
+@font-face{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            src: url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuOKfAZFhjA.eot?#) format("eot"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuOKfAZ9hiA.woff2) format("woff2"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuOKfAZFhjg.woff) format("woff"); 
+}
+@font-face{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            src: url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZFhjA.eot?#) format("eot"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2) format("woff2"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZFhjg.woff) format("woff"); 
+}
+@font-face{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 500;
+            src: url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fAZFhjA.eot?#) format("eot"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fAZ9hiA.woff2) format("woff2"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fAZFhjg.woff) format("woff"); 
+}
+@font-face{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            src: url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZFhjA.eot?#) format("eot"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hiA.woff2) format("woff2"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZFhjg.woff) format("woff"); 
+}
+@font-face{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            src: url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZFhjA.eot?#) format("eot"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiA.woff2) format("woff2"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZFhjg.woff) format("woff"); 
+}
+@font-face{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 800;
+            src: url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyYAZFhjA.eot?#) format("eot"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyYAZ9hiA.woff2) format("woff2"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyYAZFhjg.woff) format("woff"); 
+}
+@font-face{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 900;
+            src: url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuBWYAZFhjA.eot?#) format("eot"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuBWYAZ9hiA.woff2) format("woff2"),url(//fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuBWYAZFhjg.woff) format("woff"); 
+}
+@media (max-width: 1199px){
+            .section-banner .banner-list .banner-item{
+                height: 400px !important; 
+            }
+            .section-banner .banner-list .banner-item{
+                background-size: cover;
+                padding: 60px 0; 
+            }
+                .section-banner .banner-list .banner-item .col-4{
+                    width: 50%; 
+                }
+                    .section-banner .banner-list .banner-item .col-4 .item-title{
+                        font-size: 24px;
+                        line-height: 120%; /* 28.8px */
+                        letter-spacing: -0.48px;
+                    }
+                        .section-banner .banner-list .banner-item .col-4 .item-list li{
+                            font-size: 13px;
+                        }
+                    .section-banner .banner-list .banner-item .item-btns a.item-link--main,
+                    .section-banner .banner-list .banner-item .item-btns a.item-link span{
+                        padding: 12px 32px;
+                        font-size: 14px;
+                    }
+            .section-banner .banner-list .slick-dots{
+                transform: translateY(16px)
+            }
+        .info-content .info-text {
+            max-width: 50%;
+        } 
+}
+@media (max-width: 1023px){
+    .sidebar{
+        max-width: 50%;
+    }
+    .header-top{
+        display: none;
+    }
+    .header-body{
+        padding: 18px;
+    }
+            .header-bar .bar-search input{
+                display: none;
+
+            }
+            .header-bar .bar-search button{
+                position: static;
+            }
+        .header-bar .bar-icons{
+            display: none;
+        }
+            .header-body .header-menu .header-menu--list{
+                display: none;
+            }
+        .services .services-item{
+            padding-top: 60px;
+            font-size: 13px;
+            line-height: 20px;
+        } 
+            .services .services-item .item-title{
+                font-size: 16px;
+                line-height: 24px;
+            }
+            .grid_menu .grid_menu-list .grid_menu-item{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                flex-direction: column;
+                padding: 12px;
+              
+            }
+                .grid_menu .grid_menu-list .grid_menu-item .item-info{
+                    order: 1;
+                    padding: 0;
+                    width: 100%;
+                    height: auto;
+                }
+                    .grid_menu .grid_menu-list .grid_menu-item .item-info h2{
+
+                    }
+                    .grid_menu .grid_menu-list .grid_menu-item .item-info p{
+
+                    }
+                    .grid_menu .grid_menu-list .grid_menu-item .item-info .item_menu{
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        flex-direction: column;
+                        list-style: none;
+                        padding: 0;
+                    }
+                            .grid_menu .grid_menu-list .grid_menu-item .item-info .item_menu li a{
+                                -webkit-text-decoration: none;
+                                text-decoration: none;
+                                color: #67677E;
+                                font-family: 'Inter',sans-serif;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 24px;
+                            }
+                .grid_menu .grid_menu-list .grid_menu-item .item-content{
+                    width: 100%;
+                    margin-bottom: 24px;
+                }
+                    .grid_menu .grid_menu-list .grid_menu-item .item-content .item_menu{
+                        display: none;
+                    }
+                    .grid_menu .grid_menu-list .grid_menu-item .item-content picture{
+
+                    }
+    .default-animate{
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+    } 
+}
+@media (max-width: 991px){
+    .info-content{
+        padding: 32px 60px;
+    }
+        .info-content .info-text{
+            max-width: 70%;
+        }
+        .info-content .info-img{
+            right: 30px;
+        }
+                .info-content .info-img picture img{
+                    max-width: 300px;
+                } 
+}
