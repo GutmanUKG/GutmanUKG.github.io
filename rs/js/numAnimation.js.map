@@ -1,1 +1,0 @@
-{"version":3,"file":"numAnimation.js","names":["document","addEventListener"],"sources":["numAnimation.js"],"sourcesContent":["\"use strict\";\r\ndocument.addEventListener(\"DOMContentLoaded\", () => {});\r\n"],"mappings":"AAAA,YAAY;;AACZA,QAAQ,CAACC,gBAAgB,CAAC,kBAAkB,EAAE,YAAM,CAAC,CAAC,CAAC"}
