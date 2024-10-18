@@ -208,6 +208,7 @@ header{
 
 section.tabs_block{
   height: 100vh;
+
   padding: 120px 0;
   background: url("../assets/imgs/tabs_bg.png") center center no-repeat;
   background-size: contain;
@@ -252,7 +253,7 @@ section.tabs_block{
         display: grid;
         gap: 20px;
         grid-template-columns: repeat(3,1fr);
-        min-height: 550px;
+        min-height: 540px;
         .item{
 
           .item-title{
@@ -309,6 +310,122 @@ section.tabs_block{
           background: #00803d;
         }
 
+      }
+    }
+  }
+}
+
+section.slider_block{
+  background: #003318;
+  margin-top: 40px;
+  height: 100vh;
+  padding: 120px 0;
+  .tabs_title{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+  .descr{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 200%;
+    color: #fff;
+  }
+  .slider_wrapper{
+    overflow: hidden;
+  }
+  .slider_list{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+
+    .item{
+      border-radius: 24px;
+      padding: 40px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      max-width: 435px;
+      min-width: 435px;
+      .icon{
+        border-radius: 50%;
+        margin-bottom: 102px;
+        position: relative;
+        &:before{
+          content: '';
+          display: block;
+          position: absolute;
+          background: #00803d;
+          width: 140px;
+          height: 140px;
+          right: 0;
+          left: 0;
+          transform: scale(0);
+          transition: 0.5s all;
+          border-radius: 50%;
+        }
+        img{
+          width: 140px;
+          height: 140px;
+          object-fit: contain;
+          &.default{
+          display: block;
+          }
+          &.active{
+            display: none;
+          }
+        }
+      }
+      h4{
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 143%;
+        color: #333;
+        margin-bottom: 40px;
+        transition: 0.5s all;
+      }
+      p{
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 200%;
+        color: rgba(51, 51, 51, 0.75);
+        transition: 0.5s all;
+      }
+      &:hover{
+        .icon{
+          background: #fff;
+          z-index: 500;
+          position: relative;
+          img{
+            z-index: 500;
+            position: relative;
+            &.default{
+              display: none;
+            }
+            &.active{
+              display: block;
+            }
+          }
+          &:before{
+            transform: scale(10);
+            transition: .5s all;
+            z-index: 200;
+          }
+        }
+        h4,
+        p{
+          position: relative;
+          z-index: 500;
+          color: #fff;
+        }
       }
     }
   }
