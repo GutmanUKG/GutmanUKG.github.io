@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--  Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!--  Fonts  -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/ScrollTrigger.min.js"></script>
+    <script src="./js/script.js"></script>
+
+    <title>Baiterek</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header_row">
+                <a href="/" class="logo">
+                    <img src="./assets/imgs/logo.svg" alt="logo">
+                    <span>
+                         10 лет
+                    </span>
+                </a>
+                <div class="site_selector">
+                    <div class="current_lang">
+                        Рус
+                    </div>
+                    <div class="list_lang">
+                        Eng
+                    </div>
+                </div>
+                <nav class="top_menu">
+                    <ul>
+                        <li>
+                            <a href="">
+                                Вакансии
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Компании
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Новости
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Блог
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="user_wrapper">
+                    <a href="" class="sing_in btn">
+                        Войти
+                    </a>
+                    <a href="" class="btn create_resume">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 18V6M6 12H18" stroke="white" stroke-width="1.5" />
+                        </svg>
+                        Создать резюме
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="container">
+           <div class="banner_wrapper">
+               <h3 class="banner_title">
+                   Быть в команде,
+                   быть собой.
+               </h3>
+               <div class="descr">
+                   Для высоких результатов важны комфортная среда, возможности для развития и сильная команда.
+               </div>
+               <div class="search_block">
+                   <div class="search_title">
+                       Воспользуйтесь поиском вакансии
+                   </div>
+                   <form action="" class="search_form">
+                     <div class="form_group">
+                         <label for="search_input" class="search_input">
+                             <input name="search_input" id="search_input" type="text" class="" placeholder="Профессия, должность или компания">
+                         </label>
+                         <label for="selector_job" class="select_job">
+                             <select id="selector_job">
+                                 <option value="" disabled selected>
+                                     Все направления
+                                 </option>
+                                 <option value="">
+                                     Первое направление
+                                 </option>
+                             </select>
+                         </label>
+
+                     </div>
+                       <div class="form_group">
+                           <label for="selector_geo" class="select_geo">
+                               <select id="selector_geo">
+                                   <option value="" disabled selected>
+                                       Весь Казахстан
+                                   </option>
+                               </select>
+                           </label>
+
+                           <button type="submit" class="btn btn-submit">Найти</button>
+                       </div>
+                   </form>
+               </div>
+           </div>
+        </div>
+    </section>
+
+    <section class="tabs_block">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <h2 class="tabs_title">
+                        Либо подберите
+                        вакансию
+                    </h2>
+                    <div class="descr">
+                        Выбирайте вакансии из интересующиего региона, компании или направления.
+                    </div>
+                </div>
+                <div class="col-8 tabs_list">
+                    <div class="tabs_item">
+                       <div class="tabs_title">
+                           По направлению
+                       </div>
+                        <div class="tabs_content">
+                            <div class="item">
+                                <div class="item-title">
+                                    Строительство
+                                </div>
+                                <p>
+                                    74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Консалтинг
+                                </div>
+                                <p>
+                                    126 вакансий
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Управление персоналом
+                                </div>
+                                <p>
+                                    74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Бухгалтерия и финансы
+                                </div>
+                                <p>
+                                    56 вакансий
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Маркетинг и продвижение
+                                </div>
+                                <p>
+                                    17 вакансий
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Юристы
+                                </div>
+                                <p>
+                                    74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Коммуникации
+                                </div>
+                                <p>
+                                    51 вакансия
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Продажи
+                                </div>
+                                <p>
+                                    28 вакансий
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Начало карьеры / студентам
+                                </div>
+                                <p>
+                                    74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Производство
+                                </div>
+                                <p>
+                                    108 вакансий
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Рабочий персонал
+                                </div>
+                                <p>
+                                    74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Транспорт и логистика
+                                </div>
+                                <p>
+                                    74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Добыча сырья
+                                </div>
+                                <p>
+                                    108 вакансий
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Закупки
+                                </div>
+                                <p>
+                                    74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <a href="">
+                                    Смотреть все направления
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs_item">
+                        <div class="tabs_title">
+                            По организации
+                        </div>
+                        <div class="tabs_content">
+                            <div class="item">
+                                <img src="./assets/imgs/item-1.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="./assets/imgs/item-2.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="./assets/imgs/item-3.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="./assets/imgs/item-3.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="./assets/imgs/item-3.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="./assets/imgs/item-3.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="./assets/imgs/item-3.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="./assets/imgs/item-3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs_item">
+                        <div class="tabs_title">
+                            По направлению
+                        </div>
+                        <div class="tabs_content">
+                            <div class="item">
+                                <div class="item-title">
+                                    Алматы
+                                </div>
+                                <p>
+                                    74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Шымкент
+                                </div>
+                                <p>
+                                    126 вакансий
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Алматы
+                                </div>
+                                <p>
+                                    74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Астана
+                                </div>
+                                <p>
+                                    74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Павлодар
+                                </div>
+                                <p>
+                                   17 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Алматы
+                                </div>
+                                <p>
+                                  74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Атырау
+                                </div>
+                                <p>
+                                  74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Усть-Каменогорск
+                                </div>
+                                <p>
+                                  74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Алматы
+                                </div>
+                                <p>
+                                  74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Караганда
+                                </div>
+                                <p>
+                                  74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Алматы
+                                </div>
+                                <p>
+                                  74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Актау
+                                </div>
+                                <p>
+                                  74 вакансии
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">
+                                    Алматы
+                                </div>
+                                <p>
+                                  74 вакансии
+                                </p>
+                            </div>
+                            <div class="item"></div>
+                            <div class="item">
+                                <a href="">
+                                    Смотреть все города и регионы
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+
+    </section>
+    <footer></footer>
+
+</body>
+</html>
