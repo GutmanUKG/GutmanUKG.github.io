@@ -338,6 +338,7 @@ section.slider_block{
   }
   .slider_wrapper{
     overflow: hidden;
+    border-radius: 25px;
   }
   .slider_list{
     display: flex;
@@ -429,4 +430,9 @@ section.slider_block{
       }
     }
   }
+}
+
+.container-fluid{
+  padding-left: 60px;
+  padding-right: 60px;
 }
