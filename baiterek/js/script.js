@@ -107,8 +107,46 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     });
+    var footerTrigger = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.footer',
+        start: 'top center',
+        // when the top of the trigger hits the top of the viewport
+        end: '+=500',
+        onEnter: function onEnter() {
+          firstSession = false;
+        }
+      }
+    });
   } else {
     //Если анимация уже была просмотренна пользователем то делаем стандартный функционал
   }
+  var people_slider = $('.people_slider').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: false,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 4
+      }
+    }
+  });
+  $('.arrow_slider--people .btn-slider--next').click(function () {
+    people_slider.trigger('next.owl.carousel');
+    $('.arrow_slider--people .btn-slider--prev').removeClass('disable');
+  });
+  // Go to the previous item
+  $('.arrow_slider--people .btn-slider--prev').click(function () {
+    // With optional speed parameter
+    // Parameters has to be in square bracket '[]'
+    people_slider.trigger('prev.owl.carousel', [300]);
+  });
 });
 //# sourceMappingURL=script.js.map
