@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     let firstSession = true;
-
+    let tabsItems = document.querySelectorAll('.tabs_list .tabs_item');
     if(getCookie('firstSession')){
         console.log('firstSession')
         firstSession = getCookie('firstSession')
@@ -90,8 +90,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 end: '+=500',
                 onEnter: ()=>{
                     //Тут отлючаеться вся анимация привязанная с scroll
+                    ScrollTrigger.getAll().forEach(st => st.kill(true));
                     firstSession = false;
-                    setCookie('firstSession', 'false', {secure: true, 'max-age': 3600});
+                    tabsItems.forEach((i, idx)=>{
+                        i.style.cssText = 'translate: none; rotate: none; scale: initial; opacity: 1; visibility: inherit; transform: unset;';
+                    })
+                    disableScrollTriggerView()
+                    //setCookie('firstSession', 'false', {secure: true, 'max-age': 3600});
                 }
             }
         })
@@ -99,8 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }else {
         //Если анимация уже была просмотренна пользователем то делаем стандартный функционал
+        disableScrollTriggerView()
 
-        let tabsItems = document.querySelectorAll('.tabs_list .tabs_item');
+    }
+
+
+    function disableScrollTriggerView(){
         tabsItems.forEach((i, idx)=>{
             let title = i.querySelector('.tabs_title')
             title.style.cssText = "position: relative; z-index: 700";
@@ -133,9 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         })
-
     }
-
     function clearClass(items, classActive){
         for(let i = 0; i < items.length; i++){
             items[i].classList.remove(classActive)

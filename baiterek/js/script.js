@@ -8,6 +8,7 @@ function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" 
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 document.addEventListener('DOMContentLoaded', function () {
   var firstSession = true;
+  var tabsItems = document.querySelectorAll('.tabs_list .tabs_item');
   if (getCookie('firstSession')) {
     console.log('firstSession');
     firstSession = getCookie('firstSession');
@@ -125,18 +126,23 @@ document.addEventListener('DOMContentLoaded', function () {
         end: '+=500',
         onEnter: function onEnter() {
           //Тут отлючаеться вся анимация привязанная с scroll
-          firstSession = false;
-          setCookie('firstSession', 'false', {
-            secure: true,
-            'max-age': 3600
+          ScrollTrigger.getAll().forEach(function (st) {
+            return st.kill(true);
           });
+          firstSession = false;
+          tabsItems.forEach(function (i, idx) {
+            i.style.cssText = 'translate: none; rotate: none; scale: initial; opacity: 1; visibility: inherit; transform: unset;';
+          });
+          disableScrollTriggerView();
+          //setCookie('firstSession', 'false', {secure: true, 'max-age': 3600});
         }
       }
     });
   } else {
     //Если анимация уже была просмотренна пользователем то делаем стандартный функционал
-
-    var tabsItems = document.querySelectorAll('.tabs_list .tabs_item');
+    disableScrollTriggerView();
+  }
+  function disableScrollTriggerView() {
     tabsItems.forEach(function (i, idx) {
       var title = i.querySelector('.tabs_title');
       title.style.cssText = "position: relative; z-index: 700";
