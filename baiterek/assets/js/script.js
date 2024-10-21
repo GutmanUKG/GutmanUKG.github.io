@@ -72,11 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let itemsSlider = document.querySelectorAll('.slider_list .item');
         let totalItemsWidth = Array.from(itemsSlider).reduce((total, item) => {
             return total + item.offsetWidth;
-        }, 0) + (items.length - 1) * 20;
+        }, 0) + (items.length - 1) * 40;
 
         gsap.to(sliderList, {
             x: () => `-${totalItemsWidth - sliderList.offsetWidth}px`, // Прокручиваем до конца списка
-            ease: 'none',
+            // ease: 'none',
             scrollTrigger: {
                 trigger: '.slider_block',
                 pin: true, // фиксируем блок

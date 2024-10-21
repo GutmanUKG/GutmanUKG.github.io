@@ -311,6 +311,12 @@ section.tabs_block{
             width: 25px;
             height: 25px;
             background: url("../assets/imgs/icons/link-ico.svg")center/cover no-repeat;
+            transition: .5s all;
+          }
+          &:hover{
+            &:after{
+              transform: rotate(45deg);
+            }
           }
         }
       }

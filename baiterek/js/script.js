@@ -92,13 +92,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var itemsSlider = document.querySelectorAll('.slider_list .item');
     var totalItemsWidth = Array.from(itemsSlider).reduce(function (total, item) {
       return total + item.offsetWidth;
-    }, 0) + (items.length - 1) * 20;
+    }, 0) + (items.length - 1) * 40;
     gsap.to(sliderList, {
       x: function x() {
         return "-".concat(totalItemsWidth - sliderList.offsetWidth, "px");
       },
       // Прокручиваем до конца списка
-      ease: 'none',
+      // ease: 'none',
       scrollTrigger: {
         trigger: '.slider_block',
         pin: true,
