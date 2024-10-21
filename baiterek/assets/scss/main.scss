@@ -701,3 +701,37 @@ footer{
   height: 100vh !important;
   padding: 0 !important;
 }
+.banner_wrapper{
+  position: relative;
+  overflow: hidden;
+  .banner_title,
+  .descr,
+  .search_block{
+    position: relative;
+    z-index: 500;
+  }
+}
+.banner_video{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 32px;
+  z-index: 0;
+  display: none;
+  &.active{
+  display: block;
+  }
+}
+
+.overlay_video{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 2;
+  background: rgba(19, 57, 37, 0.7);
+}

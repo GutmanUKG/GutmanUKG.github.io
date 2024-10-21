@@ -1,6 +1,25 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', () => {
+    const bannerWrapper = document.querySelector('.banner_wrapper');
 
+    let videoBG = document.querySelector('.banner_video')
+    videoBG.src = '/assets/video/bg.mov'
+    videoBG.addEventListener('loadeddata', ()=>{
+        console.log('Видео загружено и готово к воспроизведению');
+        createVideoFrame()
+    })
+
+    function createVideoFrame (){
+        let overlayVideo = document.createElement('div')
+        overlayVideo.classList.add('overlay_video')
+        videoBG.classList.add('active')
+        videoBG.removeAttribute('controls'); // Убираем элементы управления, если не нужны
+        videoBG.play().catch(function(error) {
+            console.log('Ошибка автозапуска видео:', error);
+        });
+        bannerWrapper.appendChild(videoBG)
+        bannerWrapper.appendChild(overlayVideo)
+    }
     let firstSession = true;
     let tabsItems = document.querySelectorAll('.tabs_list .tabs_item');
     if(getCookie('firstSession')){

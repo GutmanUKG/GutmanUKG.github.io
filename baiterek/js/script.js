@@ -7,6 +7,24 @@ function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 document.addEventListener('DOMContentLoaded', function () {
+  var bannerWrapper = document.querySelector('.banner_wrapper');
+  var videoBG = document.querySelector('.banner_video');
+  videoBG.src = '/assets/video/bg.mov';
+  videoBG.addEventListener('loadeddata', function () {
+    console.log('Видео загружено и готово к воспроизведению');
+    createVideoFrame();
+  });
+  function createVideoFrame() {
+    var overlayVideo = document.createElement('div');
+    overlayVideo.classList.add('overlay_video');
+    videoBG.classList.add('active');
+    videoBG.removeAttribute('controls'); // Убираем элементы управления, если не нужны
+    videoBG.play().catch(function (error) {
+      console.log('Ошибка автозапуска видео:', error);
+    });
+    bannerWrapper.appendChild(videoBG);
+    bannerWrapper.appendChild(overlayVideo);
+  }
   var firstSession = true;
   var tabsItems = document.querySelectorAll('.tabs_list .tabs_item');
   if (getCookie('firstSession')) {
