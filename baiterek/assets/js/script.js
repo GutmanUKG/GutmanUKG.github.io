@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     function createVideoFrame (){
+
         let overlayVideo = document.createElement('div')
         overlayVideo.classList.add('overlay_video')
         videoBG.classList.add('active')
@@ -81,7 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 pin: true, // фиксируем блок
                 start: 'top top', // начало скроллинга
                 end: () => `+=${totalItemsWidth}`, // конец анимации после прокрутки всех элементов
-                scrub: 1
+                scrub: 0.1,
+
             }
         });
 
@@ -149,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav:false,
             dots:false,
             autoplay: true,
+
             responsive:{
                 0:{
                     items:1

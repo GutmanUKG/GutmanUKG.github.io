@@ -735,3 +735,14 @@ footer{
   z-index: 2;
   background: rgba(19, 57, 37, 0.7);
 }
+
+.form-select{
+  &:focus{
+    outline: none !important;
+    box-shadow: none;
+  }
+  &:active{
+    outline: none !important;
+  }
+  outline: none;
+}
