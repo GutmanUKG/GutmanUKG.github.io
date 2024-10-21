@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         i.style.cssText = 'translate: none; rotate: none; scale: initial; opacity: 1; visibility: inherit; transform: unset;';
                     })
                     disableScrollTriggerView()
-                    //setCookie('firstSession', 'false', {secure: true, 'max-age': 3600});
+                    setCookie('firstSession', 'false', {secure: true, 'max-age': 3600});
                 }
             }
         })
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     items:3
                 },
                 1000:{
-                    items:2.5
+                    items:2.6
                 }
             }
         })
