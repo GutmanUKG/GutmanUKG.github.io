@@ -1,11 +1,21 @@
 'use strict';
 
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 document.addEventListener('DOMContentLoaded', function () {
   var firstSession = true;
+  if (getCookie('firstSession')) {
+    console.log('firstSession');
+    firstSession = getCookie('firstSession');
+    console.log(firstSession);
+  }
   //Если анимация еще не работала то запускаем все анимашки
-  if (firstSession) {
+  if (firstSession == true) {
     gsap.registerPlugin(ScrollTrigger);
-
     // Анимация параллакса для фоновой картинки
     gsap.fromTo('.tabs_block', {
       opacity: 0
@@ -114,12 +124,54 @@ document.addEventListener('DOMContentLoaded', function () {
         // when the top of the trigger hits the top of the viewport
         end: '+=500',
         onEnter: function onEnter() {
+          //Тут отлючаеться вся анимация привязанная с scroll
           firstSession = false;
+          setCookie('firstSession', 'false', {
+            secure: true,
+            'max-age': 3600
+          });
         }
       }
     });
   } else {
     //Если анимация уже была просмотренна пользователем то делаем стандартный функционал
+
+    var tabsItems = document.querySelectorAll('.tabs_list .tabs_item');
+    tabsItems.forEach(function (i, idx) {
+      var title = i.querySelector('.tabs_title');
+      title.style.cssText = "position: relative; z-index: 700";
+      i.addEventListener('click', function (e) {
+        clearClass(tabsItems, 'active');
+        var target = e.target;
+        if (target.classList.contains('tabs_title')) {
+          i.classList.add('active');
+        }
+      });
+    });
+    $('.slider_list').addClass('owl-carousel owl-theme');
+    var slider_list = $('.slider_list').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: false,
+      dots: false,
+      autoplay: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 2.5
+        }
+      }
+    });
+  }
+  function clearClass(items, classActive) {
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.remove(classActive);
+    }
   }
   var people_slider = $('.people_slider').owlCarousel({
     loop: true,
@@ -148,5 +200,27 @@ document.addEventListener('DOMContentLoaded', function () {
     // Parameters has to be in square bracket '[]'
     people_slider.trigger('prev.owl.carousel', [300]);
   });
+  function getCookie(name) {
+    var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+  function setCookie(name, value) {
+    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    options = _objectSpread({
+      path: '/'
+    }, options);
+    if (options.expires instanceof Date) {
+      options.expires = options.expires.toUTCString();
+    }
+    var updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    for (var optionKey in options) {
+      updatedCookie += "; " + optionKey;
+      var optionValue = options[optionKey];
+      if (optionValue !== true) {
+        updatedCookie += "=" + optionValue;
+      }
+    }
+    document.cookie = updatedCookie;
+  }
 });
 //# sourceMappingURL=script.js.map

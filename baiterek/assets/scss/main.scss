@@ -246,6 +246,7 @@ section.tabs_block{
         border-radius: 24px 24px 0 0;
         margin: 0;
         width: max-content;
+        cursor: pointer;
       }
       .tabs_content{
         border-radius: 24px 24px 24px 24px;
@@ -270,6 +271,24 @@ section.tabs_block{
             font-size: 16px;
             line-height: 125%;
             color: rgba(255, 255, 255, 0.5);
+          }
+        }
+        a{
+          font-family: var(--font-family);
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 150%;
+          color: rgba(255, 255, 255, 0.75);
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          &:after{
+            content: '';
+            display: block;
+            width: 25px;
+            height: 25px;
+            background: url("../assets/imgs/icons/link-ico.svg")center/cover no-repeat;
           }
         }
       }
@@ -310,6 +329,13 @@ section.tabs_block{
           background: #00803d;
         }
 
+      }
+
+      &.active{
+        .tabs_content{
+          position: relative;
+          z-index: 1000;
+        }
       }
     }
   }
@@ -608,4 +634,9 @@ footer{
     line-height: 171%;
     color: rgba(29, 42, 41, 0.65);
   }
+}
+
+.reset-styles{
+  height: 100vh !important;
+  padding: 0 !important;
 }

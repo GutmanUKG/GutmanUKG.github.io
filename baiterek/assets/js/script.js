@@ -2,10 +2,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     let firstSession = true;
-    //Если анимация еще не работала то запускаем все анимашки
-    if(firstSession){
-        gsap.registerPlugin(ScrollTrigger);
 
+    if(getCookie('firstSession')){
+        console.log('firstSession')
+        firstSession = getCookie('firstSession')
+        console.log(firstSession)
+    }
+    //Если анимация еще не работала то запускаем все анимашки
+    if(firstSession == true){
+        gsap.registerPlugin(ScrollTrigger);
         // Анимация параллакса для фоновой картинки
         gsap.fromTo('.tabs_block',
             { opacity: 0 },  // Начальное состояние: невидимо
@@ -84,7 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 start: 'top center', // when the top of the trigger hits the top of the viewport
                 end: '+=500',
                 onEnter: ()=>{
+                    //Тут отлючаеться вся анимация привязанная с scroll
                     firstSession = false;
+                    setCookie('firstSession', 'false', {secure: true, 'max-age': 3600});
                 }
             }
         })
@@ -93,6 +100,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }else {
         //Если анимация уже была просмотренна пользователем то делаем стандартный функционал
 
+        let tabsItems = document.querySelectorAll('.tabs_list .tabs_item');
+        tabsItems.forEach((i, idx)=>{
+            let title = i.querySelector('.tabs_title')
+            title.style.cssText = "position: relative; z-index: 700";
+            i.addEventListener('click', (e)=>{
+                clearClass(tabsItems, 'active')
+                let target = e.target;
+                if(target.classList.contains('tabs_title')){
+                    i.classList.add('active')
+                }
+            })
+        })
+
+
+        $('.slider_list').addClass('owl-carousel owl-theme')
+        let slider_list = $('.slider_list').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:false,
+            dots:false,
+            autoplay: true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:2.5
+                }
+            }
+        })
+
+    }
+
+    function clearClass(items, classActive){
+        for(let i = 0; i < items.length; i++){
+            items[i].classList.remove(classActive)
+        }
     }
 
 
@@ -123,4 +170,44 @@ document.addEventListener('DOMContentLoaded', () => {
         // Parameters has to be in square bracket '[]'
         people_slider.trigger('prev.owl.carousel', [300]);
     })
+
+
+
+    function getCookie(name) {
+        let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+
+    function setCookie(name, value, options = {}) {
+
+        options = {
+            path: '/',
+            // при необходимости добавьте другие значения по умолчанию
+            ...options
+        };
+
+        if (options.expires instanceof Date) {
+            options.expires = options.expires.toUTCString();
+        }
+
+        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+        for (let optionKey in options) {
+            updatedCookie += "; " + optionKey;
+            let optionValue = options[optionKey];
+            if (optionValue !== true) {
+                updatedCookie += "=" + optionValue;
+            }
+        }
+
+        document.cookie = updatedCookie;
+    }
+
+
+
+
+
 });
