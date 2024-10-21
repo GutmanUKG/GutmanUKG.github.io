@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
           return "+=".concat(totalItemsWidth);
         },
         // конец анимации после прокрутки всех элементов
-        scrub: 1
+        scrub: 0.1
       }
     });
 

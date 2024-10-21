@@ -234,9 +234,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.cookie = updatedCookie;
     }
-
-
-
-
-
 });
