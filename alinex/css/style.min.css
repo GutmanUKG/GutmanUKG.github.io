@@ -12723,16 +12723,16 @@ body {
   display: block;
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 64px;
+  font-size: 60px;
 }
 @media (min-width: 425px) {
   .counter .counter__increment .counter__digit span {
-    font-size: clamp(64px, 64px + (128 - 64) * (100vw - 425px) / (1920 - 425), 128px);
+    font-size: clamp(60px, 60px + (120 - 60) * (100vw - 425px) / (1920 - 425), 120px);
   }
 }
 @media (min-width: 1920px) {
   .counter .counter__increment .counter__digit span {
-    font-size: 128px;
+    font-size: 120px;
   }
 }
 .counter .counter__increment .counter__digit span {
@@ -12994,6 +12994,7 @@ section {
   left: 44.5%;
 }
 .map .map__wrapper .map__dots .map__dot--kyzlodrda {
+  display: none;
   top: 64.8%;
   left: 47.5%;
 }
