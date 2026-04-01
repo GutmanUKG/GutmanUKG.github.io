@@ -12335,7 +12335,7 @@ body {
 }
 .header__menu ul li a {
   text-decoration: none;
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
 }
@@ -12351,7 +12351,6 @@ body {
 }
 .header__menu ul li a {
   color: #000;
-  letter-spacing: -1px;
 }
 .header__burger {
   display: none;
