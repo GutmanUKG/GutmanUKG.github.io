@@ -12515,7 +12515,7 @@ body {
   left: clamp(20px, 20px + (50 - 20) * (100vw - 425px) / (1920 - 425), 50px);
 }
 .steps .steps__list .step__item .step__text .step__title {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 28px;
 }
@@ -12532,10 +12532,9 @@ body {
 .steps .steps__list .step__item .step__text .step__title {
   text-align: center;
   color: #000;
-  letter-spacing: -3px;
 }
 .steps .steps__list .step__item .step__text .step__desc {
-  font-family: var(--second-family);
+  font-family: var(--font-family);
   font-size: 14px;
 }
 @media (min-width: 425px) {
@@ -12547,9 +12546,6 @@ body {
   .steps .steps__list .step__item .step__text .step__desc {
     font-size: 24px;
   }
-}
-.steps .steps__list .step__item .step__text .step__desc {
-  letter-spacing: -2px;
 }
 .steps .steps__list .step__item--1 {
   background: url(../img/step_1.png) center/contain no-repeat;
@@ -12703,7 +12699,6 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: -2px;
   margin-bottom: clamp(30px, 30px + (75 - 30) * (100vw - 425px) / (1920 - 425), 75px);
 }
 .counter h4 span, .counter .h4 span {
@@ -12737,7 +12732,7 @@ body {
 .counter .counter__increment .counter__digit span {
   display: block;
   font-family: var(--font-family);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 60px;
 }
 @media (min-width: 425px) {
@@ -12781,7 +12776,6 @@ body {
   text-align: center;
   color: #fff;
   transform: translate(-50%, 50%);
-  letter-spacing: -2px;
 }
 .counter .coin {
   position: absolute;
@@ -12894,7 +12888,6 @@ section {
   display: block;
   width: -moz-max-content;
   width: max-content;
-  letter-spacing: 1px;
   position: relative;
   overflow: hidden;
 }
@@ -13086,7 +13079,6 @@ section {
 }
 .footer__site {
   text-align: right;
-  letter-spacing: -2px;
   color: #000;
   margin-top: clamp(15px, 15px + (30 - 15) * (100vw - 425px) / (1920 - 425), 30px);
   text-decoration: none;
