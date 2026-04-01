@@ -9,21 +9,6 @@
   font-weight: 400;
   src: url("../fonts/TB-64-121_KAZ.woff") format("woff"), url("../fonts/TB-64-121_KAZ.TTF") format("truetype");
 }
-@font-face {
-  font-family: "Poppins";
-  font-weight: 400;
-  src: url("../fonts/Poppinsregular.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Poppins";
-  font-weight: 500;
-  src: url("../fonts/Poppinsmedium.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Poppins";
-  font-weight: 700;
-  src: url("../fonts/Poppinsbold.woff2") format("woff2");
-}
 /*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
@@ -12269,7 +12254,6 @@ textarea.form-control-lg {
   --c52900: #c52900;
   --font-family: "TB-64-122_KAZ", sans-serif;
   --second-family: "TB-64-121_KAZ", sans-serif;
-  --poppins: "Poppins", sans-serif;
 }
 
 .preloader {
@@ -13133,6 +13117,22 @@ img.sticker {
   display: block;
 }
 
+.site__selector li {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+}
+.site__selector li:first-child:after {
+  content: "|";
+  color: #fff;
+  margin-left: 0.5rem;
+}
+.site__selector li.active {
+  color: #fff;
+}
+
 @media (max-width: 1200px) {
   .steps .steps__list {
     grid-template-columns: 1fr;
@@ -13234,6 +13234,11 @@ img.sticker {
   }
 }
 @media (max-width: 650px) {
+  .header__wrap {
+    justify-content: end !important;
+    width: -moz-max-content;
+    width: max-content;
+  }
   .footer .row {
     gap: 2rem;
     justify-content: center;
