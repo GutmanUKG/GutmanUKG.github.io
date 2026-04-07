@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alinex</title>
   <!-- Preload fonts -->
-  <link rel="preload" href="fonts/TB-64-122_KAZ.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="fonts/TB-64-121_KAZ.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/TB-64-122_KAZ.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/TB-64-121_KAZ.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <!-- Main styles -->
@@ -25,7 +25,7 @@
             <use xlink:href="img/sprite.svg#logo"></use>
           </svg>
       </a>
-        <div class="header__wrap col-8 d-flex justify-content-between align-items-center" >
+        <div class="header__wrap col-9 d-flex justify-content-between align-items-center" >
           <nav class="header__menu" aria-label="Основная навигация">
             <ul>
               <li><a href="#conditions">Условия</a></li>
@@ -47,8 +47,8 @@
   </header>
   <main>
     <section class="banner" aria-label="Главный баннер акции">
-      <img src="img/main_banner.png" alt="Акция AlinEX - выиграй квартиру" class="banner__image banner__image--desktop">
-      <img src="img/mob_banner-2.png" alt="Акция AlinEX - выиграй квартиру" class="banner__image banner__image--mobile" loading="lazy">
+
+
 
       <!-- Parallax coins -->
       <div class="coin coin--1" data-parallax="0.25" data-parallax-rotate="true" data-parallax-max="80">
@@ -65,91 +65,103 @@
       </div>
     </section>
 
-    <section class="main-text">
-      <div class="container">
-        <div class="main-text__banner"></div>
-        <!-- Parallax coins -->
-        <div class="coin coin--1" data-parallax="0.3">
-          <img src="img/coin_6.svg" alt="" aria-hidden="true" loading="lazy">
-        </div>
-      </div>
-    </section>
+<!--    <section class="main-text">-->
+<!--      <div class="container">-->
+<!--        <div class="main-text__banner"></div>-->
+<!--        &lt;!&ndash; Parallax coins &ndash;&gt;-->
+
+<!--      </div>-->
+<!--    </section>-->
 
     <section class="steps" id="conditions">
       <div class="container-fluid">
         <h2 class="section-title">
           КАК ПРИНЯТЬ УЧАСТИЕ
         </h2>
-        <div class="steps__list">
-          <div class="step__item step__item--1">
-            <div class="step__icon">
-              <svg width="50" height="50">
-                <use xlink:href="img/sprite.svg#basket"></use>
-              </svg>
-            </div>
-            <div class="step__text">
-              <div class="step__title">
-                КУПИ 
-              </div>
-              <div class="step__desc">
-                продукцию AlinEX со специальным акционным купоном.
-              </div>
-            </div>
-          
-        
+<!--        <div class="steps__list">-->
+<!--          <div class="step__item step__item&#45;&#45;1">-->
+<!--            <div class="step__icon">-->
+<!--              <svg width="50" height="50">-->
+<!--                <use xlink:href="img/sprite.svg#basket"></use>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="step__text">-->
+<!--              <div class="step__title">-->
+<!--                КУПИ -->
+<!--              </div>-->
+<!--              <div class="step__desc">-->
+<!--                продукцию AlinEX со специальным акционным купоном.-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          -->
+<!--        -->
+<!--        </div>-->
+<!--          <div class="step__item step__item&#45;&#45;2">-->
+<!--            <div class="step__icon">-->
+<!--              <svg width="50" height="50">-->
+<!--                <use xlink:href="img/sprite.svg#text"></use>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="step__text">-->
+<!--              <div class="step__title">-->
+<!--                ОБМЕНЯЙ-->
+<!--              </div>-->
+<!--              <div class="step__desc">-->
+<!--                купоны в филиале Alina Group в твоем городе на денежный приз.-->
+<!--              </div>-->
+<!--            </div>-->
+
+
+<!--        </div>-->
+<!--          <div class="step__item step__item&#45;&#45;3">-->
+<!--            <div class="step__icon">-->
+<!--              <svg width="50" height="50">-->
+<!--                <use xlink:href="img/sprite.svg#sptep_coin"></use>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="step__text">-->
+<!--              <div class="step__title">-->
+<!--                СОБЕРИ-->
+<!--              </div>-->
+<!--              <div class="step__desc">-->
+<!--                купоны (вырежи и накопи нужное количество купонов).-->
+<!--              </div>-->
+<!--            </div>-->
+
+
+<!--        </div>-->
+<!--          <div class="step__item step__item&#45;&#45;4">-->
+<!--            <div class="step__icon">-->
+<!--              <svg width="50" height="50">-->
+<!--                <use xlink:href="img/sprite.svg#keys"></use>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="step__text">-->
+<!--              <div class="step__title">-->
+<!--                УЧАСТВУЙ-->
+<!--              </div>-->
+<!--              <div class="step__desc">-->
+<!--                в розыгрыше квартир!-->
+<!--              </div>-->
+<!--            </div>-->
+
+
+<!--        </div>-->
+<!--      </div>-->
+        <div class="steps__list--imgs">
+          <div class="step__item">
+            <img src="./img/slide_1_1.png" alt="">
+          </div>
+          <div class="step__item">
+            <img src="./img/slide_2_2.png" alt="">
+          </div>
+          <div class="step__item">
+            <img src="./img/slide_3_3.png" alt="">
+          </div>
+          <div class="step__item">
+            <img src="./img/slide_4_4.png" alt="">
+          </div>
         </div>
-          <div class="step__item step__item--2">
-            <div class="step__icon">
-              <svg width="50" height="50">
-                <use xlink:href="img/sprite.svg#text"></use>
-              </svg>
-            </div>
-            <div class="step__text">
-              <div class="step__title">
-                ОБМЕНЯЙ
-              </div>
-              <div class="step__desc">
-                купоны в филиале Alina Group в твоем городе на денежный приз.
-              </div>
-            </div>
-
-
-        </div>
-          <div class="step__item step__item--3">
-            <div class="step__icon">
-              <svg width="50" height="50">
-                <use xlink:href="img/sprite.svg#sptep_coin"></use>
-              </svg>
-            </div>
-            <div class="step__text">
-              <div class="step__title">
-                СОБЕРИ
-              </div>
-              <div class="step__desc">
-                купоны (вырежи и накопи нужное количество купонов).
-              </div>
-            </div>
-
-
-        </div>
-          <div class="step__item step__item--4">
-            <div class="step__icon">
-              <svg width="50" height="50">
-                <use xlink:href="img/sprite.svg#keys"></use>
-              </svg>
-            </div>
-            <div class="step__text">
-              <div class="step__title">
-                УЧАСТВУЙ
-              </div>
-              <div class="step__desc">
-                в розыгрыше квартир!
-              </div>
-            </div>
-
-
-        </div>
-      </div>
       </div>
       <div class="coin coin--1" data-parallax="0.3">
         <img src="img/coin_4.svg" alt="" aria-hidden="true" loading="lazy">
@@ -166,7 +178,7 @@
 
       <div class="container">
         <h2 class="section-title section-title--light">
-          ЧЕМ БОЛЬШЕ КУПОНОВ, ТЕМ БОЛЬШЕ ШАНСОВ ВЫИГРАТЬ КВАРТИРЫ!
+          ЧЕМ БОЛЬШЕ КУПОНОВ, ТЕМ БОЛЬШЕ <br> ШАНСОВ ВЫИГРАТЬ КВАРТИРЫ!
         </h2>
       </div>
 
@@ -205,8 +217,11 @@
     <section class="counter">
       <div class="container">
         <h2 class="section-title section-title--light">
-          В Акции участвуют: ALINEX SET 300, SET 301, SET 302, FINISH, GLATT, GLAT PLUS, JOINT, UNILEVEL, GRENDER.
+          В Акции участвуют:
         </h2>
+        <div class="desc">
+          ALINEX SET 300, SET 301, SET 302, FINISH, GLATT, GLAT PLUS, JOINT, UNILEVEL, GRENDER.
+        </div>
 
         <h4>
           ИЗ <span>100 000 000</span> УЖЕ ВЫПЛАЧЕНЫ:
