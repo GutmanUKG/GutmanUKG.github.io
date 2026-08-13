@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GERAT — концепт редизайна</title>
+  <script type="module" crossorigin src="/assets/index-MnqjwrYM.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Dy1M1vm_.css">
+</head>
+<body>
+
+<div class="ribbon">Концепт-макет · не боевой сайт</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#" class="logo"><i></i>GERAT</a>
+    <nav class="menu">
+      <a href="#cats">Диски</a><a href="#cats">Колодки</a><a href="#cats">Радиаторы</a>
+      <a href="#cats">Амортизаторы</a><a href="#cats">Фильтры</a><a href="#tech">Технологии</a>
+      <a href="#ai">ИИ-подбор</a>
+    </nav>
+    <div class="nav-act">
+      <span class="lang"><b>RU</b> / KZ</span>
+      <button class="icobtn" aria-label="Поиск"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+      <button class="icobtn" aria-label="Избранное"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.5-7 9-7 9z"/></svg></button>
+      <button class="icobtn cart" aria-label="Корзина"><svg viewBox="0 0 24 24"><path d="M5 7h14l-1.2 11.2a2 2 0 01-2 1.8H8.2a2 2 0 01-2-1.8z"/><path d="M9 7V5.5a3 3 0 016 0V7"/></svg><span>2</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="plate"></div>
+  <div class="sweep"><i></i><i></i></div>
+  <div class="vignette"></div>
+
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Безопасность<br>и надёжность<br>в <em>каждой детали</em></h1>
+      <p class="lead">Заводы-изготовители Gerat — официальные OEM-поставщики Toyota, Mercedes, Volkswagen, Audi, Nissan, Mitsubishi, BMW, Hyundai и KIA. Диски и колодки, радиаторы, амортизаторы, фильтры, шланги и технические жидкости.</p>
+      <div class="cta">
+        <a href="#ai" class="btn btn-p">
+          <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg>
+          Подобрать с ИИ
+        </a>
+        <a href="#cats" class="btn btn-g">Каталог <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="trust">
+        <div><b>с 2012</b>на рынке</div>
+        <div><b>7</b>направлений</div>
+        <div><b>12 мес</b>или 50 000 км</div>
+        <div><b>СНГ</b>доставка</div>
+      </div>
+    </div>
+
+    <div class="stage hot">
+      <canvas id="disc1"></canvas>
+      <div class="badge3d">3D · вращайте мышью</div>
+    </div>
+  </div>
+
+  <div class="scrollhint"><span>Листайте</span><i></i></div>
+</section>
+
+<!-- ============ FINDER ============ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="finder-card reveal">
+      <div class="tabs">
+        <button class="tab on"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 11h2M12 11h5"/></svg>По VIN</button>
+        <button class="tab"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>OEM / артикул</button>
+        <button class="tab"><svg viewBox="0 0 24 24"><path d="M5 16l1.5-5A2 2 0 018.4 9.5h7.2a2 2 0 011.9 1.5L19 16M5 16h14M7 19h2M15 19h2"/></svg>По автомобилю</button>
+        <button class="tab"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>Голосом</button>
+      </div>
+      <div class="finder-row">
+        <input id="finput" type="text" placeholder="Введите VIN, например JTMBFREV20D012345" autocomplete="off">
+        <button class="mic" id="mic1" aria-label="Голосовой ввод">
+          <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/></svg>
+        </button>
+        <button class="btn btn-p" style="height:56px">Найти</button>
+      </div>
+      <div class="hints">
+        <button class="chip">Camry 70 · передние диски</button>
+        <button class="chip">Hyundai Tucson · колодки</button>
+        <button class="chip">43512-33130</button>
+        <button class="chip">Радиатор Kia Sportage IV</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI ============ -->
+<section class="sec" id="ai">
+  <div class="wrap ai-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="dot">●</span> Gerät Assist · основной способ подбора</div>
+      <h2 style="margin:14px 0 18px">Три способа<br>сказать, что<br>у вас за машина.</h2>
+      <p class="lead">Ассистент — главный вход в каталог. Говорите голосом, снимите техпаспорт или выберите марку вручную, как привыкли. Результат один: только то, что реально встанет и есть на складе.</p>
+
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></div>
+        <div><h4>Голосом</h4><p>Русский и казахский, распознаёт артикулы, произнесённые вслух. Самый быстрый путь.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg></div>
+        <div><h4>Фото техпаспорта</h4><p>Снимок документа — марка, модель, год, объём и VIN считываются сами. Ошибиться негде.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M17 15l3 3 3-3" transform="translate(-3 0)"/></svg></div>
+        <div><h4>Вручную, как раньше</h4><p>Марка → модель → год → двигатель. Для тех, кто не хочет разговаривать с ботом.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 4.5-3.5 7-8 8-4.5-1-8-3.5-8-8V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><h4>Только совместимое</h4><p>Ответ опирается на каталог и остатки 1С — без выдуманных артикулов.</p></div>
+      </div>
+    </div>
+
+    <div class="chat reveal" id="chat">
+      <div class="chat-top">
+        <div class="avatar">G</div>
+        <div><b>Gerät Assist</b><small><i></i>онлайн · отвечает за ~2 сек</small></div>
+      </div>
+      <div class="modes" id="modes">
+        <button class="mode on" data-m="voice">
+          <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>
+          Голосом
+        </button>
+        <button class="mode" data-m="doc">
+          <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg>
+          Фото техпаспорта
+        </button>
+        <button class="mode" data-m="manual">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+          Вручную
+        </button>
+      </div>
+      <div class="chat-body" id="cbody"></div>
+      <div class="chat-bar">
+        <div class="fake" id="cfake">
+          <span id="cfaketext">Спросите про запчасть…</span>
+          <div class="wave" id="wave"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+        </div>
+        <button class="mic-sm" id="mic2" aria-label="Голосовой ввод">
+          <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section class="sec light" id="cats">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Каталог</div>
+      <h2>Безопасность и надёжность<br>в каждой детали</h2>
+      <p>Тормозная система, охлаждение, подвеска, фильтрация и технические жидкости — под одной маркой.</p>
+    </div>
+    <div class="cats reveal" id="cats-grid"></div>
+  </div>
+</section>
+
+<!-- ============ SPOTLIGHT ============ -->
+<section class="sec spot">
+  <div class="wrap spot-grid">
+    <div class="stage hot" style="max-height:60vh">
+      <canvas id="disc2"></canvas>
+      <div class="pt pt-holes" data-yaw="-0.24" data-pitch="0.22"
+           data-title="Перфорация"
+           data-text="Увеличивает площадь обдуваемой поверхности диска, улучшая охлаждение. При круглогодичной эксплуатации улучшает очистку диска от влаги и грязи."></div>
+      <div class="pt pt-slots" data-yaw="0.55" data-pitch="0.34"
+           data-title="Слотирование"
+           data-text="Помогает отводить из зоны контакта колодки мелкие частицы износа и газовую фракцию."></div>
+      <div class="pt pt-vent" data-yaw="-0.95" data-pitch="0.05"
+           data-title="Вентиляция"
+           data-text="Направленные каналы вентиляции, по сравнению с традиционной прямой конструкцией, значительно повышают интенсивность прокачки воздуха по ним, улучшая теплоотдачу."></div>
+      <div class="pt pt-hub" data-yaw="0.10" data-pitch="0.72"
+           data-title="Материал"
+           data-text="Сплав железа с углеродом GG20: высокие показатели прочности и долговечности, соответствует всем требованиям по механической и тепловой нагрузке."></div>
+
+      <div class="ptinfo" id="ptinfo">
+        <button class="pi-close" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <div class="pi-title"></div>
+        <p class="pi-text"></p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow"><span class="dot">●</span> Тормозные диски · четыре линейки</div>
+      <h2 style="margin:14px 0 16px">Перфорация,<br>слотирование,<br>защита от коррозии.</h2>
+      <p class="lead">Наводите на точки — покажу, за что отвечает каждый элемент. Диск можно вращать мышью во все стороны.</p>
+      <div class="specs">
+        <div><b>PERFORMANCE</b><small>ЧУГУН G3000 · SAE J431 · ЭПОКСИДНОЕ ПОКРЫТИЕ</small></div>
+        <div><b>PLATINUM</b><small>GG20HC · DIN 1691 · ЦИНК-АЛЮМИНИЙ · ВЫШЕ ОРИГИНАЛА НА 20%</small></div>
+        <div><b>COMPOSITE</b><small>ДВУХСОСТАВНОЙ · ЛЕГЧЕ ДО 10%</small></div>
+        <div><b>RACING</b><small>ПЛАВАЮЩИЕ БОББИНСЫ · ХОНИНГОВАНИЕ FISH SCALES</small></div>
+      </div>
+      <p style="font-size:13.5px;color:var(--muted-d);margin-top:16px">100% совместимость с заводскими параметрами тормозной системы. Качество соответствует европейскому стандарту ECE R90.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPOTLIGHT · КОЛОДКИ ============ -->
+<section class="sec spot spot-alt">
+  <div class="wrap spot-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="dot">●</span> Тормозные колодки · четыре линейки</div>
+      <h2 style="margin:14px 0 16px">Безасбестовая<br>формула,<br>тишина и ресурс.</h2>
+      <p class="lead">Точки на детали раскрывают, за счёт чего это достигается.</p>
+      <div class="specs">
+        <div><b>NORMAL</b><small>SEMI-METALLIC · μ 0,32 (EE) · ЧЁРНАЯ ПРОТИВОСКРИПНАЯ ПЛАСТИНА</small></div>
+        <div><b>PERFORMANCE</b><small>LOW-METALLIC · μ 0,41 (FF) · ECE R90</small></div>
+        <div><b>PLATINUM</b><small>CERAMIC · μ 0,42 (FF) · СЕРЕБРИСТАЯ ПЛАСТИНА · БЕЗ СКРИПА</small></div>
+        <div><b>PG / CG</b><small>КОЭФФИЦИЕНТ GG · СКОРЧИНГ · ПОКРЫТИЕ ДЛЯ ПРИКАТКИ BITE-X</small></div>
+      </div>
+      <p style="font-size:13.5px;color:var(--muted-d);margin-top:16px">100% совместимость с заводскими параметрами тормозной системы.</p>
+    </div>
+
+    <div class="stage hot" style="max-height:60vh">
+      <canvas id="pads1"></canvas>
+      <div class="pt pt-friction" data-yaw="-0.15" data-pitch="-0.25"
+           data-title="Эффективное торможение"
+           data-text="Состав фрикциона подобран таким образом, чтобы обеспечить стабильное торможение при любых условиях эксплуатации. Безасбестовая формула."></div>
+      <div class="pt pt-noise" data-yaw="0.25" data-pitch="-0.60"
+           data-title="Низкий уровень шумов"
+           data-text="Конструкция колодок предусматривает несколько мер по снижению шумов: слотирование, боковые фаски, противоскрипные пластины."></div>
+      <div class="pt pt-dust" data-yaw="-0.62" data-pitch="-0.28"
+           data-title="Низкий уровень пыли"
+           data-text="Обеспечивается характеристиками фрикциона."></div>
+      <div class="pt pt-life" data-yaw="-0.10" data-pitch="-0.78"
+           data-title="Долгая эксплуатация"
+           data-text="Колодки Gerat обеспечивают долгую эксплуатацию как самих колодок, так и дисков — при использовании дисков Gerat."></div>
+
+      <div class="ptinfo">
+        <button class="pi-close" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <div class="pi-title"></div>
+        <p class="pi-text"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH ============ -->
+<section class="sec light" id="tech">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Производство и технологии</div>
+      <h2>Тот же завод,<br>что и для конвейера.</h2>
+      <p>Заводы-изготовители Gerat — официальные OEM-поставщики мировых автомобильных компаний и международных брендов aftermarket-запчастей.</p>
+    </div>
+    <div class="nums reveal">
+      <div class="num"><b>с 2012</b><span>компания Gerat работает на рынке</span></div>
+      <div class="num"><b>12 мес</b><span>или 50 000 км пробега — гарантийный срок (для фильтров 10 000 км)</span></div>
+      <div class="num"><b>ECE R90</b><span>европейский стандарт качества тормозных компонентов</span></div>
+      <div class="num"><b>СНГ</b><span>доставка по Казахстану, в Россию, Кыргызстан, Беларусь, Узбекистан, Армению</span></div>
+    </div>
+  </div>
+
+  <div class="mq" style="margin-top:64px">
+    <div class="mq-in" id="mq"></div>
+  </div>
+</section>
+
+<!-- ============ OFFICES ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Где нас найти</div>
+      <h2>Алматы, Астана<br>и карта партнёров.</h2>
+    </div>
+    <div class="off reveal">
+      <div class="ocard">
+        <div class="k">Центральный офис</div>
+        <h3>Алматы</h3>
+        <p>м-он Таугуль 3, ул. Султана Бейбарыса 2<br>Пн–Пт 08:00–17:00</p>
+        <a href="tel:+77472509848">+7 747 250 9848</a>
+      </div>
+      <div class="ocard">
+        <div class="k">Филиал</div>
+        <h3>Астана</h3>
+        <p>пр. Нургиса Тлендиева, 15/1<br>Вт–Сб 09:00–18:00</p>
+        <a href="tel:+77082680702">+7 708 268 0702</a>
+      </div>
+      <div class="ocard">
+        <div class="k">Склад</div>
+        <h3>Алматы, Кайрат</h3>
+        <p>микрорайон Кайрат 282/3<br>Обед 13:00–14:00</p>
+        <a href="#">Карта партнёров →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BAND ============ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="band reveal">
+      <div class="eyebrow"><span class="dot">●</span> Партнёрам</div>
+      <h2 style="margin-top:14px">Станьте представителем Gerat</h2>
+      <p class="lead">Реферальная программа, склад в двух городах и поддержка по подбору — на стороне ассистента, а не менеджера в отпуске.</p>
+      <div class="cta" style="justify-content:center">
+        <a href="#" class="btn btn-p">Стать партнёром</a>
+        <a href="#" class="btn btn-g">Реферальная ссылка</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="#" class="logo" style="margin-bottom:16px"><i></i>GERAT</a>
+        <p style="font-size:14px;max-width:280px">Тормозные диски и колодки, радиаторы, амортизаторы, фильтры и шланги. Казахстан и СНГ.</p>
+      </div>
+      <div><h5>Каталог</h5>
+        <a href="#">Тормозные колодки</a><a href="#">Тормозные диски</a><a href="#">Радиаторы</a>
+        <a href="#">Фильтры</a><a href="#">Амортизаторы</a><a href="#">Технические жидкости</a>
+      </div>
+      <div><h5>Компания</h5>
+        <a href="#">О компании</a><a href="#">Производство и технологии</a><a href="#">Гарантийная политика</a>
+        <a href="#">Список партнёров</a><a href="#">Отзывы</a>
+      </div>
+      <div><h5>Контакты</h5>
+        <a href="tel:+77472509848">+7 747 250 9848</a><a href="tel:+77273100249">+7 727 310 02 49</a>
+        <a href="#">WhatsApp +7 707 129 3848</a><a href="#">Обратный звонок</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Gerat. Концепт-макет редизайна.</span>
+      <span>Алматы · Астана</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
