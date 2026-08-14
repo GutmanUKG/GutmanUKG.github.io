@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GERAT — редизайн, вариант B</title>
+  <script type="module" crossorigin src="/assets/mainB-DaTVeLFM.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/assets/chat-demo-DSQd3eSs.js">
+  <link rel="stylesheet" crossorigin href="/assets/mainB-DdV5RoGk.css">
+</head>
+<body>
+
+<div class="ribbon">
+  Вариант
+  <a href="/">A</a>
+  <a href="/index-b.html" class="on">B</a>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="/index-b.html" class="logo"><i></i>GERAT</a>
+    <nav class="menu">
+      <a href="/catalog.html">Диски</a><a href="#cats">Колодки</a><a href="#cats">Радиаторы</a>
+      <a href="#cats">Амортизаторы</a><a href="#cats">Фильтры</a><a href="#tech">Технологии</a>
+      <a href="#ai">ИИ-подбор</a>
+    </nav>
+    <div class="nav-act">
+      <span class="lang"><b>RU</b> / KZ</span>
+      <button class="icobtn" aria-label="Поиск"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+      <button class="icobtn" aria-label="Избранное"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.5-7 9-7 9z"/></svg></button>
+      <button class="icobtn cart" aria-label="Корзина"><svg viewBox="0 0 24 24"><path d="M5 7h14l-1.2 11.2a2 2 0 01-2 1.8H8.2a2 2 0 01-2-1.8z"/><path d="M9 7V5.5a3 3 0 016 0V7"/></svg><span>2</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- =======================================================================
+     ШАПКА С АВТОМОБИЛЕМ
+     Вместо детали — машина целиком: капот открывается, области ведут
+     в разделы каталога. Разметка модели не содержит: сцену поднимает
+     car3d.js, когда GLB появится в public/model/.
+======================================================================= -->
+<section class="bhero">
+  <div class="wrap">
+    <div class="bhero-copy">
+      <div class="eyebrow">ТОО «GERAT Distribution» · с 2012 года</div>
+      <h1>Безопасность<br>и надёжность<br>в <em>каждой детали</em></h1>
+      <p class="lead">Заводы-изготовители Gerat — официальные OEM-поставщики Toyota, Mercedes, Volkswagen, Audi, Nissan, Mitsubishi, BMW, Hyundai и KIA. Выберите узел на машине — покажем, что у нас для него есть.</p>
+      <div class="cta">
+        <a href="#ai" class="btn btn-p">
+          <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg>
+          Подобрать с ИИ
+        </a>
+        <a href="#cats" class="btn btn-g">Каталог <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+
+    <div class="carwrap">
+      <div class="stage carstage" id="carstage">
+        <canvas class="car3d"></canvas>
+
+        <!-- место под 3D-модель: пока её нет, ничего не подменяем -->
+        <div class="carslot">
+          <svg viewBox="0 0 24 24"><path d="M5 16l1.6-5.4A2.4 2.4 0 019 9h6a2.4 2.4 0 012.4 1.6L19 16M4 16h16v3h-3v-1.5H7V19H4z"/><circle cx="8" cy="16" r="1.3"/><circle cx="16" cy="16" r="1.3"/></svg>
+          <b>Здесь будет 3D-модель автомобиля</b>
+          <p>Капот открывается, узлы кликабельны и ведут в разделы каталога. Пока модели нет — разделы работают списком справа.</p>
+        </div>
+
+        <div class="carzones"></div>
+
+        <button class="hoodbtn" id="hoodbtn" aria-pressed="false">
+          <svg viewBox="0 0 24 24"><path d="M3 17h18M5 17l2-5h10l2 5"/><path d="M7 12l1.5-4.5h7L17 12"/></svg>
+          <span>Открыть капот</span>
+        </button>
+
+        <div class="carinfo">
+          <button class="ci-close" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+          <div class="ci-title"></div>
+          <span class="ci-sub"></span>
+          <p class="ci-text"></p>
+          <a class="ci-link" href="#">Смотреть каталог
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="carrail" id="carrail"></div>
+    </div>
+
+    <div class="trust">
+      <div><b>с 2012</b>на рынке</div>
+      <div><b>7</b>направлений</div>
+      <div><b>12 мес</b>или 50 000 км</div>
+      <div><b>ECE R90</b>стандарт качества</div>
+      <div><b>СНГ</b>доставка</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ КАТАЛОГ ============ -->
+<section class="sec soft" id="cats">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Каталог</div>
+      <h2>Семь направлений<br>под одной маркой.</h2>
+      <p>Тормозная система, охлаждение, подвеска, фильтрация и технические жидкости.</p>
+    </div>
+    <div class="cats reveal" id="cats-grid"></div>
+  </div>
+</section>
+
+<!-- ============ ИИ-ПОДБОР ============ -->
+<section class="sec" id="ai">
+  <div class="wrap ai-grid">
+    <div class="reveal">
+      <div class="eyebrow">Gerät Assist · основной способ подбора</div>
+      <h2 style="margin:12px 0 16px">Два способа<br>сказать, что<br>у вас за машина.</h2>
+      <p class="lead">Ассистент — главный вход в каталог. Скажите голосом или снимите техпаспорт. Результат один: только то, что реально встанет и есть на складе. Привычный подбор по марке и модели остался в фильтре раздела.</p>
+
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></div>
+        <div><h4>Голосом</h4><p>Русский и казахский, распознаёт артикулы, произнесённые вслух. Самый быстрый путь.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg></div>
+        <div><h4>Фото техпаспорта</h4><p>Снимок документа — марка, модель, год, объём и VIN считываются сами. Ошибиться негде.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+        <div><h4>Фильтр никуда не делся</h4><p>Марка → модель → год → двигатель остались в разделе каталога. Для тех, кто не хочет разговаривать с ботом.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 4.5-3.5 7-8 8-4.5-1-8-3.5-8-8V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><h4>Только совместимое</h4><p>Ответ опирается на каталог и остатки 1С — без выдуманных артикулов.</p></div>
+      </div>
+    </div>
+
+    <div class="chat reveal" id="chat">
+      <div class="chat-top">
+        <div class="avatar">G</div>
+        <div><b>Gerät Assist</b><small><i></i>онлайн · отвечает за ~2 сек</small></div>
+      </div>
+      <div class="chat-body" id="cbody"></div>
+      <!-- демонстрация: строка не рабочая, настоящий ввод — в разделе каталога -->
+      <div class="chat-bar">
+        <div class="fake" id="cfake">
+          <span id="cfaketext">Спросите про запчасть…</span>
+          <div class="wave" id="wave"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+        </div>
+        <button class="mic-sm" id="cam2" aria-label="Снять техпаспорт" title="Снять техпаспорт">
+          <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg>
+        </button>
+        <button class="mic-sm on" id="mic2" aria-label="Голосовой ввод" title="Сказать голосом">
+          <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ПРОИЗВОДСТВО ============ -->
+<section class="sec soft" id="tech">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Производство и технологии</div>
+      <h2>Тот же завод,<br>что и для конвейера.</h2>
+      <p>Мы размещаем прямые заказы на производство своей продукции на лучших заводах-изготовителях, соответствующих всем международным стандартам качества — ISO, TUV, ECE, AMECA.</p>
+    </div>
+    <div class="nums reveal">
+      <div class="num"><b>с 2012</b><span>компания Gerat работает на рынке</span></div>
+      <div class="num"><b>12 мес</b><span>или 50 000 км пробега — гарантийный срок (для фильтров 10 000 км)</span></div>
+      <div class="num"><b>ECE R90</b><span>европейский стандарт качества тормозных компонентов</span></div>
+      <div class="num"><b>СНГ</b><span>доставка по Казахстану, в Россию, Кыргызстан, Беларусь, Узбекистан, Армению</span></div>
+    </div>
+  </div>
+
+  <div class="mq"><div class="mq-in" id="mq"></div></div>
+</section>
+
+<!-- ============ ОФИСЫ ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Где нас найти</div>
+      <h2>Алматы, Астана<br>и карта партнёров.</h2>
+    </div>
+    <div class="off reveal">
+      <div class="ocard">
+        <div class="k">Центральный офис</div>
+        <h3>Алматы</h3>
+        <p>м-он Таугуль 3, ул. Султана Бейбарыса 2<br>Пн–Пт 08:00–17:00</p>
+        <a href="tel:+77472509848">+7 747 250 9848</a>
+      </div>
+      <div class="ocard">
+        <div class="k">Филиал</div>
+        <h3>Астана</h3>
+        <p>пр. Нургиса Тлендиева, 15/1<br>Вт–Сб 09:00–18:00</p>
+        <a href="tel:+77082680702">+7 708 268 0702</a>
+      </div>
+      <div class="ocard">
+        <div class="k">Склад</div>
+        <h3>Алматы, Кайрат</h3>
+        <p>микрорайон Кайрат 282/3<br>Обед 13:00–14:00</p>
+        <a href="#">Карта партнёров →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ПАРТНЁРАМ ============ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="band reveal">
+      <div class="eyebrow">Партнёрам</div>
+      <h2>Станьте представителем Gerat</h2>
+      <p>Бренд GERAT — официальная зарегистрированная торговая марка на территории Казахстана. Продукция защищена от подделок: логотип наносится на изделие ещё на этапе производства.</p>
+      <div class="cta">
+        <a href="#" class="btn btn-p">Стать партнёром</a>
+        <a href="#" class="btn btn-g">Реферальная ссылка</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="/index-b.html" class="logo" style="margin-bottom:16px"><i></i>GERAT</a>
+        <p style="font-size:14px;max-width:300px">Сделать вождение автомобилей безопасным, экономичным и комфортным через предоставление высококачественных запчастей по доступной цене.</p>
+      </div>
+      <div><h5>Каталог</h5>
+        <a href="https://gerat.kz/catalog/tormoznye-kolodki/" target="_blank" rel="noopener">Тормозные колодки</a>
+        <a href="/catalog.html">Тормозные диски</a>
+        <a href="https://gerat.kz/catalog/radiatory/" target="_blank" rel="noopener">Радиаторы</a>
+        <a href="https://gerat.kz/catalog/filtry/" target="_blank" rel="noopener">Фильтры</a>
+        <a href="https://gerat.kz/catalog/shockabsorber/" target="_blank" rel="noopener">Амортизаторы</a>
+        <a href="https://gerat.kz/catalog/tekhnicheskie_zhidkosti/" target="_blank" rel="noopener">Технические жидкости</a>
+      </div>
+      <div><h5>Компания</h5>
+        <a href="#tech">О компании</a><a href="#tech">Производство и технологии</a><a href="#">Гарантийная политика</a>
+        <a href="#">Список партнёров</a><a href="#">Отзывы</a>
+      </div>
+      <div><h5>Контакты</h5>
+        <a href="tel:+77472509848">+7 747 250 9848</a><a href="tel:+77273100249">+7 727 310 02 49</a>
+        <a href="#">WhatsApp +7 707 129 3848</a><a href="#">Обратный звонок</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Gerat. Концепт-макет редизайна, вариант B.</span>
+      <span>Алматы · Астана</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
