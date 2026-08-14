@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GERAT — концепт редизайна</title>
-  <script type="module" crossorigin src="/assets/main-D5wIBS-Y.js"></script>
+  <script type="module" crossorigin src="/assets/main-F46s2Dxl.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
   <link rel="modulepreload" crossorigin href="/assets/RoomEnvironment-CfYJcB9I.js">
-  <link rel="modulepreload" crossorigin href="/assets/disc3d-DxRBTDWb.js">
+  <link rel="modulepreload" crossorigin href="/assets/disc3d-Ce15nOw0.js">
   <link rel="modulepreload" crossorigin href="/assets/chat-demo-DSQd3eSs.js">
-  <link rel="stylesheet" crossorigin href="/assets/disc3d-8TSYS-Ru.css">
+  <link rel="stylesheet" crossorigin href="/assets/disc3d-D0Sq2hdf.css">
 </head>
 <body>
 
@@ -148,17 +148,17 @@
         </div>
       </div>
 
-      <!-- Фильтры: модели нет, показываем фотографию с сайта -->
+      <!-- Фильтры -->
       <div class="showpanel" id="sp-filters" role="tabpanel" aria-labelledby="st-filters" hidden>
-        <div class="stage hot flat" data-autoopen="no">
-          <img class="part-photo" src="/img/filters.webp" alt="Масляный фильтр Gerat FO-006" loading="lazy" width="900" height="624">
-          <div class="pt lbl rev ptf-eff"
+        <div class="stage hot" data-autoopen="no">
+          <canvas id="hflt"></canvas>
+          <div class="pt lbl rev ptf-eff" data-yaw="0" data-pitch="0.16"
                data-title="Эффективность фильтрации"
                data-text="Степень очистки масляных фильтров в соответствии со стандартом ISO4548-12 — свыше 99% на 30 микронах, воздушных фильтров по стандарту ISO5011 — свыше 99%."><span>Эффективность фильтрации</span></div>
-          <div class="pt lbl ptf-dirt"
+          <div class="pt lbl ptf-dirt" data-yaw="-0.62" data-pitch="0.10"
                data-title="Грязеёмкость"
                data-text="Увеличенная в 1,5–2 раза грязеёмкость по сравнению со стандартными фильтрами."><span>Грязеёмкость</span></div>
-          <div class="pt lbl rev ptf-mat"
+          <div class="pt lbl rev ptf-mat" data-yaw="0.55" data-pitch="0.06"
                data-title="Материал"
                data-text="При изготовлении масляных фильтров используется фильтровальная бумага производства Hollingsworth&amp;Vose (Германия), воздушных фильтров — Ahlstrom (Южная Корея)."><span>Материал</span></div>
 
@@ -167,6 +167,7 @@
             <div class="pi-title"></div>
             <p class="pi-text"></p>
           </div>
+          <div class="badge3d">3D · вращайте деталь</div>
         </div>
       </div>
     </div>
@@ -386,7 +387,7 @@
     <div class="reveal">
       <div class="eyebrow"><span class="dot">●</span> Фильтры · масляные, воздушные, салонные, топливные</div>
       <h2 style="margin:14px 0 16px">Свыше 99%<br>очистки и двойная<br>грязеёмкость.</h2>
-      <p class="lead">Модели фильтра пока нет — здесь фотография с сайта. Точки на ней раскрывают, за счёт чего достигается ресурс.</p>
+      <p class="lead">Точки на детали раскрывают, за счёт чего достигается ресурс. Фильтр можно вращать во все стороны.</p>
       <div class="specs">
         <div><b>PERFORMANCE SPIN-ON</b><small>HOLLINGSWORTH &amp; VOSE · СИЛИКОНОВЫЙ КЛАПАН · 99% НА 30 МК (ISO4548-12)</small></div>
         <div><b>PERFORMANCE ELEMENT</b><small>HOLLINGSWORTH &amp; VOSE · ВЫСОКАЯ ГРЯЗЕЁМКОСТЬ · ISO4548-12</small></div>
@@ -395,18 +396,18 @@
       <p style="font-size:13.5px;color:var(--muted-d);margin-top:16px">Гарантийный срок на фильтры — 10 000 км пробега.</p>
     </div>
 
-    <div class="stage hot flat" style="max-height:60vh">
-      <img class="part-photo" src="/img/filters.webp" alt="Масляный фильтр Gerat FO-006" loading="lazy" width="900" height="624">
-      <div class="pt pt-flt-eff"
+    <div class="stage hot" style="max-height:60vh">
+      <canvas id="flt2"></canvas>
+      <div class="pt pt-flt-eff" data-yaw="-0.12" data-pitch="0.13"
            data-title="Эффективность фильтрации"
            data-text="Степень очистки масляных фильтров в соответствии со стандартом ISO4548-12 — свыше 99% на 30 микронах, воздушных фильтров по стандарту ISO5011 — свыше 99%."></div>
-      <div class="pt pt-flt-dirt"
+      <div class="pt pt-flt-dirt" data-yaw="-0.70" data-pitch="0.10"
            data-title="Грязеёмкость"
            data-text="Увеличенная в 1,5–2 раза грязеёмкость по сравнению со стандартными фильтрами."></div>
-      <div class="pt pt-flt-mat"
+      <div class="pt pt-flt-mat" data-yaw="0.55" data-pitch="0.05"
            data-title="Материал"
            data-text="При изготовлении масляных фильтров используется фильтровальная бумага производства Hollingsworth&amp;Vose (Германия), воздушных фильтров — Ahlstrom (Южная Корея)."></div>
-      <div class="pt pt-flt-valve"
+      <div class="pt pt-flt-valve" data-yaw="-0.25" data-pitch="-0.45"
            data-title="Противоотливной клапан"
            data-text="В масляных фильтрах spin-on применяется только силиконовый противоотливной клапан, что обеспечивает безопасную работу двигателя при любых температурных режимах."></div>
 
