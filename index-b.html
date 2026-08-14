@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GERAT — редизайн, вариант B</title>
-  <script type="module" crossorigin src="/assets/mainB-DaTVeLFM.js"></script>
+  <script type="module" crossorigin src="/assets/mainB-DFKxdkxW.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
   <link rel="modulepreload" crossorigin href="/assets/chat-demo-DSQd3eSs.js">
-  <link rel="stylesheet" crossorigin href="/assets/mainB-DdV5RoGk.css">
+  <link rel="stylesheet" crossorigin href="/assets/mainB-Dc5P45pu.css">
 </head>
 <body>
 
@@ -37,42 +37,24 @@
 
 <!-- =======================================================================
      ШАПКА С АВТОМОБИЛЕМ
-     Вместо детали — машина целиком: капот открывается, области ведут
-     в разделы каталога. Разметка модели не содержит: сцену поднимает
-     car3d.js, когда GLB появится в public/model/.
+     Вместо детали — машина целиком, слева на первом экране.
+     Точки двухуровневые: сначала узлы (капот, колесо), после раскрытия —
+     разделы каталога внутри узла. Всё остальное делает car3d.js.
 ======================================================================= -->
 <section class="bhero">
-  <div class="wrap">
-    <div class="bhero-copy">
-      <div class="eyebrow">ТОО «GERAT Distribution» · с 2012 года</div>
-      <h1>Безопасность<br>и надёжность<br>в <em>каждой детали</em></h1>
-      <p class="lead">Заводы-изготовители Gerat — официальные OEM-поставщики Toyota, Mercedes, Volkswagen, Audi, Nissan, Mitsubishi, BMW, Hyundai и KIA. Выберите узел на машине — покажем, что у нас для него есть.</p>
-      <div class="cta">
-        <a href="#ai" class="btn btn-p">
-          <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg>
-          Подобрать с ИИ
-        </a>
-        <a href="#cats" class="btn btn-g">Каталог <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
+  <div class="wrap bhero-grid">
 
-    <div class="carwrap">
+    <div class="bhero-stage">
       <div class="stage carstage" id="carstage">
         <canvas class="car3d"></canvas>
-
-        <!-- место под 3D-модель: пока её нет, ничего не подменяем -->
-        <div class="carslot">
-          <svg viewBox="0 0 24 24"><path d="M5 16l1.6-5.4A2.4 2.4 0 019 9h6a2.4 2.4 0 012.4 1.6L19 16M4 16h16v3h-3v-1.5H7V19H4z"/><circle cx="8" cy="16" r="1.3"/><circle cx="16" cy="16" r="1.3"/></svg>
-          <b>Здесь будет 3D-модель автомобиля</b>
-          <p>Капот открывается, узлы кликабельны и ведут в разделы каталога. Пока модели нет — разделы работают списком справа.</p>
-        </div>
-
+        <div class="carshadow"></div>
         <div class="carzones"></div>
 
-        <button class="hoodbtn" id="hoodbtn" aria-pressed="false">
-          <svg viewBox="0 0 24 24"><path d="M3 17h18M5 17l2-5h10l2 5"/><path d="M7 12l1.5-4.5h7L17 12"/></svg>
-          <span>Открыть капот</span>
+        <button class="carback" hidden>
+          <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          Вся машина
         </button>
+        <div class="hint3d">Нажмите точку на машине</div>
 
         <div class="carinfo">
           <button class="ci-close" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
@@ -84,17 +66,28 @@
           </a>
         </div>
       </div>
-
-      <div class="carrail" id="carrail"></div>
+      <p class="credit">3D-модель на основе «2020 Audi RS 6 Avant» © Galaxy Car Showroom (Sketchfab), CC BY 4.0</p>
     </div>
 
-    <div class="trust">
-      <div><b>с 2012</b>на рынке</div>
-      <div><b>7</b>направлений</div>
-      <div><b>12 мес</b>или 50 000 км</div>
-      <div><b>ECE R90</b>стандарт качества</div>
-      <div><b>СНГ</b>доставка</div>
+    <div class="bhero-copy">
+      <div class="eyebrow">ТОО «GERAT Distribution» · с 2012 года</div>
+      <h1>Безопасность<br>и надёжность<br>в <em>каждой детали</em></h1>
+      <p class="lead">Заводы-изготовители Gerat — официальные OEM-поставщики Toyota, Mercedes, Volkswagen, Audi, Nissan, Mitsubishi, BMW, Hyundai и KIA. Нажмите точку на машине — откроется узел, а в нём разделы каталога.</p>
+      <div class="cta">
+        <a href="#ai" class="btn btn-p">
+          <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg>
+          Подобрать с ИИ
+        </a>
+        <a href="#cats" class="btn btn-g">Каталог <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="trust">
+        <div><b>с 2012</b>на рынке</div>
+        <div><b>7</b>направлений</div>
+        <div><b>12 мес</b>или 50 000 км</div>
+        <div><b>ECE R90</b>стандарт</div>
+      </div>
     </div>
+
   </div>
 </section>
 
