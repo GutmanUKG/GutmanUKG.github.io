@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GERAT — концепт редизайна</title>
-  <script type="module" crossorigin src="/assets/main-BB2t7n7B.js"></script>
+  <script type="module" crossorigin src="/assets/main-Bz_OY8DO.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
   <link rel="modulepreload" crossorigin href="/assets/RoomEnvironment-CfYJcB9I.js">
-  <link rel="modulepreload" crossorigin href="/assets/disc3d-CQeyrb2W.js">
+  <link rel="modulepreload" crossorigin href="/assets/disc3d-CMWD2Nqo.js">
   <link rel="modulepreload" crossorigin href="/assets/chat-demo-DSQd3eSs.js">
-  <link rel="stylesheet" crossorigin href="/assets/disc3d-zgQHtXZP.css">
+  <link rel="stylesheet" crossorigin href="/assets/disc3d-BMQEKm5z.css">
 </head>
 <body>
 
@@ -125,17 +125,17 @@
         </div>
       </div>
 
-      <!-- Радиаторы: модели пока нет, показываем фотографию с сайта -->
+      <!-- Радиаторы -->
       <div class="showpanel" id="sp-rads" role="tabpanel" aria-labelledby="st-rads" hidden>
-        <div class="stage hot flat" data-autoopen="no">
-          <img class="part-photo" src="/img/radiators.webp" alt="Радиатор охлаждения Gerat" loading="lazy" width="900" height="700">
-          <div class="pt lbl ptr-rows"
+        <div class="stage hot" data-autoopen="no">
+          <canvas id="hrad"></canvas>
+          <div class="pt lbl ptr-rows" data-yaw="-0.14" data-pitch="0.10"
                data-title="Увеличенная рядность"
                data-text="Расстояние 5–10 мм между лентами в зависимости от модели; у трубчатых — 15 мм между трубками. Отсюда высокая тепловая эффективность, прочность и надёжность конструкции."><span>Увеличенная рядность</span></div>
-          <div class="pt lbl ptr-tank"
+          <div class="pt lbl ptr-tank" data-yaw="-0.95" data-pitch="0.12"
                data-title="Цельнолитые бачки"
                data-text="Бачки цельные, без склеек или спаек разных частей, — это гарантия от протекания. Литые, в отличие от стандартных паяных."><span>Цельнолитые бачки</span></div>
-          <div class="pt lbl ptr-oem"
+          <div class="pt lbl ptr-oem" data-yaw="-0.34" data-pitch="0.46"
                data-title="Крепления под размеры OEM"
                data-text="Полное соответствие ОЕМ размерам с годовой гарантией на протекание. Полотно и бачки соединены механически, специальными зажимами, на высокоточном немецком оборудовании."><span>Крепления под размеры OEM</span></div>
 
@@ -144,6 +144,7 @@
             <div class="pi-title"></div>
             <p class="pi-text"></p>
           </div>
+          <div class="badge3d">3D · вращайте деталь</div>
         </div>
       </div>
 
