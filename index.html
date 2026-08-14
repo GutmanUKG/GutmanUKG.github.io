@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GERAT — концепт редизайна</title>
-  <script type="module" crossorigin src="/assets/index-0ekXqk62.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DzwsxVf0.css">
+  <script type="module" crossorigin src="/assets/main-D9vUy_qb.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/disc3d-DAHpv2j_.js">
+  <link rel="stylesheet" crossorigin href="/assets/disc3d-k8DBGlZp.css">
 </head>
 <body>
 
@@ -16,7 +17,7 @@
   <div class="nav-in">
     <a href="#" class="logo"><i></i>GERAT</a>
     <nav class="menu">
-      <a href="#cats">Диски</a><a href="#cats">Колодки</a><a href="#cats">Радиаторы</a>
+      <a href="/catalog.html">Диски</a><a href="#cats">Колодки</a><a href="#cats">Радиаторы</a>
       <a href="#cats">Амортизаторы</a><a href="#cats">Фильтры</a><a href="#tech">Технологии</a>
       <a href="#ai">ИИ-подбор</a>
     </nav>
@@ -95,8 +96,8 @@
   <div class="wrap ai-grid">
     <div class="reveal">
       <div class="eyebrow"><span class="dot">●</span> Gerät Assist · основной способ подбора</div>
-      <h2 style="margin:14px 0 18px">Три способа<br>сказать, что<br>у вас за машина.</h2>
-      <p class="lead">Ассистент — главный вход в каталог. Говорите голосом, снимите техпаспорт или выберите марку вручную, как привыкли. Результат один: только то, что реально встанет и есть на складе.</p>
+      <h2 style="margin:14px 0 18px">Два способа<br>сказать, что<br>у вас за машина.</h2>
+      <p class="lead">Ассистент — главный вход в каталог. Скажите голосом или снимите техпаспорт. Результат один: только то, что реально встанет и есть на складе. Привычный подбор по марке и модели остался в фильтре раздела.</p>
 
       <div class="feat">
         <div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></div>
@@ -108,7 +109,7 @@
       </div>
       <div class="feat">
         <div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M17 15l3 3 3-3" transform="translate(-3 0)"/></svg></div>
-        <div><h4>Вручную, как раньше</h4><p>Марка → модель → год → двигатель. Для тех, кто не хочет разговаривать с ботом.</p></div>
+        <div><h4>Фильтр никуда не делся</h4><p>Марка → модель → год → двигатель остались в разделе каталога. Для тех, кто не хочет разговаривать с ботом.</p></div>
       </div>
       <div class="feat">
         <div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 4.5-3.5 7-8 8-4.5-1-8-3.5-8-8V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
@@ -121,27 +122,17 @@
         <div class="avatar">G</div>
         <div><b>Gerät Assist</b><small><i></i>онлайн · отвечает за ~2 сек</small></div>
       </div>
-      <div class="modes" id="modes">
-        <button class="mode on" data-m="voice">
-          <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>
-          Голосом
-        </button>
-        <button class="mode" data-m="doc">
-          <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg>
-          Фото техпаспорта
-        </button>
-        <button class="mode" data-m="manual">
-          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
-          Вручную
-        </button>
-      </div>
       <div class="chat-body" id="cbody"></div>
+      <!-- Способы ввода — кнопками прямо в строке: голос и снимок техпаспорта -->
       <div class="chat-bar">
         <div class="fake" id="cfake">
           <span id="cfaketext">Спросите про запчасть…</span>
           <div class="wave" id="wave"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
         </div>
-        <button class="mic-sm" id="mic2" aria-label="Голосовой ввод">
+        <button class="mic-sm" id="cam2" aria-label="Снять техпаспорт" title="Снять техпаспорт">
+          <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg>
+        </button>
+        <button class="mic-sm on" id="mic2" aria-label="Голосовой ввод" title="Сказать голосом">
           <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>
         </button>
       </div>

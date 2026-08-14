@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Тормозные диски Gerat — каталог</title>
+  <script type="module" crossorigin src="/assets/catalog-BmDrg-j1.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/disc3d-DAHpv2j_.js">
+  <link rel="stylesheet" crossorigin href="/assets/disc3d-k8DBGlZp.css">
+  <link rel="stylesheet" crossorigin href="/assets/catalog-DwmcF4CK.css">
+</head>
+<body class="cat-page">
+
+<div class="ribbon">Концепт-макет · не боевой сайт</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav solid" id="nav">
+  <div class="nav-in">
+    <a href="/" class="logo"><i></i>GERAT</a>
+    <nav class="menu">
+      <a href="/catalog.html" class="on">Диски</a><a href="/#cats">Колодки</a><a href="/#cats">Радиаторы</a>
+      <a href="/#cats">Амортизаторы</a><a href="/#cats">Фильтры</a><a href="/#tech">Технологии</a>
+      <a href="#assist">ИИ-подбор</a>
+    </nav>
+    <div class="nav-act">
+      <span class="lang"><b>RU</b> / KZ</span>
+      <button class="icobtn" aria-label="Поиск"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+      <button class="icobtn" aria-label="Избранное"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.5-7 9-7 9z"/></svg></button>
+      <button class="icobtn cart" aria-label="Корзина"><svg viewBox="0 0 24 24"><path d="M5 7h14l-1.2 11.2a2 2 0 01-2 1.8H8.2a2 2 0 01-2-1.8z"/><path d="M9 7V5.5a3 3 0 016 0V7"/></svg><span>2</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- =======================================================================
+     ШАПКА РАЗДЕЛА
+     Слева — 3D-модель детали раздела, справа — ИИ-подбор.
+     Ниже — обычный фильтр, под ним карточки.
+======================================================================= -->
+<section class="cathead" id="assist">
+  <div class="plate"></div>
+  <div class="vignette"></div>
+
+  <div class="wrap">
+    <div class="crumbs">
+      <a href="/">Главная</a><span>/</span><a href="/#cats">Каталог</a><span>/</span><b>Тормозные диски</b>
+    </div>
+
+    <div class="cathead-grid">
+
+      <!-- ---- левая колонка: 3D-модель раздела ---- -->
+      <div class="ch-model">
+        <div class="stage hot">
+          <canvas id="cat3d"></canvas>
+          <div class="pt pt-holes" data-yaw="-0.24" data-pitch="0.22"
+               data-title="Перфорация"
+               data-text="Увеличивает площадь обдуваемой поверхности диска, улучшая охлаждение. При круглогодичной эксплуатации улучшает очистку диска от влаги и грязи."></div>
+          <div class="pt pt-slots" data-yaw="0.55" data-pitch="0.34"
+               data-title="Слотирование"
+               data-text="Помогает отводить из зоны контакта колодки мелкие частицы износа и газовую фракцию."></div>
+          <div class="pt pt-vent" data-yaw="-0.95" data-pitch="0.05"
+               data-title="Вентиляция"
+               data-text="Направленные каналы вентиляции, по сравнению с традиционной прямой конструкцией, значительно повышают интенсивность прокачки воздуха по ним, улучшая теплоотдачу."></div>
+          <div class="pt pt-hub" data-yaw="0.10" data-pitch="0.72"
+               data-title="Материал"
+               data-text="Сплав железа с углеродом GG20: высокие показатели прочности и долговечности, соответствует всем требованиям по механической и тепловой нагрузке."></div>
+
+          <div class="ptinfo">
+            <button class="pi-close" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+            <div class="pi-title"></div>
+            <p class="pi-text"></p>
+          </div>
+          <div class="badge3d">3D · вращайте мышью</div>
+        </div>
+      </div>
+
+      <!-- ---- правая колонка: умный подбор ---- -->
+      <div class="ch-assist">
+        <h1>Тормозные<br>диски <em>Gerat</em></h1>
+        <p class="lead">Четыре линейки: Performance, Platinum, Composite и Racing. Скажите, что у вас за машина — ассистент сам выставит фильтр ниже.</p>
+
+        <div class="chat chat-inline" id="chat">
+          <div class="chat-top">
+            <div class="avatar">G</div>
+            <div><b>Gerät Assist</b><small><i></i>онлайн · отвечает за ~2 сек</small></div>
+          </div>
+          <div class="chat-body" id="cbody"></div>
+          <!-- В разделе строка рабочая: клиент пишет запрос сам.
+               Способы ввода — голос и снимок техпаспорта — кнопками здесь же.
+               Ручной выбор из чата убран: для него под каталогом есть фильтр. -->
+          <form class="chat-bar" id="cform" autocomplete="off">
+            <div class="cfield">
+              <input class="cinput" id="cinput" type="text" enterkeyhint="send"
+                     placeholder="Марка, модель, артикул или размер…" aria-label="Запрос ассистенту">
+              <div class="wave" id="wave"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+            </div>
+            <input type="file" id="cfile" accept="image/*" hidden>
+            <button type="button" class="mic-sm" id="cam2" aria-label="Снять техпаспорт" title="Снять техпаспорт">
+              <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg>
+            </button>
+            <button type="button" class="mic-sm" id="mic2" aria-label="Голосовой ввод" title="Сказать голосом">
+              <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>
+            </button>
+            <button type="submit" class="send-sm" id="csend" aria-label="Отправить">
+              <svg viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================================
+     ФИЛЬТР
+     Набор полей повторяет боевой фильтр gerat.kz:
+     марка → модель → год → двигатель, плюс линейка, наличие и сортировка.
+======================================================================= -->
+<div class="fbar" id="fbar">
+  <div class="wrap">
+    <div class="fbar-main">
+      <div class="fsel">
+        <label for="f-brand">Марка</label>
+        <select id="f-brand"><option value="">Все марки</option></select>
+      </div>
+      <div class="fsel">
+        <label for="f-model">Модель</label>
+        <select id="f-model" disabled><option value="">Сначала марка</option></select>
+      </div>
+      <div class="fsel">
+        <label for="f-line">Линейка</label>
+        <select id="f-line">
+          <option value="">Любая</option>
+          <option value="Performance">Performance</option>
+          <option value="Platinum">Platinum</option>
+        </select>
+      </div>
+      <div class="fsel">
+        <label for="f-dia">Диаметр</label>
+        <select id="f-dia">
+          <option value="">Любой</option>
+          <option value="0-300">до 300 мм</option>
+          <option value="300-330">300–330 мм</option>
+          <option value="330-999">от 330 мм</option>
+        </select>
+      </div>
+      <div class="fsel">
+        <label for="f-sort">Сортировка</label>
+        <select id="f-sort">
+          <option value="name">По имени</option>
+          <option value="num">По номеру</option>
+          <option value="dia">По диаметру</option>
+        </select>
+      </div>
+      <button class="fstock" id="f-stock" aria-pressed="false">
+        <i></i>Только в наличии
+      </button>
+      <!-- Шапка с ассистентом уезжает вверх при прокрутке, поэтому вход
+           в ИИ-подбор дублируется здесь и открывает его окном -->
+      <button class="fai" id="ai-open" aria-haspopup="dialog" aria-controls="aimodal">
+        <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg>
+        Подобрать с ИИ
+      </button>
+      <button class="freset" id="f-reset" hidden>Сбросить</button>
+    </div>
+
+    <div class="fbar-sub">
+      <div class="fcount" id="fcount">12 позиций</div>
+      <div class="fnote">
+        <svg viewBox="0 0 24 24"><path d="M12 9v5M12 17.5v.5"/><path d="M12 3l9 16H3z"/></svg>
+        Обязательно проверяйте совместимость по VIN — каталог не даёт полной гарантии совместимости
+      </div>
+    </div>
+
+    <div class="ftags" id="ftags"></div>
+  </div>
+</div>
+
+<!-- ============ КАРТОЧКИ ============ -->
+<section class="sec light catgrid-sec">
+  <div class="wrap">
+    <div class="pgrid" id="pgrid"></div>
+    <div class="pempty" id="pempty" hidden>
+      <b>Под такой запрос ничего не нашлось</b>
+      <p>Снимите часть условий или спросите ассистента — он подберёт по VIN и остаткам.</p>
+      <button class="btn btn-g" id="p-clear">Сбросить фильтр</button>
+    </div>
+    <div class="pmore-wrap">
+      <button class="btn btn-g pmore" id="pmore" hidden>Показать ещё <span></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================================
+     ОКНО ИИ-ПОДБОРА
+     Своей разметки чата здесь нет: при открытии сюда переезжает тот же
+     блок из шапки раздела. Так диалог один, id не задваиваются и сценарий
+     не запускается вторым экземпляром.
+======================================================================= -->
+<div class="aimodal" id="aimodal" hidden>
+  <div class="aim-back" data-close></div>
+  <div class="aim-win" role="dialog" aria-modal="true" aria-label="Подбор с ИИ">
+    <div class="aim-head">
+      <b>Подбор с ИИ</b>
+      <button class="aim-x" data-close aria-label="Закрыть">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="aim-slot" id="aim-slot"></div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="/" class="logo" style="margin-bottom:16px"><i></i>GERAT</a>
+        <p style="font-size:14px;max-width:280px">Тормозные диски и колодки, радиаторы, амортизаторы, фильтры и шланги. Казахстан и СНГ.</p>
+      </div>
+      <div><h5>Каталог</h5>
+        <a href="/#cats">Тормозные колодки</a><a href="/catalog.html">Тормозные диски</a><a href="/#cats">Радиаторы</a>
+        <a href="/#cats">Фильтры</a><a href="/#cats">Амортизаторы</a><a href="/#cats">Технические жидкости</a>
+      </div>
+      <div><h5>Компания</h5>
+        <a href="/#tech">О компании</a><a href="/#tech">Производство и технологии</a><a href="#">Гарантийная политика</a>
+        <a href="#">Список партнёров</a><a href="#">Отзывы</a>
+      </div>
+      <div><h5>Контакты</h5>
+        <a href="tel:+77472509848">+7 747 250 9848</a><a href="tel:+77273100249">+7 727 310 02 49</a>
+        <a href="#">WhatsApp +7 707 129 3848</a><a href="#">Обратный звонок</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Gerat. Концепт-макет редизайна.</span>
+      <span>Алматы · Астана</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
