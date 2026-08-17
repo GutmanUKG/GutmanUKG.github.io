@@ -7,10 +7,11 @@
 <meta name="description" content="ERB Avtodom, Усть-Каменогорск: авторазбор и контрактные автозапчасти на 12 марок. Двигатели, коробки, ходовая, кузов. Доставка по Казахстану. WhatsApp +7 705 465 55 62.">
 <meta property="og:title" content="ERB Avtodom — контрактные автозапчасти">
 <meta property="og:description" content="12 марок. Двигатели, коробки, ходовая. Подбор по модели, отправка по Казахстану.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23000'/><rect x='4' y='11' width='24' height='11' fill='none' stroke='%23e8202a' stroke-width='2'/><text x='16' y='20' font-size='8' font-family='Helvetica,Arial' font-weight='700' fill='%23fff' text-anchor='middle'>ERB</text></svg>">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23000'/><rect x='4' y='11' width='24' height='11' fill='none' stroke='%23d81c26' stroke-width='2'/><text x='16' y='20' font-size='8' font-family='Helvetica,Arial' font-weight='700' fill='%23fff' text-anchor='middle'>ERB</text></svg>">
 <style>
   :root{
-    --ink:#000; --paper:#fff; --red:#e8202a; --grey:#767676; --rule:#000;
+    --ink:#000; --paper:#fff; --red:#d81c26; --grey:#6e6e6e; --rule:#000;
     --gap:24px; --pad:32px; --max:1440px;
     --sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
     --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
@@ -21,153 +22,214 @@
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--paper);color:var(--ink);
-    font:400 16px/1.5 var(--sans);letter-spacing:-.01em;padding-bottom:62px;
+    font:400 16px/1.5 var(--sans);letter-spacing:-.01em;
+    padding-bottom:calc(62px + env(safe-area-inset-bottom));
     -webkit-font-smoothing:antialiased}
   @media(min-width:820px){body{padding-bottom:0}}
-  img{max-width:100%;display:block}
+  img{max-width:100%;height:auto;display:block}
   a{color:inherit}
+  figure{margin:0}
+  p{margin:0}
+
+  :focus-visible{outline:2px solid var(--red);outline-offset:3px}
+  .act-red:focus-visible,.dock a.p:focus-visible{outline-color:var(--ink)}
+  .skip{position:absolute;left:-9999px;top:0}
+  .skip:focus{left:0;top:0;z-index:60;background:var(--ink);color:var(--paper);
+    padding:14px 18px;font:600 13px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase}
 
   .shell{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
   .g{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
-  @media(max-width:760px){ .g{grid-template-columns:repeat(6,1fr)} }
+  @media(max-width:999px){ .g{grid-template-columns:repeat(6,1fr)} .g>*{grid-column:1/-1} }
 
   /* ——— типографика ——— */
   h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.045em;line-height:.94}
-  h1{font-size:clamp(44px,8.2vw,132px);text-transform:uppercase}
-  h2{font-size:clamp(30px,4.6vw,64px);text-transform:uppercase}
-  h3{font-size:clamp(18px,1.6vw,24px);letter-spacing:-.03em;line-height:1.1}
-  .lede{font-size:clamp(17px,1.65vw,23px);line-height:1.42;letter-spacing:-.02em;margin:0}
+  h1{font-size:clamp(40px,7.2vw,92px);text-transform:uppercase}
+  h2{font-size:clamp(28px,4vw,56px);text-transform:uppercase}
+  h3{font-size:clamp(17px,1.4vw,21px);letter-spacing:-.03em;line-height:1.12}
+  .lede{font-size:clamp(17px,1.5vw,21px);line-height:1.42;letter-spacing:-.02em;margin:0}
   .mono{font:500 11px/1.35 var(--mono);letter-spacing:.16em;text-transform:uppercase}
   .grey{color:var(--grey)}
   .red{color:var(--red)}
-  p{margin:0}
 
   .rule{border:0;border-top:1px solid var(--rule);margin:0}
   .rule-thick{border:0;border-top:3px solid var(--ink);margin:0}
 
   /* ——— кнопки: плоские прямоугольники, без скруглений и теней ——— */
   .act{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;
-    padding:19px 22px;text-decoration:none;border:1px solid var(--ink);
+    padding:18px 21px;text-decoration:none;border:1px solid var(--ink);
     font:600 13px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;
-    transition:background .12s,color .12s}
+    transition:background .16s,color .16s,border-color .16s}
   .act .arw{font:400 14px/1 var(--mono)}
-  .act-fill{background:var(--ink);color:var(--paper)}
-  .act-fill:hover{background:var(--red);border-color:var(--red)}
   .act-line:hover{background:var(--ink);color:var(--paper)}
   .act-red{background:var(--red);border-color:var(--red);color:var(--paper)}
   .act-red:hover{background:var(--ink);border-color:var(--ink)}
+  .act:active{opacity:.86}
+
+  /* ——— кадры ——— */
+  .shot img{width:100%;object-fit:cover}
+  .ar24 img{aspect-ratio:24/10}
+  .ar32 img{aspect-ratio:3/2}
+  .ar169 img{aspect-ratio:16/9}
+  .ar11 img{aspect-ratio:1/1}
+  .ar45 img{aspect-ratio:4/5}
+  .cap{margin-top:9px;display:block}
 
   /* ——— плашка «черновик» ——— */
   .draft{background:var(--ink);color:var(--paper)}
-  .draft .shell{padding-top:18px;padding-bottom:18px}
+  .draft .shell{padding-top:16px;padding-bottom:17px}
   .draft .g{align-items:start}
-  .draft .lab{grid-column:span 2}
-  .draft .txt{grid-column:span 10;font-size:14px;line-height:1.5;letter-spacing:-.01em}
-  @media(max-width:760px){ .draft .lab,.draft .txt{grid-column:span 6} .draft .txt{margin-top:10px} }
-  .draft a{color:var(--paper)}
+  .draft .txt{font-size:13.8px;line-height:1.5;letter-spacing:-.005em}
+  @media(min-width:1000px){ .draft .lab{grid-column:span 2} .draft .txt{grid-column:span 10} }
+  @media(max-width:999px){ .draft .txt{margin-top:9px} }
+  .draft a{color:var(--paper);text-underline-offset:2px}
   .draft b{font-weight:700}
 
   /* ——— шапка ——— */
   .top{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--rule)}
-  .top .shell{display:flex;align-items:center;gap:28px;height:78px}
-  .brand{display:flex;align-items:baseline;gap:12px;text-decoration:none}
-  .brand .box{border:2px solid var(--red);padding:3px 8px;font:700 16px/1 var(--sans);letter-spacing:.02em}
-  .brand .nm{font:700 16px/1 var(--sans);letter-spacing:.02em}
-  .top nav{display:none;gap:26px;margin-left:auto}
+  .top .shell{display:flex;align-items:center;gap:24px;height:70px}
+  .brand{display:flex;align-items:baseline;gap:11px;text-decoration:none;padding:10px 0}
+  .brand .box{border:2px solid var(--red);padding:3px 8px;font:700 15px/1 var(--sans);letter-spacing:.02em}
+  .brand .nm{font:700 15px/1 var(--sans);letter-spacing:.02em}
+  .top nav{display:none;gap:22px;margin-left:auto}
   .top nav a{text-decoration:none}
   .top nav a:hover{color:var(--red)}
-  .top .tel{margin-left:auto;text-decoration:none;font:600 16px/1 var(--sans);letter-spacing:-.02em}
+  .top .tel{margin-left:auto;text-decoration:none;font:600 16px/1 var(--sans);letter-spacing:-.02em;
+    padding:12px 0}
+  .top .tel:hover{color:var(--red)}
   @media(min-width:1080px){ .top nav{display:flex} .top .tel{margin-left:0} }
 
-  /* ——— первый экран ——— */
-  .hero{padding:clamp(56px,9vw,140px) 0 0}
-  .hero h1{grid-column:1/span 9}
-  .hero .meta{grid-column:11/span 2;align-self:end;display:grid;gap:16px}
-  .hero .meta div span{display:block;font:400 14px/1.3 var(--sans);letter-spacing:-.01em;margin-top:5px}
-  .hero .under{margin-top:clamp(40px,5vw,72px)}
-  .hero .lede{grid-column:1/span 6}
-  .hero .cta{grid-column:8/span 5;display:grid;gap:12px;align-content:start}
-  @media(max-width:1000px){
-    .hero h1{grid-column:1/-1} .hero .meta{grid-column:1/-1;margin-top:32px}
-    .hero .lede{grid-column:1/-1} .hero .cta{grid-column:1/-1;margin-top:28px}
+  /* ——— первый экран: текст слева, кадр справа ——— */
+  .hero{padding:clamp(30px,3.6vw,58px) 0 0}
+  .hero .kicker{margin-bottom:clamp(14px,1.6vw,22px)}
+  .hero .lede{margin-top:clamp(20px,2.2vw,30px);max-width:52ch}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(22px,2.4vw,32px)}
+  .hero .cta .act{flex:1 1 230px}
+  .hero figure{margin-top:26px}
+  .hero figure img{aspect-ratio:16/11}
+  @media(min-width:1000px){
+    .hero .lead{grid-column:1/span 7}
+    .hero figure{grid-column:9/span 4;margin-top:6px}
+    .hero figure img{aspect-ratio:4/5}
   }
-  .band{margin-top:clamp(48px,6vw,96px);height:clamp(280px,46vw,600px);overflow:hidden}
-  .band img{width:100%;height:100%;object-fit:cover}
+  .facts{margin-top:clamp(30px,3.4vw,54px);padding-top:16px;border-top:1px solid var(--rule);
+    row-gap:20px}
+  .facts div span{display:block;font:400 14.5px/1.35 var(--sans);letter-spacing:-.012em;margin-top:5px}
+  @media(min-width:1000px){ .facts>div{grid-column:span 3} }
+  @media(max-width:999px){ .facts>div{grid-column:span 3} }
+
+  .band{margin-top:clamp(34px,4vw,64px)}
+  .band img{width:100%;aspect-ratio:24/10;object-fit:cover}
+  .band-cap{padding-top:10px}
 
   /* ——— секции ——— */
-  section{padding:clamp(72px,10vw,168px) 0 0}
+  section{padding:clamp(56px,6.6vw,106px) 0 0}
+  section[id]{scroll-margin-top:78px}
   .head{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);align-items:baseline;
-    padding-bottom:clamp(28px,3.4vw,52px)}
+    padding-bottom:clamp(24px,2.6vw,42px)}
   .head .num{grid-column:1/span 2}
-  .head h2{grid-column:3/span 8}
-  @media(max-width:760px){ .head{grid-template-columns:repeat(6,1fr)}
-    .head .num{grid-column:1/-1;margin-bottom:14px} .head h2{grid-column:1/-1} }
+  .head h2{grid-column:3/span 9}
+  @media(max-width:999px){ .head{grid-template-columns:repeat(6,1fr)}
+    .head .num{grid-column:1/-1;margin-bottom:12px} .head h2{grid-column:1/-1} }
 
-  /* марки — типографический список, не плитки */
-  .marks{grid-column:1/span 10;font-weight:700;letter-spacing:-.04em;
-    font-size:clamp(26px,4.2vw,58px);line-height:1.06;text-transform:uppercase}
+  /* ——— 01 марки: типографический список + кадр ——— */
+  .marks{font-weight:700;letter-spacing:-.04em;
+    font-size:clamp(24px,3.2vw,44px);line-height:1.08;text-transform:uppercase}
   .marks i{font-style:normal;color:var(--red)}
-  @media(max-width:1000px){ .marks{grid-column:1/-1} }
+  .marks-note{margin-top:clamp(18px,2vw,28px);padding-top:14px;border-top:1px solid var(--rule);
+    max-width:56ch;font-size:15.5px;letter-spacing:-.012em}
+  @media(min-width:1000px){
+    .mk .txt{grid-column:1/span 6}
+    .mk figure{grid-column:8/span 5;margin-top:6px}
+  }
+  @media(max-width:999px){ .mk figure{margin-top:28px} }
 
-  /* индекс категорий — строки с волосяными линиями */
-  .idx{border-top:1px solid var(--rule)}
-  .idx .row{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);
-    padding:clamp(18px,1.9vw,28px) 0;border-bottom:1px solid var(--rule);align-items:baseline;
-    transition:color .12s}
+  /* ——— 02 индекс категорий: две колонки, волосяные линии ——— */
+  .idx{display:grid;grid-template-columns:1fr;column-gap:var(--gap);
+    border-bottom:1px solid var(--rule)}
+  @media(min-width:1000px){
+    .idx{grid-template-columns:1fr 1fr;grid-template-rows:repeat(6,auto);grid-auto-flow:column}
+  }
+  .idx .row{display:grid;grid-template-columns:40px 1fr;gap:0 12px;
+    padding:clamp(13px,1.3vw,17px) 0;border-top:1px solid var(--rule);
+    align-content:start;transition:color .16s}
   .idx .row:hover{color:var(--red)}
-  .idx .n{grid-column:1/span 1}
-  .idx .t{grid-column:2/span 5}
-  .idx .d{grid-column:8/span 5;color:var(--grey);font-size:15px;letter-spacing:-.01em}
+  .idx .n{grid-column:1;grid-row:1}
+  .idx .t{grid-column:2;grid-row:1}
+  .idx .d{grid-column:2;grid-row:2;color:var(--grey);font-size:14.5px;letter-spacing:-.012em;
+    margin-top:5px;transition:color .16s}
   .idx .row:hover .d{color:var(--red)}
-  @media(max-width:760px){
-    .idx .row{grid-template-columns:repeat(6,1fr);row-gap:6px}
-    .idx .n{grid-column:1/span 1} .idx .t{grid-column:2/span 5} .idx .d{grid-column:2/span 5}
+  .idx-shots{margin-top:clamp(28px,3.2vw,52px)}
+  @media(min-width:1000px){
+    .idx-shots .a{grid-column:1/span 5}
+    .idx-shots .b{grid-column:7/span 6;margin-top:clamp(24px,3vw,56px)}
+  }
+  @media(max-width:999px){ .idx-shots .b{margin-top:22px} }
+
+  /* ——— 03 склад: мозаика из шести кадров ——— */
+  .mosaic{row-gap:clamp(26px,3vw,46px)}
+  @media(min-width:1000px){
+    .mosaic .m1{grid-column:1/span 7}
+    .mosaic .m2{grid-column:9/span 4;margin-top:clamp(40px,5vw,92px)}
+    .mosaic .m3{grid-column:1/span 4}
+    .mosaic .m4{grid-column:5/span 8;margin-top:clamp(20px,2.6vw,44px)}
+    .mosaic .m5{grid-column:1/span 6}
+    .mosaic .m6{grid-column:8/span 5;margin-top:clamp(24px,3vw,52px)}
+  }
+  .stock-note{margin-top:clamp(30px,3.4vw,54px);padding-top:14px;border-top:1px solid var(--rule);
+    max-width:64ch;font-size:15.5px;letter-spacing:-.012em}
+
+  /* ——— 04 отправка ——— */
+  .ship .txt p+p{margin-top:16px}
+  @media(min-width:1000px){
+    .ship .txt{grid-column:1/span 4}
+    .ship .w{grid-column:6/span 7}
+    .ship .p1{grid-column:1/span 6;margin-top:clamp(26px,3vw,48px)}
+    .ship .p2{grid-column:8/span 5;margin-top:clamp(48px,6vw,104px)}
+  }
+  @media(max-width:999px){
+    .ship .w,.ship .p1,.ship .p2{margin-top:24px}
   }
 
-  /* склад — асимметрия со сдвигом */
-  .shots .big{grid-column:1/span 8}
-  .shots .col{grid-column:10/span 3;margin-top:clamp(48px,7vw,120px);display:grid;gap:clamp(28px,3vw,44px)}
-  .shots img{width:100%;object-fit:cover}
-  .shots .big img{height:clamp(300px,42vw,560px)}
-  .shots .col img{height:clamp(180px,17vw,240px)}
-  .cap{margin-top:10px}
-  @media(max-width:1000px){
-    .shots .big{grid-column:1/-1} .shots .col{grid-column:1/-1;margin-top:32px;
-      grid-template-columns:1fr 1fr;gap:var(--gap)}
+  /* ——— 05 заказ: широкий кадр + ступенчатый сдвиг ——— */
+  .work-shot img{aspect-ratio:16/9}
+  @media(min-width:1000px){ .work-shot img{aspect-ratio:21/9} }
+  .steps{margin-top:clamp(34px,4vw,64px)}
+  @media(min-width:1000px){
+    .steps .s{grid-column:span 4}
+    .steps .s:nth-child(2){margin-top:clamp(24px,3vw,56px)}
+    .steps .s:nth-child(3){margin-top:clamp(48px,6vw,112px)}
   }
-
-  /* шаги — ступенчатый сдвиг вниз */
-  .steps .s{grid-column:span 4}
-  .steps .s:nth-child(2){margin-top:clamp(32px,4vw,72px)}
-  .steps .s:nth-child(3){margin-top:clamp(64px,8vw,144px)}
-  .steps .s .big{font:700 clamp(56px,7vw,110px)/.8 var(--sans);letter-spacing:-.06em;
-    color:var(--paper);-webkit-text-stroke:1.5px var(--ink);display:block;margin-bottom:22px}
-  .steps .s p{margin-top:12px;color:var(--grey);font-size:15.5px;letter-spacing:-.01em}
-  @media(max-width:900px){
-    .steps .s{grid-column:1/-1;margin-top:0!important;padding-top:26px;border-top:1px solid var(--rule)}
+  .steps .s .big{font:700 clamp(48px,5.6vw,88px)/.8 var(--sans);letter-spacing:-.06em;
+    color:var(--paper);-webkit-text-stroke:1.5px var(--ink);display:block;margin-bottom:18px}
+  .steps .s p{margin-top:10px;color:var(--grey);font-size:15.2px;letter-spacing:-.012em}
+  @media(max-width:999px){
+    .steps .s{margin-top:0!important;padding-top:24px;border-top:1px solid var(--rule)}
     .steps .s:first-child{border-top:0;padding-top:0}
   }
 
-  /* смещённый текстовый блок */
-  .offset .t{grid-column:4/span 7}
-  .offset .l{grid-column:1/span 2}
-  @media(max-width:1000px){ .offset .t,.offset .l{grid-column:1/-1} .offset .t{margin-top:18px} }
-  .offset p+p{margin-top:18px}
+  /* ——— смещённый текстовый блок ——— */
+  @media(min-width:1000px){
+    .offset .t{grid-column:4/span 7}
+    .offset .l{grid-column:1/span 2}
+  }
+  @media(max-width:999px){ .offset .t{margin-top:16px} }
+  .offset p+p{margin-top:16px}
 
-  /* вопросы */
+  /* ——— вопросы ——— */
   details{border-bottom:1px solid var(--rule)}
   details summary{cursor:pointer;list-style:none;display:grid;
     grid-template-columns:repeat(12,1fr);gap:var(--gap);align-items:baseline;
-    padding:clamp(18px,1.8vw,26px) 0}
+    padding:clamp(15px,1.5vw,22px) 0;transition:color .16s}
+  details summary:hover{color:var(--red)}
   details summary::-webkit-details-marker{display:none}
-  details summary .q{grid-column:2/span 7;font-size:clamp(17px,1.5vw,21px);font-weight:600;
+  details summary .q{grid-column:2/span 7;font-size:clamp(16.5px,1.4vw,20px);font-weight:600;
     letter-spacing:-.025em}
   details summary .pm{grid-column:12/span 1;justify-self:end;font:400 20px/1 var(--mono);color:var(--red)}
   details summary .no{grid-column:1/span 1}
-  details[open] summary .pm::after{content:"−"}
   details summary .pm::after{content:"+"}
-  details .ans{grid-column:2/span 7;color:var(--grey);padding:0 0 clamp(22px,2.2vw,32px);
-    font-size:15.5px;letter-spacing:-.01em;max-width:62ch}
+  details[open] summary .pm::after{content:"\2212"}
+  details .ans{grid-column:2/span 7;color:var(--grey);padding:0 0 clamp(18px,1.9vw,26px);
+    font-size:15.2px;letter-spacing:-.012em;max-width:62ch}
   details .wrapa{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
   @media(max-width:760px){
     details summary{grid-template-columns:repeat(6,1fr)}
@@ -175,30 +237,42 @@
     details .wrapa{grid-template-columns:repeat(6,1fr)} details .ans{grid-column:2/span 5}
   }
 
-  /* контакты */
-  .contact .tel{grid-column:1/span 7;font-weight:700;letter-spacing:-.05em;
-    font-size:clamp(38px,6.6vw,96px);line-height:.92;text-decoration:none;display:block}
+  /* ——— контакты ——— */
+  .cont-shot{margin-bottom:clamp(30px,3.6vw,56px)}
+  .cont-shot img{aspect-ratio:16/9;object-position:50% 38%}
+  @media(min-width:1000px){ .cont-shot img{aspect-ratio:24/9} }
+  .contact .tel{font-weight:700;letter-spacing:-.05em;
+    font-size:clamp(36px,6vw,88px);line-height:.92;text-decoration:none;display:block}
   .contact .tel:hover{color:var(--red)}
-  .contact .side{grid-column:9/span 4;display:grid;gap:22px;align-content:start}
-  .contact .side div span{display:block;font-size:15.5px;margin-top:5px;letter-spacing:-.01em}
-  @media(max-width:1000px){ .contact .tel,.contact .side{grid-column:1/-1} .contact .side{margin-top:34px} }
+  .contact .side{display:grid;gap:20px;align-content:start}
+  .contact .side div span{display:block;font-size:15.2px;margin-top:5px;letter-spacing:-.012em}
+  @media(min-width:1000px){
+    .contact .tel{grid-column:1/span 6}
+    .contact .side{grid-column:8/span 5}
+  }
+  @media(max-width:999px){ .contact .side{margin-top:30px} }
 
-  footer{margin-top:clamp(72px,9vw,150px);border-top:1px solid var(--rule);
-    padding:26px 0 44px}
-  footer .a{grid-column:1/span 6}
-  footer .b{grid-column:8/span 5}
-  @media(max-width:760px){ footer .a,footer .b{grid-column:1/-1} footer .b{margin-top:14px} }
+  footer{margin-top:clamp(54px,6vw,98px);border-top:1px solid var(--rule);padding:24px 0 40px}
+  @media(min-width:1000px){ footer .a{grid-column:1/span 6} footer .b{grid-column:8/span 5} }
+  @media(max-width:999px){ footer .b{margin-top:12px} }
 
-  /* нижняя панель на телефоне */
-  .dock{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;border-top:1px solid var(--ink)}
+  /* ——— нижняя панель на телефоне ——— */
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;
+    border-top:1px solid var(--ink);padding-bottom:env(safe-area-inset-bottom);background:var(--paper)}
   .dock a{flex:1;text-align:center;padding:19px 8px;text-decoration:none;
     font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;background:var(--paper)}
   .dock a.p{background:var(--red);color:var(--paper)}
   .dock a+a{border-left:1px solid var(--ink)}
   @media(min-width:820px){ .dock{display:none} }
+
+  @media(prefers-reduced-motion:reduce){
+    *{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}
+  }
 </style>
 </head>
 <body>
+
+<a class="skip" href="#main">К содержанию</a>
 
 <div class="draft">
   <div class="shell">
@@ -209,7 +283,7 @@
         Данные и фотографии — из вашей открытой карточки в 2GIS: это ваши полки и ваши детали,
         а не стоковые картинки. Телефон, марки, категории и оплата оттуда же. Что устарело — поправим.
         Сделал Владимир Гутман, веб-разработчик, Усть-Каменогорск,
-        <a href="tel:+77776722860"><b>+7 777 672 28 60</b></a> —
+        <a href="tel:+77776722860"><b>+7&nbsp;777&nbsp;672&nbsp;28&nbsp;60</b></a> —
         <a href="https://wa.me/77776722860">WhatsApp</a>.
       </div>
     </div>
@@ -223,42 +297,64 @@
       <a href="#marks">Марки</a>
       <a href="#parts">Запчасти</a>
       <a href="#stock">Склад</a>
+      <a href="#ship">Отправка</a>
       <a href="#order">Заказ</a>
       <a href="#faq">Вопросы</a>
     </nav>
-    <a class="tel" href="tel:+77054655562">+7 705 465 55 62</a>
+    <a class="tel" href="tel:+77054655562">+7&nbsp;705&nbsp;465&nbsp;55&nbsp;62</a>
   </div>
 </header>
 
+<main id="main">
+
 <div class="hero shell">
   <div class="g">
-    <h1>Контрактные<br>запчасти<br><span class="red">со своего</span><br>разбора</h1>
-    <div class="meta">
-      <div><div class="mono grey">Город</div><span>Усть-Каменогорск</span></div>
-      <div><div class="mono grey">Доставка</div><span>по Казахстану</span></div>
-      <div><div class="mono grey">Часы</div><span>09:00—18:00</span></div>
+    <div class="lead">
+      <div class="kicker mono red">Авторазбор и контрактные запчасти · Усть-Каменогорск</div>
+      <h1>Контрактные запчасти со <span class="red">своего</span> разбора</h1>
+      <p class="lede">Двигатели, коробки, ходовая, кузов, оптика, электрика на двенадцать марок.
+        Всё лежит на своём складе и подписано по моделям. Напишите марку, модель и год —
+        ответим, есть ли деталь, и пришлём её фотографию.</p>
+      <div class="cta">
+        <a class="act act-red" href="https://wa.me/77054655562">Написать в WhatsApp <span class="arw">&#8594;</span></a>
+        <a class="act act-line" href="tel:+77054655562">Позвонить <span class="arw">&#8594;</span></a>
+      </div>
     </div>
+    <figure class="shot">
+      <img src="img/racks.jpg" width="1000" height="1000" fetchpriority="high"
+        alt="Рулевые рейки на стеллаже, на каждой маркером написана модель автомобиля">
+      <figcaption class="cap mono grey">Рулевые рейки — модель и год написаны прямо на детали</figcaption>
+    </figure>
   </div>
-  <div class="g under">
-    <p class="lede">Двигатели, коробки, ходовая, кузов, оптика, электрика на двенадцать марок.
-      Всё лежит на своём складе и подписано по моделям. Напишите марку, модель и год —
-      ответим, есть ли деталь, и пришлём её фотографию.</p>
-    <div class="cta">
-      <a class="act act-red" href="https://wa.me/77054655562">Написать в WhatsApp <span class="arw">→</span></a>
-      <a class="act act-line" href="tel:+77054655562">Позвонить <span class="arw">→</span></a>
-    </div>
+  <div class="g facts">
+    <div><div class="mono grey">Город</div><span>Усть-Каменогорск</span></div>
+    <div><div class="mono grey">Доставка</div><span>по Казахстану</span></div>
+    <div><div class="mono grey">Часы</div><span>с 09:00 до 18:00</span></div>
+    <div><div class="mono grey">Оплата</div><span>Перевод с карты · QR · Через банк</span></div>
   </div>
 </div>
 
-<div class="band"><img src="img/hero.jpg" alt="Склад авторазбора ERB Avtodom"></div>
+<div class="band">
+  <img src="img/hero.jpg" width="1800" height="1012" alt="Стеллажи с коробками запчастей во всю длину ангара ERB Avtodom">
+  <div class="shell"><div class="band-cap mono grey">Свой склад — стеллажи по всей длине ангара</div></div>
+</div>
 
 <section id="marks">
   <div class="shell">
     <div class="head"><div class="num mono">01 — Марки</div><h2>Что разбираем</h2></div>
-    <div class="g">
-      <p class="marks">Toyota <i>/</i> Lexus <i>/</i> Nissan <i>/</i> Infiniti <i>/</i> Subaru <i>/</i>
-        Mazda <i>/</i> Honda <i>/</i> Mitsubishi <i>/</i> Hyundai <i>/</i> Kia <i>/</i> BMW <i>/</i>
-        Mercedes-Benz</p>
+    <div class="g mk">
+      <div class="txt">
+        <p class="marks">Toyota <i>/</i> Lexus <i>/</i> Nissan <i>/</i> Infiniti <i>/</i> Subaru <i>/</i>
+          Mazda <i>/</i> Honda <i>/</i> Mitsubishi <i>/</i> Hyundai <i>/</i> Kia <i>/</i> BMW <i>/</i>
+          Mercedes-Benz</p>
+        <p class="marks-note grey">Двенадцать марок, с которыми работаем постоянно. Начните с сообщения:
+          марка, модель, год и что именно нужно.</p>
+      </div>
+      <figure class="shot ar32">
+        <img src="img/front.jpg" width="950" height="534" loading="lazy"
+          alt="Передняя часть красного автомобиля: бампер, фары и решётка радиатора">
+        <figcaption class="cap mono grey">Передок в сборе: бампер, фары, решётка</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -280,34 +376,99 @@
       <div class="row"><div class="n mono">11</div><h3 class="t">Стёкла</h3><div class="d">Лобовые, боковые, задние, форточки</div></div>
       <div class="row"><div class="n mono">12</div><h3 class="t">Расходные материалы</h3><div class="d">Фильтры, ремни, колодки, прокладки</div></div>
     </div>
+    <div class="g idx-shots">
+      <figure class="shot ar169 a">
+        <img src="img/gearbox.jpg" width="950" height="534" loading="lazy"
+          alt="Коробка передач крупным планом, на корпусе видна заводская маркировка">
+        <figcaption class="cap mono grey">Коробка передач — маркировка на корпусе</figcaption>
+      </figure>
+      <figure class="shot ar169 b">
+        <img src="img/motor.jpg" width="950" height="534" loading="lazy"
+          alt="Двигатель крупным планом с впускным коллектором">
+        <figcaption class="cap mono grey">Двигатель с впускным коллектором</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
 <section id="stock">
   <div class="shell">
     <div class="head"><div class="num mono">03 — Склад</div><h2>Подписано<br>и лежит на месте</h2></div>
-    <div class="g shots">
-      <figure class="big" style="margin:0">
-        <img src="img/racks.jpg" alt="Рулевые рейки с подписями по моделям">
-        <figcaption class="cap mono grey">Рулевые рейки — модель и год написаны прямо на детали</figcaption>
+    <div class="g mosaic">
+      <figure class="shot ar169 m1">
+        <img src="img/rows.jpg" width="1250" height="703" loading="lazy"
+          alt="Длинный ряд двигателей на стеллаже склада">
+        <figcaption class="cap mono grey">Двигатели рядами на стеллаже</figcaption>
       </figure>
-      <div class="col">
-        <figure style="margin:0">
-          <img src="img/engine.jpg" alt="Двигатель в сборе">
-          <figcaption class="cap mono grey">Двигатели в сборе</figcaption>
-        </figure>
-        <figure style="margin:0">
-          <img src="img/shafts.jpg" alt="Приводы Subaru Legacy">
-          <figcaption class="cap mono grey">Приводы, помечены по моделям</figcaption>
-        </figure>
+      <figure class="shot ar11 m2">
+        <img src="img/engine.jpg" width="900" height="900" loading="lazy"
+          alt="Двигатель Nissan в сборе">
+        <figcaption class="cap mono grey">Двигатели в сборе</figcaption>
+      </figure>
+      <figure class="shot ar11 m3">
+        <img src="img/boxes.jpg" width="820" height="820" loading="lazy"
+          alt="Автоматические коробки передач, снятые с машин, стоят рядами">
+        <figcaption class="cap mono grey">Коробки-автоматы, снятые с машин</figcaption>
+      </figure>
+      <figure class="shot ar169 m4">
+        <img src="img/shelf.jpg" width="1150" height="647" loading="lazy"
+          alt="Двухъярусный стеллаж, забитый снятыми узлами">
+        <figcaption class="cap mono grey">Двухъярусный стеллаж с узлами</figcaption>
+      </figure>
+      <figure class="shot ar32 m5">
+        <img src="img/yard.jpg" width="820" height="820" loading="lazy"
+          alt="Двигатели, выставленные рядами у синего морского контейнера">
+        <figcaption class="cap mono grey">Двигатели под навесом у контейнера</figcaption>
+      </figure>
+      <figure class="shot ar11 m6">
+        <img src="img/shafts.jpg" width="900" height="900" loading="lazy"
+          alt="Приводы с подписями Subaru Legacy">
+        <figcaption class="cap mono grey">Приводы, помечены по моделям</figcaption>
+      </figure>
+    </div>
+    <p class="stock-note grey">Модель и год написаны прямо на детали — поэтому ответ на вопрос
+      «есть ли такое» занимает минуты, а не день.</p>
+  </div>
+</section>
+
+<section id="ship">
+  <div class="shell">
+    <div class="head"><div class="num mono">04 — Отправка</div><h2>Собираем<br>и отправляем</h2></div>
+    <div class="g ship">
+      <div class="txt">
+        <p class="lede">Двигатель притягиваем стропами к паллету, узлы уходят в упаковке.
+          Отправляем по Казахстану.</p>
+        <p class="grey" style="font-size:15.5px;letter-spacing:-.012em">Способ отправки и стоимость
+          обсуждаем при заказе — зависит от габарита узла и вашего города. Фотографии упакованной
+          детали пришлём до отправки.</p>
       </div>
+      <figure class="shot ar169 w">
+        <img src="img/container.jpg" width="1300" height="731" loading="lazy"
+          alt="Ряды коробок передач у морского контейнера">
+        <figcaption class="cap mono grey">Коробки передач на площадке у контейнера</figcaption>
+      </figure>
+      <figure class="shot ar169 p1">
+        <img src="img/pallet.jpg" width="1050" height="591" loading="lazy"
+          alt="Двигатель, притянутый стропами к деревянному паллету">
+        <figcaption class="cap mono grey">Двигатель на паллете, притянут стропами</figcaption>
+      </figure>
+      <figure class="shot ar169 p2">
+        <img src="img/crated.jpg" width="1050" height="591" loading="lazy"
+          alt="Упакованный двигатель на паллете, рядом деревянный ящик">
+        <figcaption class="cap mono grey">Упаковка перед отправкой</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
 <section id="order">
   <div class="shell">
-    <div class="head"><div class="num mono">04 — Заказ</div><h2>Как это<br>работает</h2></div>
+    <div class="head"><div class="num mono">05 — Заказ</div><h2>Как это<br>работает</h2></div>
+    <figure class="shot work-shot">
+      <img src="img/work.jpg" width="1600" height="900" loading="lazy"
+        alt="Двое работников снимают двигатель с автомобиля на подъёмнике, вид сверху">
+      <figcaption class="cap mono grey">Съём двигателя на подъёмнике</figcaption>
+    </figure>
     <div class="g steps">
       <div class="s">
         <span class="big">01</span>
@@ -331,12 +492,12 @@
 <section>
   <div class="shell">
     <hr class="rule-thick">
-    <div class="g offset" style="padding-top:clamp(36px,4vw,64px)">
+    <div class="g offset" style="padding-top:clamp(30px,3.4vw,54px)">
       <div class="l mono grey">Почему контрактная</div>
       <div class="t">
         <p class="lede">Контрактная запчасть — это оригинальная деталь, снятая с автомобиля.
           Она уже работала, но это заводское качество, а не безымянный новодел за те же деньги.</p>
-        <p class="grey" style="font-size:16px;letter-spacing:-.01em">На двигателе, коробке или рулевой
+        <p class="grey" style="font-size:15.8px;letter-spacing:-.012em">На двигателе, коробке или рулевой
           рейке разница с новым оригиналом такая, что вопрос обычно закрывается сам. Фотографию детали
           присылаем до оплаты — чтобы вы видели состояние, а не читали описание.</p>
       </div>
@@ -346,32 +507,32 @@
 
 <section id="faq">
   <div class="shell">
-    <div class="head"><div class="num mono">05 — Вопросы</div><h2>Что спрашивают</h2></div>
+    <div class="head"><div class="num mono">06 — Вопросы</div><h2>Что спрашивают</h2></div>
     <hr class="rule">
     <details open>
-      <summary><span class="no mono">01</span><span class="q">Как узнать, есть ли нужная деталь</span><span class="pm"></span></summary>
+      <summary><span class="no mono">01</span><span class="q">Как узнать, есть ли нужная деталь</span><span class="pm" aria-hidden="true"></span></summary>
       <div class="wrapa"><p class="ans">Напишите в WhatsApp марку, модель, год и что именно нужно.
         Проверим по складу и ответим — с фотографией, если деталь есть.</p></div>
     </details>
     <details>
-      <summary><span class="no mono">02</span><span class="q">Отправляете в другие города</span><span class="pm"></span></summary>
+      <summary><span class="no mono">02</span><span class="q">Отправляете в другие города</span><span class="pm" aria-hidden="true"></span></summary>
       <div class="wrapa"><p class="ans">Да, по Казахстану. Способ и стоимость доставки обсуждаем при заказе.</p></div>
     </details>
     <details>
-      <summary><span class="no mono">03</span><span class="q">Можно ли увидеть деталь до оплаты</span><span class="pm"></span></summary>
+      <summary><span class="no mono">03</span><span class="q">Можно ли увидеть деталь до оплаты</span><span class="pm" aria-hidden="true"></span></summary>
       <div class="wrapa"><p class="ans">Обязательно. Присылаем фотографии именно той детали, которая поедет к вам.</p></div>
     </details>
     <details>
-      <summary><span class="no mono">04</span><span class="q">Как можно оплатить</span><span class="pm"></span></summary>
+      <summary><span class="no mono">04</span><span class="q">Как можно оплатить</span><span class="pm" aria-hidden="true"></span></summary>
       <div class="wrapa"><p class="ans">Переводом с карты, по QR-коду или через банк.</p></div>
     </details>
     <details>
-      <summary><span class="no mono">05</span><span class="q">Есть ли гарантия</span><span class="pm"></span></summary>
+      <summary><span class="no mono">05</span><span class="q">Есть ли гарантия</span><span class="pm" aria-hidden="true"></span></summary>
       <div class="wrapa"><p class="ans">По каждому узлу условия свои — зависят от детали и её состояния.
         Спросите до покупки, скажем прямо по вашей позиции.</p></div>
     </details>
     <details>
-      <summary><span class="no mono">06</span><span class="q">А если детали сейчас нет</span><span class="pm"></span></summary>
+      <summary><span class="no mono">06</span><span class="q">А если детали сейчас нет</span><span class="pm" aria-hidden="true"></span></summary>
       <div class="wrapa"><p class="ans">Напишите всё равно. Машины на разбор приходят регулярно —
         скажем, стоит ли подождать.</p></div>
     </details>
@@ -380,24 +541,32 @@
 
 <section id="contacts">
   <div class="shell">
-    <div class="head"><div class="num mono">06 — Контакты</div><h2>Написать</h2></div>
+    <div class="head"><div class="num mono">07 — Контакты</div><h2>Написать</h2></div>
+    <figure class="shot cont-shot">
+      <img src="img/building.jpg" width="1500" height="844" loading="lazy"
+        alt="Здание ERB Avtodom ночью с подсвеченной вывеской">
+      <figcaption class="cap mono grey">Наша вывеска. Подбор и заказ идут в WhatsApp — приезжать никуда не нужно</figcaption>
+    </figure>
     <div class="g contact">
-      <a class="tel" href="https://wa.me/77054655562">+7 705<br>465 55 62</a>
+      <a class="tel" href="https://wa.me/77054655562">+7&nbsp;705<br>465&nbsp;55&nbsp;62</a>
       <div class="side">
         <div><div class="mono grey">WhatsApp</div><span>Самый быстрый способ — сразу с фото детали</span></div>
         <div><div class="mono grey">Город</div><span>Усть-Каменогорск, доставка по Казахстану</span></div>
-        <div><div class="mono grey">Часы</div><span>09:00—18:00, график по дням уточним</span></div>
+        <div><div class="mono grey">Часы</div><span>с 09:00 до 18:00, график по дням уточним</span></div>
         <div><div class="mono grey">Оплата</div><span>Перевод с карты · QR · Через банк</span></div>
-        <a class="act act-red" href="https://wa.me/77054655562" style="margin-top:6px">Написать в WhatsApp <span class="arw">→</span></a>
+        <a class="act act-red" href="https://wa.me/77054655562" style="margin-top:4px">Написать в WhatsApp <span class="arw">&#8594;</span></a>
       </div>
     </div>
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="shell">
     <div class="g">
-      <div class="a mono">ERB Avtodom — авторазбор и контрактные автозапчасти, Усть-Каменогорск</div>
+      <div class="a mono">ERB Avtodom — авторазбор и контрактные автозапчасти, Усть-Каменогорск ·
+        +7&nbsp;705&nbsp;465&nbsp;55&nbsp;62</div>
       <div class="b mono grey">Демонстрационная страница. Сведения и фотографии — из открытой карточки организации в 2GIS.</div>
     </div>
   </div>
