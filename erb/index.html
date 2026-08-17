@@ -3,307 +3,409 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ERB Avtodom — контрактные автозапчасти в Усть-Каменогорске с доставкой</title>
-<meta name="description" content="ERB Avtodom, Усть-Каменогорск: авторазбор и магазин контрактных автозапчастей. Toyota, Lexus, Nissan, Subaru, Mazda, Honda, BMW, Mercedes-Benz, Hyundai, Kia, Infiniti, Mitsubishi. Доставка. WhatsApp +7 705 465 55 62.">
-<meta property="og:title" content="ERB Avtodom — контрактные автозапчасти с доставкой">
-<meta property="og:description" content="Двигатели, коробки, ходовая, кузов. 12 марок. Подбор по модели, отправка по Казахстану.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111'/><rect x='3' y='9' width='26' height='14' rx='2' fill='none' stroke='%23e8202a' stroke-width='2'/><text x='16' y='21' font-size='10' font-family='Arial Black,Arial' font-weight='900' fill='%23fff' text-anchor='middle'>ERB</text></svg>">
+<title>ERB Avtodom — контрактные автозапчасти, Усть-Каменогорск</title>
+<meta name="description" content="ERB Avtodom, Усть-Каменогорск: авторазбор и контрактные автозапчасти на 12 марок. Двигатели, коробки, ходовая, кузов. Доставка по Казахстану. WhatsApp +7 705 465 55 62.">
+<meta property="og:title" content="ERB Avtodom — контрактные автозапчасти">
+<meta property="og:description" content="12 марок. Двигатели, коробки, ходовая. Подбор по модели, отправка по Казахстану.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23000'/><rect x='4' y='11' width='24' height='11' fill='none' stroke='%23e8202a' stroke-width='2'/><text x='16' y='20' font-size='8' font-family='Helvetica,Arial' font-weight='700' fill='%23fff' text-anchor='middle'>ERB</text></svg>">
 <style>
   :root{
-    --red:#e8202a; --ink:#0b0b0c; --ink-2:#141416; --ink-3:#1c1d20;
-    --line:#2a2c31; --dim:#9ba1a9; --wrap:1180px;
+    --ink:#000; --paper:#fff; --red:#e8202a; --grey:#767676; --rule:#000;
+    --gap:24px; --pad:32px; --max:1440px;
+    --sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
   }
+  @media(min-width:900px){ :root{ --pad:56px; --gap:28px } }
+  @media(min-width:1280px){ :root{ --pad:72px } }
+
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--ink);color:#fff;
-    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;padding-bottom:70px}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:400 16px/1.5 var(--sans);letter-spacing:-.01em;padding-bottom:62px;
+    -webkit-font-smoothing:antialiased}
   @media(min-width:820px){body{padding-bottom:0}}
   img{max-width:100%;display:block}
   a{color:inherit}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
-  h1,h2,h3{margin:0;line-height:1.1;letter-spacing:-.02em}
-  h1{font-size:clamp(30px,5.4vw,56px);font-weight:800}
-  h2{font-size:clamp(25px,4vw,40px);font-weight:800;margin-bottom:16px}
-  h3{font-size:18px;font-weight:700}
-  .eyebrow{color:var(--red);font-size:12.5px;font-weight:800;letter-spacing:.17em;
-    text-transform:uppercase;margin:0 0 13px}
-  .dim{color:var(--dim)}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;
-    font-weight:700;font-size:14px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;
-    border:2px solid transparent;transition:.15s}
-  .btn-wa{background:#25d366;color:#062d17}
-  .btn-wa:hover{filter:brightness(1.08)}
-  .btn-red{background:var(--red);color:#fff}
-  .btn-red:hover{filter:brightness(1.1)}
-  .btn-line{border-color:rgba(255,255,255,.26)}
-  .btn-line:hover{border-color:#fff}
+  .shell{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+  .g{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+  @media(max-width:760px){ .g{grid-template-columns:repeat(6,1fr)} }
 
-  .draft{background:#f5b301;color:#1a1400;font-size:14.5px;line-height:1.5}
-  .draft .wrap{padding:13px 22px}
-  .draft b{font-weight:800}
-  .draft a{color:#1a1400}
+  /* ——— типографика ——— */
+  h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.045em;line-height:.94}
+  h1{font-size:clamp(44px,8.2vw,132px);text-transform:uppercase}
+  h2{font-size:clamp(30px,4.6vw,64px);text-transform:uppercase}
+  h3{font-size:clamp(18px,1.6vw,24px);letter-spacing:-.03em;line-height:1.1}
+  .lede{font-size:clamp(17px,1.65vw,23px);line-height:1.42;letter-spacing:-.02em;margin:0}
+  .mono{font:500 11px/1.35 var(--mono);letter-spacing:.16em;text-transform:uppercase}
+  .grey{color:var(--grey)}
+  .red{color:var(--red)}
+  p{margin:0}
 
-  .nav{position:sticky;top:0;z-index:40;background:rgba(11,11,12,.93);
-    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav .wrap{display:flex;align-items:center;gap:24px;height:70px}
-  .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-  .logo .mark{border:2px solid var(--red);padding:3px 9px;font:900 17px/1 Arial Black,Arial;letter-spacing:.04em}
-  .logo small{display:block;font-size:10.5px;letter-spacing:.22em;color:var(--dim);font-weight:700}
-  .nav nav{display:none;gap:22px;font-size:14.5px;margin-left:8px}
-  .nav nav a{text-decoration:none;color:var(--dim)}
-  .nav nav a:hover{color:#fff}
-  .nav .call{margin-left:auto;text-decoration:none;font-weight:700;font-size:16.5px;display:none}
-  @media(min-width:1000px){.nav nav{display:flex}.nav .call{display:block}}
+  .rule{border:0;border-top:1px solid var(--rule);margin:0}
+  .rule-thick{border:0;border-top:3px solid var(--ink);margin:0}
 
-  .hero{position:relative;overflow:hidden}
-  .hero .bg{position:absolute;inset:0;background:url(img/hero.jpg) center/cover no-repeat;opacity:.5}
-  .hero .veil{position:absolute;inset:0;
-    background:linear-gradient(105deg,var(--ink) 26%,rgba(11,11,12,.6) 66%,rgba(11,11,12,.25) 100%)}
-  .hero .wrap{position:relative;padding:72px 22px 64px}
-  .hero h1{max-width:16ch}
-  .hero p.lead{max-width:52ch;margin:20px 0 28px;font-size:clamp(16px,2.1vw,18.5px);color:#d7dbe0}
-  .acts{display:flex;flex-wrap:wrap;gap:12px}
+  /* ——— кнопки: плоские прямоугольники, без скруглений и теней ——— */
+  .act{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;
+    padding:19px 22px;text-decoration:none;border:1px solid var(--ink);
+    font:600 13px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;
+    transition:background .12s,color .12s}
+  .act .arw{font:400 14px/1 var(--mono)}
+  .act-fill{background:var(--ink);color:var(--paper)}
+  .act-fill:hover{background:var(--red);border-color:var(--red)}
+  .act-line:hover{background:var(--ink);color:var(--paper)}
+  .act-red{background:var(--red);border-color:var(--red);color:var(--paper)}
+  .act-red:hover{background:var(--ink);border-color:var(--ink)}
 
-  .brands{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:38px;max-width:640px}
-  @media(min-width:620px){.brands{grid-template-columns:repeat(4,1fr)}}
-  .brands div{border:1px solid var(--line);background:rgba(255,255,255,.045);padding:11px 6px;
-    text-align:center;font-weight:700;font-size:13.5px;letter-spacing:.02em}
+  /* ——— плашка «черновик» ——— */
+  .draft{background:var(--ink);color:var(--paper)}
+  .draft .shell{padding-top:18px;padding-bottom:18px}
+  .draft .g{align-items:start}
+  .draft .lab{grid-column:span 2}
+  .draft .txt{grid-column:span 10;font-size:14px;line-height:1.5;letter-spacing:-.01em}
+  @media(max-width:760px){ .draft .lab,.draft .txt{grid-column:span 6} .draft .txt{margin-top:10px} }
+  .draft a{color:var(--paper)}
+  .draft b{font-weight:700}
 
-  section{padding:72px 0}
-  .alt{background:var(--ink-2)}
+  /* ——— шапка ——— */
+  .top{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--rule)}
+  .top .shell{display:flex;align-items:center;gap:28px;height:78px}
+  .brand{display:flex;align-items:baseline;gap:12px;text-decoration:none}
+  .brand .box{border:2px solid var(--red);padding:3px 8px;font:700 16px/1 var(--sans);letter-spacing:.02em}
+  .brand .nm{font:700 16px/1 var(--sans);letter-spacing:.02em}
+  .top nav{display:none;gap:26px;margin-left:auto}
+  .top nav a{text-decoration:none}
+  .top nav a:hover{color:var(--red)}
+  .top .tel{margin-left:auto;text-decoration:none;font:600 16px/1 var(--sans);letter-spacing:-.02em}
+  @media(min-width:1080px){ .top nav{display:flex} .top .tel{margin-left:0} }
 
-  .cats{display:grid;gap:16px;grid-template-columns:1fr 1fr}
-  @media(min-width:760px){.cats{grid-template-columns:repeat(3,1fr)}}
-  .cat{background:var(--ink-3);border:1px solid var(--line);padding:16px 16px 18px;transition:.16s;
-    min-width:0;overflow-wrap:anywhere}
-  .cat:hover{border-color:var(--red)}
-  .cat b{display:block;font-size:15.5px}
-  .cat span{color:var(--dim);font-size:13.5px}
+  /* ——— первый экран ——— */
+  .hero{padding:clamp(56px,9vw,140px) 0 0}
+  .hero h1{grid-column:1/span 9}
+  .hero .meta{grid-column:11/span 2;align-self:end;display:grid;gap:16px}
+  .hero .meta div span{display:block;font:400 14px/1.3 var(--sans);letter-spacing:-.01em;margin-top:5px}
+  .hero .under{margin-top:clamp(40px,5vw,72px)}
+  .hero .lede{grid-column:1/span 6}
+  .hero .cta{grid-column:8/span 5;display:grid;gap:12px;align-content:start}
+  @media(max-width:1000px){
+    .hero h1{grid-column:1/-1} .hero .meta{grid-column:1/-1;margin-top:32px}
+    .hero .lede{grid-column:1/-1} .hero .cta{grid-column:1/-1;margin-top:28px}
+  }
+  .band{margin-top:clamp(48px,6vw,96px);height:clamp(280px,46vw,600px);overflow:hidden}
+  .band img{width:100%;height:100%;object-fit:cover}
 
-  .duo{display:grid;gap:32px;grid-template-columns:1fr;align-items:center}
-  @media(min-width:900px){.duo{grid-template-columns:1fr 1fr;gap:56px}}
-  .duo img{width:100%;height:100%;max-height:460px;object-fit:cover}
-  .duo p{color:#c6ccd3;font-size:16.5px}
+  /* ——— секции ——— */
+  section{padding:clamp(72px,10vw,168px) 0 0}
+  .head{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);align-items:baseline;
+    padding-bottom:clamp(28px,3.4vw,52px)}
+  .head .num{grid-column:1/span 2}
+  .head h2{grid-column:3/span 8}
+  @media(max-width:760px){ .head{grid-template-columns:repeat(6,1fr)}
+    .head .num{grid-column:1/-1;margin-bottom:14px} .head h2{grid-column:1/-1} }
 
-  .shots{display:grid;gap:14px;grid-template-columns:1fr 1fr}
-  @media(min-width:820px){.shots{grid-template-columns:repeat(4,1fr)}}
-  .shots figure{margin:0;position:relative;overflow:hidden}
-  .shots img{width:100%;height:210px;object-fit:cover;transition:.3s}
-  .shots figure:hover img{transform:scale(1.04)}
-  .shots figcaption{position:absolute;left:0;right:0;bottom:0;padding:20px 14px 11px;font-size:13.5px;
-    background:linear-gradient(transparent,rgba(0,0,0,.85))}
+  /* марки — типографический список, не плитки */
+  .marks{grid-column:1/span 10;font-weight:700;letter-spacing:-.04em;
+    font-size:clamp(26px,4.2vw,58px);line-height:1.06;text-transform:uppercase}
+  .marks i{font-style:normal;color:var(--red)}
+  @media(max-width:1000px){ .marks{grid-column:1/-1} }
 
-  .steps{display:grid;gap:20px;grid-template-columns:1fr}
-  @media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
-  .step{border-top:3px solid var(--red);padding-top:20px}
-  .step b{display:block;color:var(--red);font-size:32px;font-weight:800;line-height:1;margin-bottom:10px}
-  .step p{margin:7px 0 0;color:var(--dim);font-size:15px}
+  /* индекс категорий — строки с волосяными линиями */
+  .idx{border-top:1px solid var(--rule)}
+  .idx .row{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);
+    padding:clamp(18px,1.9vw,28px) 0;border-bottom:1px solid var(--rule);align-items:baseline;
+    transition:color .12s}
+  .idx .row:hover{color:var(--red)}
+  .idx .n{grid-column:1/span 1}
+  .idx .t{grid-column:2/span 5}
+  .idx .d{grid-column:8/span 5;color:var(--grey);font-size:15px;letter-spacing:-.01em}
+  .idx .row:hover .d{color:var(--red)}
+  @media(max-width:760px){
+    .idx .row{grid-template-columns:repeat(6,1fr);row-gap:6px}
+    .idx .n{grid-column:1/span 1} .idx .t{grid-column:2/span 5} .idx .d{grid-column:2/span 5}
+  }
 
-  details{border-bottom:1px solid var(--line);padding:19px 0}
-  details summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;display:flex;
-    justify-content:space-between;gap:16px;align-items:flex-start}
+  /* склад — асимметрия со сдвигом */
+  .shots .big{grid-column:1/span 8}
+  .shots .col{grid-column:10/span 3;margin-top:clamp(48px,7vw,120px);display:grid;gap:clamp(28px,3vw,44px)}
+  .shots img{width:100%;object-fit:cover}
+  .shots .big img{height:clamp(300px,42vw,560px)}
+  .shots .col img{height:clamp(180px,17vw,240px)}
+  .cap{margin-top:10px}
+  @media(max-width:1000px){
+    .shots .big{grid-column:1/-1} .shots .col{grid-column:1/-1;margin-top:32px;
+      grid-template-columns:1fr 1fr;gap:var(--gap)}
+  }
+
+  /* шаги — ступенчатый сдвиг вниз */
+  .steps .s{grid-column:span 4}
+  .steps .s:nth-child(2){margin-top:clamp(32px,4vw,72px)}
+  .steps .s:nth-child(3){margin-top:clamp(64px,8vw,144px)}
+  .steps .s .big{font:700 clamp(56px,7vw,110px)/.8 var(--sans);letter-spacing:-.06em;
+    color:var(--paper);-webkit-text-stroke:1.5px var(--ink);display:block;margin-bottom:22px}
+  .steps .s p{margin-top:12px;color:var(--grey);font-size:15.5px;letter-spacing:-.01em}
+  @media(max-width:900px){
+    .steps .s{grid-column:1/-1;margin-top:0!important;padding-top:26px;border-top:1px solid var(--rule)}
+    .steps .s:first-child{border-top:0;padding-top:0}
+  }
+
+  /* смещённый текстовый блок */
+  .offset .t{grid-column:4/span 7}
+  .offset .l{grid-column:1/span 2}
+  @media(max-width:1000px){ .offset .t,.offset .l{grid-column:1/-1} .offset .t{margin-top:18px} }
+  .offset p+p{margin-top:18px}
+
+  /* вопросы */
+  details{border-bottom:1px solid var(--rule)}
+  details summary{cursor:pointer;list-style:none;display:grid;
+    grid-template-columns:repeat(12,1fr);gap:var(--gap);align-items:baseline;
+    padding:clamp(18px,1.8vw,26px) 0}
   details summary::-webkit-details-marker{display:none}
-  details summary::after{content:"+";color:var(--red);font-size:23px;line-height:1;flex:none;font-weight:400}
-  details[open] summary::after{content:"–"}
-  details p{margin:12px 0 0;color:var(--dim);font-size:15.4px;max-width:70ch}
+  details summary .q{grid-column:2/span 7;font-size:clamp(17px,1.5vw,21px);font-weight:600;
+    letter-spacing:-.025em}
+  details summary .pm{grid-column:12/span 1;justify-self:end;font:400 20px/1 var(--mono);color:var(--red)}
+  details summary .no{grid-column:1/span 1}
+  details[open] summary .pm::after{content:"−"}
+  details summary .pm::after{content:"+"}
+  details .ans{grid-column:2/span 7;color:var(--grey);padding:0 0 clamp(22px,2.2vw,32px);
+    font-size:15.5px;letter-spacing:-.01em;max-width:62ch}
+  details .wrapa{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+  @media(max-width:760px){
+    details summary{grid-template-columns:repeat(6,1fr)}
+    details summary .q{grid-column:2/span 4} details summary .pm{grid-column:6/span 1}
+    details .wrapa{grid-template-columns:repeat(6,1fr)} details .ans{grid-column:2/span 5}
+  }
 
-  .rows{border:1px solid var(--line);max-width:640px}
-  .row{display:grid;grid-template-columns:132px 1fr;gap:14px;padding:17px 20px;border-bottom:1px solid var(--line)}
-  .row:last-child{border-bottom:0}
-  .row dt{color:var(--dim);font-size:14.5px;margin:0}
-  .row dd{margin:0;font-weight:600}
-  .row a{text-decoration:none}
+  /* контакты */
+  .contact .tel{grid-column:1/span 7;font-weight:700;letter-spacing:-.05em;
+    font-size:clamp(38px,6.6vw,96px);line-height:.92;text-decoration:none;display:block}
+  .contact .tel:hover{color:var(--red)}
+  .contact .side{grid-column:9/span 4;display:grid;gap:22px;align-content:start}
+  .contact .side div span{display:block;font-size:15.5px;margin-top:5px;letter-spacing:-.01em}
+  @media(max-width:1000px){ .contact .tel,.contact .side{grid-column:1/-1} .contact .side{margin-top:34px} }
 
-  footer{border-top:1px solid var(--line);padding:32px 0 44px;color:var(--dim);font-size:14px}
-  footer b{color:#fff}
+  footer{margin-top:clamp(72px,9vw,150px);border-top:1px solid var(--rule);
+    padding:26px 0 44px}
+  footer .a{grid-column:1/span 6}
+  footer .b{grid-column:8/span 5}
+  @media(max-width:760px){ footer .a,footer .b{grid-column:1/-1} footer .b{margin-top:14px} }
 
-  .dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;background:var(--ink-2);
-    border-top:1px solid var(--line)}
-  .dock a{flex:1;text-align:center;padding:17px 8px;text-decoration:none;font-weight:700;
-    font-size:14px;text-transform:uppercase;letter-spacing:.04em}
-  .dock a.wa{background:#25d366;color:#062d17}
-  .dock a.tel{background:var(--red)}
-  @media(min-width:820px){.dock{display:none}}
+  /* нижняя панель на телефоне */
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;border-top:1px solid var(--ink)}
+  .dock a{flex:1;text-align:center;padding:19px 8px;text-decoration:none;
+    font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;background:var(--paper)}
+  .dock a.p{background:var(--red);color:var(--paper)}
+  .dock a+a{border-left:1px solid var(--ink)}
+  @media(min-width:820px){ .dock{display:none} }
 </style>
 </head>
 <body>
 
 <div class="draft">
-  <div class="wrap">
-    <b>Это демонстрационный вариант сайта, сделанный для ERB Avtodom.</b>
-    Данные и фотографии взяты из вашей карточки в 2GIS — то есть это ваши настоящие полки
-    и ваши детали, а не сток. Telephone, марки, категории и способы оплаты оттуда же.
-    Если что-то устарело, поправим с ваших слов.<br>
-    Сделал Владимир Гутман, веб-разработчик, Усть-Каменогорск —
-    <a href="tel:+77776722860"><b>+7 777 672 28 60</b></a>,
-    <a href="https://wa.me/77776722860">WhatsApp</a>.
+  <div class="shell">
+    <div class="g">
+      <div class="lab mono">Черновик</div>
+      <div class="txt">
+        <b>Демонстрационный вариант сайта, сделанный для ERB Avtodom.</b>
+        Данные и фотографии — из вашей открытой карточки в 2GIS: это ваши полки и ваши детали,
+        а не стоковые картинки. Телефон, марки, категории и оплата оттуда же. Что устарело — поправим.
+        Сделал Владимир Гутман, веб-разработчик, Усть-Каменогорск,
+        <a href="tel:+77776722860"><b>+7 777 672 28 60</b></a> —
+        <a href="https://wa.me/77776722860">WhatsApp</a>.
+      </div>
+    </div>
   </div>
 </div>
 
-<header class="nav">
-  <div class="wrap">
-    <a class="logo" href="#">
-      <span class="mark">ERB</span>
-      <span><b style="font-size:15px">AVTODOM</b><small>АВТОРАЗБОР</small></span>
-    </a>
-    <nav>
-      <a href="#brands">Марки</a>
-      <a href="#cats">Запчасти</a>
+<header class="top">
+  <div class="shell">
+    <a class="brand" href="#"><span class="box">ERB</span><span class="nm">AVTODOM</span></a>
+    <nav class="mono">
+      <a href="#marks">Марки</a>
+      <a href="#parts">Запчасти</a>
       <a href="#stock">Склад</a>
-      <a href="#how">Как заказать</a>
+      <a href="#order">Заказ</a>
       <a href="#faq">Вопросы</a>
-      <a href="#contacts">Контакты</a>
     </nav>
-    <a class="call" href="tel:+77054655562">+7 705 465 55 62</a>
+    <a class="tel" href="tel:+77054655562">+7 705 465 55 62</a>
   </div>
 </header>
 
-<div class="hero">
-  <div class="bg"></div><div class="veil"></div>
-  <div class="wrap">
-    <p class="eyebrow">Усть-Каменогорск · доставка по Казахстану</p>
-    <h1>Контрактные запчасти на 12 марок — со своего разбора</h1>
-    <p class="lead">Двигатели, коробки, ходовая, кузов, оптика, электрика. Всё лежит на своём
-      складе и подписано по моделям. Напишите в WhatsApp марку, модель и год — ответим,
-      есть ли деталь, и пришлём фото.</p>
-    <div class="acts">
-      <a class="btn btn-wa" href="https://wa.me/77054655562">Написать в WhatsApp</a>
-      <a class="btn btn-red" href="tel:+77054655562">Позвонить</a>
-      <a class="btn btn-line" href="#cats">Что есть в наличии</a>
+<div class="hero shell">
+  <div class="g">
+    <h1>Контрактные<br>запчасти<br><span class="red">со своего</span><br>разбора</h1>
+    <div class="meta">
+      <div><div class="mono grey">Город</div><span>Усть-Каменогорск</span></div>
+      <div><div class="mono grey">Доставка</div><span>по Казахстану</span></div>
+      <div><div class="mono grey">Часы</div><span>09:00—18:00</span></div>
     </div>
-
-    <div class="brands" id="brands">
-      <div>Toyota</div><div>Lexus</div><div>Nissan</div><div>Infiniti</div>
-      <div>Subaru</div><div>Mazda</div><div>Honda</div><div>Mitsubishi</div>
-      <div>Hyundai</div><div>Kia</div><div>BMW</div><div>Mercedes</div>
+  </div>
+  <div class="g under">
+    <p class="lede">Двигатели, коробки, ходовая, кузов, оптика, электрика на двенадцать марок.
+      Всё лежит на своём складе и подписано по моделям. Напишите марку, модель и год —
+      ответим, есть ли деталь, и пришлём её фотографию.</p>
+    <div class="cta">
+      <a class="act act-red" href="https://wa.me/77054655562">Написать в WhatsApp <span class="arw">→</span></a>
+      <a class="act act-line" href="tel:+77054655562">Позвонить <span class="arw">→</span></a>
     </div>
   </div>
 </div>
 
-<section id="cats">
-  <div class="wrap">
-    <p class="eyebrow">Запчасти</p>
-    <h2>Что разбираем и держим на складе</h2>
-    <div class="cats">
-      <div class="cat"><b>Двигатели</b><span>в сборе и по частям</span></div>
-      <div class="cat"><b>Трансмиссия</b><span>АКПП, МКПП, раздатки</span></div>
-      <div class="cat"><b>Подвеска и ходовая</b><span>стойки, рычаги, приводы</span></div>
-      <div class="cat"><b>Рулевое управление</b><span>рейки, насосы, тяги</span></div>
-      <div class="cat"><b>Кузов</b><span>двери, крылья, капоты</span></div>
-      <div class="cat"><b>Автооптика</b><span>фары, фонари, зеркала</span></div>
-      <div class="cat"><b>Тормозная система</b><span>суппорты, диски, ABS</span></div>
-      <div class="cat"><b>Топливная система</b><span>насосы, форсунки, баки</span></div>
-      <div class="cat"><b>Электрооборудование</b><span>блоки, проводка, стартеры</span></div>
-      <div class="cat"><b>Отопление и кондиционер</b><span>радиаторы, компрессоры</span></div>
-      <div class="cat"><b>Стёкла</b><span>лобовые, боковые, задние</span></div>
-      <div class="cat"><b>Расходные материалы</b><span>фильтры, ремни, колодки</span></div>
+<div class="band"><img src="img/hero.jpg" alt="Склад авторазбора ERB Avtodom"></div>
+
+<section id="marks">
+  <div class="shell">
+    <div class="head"><div class="num mono">01 — Марки</div><h2>Что разбираем</h2></div>
+    <div class="g">
+      <p class="marks">Toyota <i>/</i> Lexus <i>/</i> Nissan <i>/</i> Infiniti <i>/</i> Subaru <i>/</i>
+        Mazda <i>/</i> Honda <i>/</i> Mitsubishi <i>/</i> Hyundai <i>/</i> Kia <i>/</i> BMW <i>/</i>
+        Mercedes-Benz</p>
     </div>
   </div>
 </section>
 
-<section id="stock" class="alt">
-  <div class="wrap">
-    <p class="eyebrow">Склад</p>
-    <h2>Всё подписано и лежит на месте</h2>
-    <p class="dim" style="max-width:60ch;margin:0 0 26px">Каждая деталь помечена моделью и годом,
-      с которых снята. Поэтому на вопрос «есть ли рейка на Camry 96» отвечаем сразу, а не
-      «приезжайте, посмотрим».</p>
-    <div class="shots">
-      <figure><img src="img/racks.jpg" alt="Рулевые рейки с подписями по моделям" loading="lazy">
-        <figcaption>Рулевые рейки, подписаны по моделям</figcaption></figure>
-      <figure><img src="img/engine.jpg" alt="Двигатель Nissan" loading="lazy">
-        <figcaption>Двигатели в сборе</figcaption></figure>
-      <figure><img src="img/boxes.jpg" alt="Коробки передач на складе" loading="lazy">
-        <figcaption>АКПП и МКПП</figcaption></figure>
-      <figure><img src="img/shafts.jpg" alt="Приводы Subaru Legacy" loading="lazy">
-        <figcaption>Приводы, помечены по моделям</figcaption></figure>
+<section id="parts">
+  <div class="shell">
+    <div class="head"><div class="num mono">02 — Запчасти</div><h2>Что на складе</h2></div>
+    <div class="idx">
+      <div class="row"><div class="n mono">01</div><h3 class="t">Двигатели</h3><div class="d">В сборе и по частям, с известным пробегом донора</div></div>
+      <div class="row"><div class="n mono">02</div><h3 class="t">Трансмиссия</h3><div class="d">АКПП, МКПП, раздаточные коробки, редукторы</div></div>
+      <div class="row"><div class="n mono">03</div><h3 class="t">Подвеска и ходовая</h3><div class="d">Стойки, рычаги, ступицы, приводы, подрамники</div></div>
+      <div class="row"><div class="n mono">04</div><h3 class="t">Рулевое управление</h3><div class="d">Рейки, насосы ГУР, тяги, наконечники</div></div>
+      <div class="row"><div class="n mono">05</div><h3 class="t">Кузов</h3><div class="d">Двери, крылья, капоты, бамперы, крышки багажника</div></div>
+      <div class="row"><div class="n mono">06</div><h3 class="t">Автооптика</h3><div class="d">Фары, задние фонари, противотуманки, зеркала</div></div>
+      <div class="row"><div class="n mono">07</div><h3 class="t">Тормозная система</h3><div class="d">Суппорты, диски, блоки ABS, главные цилиндры</div></div>
+      <div class="row"><div class="n mono">08</div><h3 class="t">Топливная система</h3><div class="d">Насосы, форсунки, рампы, баки</div></div>
+      <div class="row"><div class="n mono">09</div><h3 class="t">Электрооборудование</h3><div class="d">Блоки управления, проводка, стартеры, генераторы</div></div>
+      <div class="row"><div class="n mono">10</div><h3 class="t">Отопление и кондиционер</h3><div class="d">Радиаторы, компрессоры, испарители, печки</div></div>
+      <div class="row"><div class="n mono">11</div><h3 class="t">Стёкла</h3><div class="d">Лобовые, боковые, задние, форточки</div></div>
+      <div class="row"><div class="n mono">12</div><h3 class="t">Расходные материалы</h3><div class="d">Фильтры, ремни, колодки, прокладки</div></div>
     </div>
   </div>
 </section>
 
-<section id="how">
-  <div class="wrap">
-    <p class="eyebrow">Как заказать</p>
-    <h2>Три шага, всё через WhatsApp</h2>
-    <div class="steps">
-      <div class="step"><b>01</b><h3>Напишите, что нужно</h3>
-        <p>Марка, модель, год, деталь. Есть VIN или номер старой детали — ещё точнее.</p></div>
-      <div class="step"><b>02</b><h3>Присылаем фото и цену</h3>
-        <p>Показываем деталь как есть, чтобы вы решали, глядя на неё, а не на описание.</p></div>
-      <div class="step"><b>03</b><h3>Забираете или отправляем</h3>
-        <p>Доставка по городу и отправка в другие города. Оплата переводом, по QR или через банк.</p></div>
+<section id="stock">
+  <div class="shell">
+    <div class="head"><div class="num mono">03 — Склад</div><h2>Подписано<br>и лежит на месте</h2></div>
+    <div class="g shots">
+      <figure class="big" style="margin:0">
+        <img src="img/racks.jpg" alt="Рулевые рейки с подписями по моделям">
+        <figcaption class="cap mono grey">Рулевые рейки — модель и год написаны прямо на детали</figcaption>
+      </figure>
+      <div class="col">
+        <figure style="margin:0">
+          <img src="img/engine.jpg" alt="Двигатель в сборе">
+          <figcaption class="cap mono grey">Двигатели в сборе</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <img src="img/shafts.jpg" alt="Приводы Subaru Legacy">
+          <figcaption class="cap mono grey">Приводы, помечены по моделям</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="alt">
-  <div class="wrap duo">
-    <img src="img/yard.jpg" alt="Площадка авторазбора" loading="lazy">
-    <div>
-      <p class="eyebrow">Почему контрактная деталь</p>
-      <h2>Заводская деталь вместо дешёвого аналога</h2>
-      <p>Контрактная запчасть — оригинальная, снятая с автомобиля. Она уже работала, но это
-         заводское качество, а не безымянный новодел за те же деньги.</p>
-      <p class="dim">На узлах вроде двигателя, коробки или рулевой рейки разница с новым
-         оригиналом такая, что вопрос обычно закрывается сам. А мы всегда покажем фото
-         до оплаты, чтобы не было сюрпризов.</p>
+<section id="order">
+  <div class="shell">
+    <div class="head"><div class="num mono">04 — Заказ</div><h2>Как это<br>работает</h2></div>
+    <div class="g steps">
+      <div class="s">
+        <span class="big">01</span>
+        <h3>Пишете, что нужно</h3>
+        <p>Марка, модель, год и деталь. Если есть VIN или номер старой детали — подбор точнее.</p>
+      </div>
+      <div class="s">
+        <span class="big">02</span>
+        <h3>Присылаем фото и цену</h3>
+        <p>Показываем ту самую деталь, которая поедет к вам. Решение принимаете, глядя на неё.</p>
+      </div>
+      <div class="s">
+        <span class="big">03</span>
+        <h3>Забираете или отправляем</h3>
+        <p>Доставка по городу, отправка в другие города. Оплата переводом, по QR или через банк.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shell">
+    <hr class="rule-thick">
+    <div class="g offset" style="padding-top:clamp(36px,4vw,64px)">
+      <div class="l mono grey">Почему контрактная</div>
+      <div class="t">
+        <p class="lede">Контрактная запчасть — это оригинальная деталь, снятая с автомобиля.
+          Она уже работала, но это заводское качество, а не безымянный новодел за те же деньги.</p>
+        <p class="grey" style="font-size:16px;letter-spacing:-.01em">На двигателе, коробке или рулевой
+          рейке разница с новым оригиналом такая, что вопрос обычно закрывается сам. Фотографию детали
+          присылаем до оплаты — чтобы вы видели состояние, а не читали описание.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="faq">
-  <div class="wrap">
-    <p class="eyebrow">Частые вопросы</p>
-    <h2>Что обычно спрашивают</h2>
-    <div style="max-width:840px">
-      <details open><summary>Как узнать, есть ли нужная деталь?</summary>
-        <p>Напишите в WhatsApp марку, модель, год и что именно нужно. Проверим по складу
-           и ответим — с фото, если деталь есть.</p></details>
-      <details><summary>Отправляете в другие города?</summary>
-        <p>Да, отправляем по Казахстану. Способ и стоимость доставки обсуждаем при заказе.</p></details>
-      <details><summary>Можно ли увидеть деталь до оплаты?</summary>
-        <p>Обязательно. Присылаем фотографии именно той детали, которая поедет к вам.</p></details>
-      <details><summary>Как можно оплатить?</summary>
-        <p>Переводом с карты, по QR-коду или через банк.</p></details>
-      <details><summary>Есть ли гарантия?</summary>
-        <p>По каждому узлу условия свои — зависит от детали и её состояния. Спросите
-           до покупки, скажем прямо по вашей позиции.</p></details>
-      <details><summary>А если детали сейчас нет?</summary>
-        <p>Напишите всё равно. Машины на разбор приходят регулярно, скажем, стоит ли подождать.</p></details>
-    </div>
+  <div class="shell">
+    <div class="head"><div class="num mono">05 — Вопросы</div><h2>Что спрашивают</h2></div>
+    <hr class="rule">
+    <details open>
+      <summary><span class="no mono">01</span><span class="q">Как узнать, есть ли нужная деталь</span><span class="pm"></span></summary>
+      <div class="wrapa"><p class="ans">Напишите в WhatsApp марку, модель, год и что именно нужно.
+        Проверим по складу и ответим — с фотографией, если деталь есть.</p></div>
+    </details>
+    <details>
+      <summary><span class="no mono">02</span><span class="q">Отправляете в другие города</span><span class="pm"></span></summary>
+      <div class="wrapa"><p class="ans">Да, по Казахстану. Способ и стоимость доставки обсуждаем при заказе.</p></div>
+    </details>
+    <details>
+      <summary><span class="no mono">03</span><span class="q">Можно ли увидеть деталь до оплаты</span><span class="pm"></span></summary>
+      <div class="wrapa"><p class="ans">Обязательно. Присылаем фотографии именно той детали, которая поедет к вам.</p></div>
+    </details>
+    <details>
+      <summary><span class="no mono">04</span><span class="q">Как можно оплатить</span><span class="pm"></span></summary>
+      <div class="wrapa"><p class="ans">Переводом с карты, по QR-коду или через банк.</p></div>
+    </details>
+    <details>
+      <summary><span class="no mono">05</span><span class="q">Есть ли гарантия</span><span class="pm"></span></summary>
+      <div class="wrapa"><p class="ans">По каждому узлу условия свои — зависят от детали и её состояния.
+        Спросите до покупки, скажем прямо по вашей позиции.</p></div>
+    </details>
+    <details>
+      <summary><span class="no mono">06</span><span class="q">А если детали сейчас нет</span><span class="pm"></span></summary>
+      <div class="wrapa"><p class="ans">Напишите всё равно. Машины на разбор приходят регулярно —
+        скажем, стоит ли подождать.</p></div>
+    </details>
   </div>
 </section>
 
-<section id="contacts" class="alt">
-  <div class="wrap">
-    <p class="eyebrow">Контакты</p>
-    <h2>Написать проще всего в WhatsApp</h2>
-    <dl class="rows">
-      <div class="row"><dt>WhatsApp</dt><dd><a href="https://wa.me/77054655562">+7 705 465 55 62</a></dd></div>
-      <div class="row"><dt>Телефон</dt><dd><a href="tel:+77054655562">+7 705 465 55 62</a></dd></div>
-      <div class="row"><dt>Город</dt><dd>Усть-Каменогорск<br><span class="dim" style="font-weight:400;font-size:14.5px">доставка по городу и Казахстану</span></dd></div>
-      <div class="row"><dt>Режим работы</dt><dd>с 09:00 до 18:00<br><span class="dim" style="font-weight:400;font-size:14.5px">график по дням уточним</span></dd></div>
-      <div class="row"><dt>Оплата</dt><dd>Перевод с карты · QR · Через банк</dd></div>
-    </dl>
-    <div class="acts" style="margin-top:26px">
-      <a class="btn btn-wa" href="https://wa.me/77054655562">Написать в WhatsApp</a>
-      <a class="btn btn-red" href="tel:+77054655562">Позвонить</a>
+<section id="contacts">
+  <div class="shell">
+    <div class="head"><div class="num mono">06 — Контакты</div><h2>Написать</h2></div>
+    <div class="g contact">
+      <a class="tel" href="https://wa.me/77054655562">+7 705<br>465 55 62</a>
+      <div class="side">
+        <div><div class="mono grey">WhatsApp</div><span>Самый быстрый способ — сразу с фото детали</span></div>
+        <div><div class="mono grey">Город</div><span>Усть-Каменогорск, доставка по Казахстану</span></div>
+        <div><div class="mono grey">Часы</div><span>09:00—18:00, график по дням уточним</span></div>
+        <div><div class="mono grey">Оплата</div><span>Перевод с карты · QR · Через банк</span></div>
+        <a class="act act-red" href="https://wa.me/77054655562" style="margin-top:6px">Написать в WhatsApp <span class="arw">→</span></a>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <b>ERB Avtodom</b> — авторазбор и контрактные автозапчасти, Усть-Каменогорск ·
-    +7 705 465 55 62<br>
-    Демонстрационная страница. Сведения и фотографии — из открытой карточки организации в 2GIS.
+  <div class="shell">
+    <div class="g">
+      <div class="a mono">ERB Avtodom — авторазбор и контрактные автозапчасти, Усть-Каменогорск</div>
+      <div class="b mono grey">Демонстрационная страница. Сведения и фотографии — из открытой карточки организации в 2GIS.</div>
+    </div>
   </div>
 </footer>
 
 <nav class="dock">
-  <a class="wa" href="https://wa.me/77054655562">WhatsApp</a>
-  <a class="tel" href="tel:+77054655562">Позвонить</a>
+  <a class="p" href="https://wa.me/77054655562">WhatsApp</a>
+  <a href="tel:+77054655562">Позвонить</a>
 </nav>
 
 </body>
