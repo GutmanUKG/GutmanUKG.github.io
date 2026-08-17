@@ -3,16 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Автоконтинент — автозапчасти в Усть-Каменогорске</title>
-<meta name="description" content="Автоконтинент, Усть-Каменогорск: автозапчасти в наличии и под заказ. Подбор по VIN. Пн–Сб 09:00–18:00, Вс 10:00–15:00. Телефон +7 7232 529040.">
-<meta property="og:title" content="Автоконтинент — автозапчасти в Усть-Каменогорске">
-<meta property="og:description" content="Запчасти в наличии и под заказ. Подбор по VIN, марке и модели.">
+<title>Автоконтинент — авторазбор в Усть-Каменогорске: Toyota, Subaru, Nissan, Mitsubishi, Honda</title>
+<meta name="description" content="Автоконтинент, Усть-Каменогорск, Брусиловского 59 — центр авторазбора. Контрактные запчасти для Toyota, Subaru, Nissan, Mitsubishi, Honda. Телефон и WhatsApp +7 777 857 88 33.">
+<meta property="og:title" content="Автоконтинент — авторазбор в Усть-Каменогорске">
+<meta property="og:description" content="Контрактные запчасти с разбора: Toyota, Subaru, Nissan, Mitsubishi, Honda. Брусиловского 59.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23e11d2e'/><text x='16' y='23' font-size='18' font-family='Arial' font-weight='bold' fill='%23fff' text-anchor='middle'>А</text></svg>">
 <style>
   :root{
     --red:#e11d2e; --ink:#0d0f12; --ink-2:#15181d; --ink-3:#1d2128;
-    --paper:#ffffff; --grey:#f3f4f6; --line:#262b33;
-    --text-dim:#a3abb6; --wrap:1180px; --r:16px;
+    --paper:#ffffff; --line:#262b33; --text-dim:#a3abb6; --wrap:1180px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -27,80 +26,89 @@
   .eyebrow{color:var(--red);font-size:12.5px;font-weight:800;letter-spacing:.16em;
     text-transform:uppercase;margin:0 0 14px}
   h1,h2,h3{letter-spacing:-.025em;line-height:1.08;margin:0}
-  h1{font-size:clamp(34px,6.6vw,66px);font-weight:800}
+  h1{font-size:clamp(31px,5.6vw,58px);font-weight:800}
   h2{font-size:clamp(26px,4.4vw,44px);font-weight:800;margin-bottom:18px}
   h3{font-size:19px;font-weight:700}
   .dim{color:var(--text-dim)}
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    padding:16px 30px;font-weight:700;font-size:14px;letter-spacing:.09em;text-transform:uppercase;
-    text-decoration:none;border:2px solid transparent;transition:.15s;white-space:nowrap}
+    padding:16px 28px;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;
+    text-decoration:none;border:2px solid transparent;transition:.15s}
   .btn-red{background:var(--red);color:#fff}
   .btn-red:hover{background:#c4162a}
+  .btn-wa{background:#25d366;color:#07301a}
+  .btn-wa:hover{filter:brightness(1.07)}
   .btn-line{border-color:rgba(255,255,255,.28);color:#fff}
   .btn-line:hover{border-color:#fff}
-  .btn-dark{border-color:rgba(0,0,0,.2);color:var(--ink)}
 
-  /* ——— уведомление о черновике ——— */
   .draft{background:#f5b301;color:#1a1400;font-size:14.5px;line-height:1.5}
-  .draft .wrap{padding:13px 22px;display:flex;gap:12px;align-items:flex-start}
+  .draft .wrap{padding:13px 22px}
   .draft b{font-weight:800}
   .draft a{color:#1a1400}
 
-  /* ——— шапка ——— */
   .nav{position:sticky;top:0;z-index:40;background:rgba(13,15,18,.92);
     backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav .wrap{display:flex;align-items:center;gap:26px;height:72px}
   .logo{font-weight:800;font-size:21px;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
   .logo span{color:var(--red)}
-  .nav nav{display:none;gap:26px;margin-left:12px;font-size:14.5px}
+  .nav nav{display:none;gap:24px;margin-left:10px;font-size:14.5px}
   .nav nav a{text-decoration:none;color:var(--text-dim)}
   .nav nav a:hover{color:#fff}
   .nav .call{margin-left:auto;display:none;text-decoration:none;font-weight:700;font-size:17px}
-  @media(min-width:940px){.nav nav{display:flex}.nav .call{display:block}}
+  @media(min-width:1000px){.nav nav{display:flex}.nav .call{display:block}}
 
-  /* ——— первый экран ——— */
   .hero{position:relative;overflow:hidden}
-  .hero .bg{position:absolute;inset:0;background:url(img/hero.jpg) center/cover no-repeat;opacity:.42}
+  .hero .bg{position:absolute;inset:0;background:url(img/hero.jpg) center/cover no-repeat;opacity:.4}
   .hero .veil{position:absolute;inset:0;
-    background:linear-gradient(100deg,var(--ink) 22%,rgba(13,15,18,.55) 62%,rgba(13,15,18,.2) 100%)}
-  .hero .wrap{position:relative;padding:76px 22px 0}
-  .hero h1{max-width:15ch}
-  .hero p{max-width:52ch;margin:22px 0 32px;font-size:clamp(16px,2.1vw,18.5px);color:#d5dae1}
+    background:linear-gradient(100deg,var(--ink) 24%,rgba(13,15,18,.55) 64%,rgba(13,15,18,.2) 100%)}
+  .hero .wrap{position:relative;padding:70px 22px 0}
+  .hero h1{max-width:17ch}
+  .hero p.lead{max-width:54ch;margin:22px 0 30px;font-size:clamp(16px,2.1vw,18.5px);color:#d5dae1}
   .hero .acts{display:flex;flex-wrap:wrap;gap:12px}
-  .float{display:grid;gap:16px;grid-template-columns:1fr;margin:56px 0 0;padding-bottom:56px}
+
+  /* марки */
+  .marks{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0 0}
+  .mark{border:1px solid var(--line);background:rgba(255,255,255,.04);padding:11px 20px;
+    font-weight:700;font-size:15px;letter-spacing:.04em}
+
+  .float{display:grid;gap:16px;grid-template-columns:1fr;margin:48px 0 0;padding-bottom:54px}
   @media(min-width:760px){.float{grid-template-columns:repeat(3,1fr);gap:20px}}
-  .tile{background:var(--paper);color:var(--ink);padding:26px 24px;border-radius:4px;
+  .tile{background:var(--paper);color:var(--ink);padding:25px 23px;border-radius:4px;
     box-shadow:0 24px 50px rgba(0,0,0,.4)}
-  .tile .n{color:var(--red);font-weight:800;font-size:13px;letter-spacing:.14em;margin-bottom:12px}
+  .tile .n{color:var(--red);font-weight:800;font-size:13px;letter-spacing:.14em;margin-bottom:11px}
   .tile p{margin:8px 0 0;font-size:15px;color:#4b535d}
 
-  /* ——— секции ——— */
-  section{padding:76px 0}
+  section{padding:74px 0}
   .alt{background:var(--ink-2)}
   .duo{display:grid;gap:34px;grid-template-columns:1fr;align-items:center}
-  @media(min-width:900px){.duo{grid-template-columns:1fr 1fr;gap:60px}}
+  @media(min-width:900px){.duo{grid-template-columns:1fr 1fr;gap:58px}}
   .duo img{border-radius:4px;width:100%;height:100%;object-fit:cover;max-height:520px}
   .duo p{color:#c3cad3;font-size:16.5px}
 
   .four{display:grid;gap:18px;grid-template-columns:1fr}
   @media(min-width:640px){.four{grid-template-columns:1fr 1fr}}
   @media(min-width:1000px){.four{grid-template-columns:repeat(4,1fr)}}
-  .svc{background:var(--ink-3);border:1px solid var(--line);border-radius:4px;overflow:hidden;
-    transition:.18s}
+  .svc{background:var(--ink-3);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:.18s}
   .svc:hover{border-color:var(--red);transform:translateY(-3px)}
-  .svc img{height:172px;width:100%;object-fit:cover}
-  .svc .in{padding:22px 20px 26px}
+  .svc img{height:170px;width:100%;object-fit:cover}
+  .svc .in{padding:21px 20px 25px}
   .svc p{margin:9px 0 0;font-size:14.8px;color:var(--text-dim)}
 
-  .steps{display:grid;gap:20px;grid-template-columns:1fr;counter-reset:s}
+  /* блок с оценкой 2ГИС */
+  .proof{display:grid;gap:22px;grid-template-columns:1fr;align-items:center;
+    background:var(--ink-3);border:1px solid var(--line);border-radius:4px;padding:30px 28px}
+  @media(min-width:760px){.proof{grid-template-columns:auto 1fr}}
+  .score{display:flex;align-items:baseline;gap:12px}
+  .score b{font-size:58px;font-weight:800;line-height:1;color:var(--red)}
+  .score span{font-size:15px;color:var(--text-dim)}
+  .proof p{margin:0;color:var(--text-dim);font-size:15.5px}
+
+  .steps{display:grid;gap:20px;grid-template-columns:1fr}
   @media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
   .step{border-top:3px solid var(--red);padding-top:22px}
   .step b{display:block;color:var(--red);font-size:34px;font-weight:800;line-height:1;margin-bottom:12px}
   .step p{margin:8px 0 0;color:var(--text-dim);font-size:15.3px}
 
-  /* ——— FAQ ——— */
-  .faq{max-width:820px}
   details{border-bottom:1px solid var(--line);padding:20px 0}
   details summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;
     display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
@@ -109,11 +117,10 @@
   details[open] summary::after{content:"–"}
   details p{margin:14px 0 0;color:var(--text-dim);font-size:15.6px;max-width:70ch}
 
-  /* ——— контакты ——— */
   .contacts{display:grid;gap:26px;grid-template-columns:1fr}
   @media(min-width:900px){.contacts{grid-template-columns:1fr 1.25fr}}
   .rows{border:1px solid var(--line);border-radius:4px;overflow:hidden}
-  .row{display:grid;grid-template-columns:120px 1fr;gap:14px;padding:18px 20px;
+  .row{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:18px 20px;
     border-bottom:1px solid var(--line)}
   .row:last-child{border-bottom:0}
   .row dt{color:var(--text-dim);font-size:14.5px;margin:0}
@@ -128,8 +135,9 @@
   .dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;
     background:var(--ink-2);border-top:1px solid var(--line)}
   .dock a{flex:1;text-align:center;padding:17px 8px;text-decoration:none;font-weight:700;
-    font-size:14px;letter-spacing:.05em;text-transform:uppercase}
-  .dock a:first-child{background:var(--red)}
+    font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+  .dock a.wa{background:#25d366;color:#07301a}
+  .dock a.tel{background:var(--red)}
   @media(min-width:820px){.dock{display:none}}
 </style>
 </head>
@@ -137,15 +145,13 @@
 
 <div class="draft">
   <div class="wrap">
-    <div>
-      <b>Это демонстрационный вариант сайта, сделанный для «Автоконтинента».</b>
-      Название, телефон, почта и режим работы взяты с открытой карты, поэтому могут быть неточными.
-      Фотографии сейчас стоковые — на настоящем сайте будут ваш магазин, ваши полки и ваши люди.
-      Тексты тоже правим под вас.<br>
-      Сделал Владимир Гутман, веб-разработчик, Усть-Каменогорск —
-      <a href="tel:+77776722860"><b>+7 777 672 28 60</b></a>,
-      <a href="https://wa.me/77776722860">WhatsApp</a>.
-    </div>
+    <b>Это демонстрационный вариант сайта, сделанный для «Автоконтинента».</b>
+    Данные — из вашей карточки в 2GIS и с карты города: адрес, телефон, марки, оценка.
+    Фотографии пока стоковые, на настоящем сайте будут ваши — в 2GIS их уже 39.
+    Точный график по дням недели и условия гарантии впишем с ваших слов.<br>
+    Сделал Владимир Гутман, веб-разработчик, Усть-Каменогорск —
+    <a href="tel:+77776722860"><b>+7 777 672 28 60</b></a>,
+    <a href="https://wa.me/77776722860">WhatsApp</a>.
   </div>
 </div>
 
@@ -153,105 +159,126 @@
   <div class="wrap">
     <a class="logo" href="#">АВТО<span>КОНТИНЕНТ</span></a>
     <nav>
-      <a href="#about">О магазине</a>
-      <a href="#services">Что мы делаем</a>
+      <a href="#marks">Марки</a>
+      <a href="#what">Что есть</a>
       <a href="#how">Как заказать</a>
       <a href="#faq">Вопросы</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <a class="call" href="tel:+77232529040">+7 7232 529040</a>
+    <a class="call" href="tel:+77778578833">+7 777 857 88 33</a>
   </div>
 </header>
 
 <div class="hero">
   <div class="bg"></div><div class="veil"></div>
   <div class="wrap">
-    <p class="eyebrow">Усть-Каменогорск</p>
-    <h1>Запчасти на ваш автомобиль — в наличии и под заказ</h1>
-    <p>Назовите VIN или марку, модель и год выпуска — подберём именно ту деталь, которая встанет
-       на вашу машину. Что есть на складе, заберёте сегодня.</p>
+    <p class="eyebrow">Центр авторазбора · Усть-Каменогорск</p>
+    <h1>Контрактные запчасти для японских иномарок</h1>
+    <p class="lead">Разбираем Toyota, Subaru, Nissan, Mitsubishi и Honda. Деталь с живой машины
+      обходится дешевле новой, а служит дольше дешёвого аналога. Напишите марку, модель и год —
+      скажем, есть ли нужное на разборе.</p>
     <div class="acts">
-      <a class="btn btn-red" href="tel:+77232529040">Позвонить</a>
+      <a class="btn btn-wa" href="https://wa.me/77778578833">Написать в WhatsApp</a>
+      <a class="btn btn-red" href="tel:+77778578833">Позвонить</a>
       <a class="btn btn-line" href="#contacts">Как проехать</a>
+    </div>
+
+    <div class="marks" id="marks">
+      <div class="mark">Toyota</div>
+      <div class="mark">Subaru</div>
+      <div class="mark">Nissan</div>
+      <div class="mark">Mitsubishi</div>
+      <div class="mark">Honda</div>
     </div>
 
     <div class="float">
       <div class="tile">
         <div class="n">ПОДБОР</div>
-        <h3>По VIN, а не «на глаз»</h3>
-        <p>Сверяем деталь по номеру кузова, чтобы не привезти похожую, но не ту.</p>
+        <h3>По марке, модели и году</h3>
+        <p>Пришлите данные машины или VIN — проверим по разбору и ответим по наличию.</p>
       </div>
       <div class="tile">
-        <div class="n">СРОКИ</div>
-        <h3>Говорим честно</h3>
-        <p>Если детали нет в наличии, называем реальный срок поставки до того, как вы заплатите.</p>
+        <div class="n">ЦЕНА</div>
+        <h3>Дешевле новой детали</h3>
+        <p>Контрактная запчасть с разбора стоит заметно меньше оригинала из магазина.</p>
       </div>
       <div class="tile">
-        <div class="n">ВЫБОР</div>
-        <h3>Оригинал и аналоги</h3>
-        <p>Объясним, чем отличаются и где разница в цене оправдана, а где нет.</p>
+        <div class="n">ПРОВЕРКА</div>
+        <h3>Фото до покупки</h3>
+        <p>Попросите фото — покажем деталь как есть, чтобы вы решали, глядя на неё.</p>
       </div>
     </div>
   </div>
 </div>
 
-<section id="about" class="alt">
-  <div class="wrap duo">
-    <div>
-      <p class="eyebrow">О магазине</p>
-      <h2>Разбираемся в запчастях, а не просто продаём коробки</h2>
-      <p>«Автоконтинент» — магазин автозапчастей в Усть-Каменогорске. Работаем и с частными
-         владельцами, и с автосервисами: подбираем детали, заказываем то, чего нет на складе,
-         и подсказываем, что действительно нужно менять, а что ещё походит.</p>
-      <p class="dim">Приезжайте с VIN-кодом или свидетельством о регистрации — этого достаточно,
-         чтобы подобрать деталь точно. Можно и просто позвонить: скажем сразу, есть ли позиция
-         в наличии, без «мы вам перезвоним».</p>
-    </div>
-    <img src="img/about.jpg" alt="Работа с автомобилем в мастерской" loading="lazy">
-  </div>
-</section>
-
-<section id="services">
+<section id="what">
   <div class="wrap">
-    <p class="eyebrow">Что мы делаем</p>
-    <h2>Основные направления</h2>
+    <p class="eyebrow">Что есть на разборе</p>
+    <h2>Основные группы деталей</h2>
     <div class="four">
       <div class="svc">
-        <img src="img/p1.jpg" alt="Полки с автозапчастями" loading="lazy">
-        <div class="in"><h3>Запчасти в наличии</h3>
-          <p>Расходники и ходовые позиции, которые нужны здесь и сейчас.</p></div>
+        <img src="img/p1.jpg" alt="Запчасти на складе разбора" loading="lazy">
+        <div class="in"><h3>Двигатель и КПП</h3>
+          <p>Моторы, коробки, навесное оборудование.</p></div>
       </div>
       <div class="svc">
-        <img src="img/p2.jpg" alt="Детали подвески крупным планом" loading="lazy">
-        <div class="in"><h3>Заказ под клиента</h3>
-          <p>Привезём то, чего нет на складе, — со сроком, названным заранее.</p></div>
+        <img src="img/p2.jpg" alt="Кузовные детали" loading="lazy">
+        <div class="in"><h3>Кузов и оптика</h3>
+          <p>Двери, крылья, бамперы, фары, зеркала.</p></div>
       </div>
       <div class="svc">
-        <img src="img/p3.jpg" alt="Колесо и инструмент" loading="lazy">
-        <div class="in"><h3>Расходники и масла</h3>
-          <p>Фильтры, масла, тормозные колодки, ремни, свечи.</p></div>
+        <img src="img/p3.jpg" alt="Диски и колёса" loading="lazy">
+        <div class="in"><h3>Ходовая и колёса</h3>
+          <p>Подвеска, рулевое, ступицы, диски.</p></div>
       </div>
       <div class="svc">
-        <img src="img/p4.jpg" alt="Мастер работает в подкапотном пространстве" loading="lazy">
-        <div class="in"><h3>Работа с сервисами</h3>
-          <p>Отдельные условия для автосервисов и корпоративных автопарков.</p></div>
+        <img src="img/p4.jpg" alt="Салон и электрика" loading="lazy">
+        <div class="in"><h3>Салон и электрика</h3>
+          <p>Сиденья, панели, блоки, проводка, стёкла.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="how" class="alt">
+<section class="alt">
+  <div class="wrap">
+    <div class="proof">
+      <div class="score"><b>4,2</b><span>44 оценки<br>в 2GIS</span></div>
+      <p>Люди приезжают на Брусиловского не первый год и оставляют отзывы. Мы не обещаем чудес:
+         запчасть с разбора — это деталь, которая уже поработала. Наше дело — показать её честно
+         и не продать то, что не подойдёт.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
   <div class="wrap">
     <p class="eyebrow">Как заказать</p>
-    <h2>Три шага, без беготни</h2>
+    <h2>Три шага</h2>
     <div class="steps">
-      <div class="step"><b>01</b><h3>Позвоните или напишите</h3>
-        <p>Назовите марку, модель, год и VIN. Можно прислать фото старой детали или её номер.</p></div>
-      <div class="step"><b>02</b><h3>Мы проверяем и отвечаем</h3>
-        <p>Говорим, есть ли деталь в наличии, сколько стоит и когда её можно забрать.</p></div>
-      <div class="step"><b>03</b><h3>Забираете в магазине</h3>
-        <p>Отложим позицию до конца дня, чтобы вы спокойно доехали.</p></div>
+      <div class="step"><b>01</b><h3>Напишите в WhatsApp</h3>
+        <p>Марка, модель, год, что именно нужно. Есть VIN или номер детали — ещё точнее.</p></div>
+      <div class="step"><b>02</b><h3>Проверяем и показываем</h3>
+        <p>Скажем, есть ли деталь, сколько стоит, и пришлём фото, чтобы вы её увидели.</p></div>
+      <div class="step"><b>03</b><h3>Забираете на Брусиловского</h3>
+        <p>Оплата наличными, переводом с карты или по QR — как вам удобно.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap duo">
+    <div>
+      <p class="eyebrow">О нас</p>
+      <h2>Разбор — это про конкретную машину, а не про склад коробок</h2>
+      <p>Мы работаем с японскими иномарками: Toyota, Subaru, Nissan, Mitsubishi, Honda.
+         Когда на разбор приходит машина, детали с неё попадают на склад с понятной историей —
+         известно, с какого кузова и какого года.</p>
+      <p class="dim">Поэтому подбор начинается не с каталожного номера, а с вашей машины.
+         Назовите марку, модель, год и комплектацию — этого обычно достаточно, чтобы понять,
+         подойдёт ли то, что у нас есть.</p>
+    </div>
+    <img src="img/about.jpg" alt="Разбор двигателя" loading="lazy">
   </div>
 </section>
 
@@ -259,21 +286,25 @@
   <div class="wrap">
     <p class="eyebrow">Частые вопросы</p>
     <h2>Что обычно спрашивают</h2>
-    <div class="faq">
-      <details open><summary>Как понять, подойдёт ли деталь именно моей машине?</summary>
-        <p>Надёжнее всего — по VIN-коду: он есть в свидетельстве о регистрации и под лобовым стеклом.
-           По VIN видно комплектацию и завод-изготовитель, поэтому подбор идёт точно, а не «по марке
-           и году».</p></details>
-      <details><summary>Чем оригинал отличается от аналога?</summary>
-        <p>Оригинал — деталь под маркой автопроизводителя. Аналог выпускает тот же или другой завод
-           под своим брендом, и он часто дешевле при сопоставимом качестве. Скажем, где экономия
-           разумна, а где лучше не рисковать.</p></details>
-      <details><summary>А если детали нет в наличии?</summary>
-        <p>Закажем. Срок назовём до оплаты — обычно он зависит от того, откуда идёт поставка.</p></details>
-      <details><summary>Работаете с автосервисами и организациями?</summary>
-        <p>Да. Для постоянных сервисов и автопарков условия обсуждаем отдельно.</p></details>
-      <details><summary>Можно ли вернуть деталь, если она не подошла?</summary>
-        <p>Условия возврата зависят от категории товара — подскажем по конкретной позиции при покупке.</p></details>
+    <div style="max-width:840px">
+      <details open><summary>Чем контрактная запчасть отличается от новой?</summary>
+        <p>Контрактная — это оригинальная деталь, снятая с автомобиля. Она уже работала, но это
+           заводская деталь, а не дешёвый аналог. Часто это разумный выбор для узлов, которые
+           новыми стоят как половина машины.</p></details>
+      <details><summary>Как понять, что деталь подойдёт?</summary>
+        <p>Назовите марку, модель, год и комплектацию — по ним видно, какой кузов и какой мотор.
+           Если есть VIN или номер снятой детали, подбор будет точнее.</p></details>
+      <details><summary>Можно ли посмотреть деталь до покупки?</summary>
+        <p>Да. Напишите в WhatsApp — пришлём фото. Или приезжайте на Брусиловского и посмотрите
+           своими глазами.</p></details>
+      <details><summary>Есть ли гарантия и возврат?</summary>
+        <p>По каждой детали условия разные — они зависят от узла и его состояния. Спросите
+           до покупки, и мы скажем прямо, что даём именно на эту позицию.</p></details>
+      <details><summary>Как можно оплатить?</summary>
+        <p>Наличными, переводом с карты или по QR-коду.</p></details>
+      <details><summary>Если нужной детали сейчас нет?</summary>
+        <p>Напишите всё равно — машины на разбор приходят регулярно, и мы скажем, стоит ли
+           подождать или лучше искать в другом месте.</p></details>
     </div>
   </div>
 </section>
@@ -281,17 +312,19 @@
 <section id="contacts" class="alt">
   <div class="wrap">
     <p class="eyebrow">Контакты</p>
-    <h2>Где нас найти</h2>
+    <h2>Улица Евгения Брусиловского, 59</h2>
     <div class="contacts">
       <dl class="rows">
-        <div class="row"><dt>Телефон</dt><dd><a href="tel:+77232529040">+7 7232 529040</a></dd></div>
-        <div class="row"><dt>Почта</dt><dd><a href="mailto:avtotrd710@yandex.ru">avtotrd710@yandex.ru</a></dd></div>
-        <div class="row"><dt>Город</dt><dd>Усть-Каменогорск<br><span class="dim" style="font-weight:400;font-size:14.5px">точный адрес — на карте справа</span></dd></div>
-        <div class="row"><dt>Режим работы</dt><dd>Пн–Сб 09:00–18:00<br>Вс 10:00–15:00</dd></div>
+        <div class="row"><dt>Телефон</dt><dd><a href="tel:+77778578833">+7 777 857 88 33</a></dd></div>
+        <div class="row"><dt>WhatsApp</dt><dd><a href="https://wa.me/77778578833">Написать сообщение</a></dd></div>
+        <div class="row"><dt>Instagram</dt><dd><a href="https://instagram.com/avtokontinent_uka">@avtokontinent_uka</a></dd></div>
+        <div class="row"><dt>Адрес</dt><dd>ул. Евгения Брусиловского, 59<br><span class="dim" style="font-weight:400;font-size:14.5px">рядом с городской больницей, 9 парковок</span></dd></div>
+        <div class="row"><dt>Режим работы</dt><dd>с 09:00 до 17:00<br><span class="dim" style="font-weight:400;font-size:14.5px">график по дням уточним</span></dd></div>
+        <div class="row"><dt>Оплата</dt><dd>Наличные · Перевод с карты · QR</dd></div>
       </dl>
       <div class="map">
         <iframe loading="lazy" title="Автоконтинент на карте"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=82.59893%2C49.97532%2C82.60793%2C49.97972&amp;layer=mapnik&amp;marker=49.9775156%2C82.6034306"></iframe>
+          src="https://www.openstreetmap.org/export/embed.html?bbox=82.61662%2C49.96459%2C82.62562%2C49.96899&amp;layer=mapnik&amp;marker=49.966792%2C82.621116"></iframe>
       </div>
     </div>
   </div>
@@ -299,15 +332,16 @@
 
 <footer>
   <div class="wrap">
-    <b>Автоконтинент</b> — автозапчасти, Усть-Каменогорск · +7 7232 529040<br>
-    Демонстрационная страница. Сведения об организации взяты из OpenStreetMap,
-    фотографии — стоковые (Unsplash).
+    <b>Автоконтинент</b> — центр авторазбора, Усть-Каменогорск, ул. Евгения Брусиловского, 59 ·
+    +7 777 857 88 33<br>
+    Демонстрационная страница. Сведения об организации взяты из открытых источников
+    (2GIS, OpenStreetMap), фотографии — стоковые.
   </div>
 </footer>
 
 <nav class="dock">
-  <a href="tel:+77232529040">Позвонить</a>
-  <a href="#contacts">Адрес</a>
+  <a class="wa" href="https://wa.me/77778578833">WhatsApp</a>
+  <a class="tel" href="tel:+77778578833">Позвонить</a>
 </nav>
 
 </body>
