@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ERB Avtodom — контрактные автозапчасти в Усть-Каменогорске с доставкой</title>
+<meta name="description" content="ERB Avtodom, Усть-Каменогорск: авторазбор и магазин контрактных автозапчастей. Toyota, Lexus, Nissan, Subaru, Mazda, Honda, BMW, Mercedes-Benz, Hyundai, Kia, Infiniti, Mitsubishi. Доставка. WhatsApp +7 705 465 55 62.">
+<meta property="og:title" content="ERB Avtodom — контрактные автозапчасти с доставкой">
+<meta property="og:description" content="Двигатели, коробки, ходовая, кузов. 12 марок. Подбор по модели, отправка по Казахстану.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111'/><rect x='3' y='9' width='26' height='14' rx='2' fill='none' stroke='%23e8202a' stroke-width='2'/><text x='16' y='21' font-size='10' font-family='Arial Black,Arial' font-weight='900' fill='%23fff' text-anchor='middle'>ERB</text></svg>">
+<style>
+  :root{
+    --red:#e8202a; --ink:#0b0b0c; --ink-2:#141416; --ink-3:#1c1d20;
+    --line:#2a2c31; --dim:#9ba1a9; --wrap:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--ink);color:#fff;
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;padding-bottom:70px}
+  @media(min-width:820px){body{padding-bottom:0}}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+  h1,h2,h3{margin:0;line-height:1.1;letter-spacing:-.02em}
+  h1{font-size:clamp(30px,5.4vw,56px);font-weight:800}
+  h2{font-size:clamp(25px,4vw,40px);font-weight:800;margin-bottom:16px}
+  h3{font-size:18px;font-weight:700}
+  .eyebrow{color:var(--red);font-size:12.5px;font-weight:800;letter-spacing:.17em;
+    text-transform:uppercase;margin:0 0 13px}
+  .dim{color:var(--dim)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;
+    font-weight:700;font-size:14px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;
+    border:2px solid transparent;transition:.15s}
+  .btn-wa{background:#25d366;color:#062d17}
+  .btn-wa:hover{filter:brightness(1.08)}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{filter:brightness(1.1)}
+  .btn-line{border-color:rgba(255,255,255,.26)}
+  .btn-line:hover{border-color:#fff}
+
+  .draft{background:#f5b301;color:#1a1400;font-size:14.5px;line-height:1.5}
+  .draft .wrap{padding:13px 22px}
+  .draft b{font-weight:800}
+  .draft a{color:#1a1400}
+
+  .nav{position:sticky;top:0;z-index:40;background:rgba(11,11,12,.93);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;gap:24px;height:70px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .logo .mark{border:2px solid var(--red);padding:3px 9px;font:900 17px/1 Arial Black,Arial;letter-spacing:.04em}
+  .logo small{display:block;font-size:10.5px;letter-spacing:.22em;color:var(--dim);font-weight:700}
+  .nav nav{display:none;gap:22px;font-size:14.5px;margin-left:8px}
+  .nav nav a{text-decoration:none;color:var(--dim)}
+  .nav nav a:hover{color:#fff}
+  .nav .call{margin-left:auto;text-decoration:none;font-weight:700;font-size:16.5px;display:none}
+  @media(min-width:1000px){.nav nav{display:flex}.nav .call{display:block}}
+
+  .hero{position:relative;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;background:url(img/hero.jpg) center/cover no-repeat;opacity:.5}
+  .hero .veil{position:absolute;inset:0;
+    background:linear-gradient(105deg,var(--ink) 26%,rgba(11,11,12,.6) 66%,rgba(11,11,12,.25) 100%)}
+  .hero .wrap{position:relative;padding:72px 22px 64px}
+  .hero h1{max-width:16ch}
+  .hero p.lead{max-width:52ch;margin:20px 0 28px;font-size:clamp(16px,2.1vw,18.5px);color:#d7dbe0}
+  .acts{display:flex;flex-wrap:wrap;gap:12px}
+
+  .brands{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:38px;max-width:640px}
+  @media(min-width:620px){.brands{grid-template-columns:repeat(4,1fr)}}
+  .brands div{border:1px solid var(--line);background:rgba(255,255,255,.045);padding:11px 6px;
+    text-align:center;font-weight:700;font-size:13.5px;letter-spacing:.02em}
+
+  section{padding:72px 0}
+  .alt{background:var(--ink-2)}
+
+  .cats{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+  @media(min-width:760px){.cats{grid-template-columns:repeat(3,1fr)}}
+  .cat{background:var(--ink-3);border:1px solid var(--line);padding:16px 16px 18px;transition:.16s;
+    min-width:0;overflow-wrap:anywhere}
+  .cat:hover{border-color:var(--red)}
+  .cat b{display:block;font-size:15.5px}
+  .cat span{color:var(--dim);font-size:13.5px}
+
+  .duo{display:grid;gap:32px;grid-template-columns:1fr;align-items:center}
+  @media(min-width:900px){.duo{grid-template-columns:1fr 1fr;gap:56px}}
+  .duo img{width:100%;height:100%;max-height:460px;object-fit:cover}
+  .duo p{color:#c6ccd3;font-size:16.5px}
+
+  .shots{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+  @media(min-width:820px){.shots{grid-template-columns:repeat(4,1fr)}}
+  .shots figure{margin:0;position:relative;overflow:hidden}
+  .shots img{width:100%;height:210px;object-fit:cover;transition:.3s}
+  .shots figure:hover img{transform:scale(1.04)}
+  .shots figcaption{position:absolute;left:0;right:0;bottom:0;padding:20px 14px 11px;font-size:13.5px;
+    background:linear-gradient(transparent,rgba(0,0,0,.85))}
+
+  .steps{display:grid;gap:20px;grid-template-columns:1fr}
+  @media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{border-top:3px solid var(--red);padding-top:20px}
+  .step b{display:block;color:var(--red);font-size:32px;font-weight:800;line-height:1;margin-bottom:10px}
+  .step p{margin:7px 0 0;color:var(--dim);font-size:15px}
+
+  details{border-bottom:1px solid var(--line);padding:19px 0}
+  details summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;display:flex;
+    justify-content:space-between;gap:16px;align-items:flex-start}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";color:var(--red);font-size:23px;line-height:1;flex:none;font-weight:400}
+  details[open] summary::after{content:"–"}
+  details p{margin:12px 0 0;color:var(--dim);font-size:15.4px;max-width:70ch}
+
+  .rows{border:1px solid var(--line);max-width:640px}
+  .row{display:grid;grid-template-columns:132px 1fr;gap:14px;padding:17px 20px;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:0}
+  .row dt{color:var(--dim);font-size:14.5px;margin:0}
+  .row dd{margin:0;font-weight:600}
+  .row a{text-decoration:none}
+
+  footer{border-top:1px solid var(--line);padding:32px 0 44px;color:var(--dim);font-size:14px}
+  footer b{color:#fff}
+
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;background:var(--ink-2);
+    border-top:1px solid var(--line)}
+  .dock a{flex:1;text-align:center;padding:17px 8px;text-decoration:none;font-weight:700;
+    font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+  .dock a.wa{background:#25d366;color:#062d17}
+  .dock a.tel{background:var(--red)}
+  @media(min-width:820px){.dock{display:none}}
+</style>
+</head>
+<body>
+
+<div class="draft">
+  <div class="wrap">
+    <b>Это демонстрационный вариант сайта, сделанный для ERB Avtodom.</b>
+    Данные и фотографии взяты из вашей карточки в 2GIS — то есть это ваши настоящие полки
+    и ваши детали, а не сток. Telephone, марки, категории и способы оплаты оттуда же.
+    Если что-то устарело, поправим с ваших слов.<br>
+    Сделал Владимир Гутман, веб-разработчик, Усть-Каменогорск —
+    <a href="tel:+77776722860"><b>+7 777 672 28 60</b></a>,
+    <a href="https://wa.me/77776722860">WhatsApp</a>.
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#">
+      <span class="mark">ERB</span>
+      <span><b style="font-size:15px">AVTODOM</b><small>АВТОРАЗБОР</small></span>
+    </a>
+    <nav>
+      <a href="#brands">Марки</a>
+      <a href="#cats">Запчасти</a>
+      <a href="#stock">Склад</a>
+      <a href="#how">Как заказать</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="call" href="tel:+77054655562">+7 705 465 55 62</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="bg"></div><div class="veil"></div>
+  <div class="wrap">
+    <p class="eyebrow">Усть-Каменогорск · доставка по Казахстану</p>
+    <h1>Контрактные запчасти на 12 марок — со своего разбора</h1>
+    <p class="lead">Двигатели, коробки, ходовая, кузов, оптика, электрика. Всё лежит на своём
+      складе и подписано по моделям. Напишите в WhatsApp марку, модель и год — ответим,
+      есть ли деталь, и пришлём фото.</p>
+    <div class="acts">
+      <a class="btn btn-wa" href="https://wa.me/77054655562">Написать в WhatsApp</a>
+      <a class="btn btn-red" href="tel:+77054655562">Позвонить</a>
+      <a class="btn btn-line" href="#cats">Что есть в наличии</a>
+    </div>
+
+    <div class="brands" id="brands">
+      <div>Toyota</div><div>Lexus</div><div>Nissan</div><div>Infiniti</div>
+      <div>Subaru</div><div>Mazda</div><div>Honda</div><div>Mitsubishi</div>
+      <div>Hyundai</div><div>Kia</div><div>BMW</div><div>Mercedes</div>
+    </div>
+  </div>
+</div>
+
+<section id="cats">
+  <div class="wrap">
+    <p class="eyebrow">Запчасти</p>
+    <h2>Что разбираем и держим на складе</h2>
+    <div class="cats">
+      <div class="cat"><b>Двигатели</b><span>в сборе и по частям</span></div>
+      <div class="cat"><b>Трансмиссия</b><span>АКПП, МКПП, раздатки</span></div>
+      <div class="cat"><b>Подвеска и ходовая</b><span>стойки, рычаги, приводы</span></div>
+      <div class="cat"><b>Рулевое управление</b><span>рейки, насосы, тяги</span></div>
+      <div class="cat"><b>Кузов</b><span>двери, крылья, капоты</span></div>
+      <div class="cat"><b>Автооптика</b><span>фары, фонари, зеркала</span></div>
+      <div class="cat"><b>Тормозная система</b><span>суппорты, диски, ABS</span></div>
+      <div class="cat"><b>Топливная система</b><span>насосы, форсунки, баки</span></div>
+      <div class="cat"><b>Электрооборудование</b><span>блоки, проводка, стартеры</span></div>
+      <div class="cat"><b>Отопление и кондиционер</b><span>радиаторы, компрессоры</span></div>
+      <div class="cat"><b>Стёкла</b><span>лобовые, боковые, задние</span></div>
+      <div class="cat"><b>Расходные материалы</b><span>фильтры, ремни, колодки</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="stock" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Склад</p>
+    <h2>Всё подписано и лежит на месте</h2>
+    <p class="dim" style="max-width:60ch;margin:0 0 26px">Каждая деталь помечена моделью и годом,
+      с которых снята. Поэтому на вопрос «есть ли рейка на Camry 96» отвечаем сразу, а не
+      «приезжайте, посмотрим».</p>
+    <div class="shots">
+      <figure><img src="img/racks.jpg" alt="Рулевые рейки с подписями по моделям" loading="lazy">
+        <figcaption>Рулевые рейки, подписаны по моделям</figcaption></figure>
+      <figure><img src="img/engine.jpg" alt="Двигатель Nissan" loading="lazy">
+        <figcaption>Двигатели в сборе</figcaption></figure>
+      <figure><img src="img/boxes.jpg" alt="Коробки передач на складе" loading="lazy">
+        <figcaption>АКПП и МКПП</figcaption></figure>
+      <figure><img src="img/shafts.jpg" alt="Приводы Subaru Legacy" loading="lazy">
+        <figcaption>Приводы, помечены по моделям</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <p class="eyebrow">Как заказать</p>
+    <h2>Три шага, всё через WhatsApp</h2>
+    <div class="steps">
+      <div class="step"><b>01</b><h3>Напишите, что нужно</h3>
+        <p>Марка, модель, год, деталь. Есть VIN или номер старой детали — ещё точнее.</p></div>
+      <div class="step"><b>02</b><h3>Присылаем фото и цену</h3>
+        <p>Показываем деталь как есть, чтобы вы решали, глядя на неё, а не на описание.</p></div>
+      <div class="step"><b>03</b><h3>Забираете или отправляем</h3>
+        <p>Доставка по городу и отправка в другие города. Оплата переводом, по QR или через банк.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap duo">
+    <img src="img/yard.jpg" alt="Площадка авторазбора" loading="lazy">
+    <div>
+      <p class="eyebrow">Почему контрактная деталь</p>
+      <h2>Заводская деталь вместо дешёвого аналога</h2>
+      <p>Контрактная запчасть — оригинальная, снятая с автомобиля. Она уже работала, но это
+         заводское качество, а не безымянный новодел за те же деньги.</p>
+      <p class="dim">На узлах вроде двигателя, коробки или рулевой рейки разница с новым
+         оригиналом такая, что вопрос обычно закрывается сам. А мы всегда покажем фото
+         до оплаты, чтобы не было сюрпризов.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">Частые вопросы</p>
+    <h2>Что обычно спрашивают</h2>
+    <div style="max-width:840px">
+      <details open><summary>Как узнать, есть ли нужная деталь?</summary>
+        <p>Напишите в WhatsApp марку, модель, год и что именно нужно. Проверим по складу
+           и ответим — с фото, если деталь есть.</p></details>
+      <details><summary>Отправляете в другие города?</summary>
+        <p>Да, отправляем по Казахстану. Способ и стоимость доставки обсуждаем при заказе.</p></details>
+      <details><summary>Можно ли увидеть деталь до оплаты?</summary>
+        <p>Обязательно. Присылаем фотографии именно той детали, которая поедет к вам.</p></details>
+      <details><summary>Как можно оплатить?</summary>
+        <p>Переводом с карты, по QR-коду или через банк.</p></details>
+      <details><summary>Есть ли гарантия?</summary>
+        <p>По каждому узлу условия свои — зависит от детали и её состояния. Спросите
+           до покупки, скажем прямо по вашей позиции.</p></details>
+      <details><summary>А если детали сейчас нет?</summary>
+        <p>Напишите всё равно. Машины на разбор приходят регулярно, скажем, стоит ли подождать.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Контакты</p>
+    <h2>Написать проще всего в WhatsApp</h2>
+    <dl class="rows">
+      <div class="row"><dt>WhatsApp</dt><dd><a href="https://wa.me/77054655562">+7 705 465 55 62</a></dd></div>
+      <div class="row"><dt>Телефон</dt><dd><a href="tel:+77054655562">+7 705 465 55 62</a></dd></div>
+      <div class="row"><dt>Город</dt><dd>Усть-Каменогорск<br><span class="dim" style="font-weight:400;font-size:14.5px">доставка по городу и Казахстану</span></dd></div>
+      <div class="row"><dt>Режим работы</dt><dd>с 09:00 до 18:00<br><span class="dim" style="font-weight:400;font-size:14.5px">график по дням уточним</span></dd></div>
+      <div class="row"><dt>Оплата</dt><dd>Перевод с карты · QR · Через банк</dd></div>
+    </dl>
+    <div class="acts" style="margin-top:26px">
+      <a class="btn btn-wa" href="https://wa.me/77054655562">Написать в WhatsApp</a>
+      <a class="btn btn-red" href="tel:+77054655562">Позвонить</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>ERB Avtodom</b> — авторазбор и контрактные автозапчасти, Усть-Каменогорск ·
+    +7 705 465 55 62<br>
+    Демонстрационная страница. Сведения и фотографии — из открытой карточки организации в 2GIS.
+  </div>
+</footer>
+
+<nav class="dock">
+  <a class="wa" href="https://wa.me/77054655562">WhatsApp</a>
+  <a class="tel" href="tel:+77054655562">Позвонить</a>
+</nav>
+
+</body>
+</html>
