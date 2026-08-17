@@ -5,51 +5,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Народные окна — окна, балконы, витражи и двери в Усть-Каменогорске</title>
 <meta name="description" content="Народные окна, Усть-Каменогорск, проспект Шакарим, 181. Пластиковые окна, остекление и отделка балконов, витражи и мозаика, входные двери. Предоплата 30%, рассрочка на 6 месяцев от фирмы. Три филиала. Телефон +7 (7232) 70-63-45.">
+<meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gutmanukg.github.io/narodnye-okna/">
 <meta property="og:title" content="Народные окна — окна и остекление балконов, Усть-Каменогорск">
 <meta property="og:description" content="Предоплата 30%, рассрочка на 6 месяцев от фирмы. Три филиала, 4,8 при 97 оценках в 2GIS.">
 <meta property="og:image" content="https://gutmanukg.github.io/narodnye-okna/img/house.jpg">
-<meta name="theme-color" content="#b3ab90">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23b3ab90'/%3E%3Crect x='4' y='4' width='9' height='13' fill='%23eeece4' stroke='%2363321f' stroke-width='2'/%3E%3Crect x='18' y='7' width='10' height='7' fill='%23eeece4' stroke='%2363321f' stroke-width='2'/%3E%3Crect x='9' y='21' width='19' height='7' fill='%23eeece4' stroke='%2363321f' stroke-width='2'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#b5ab91">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23b5ab91'/%3E%3Crect x='4' y='4' width='9' height='13' fill='%23f1efe8'/%3E%3Crect x='18' y='7' width='10' height='7' fill='%23f1efe8'/%3E%3Crect x='9' y='21' width='19' height='7' fill='%23f1efe8'/%3E%3Cpath d='M8.5 4V17 M18 10.5H28 M9 24.5H28' stroke='%235c3826' stroke-width='1.4'/%3E%3C/svg%3E">
 <style>
+  /* ================================================================
+     Народные окна — страница собрана как фасад.
+     Три плана, физически разнесённые по глубине:
+       1. стена  — дальше всего, лежит под содержанием и едет медленнее
+       2. проёмы — вырезаны в стене, идут в обычном потоке
+       3. вид за стеклом — внутри проёма, движется относительно рамы
+     Отсюда и весь параллакс: он не наклеен, он и есть эта глубина.
+     ================================================================ */
   :root{
-    /* стена и проёмы — цвета сняты с их же фотографии дома */
-    --wall:#b3ab90;        /* кладка фасада */
-    --frame:#63321f;       /* профиль оконной рамы */
-    --glass:#eeece4;       /* поле обычного проёма */
-    --glass-lit:#fcfbf7;   /* самый светлый проём — рассрочка */
-    --ink:#1a1613;
-    --ink-2:#5b5346;
-    --dark:#221c17;        /* табличка «черновик» */
-    --on-dark:#eeece4;
-    --on-dark-2:#b0a897;
+    --wall:#b5ab91;        /* кладка фасада */
+    --wall-dk:#736850;     /* откос в тени: верх и левая четверть */
+    --wall-lt:#d8cfb4;     /* освещённая четверть: низ и правая */
+    --rev:3px;             /* глубина откоса — вся «рама» проёма и есть он */
+    --glass:#f1efe8;       /* поле проёма */
+    --glass-lit:#fefdf9;   /* проём, в котором зажгли свет */
+    --profile:#5c3826;     /* профиль рамы — только на импостах */
+    --ink:#191512;
+    --ink-2:#544c40;
+    --ink-3:#14100e;       /* текст прямо на кладке */
+    --accent:#16423b;      /* торец стекла: оно зелёное, если смотреть с ребра */
+    --dark:#201a15;
+    --on-dark:#eceae2;
+    --on-dark-2:#aca492;
 
-    --joint:14px;          /* простенок */
-    --rev:6px;             /* откос: верх и левая сторона */
-    --edge:16px;           /* поле стены по краям страницы */
-    --pad-o:18px;          /* воздух внутри проёма */
+    --joint:14px;          /* простенок между проёмами */
+    --edge:16px;           /* поле кладки по краям страницы */
+    --pad:18px;            /* воздух внутри проёма */
     --max:1360px;
 
-    --disp:"Arial Narrow","Roboto Condensed","Liberation Sans Narrow",Roboto,"Segoe UI",Arial,sans-serif;
-    --body:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+    --disp:Georgia,"Times New Roman",Times,serif;
+    --body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 
-    /* кладка в перевязку: горизонтальные ряды и вертикальные швы вразбежку */
-    --tex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='88'%3E%3Cpath d='M0 .5H160 M0 44.5H160 M.5 0V44 M80.5 0V44 M40.5 44V88 M120.5 44V88' fill='none' stroke='rgba(26,22,19,.14)' stroke-width='1'/%3E%3C/svg%3E");
+    /* ход планов; переопределяется на узких экранах */
+    --wall-run:-11vh;      /* насколько стена отстаёт за всю страницу */
+    --view-a:-6%;          /* вид за стеклом: начало */
+    --view-b:-16%;         /* вид за стеклом: конец */
+
+    /* кладка в перевязку */
+    --tex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='88'%3E%3Cpath d='M0 .5H160 M0 44.5H160 M.5 0V44 M80.5 0V44 M40.5 44V88 M120.5 44V88' fill='none' stroke='rgba(25,21,18,.13)' stroke-width='1'/%3E%3C/svg%3E");
   }
-  @media(min-width:640px){ :root{--joint:20px;--edge:28px;--pad-o:24px;--rev:8px} }
-  @media(min-width:900px){ :root{--joint:26px;--edge:36px;--pad-o:28px;--rev:10px} }
-  @media(min-width:1200px){ :root{--joint:32px;--edge:48px;--pad-o:34px} }
+  @media(min-width:640px){ :root{--joint:20px;--edge:28px;--pad:24px;--rev:4px} }
+  @media(min-width:900px){ :root{--joint:26px;--edge:36px;--pad:28px;--rev:5px} }
+  @media(min-width:1200px){ :root{--joint:32px;--edge:48px;--pad:34px} }
+  @media(max-width:639px){ :root{--wall-run:-6vh;--view-a:-8%;--view-b:-14%} }
 
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%;color-scheme:light only}
-  body{margin:0;color:var(--ink);
-    background:var(--wall) var(--tex) repeat 0 0;
-    background-size:110px 62px;
-    font:400 16.5px/1.55 var(--body);
+  body{margin:0;color:var(--ink);background:var(--wall);
+    font:400 16.5px/1.6 var(--body);
     -webkit-font-smoothing:antialiased;
-    -webkit-tap-highlight-color:rgba(99,50,31,.25)}
-  @media(min-width:900px){ body{background-size:160px 88px} }
+    -webkit-tap-highlight-color:rgba(92,56,38,.22);
+    touch-action:manipulation;
+    overflow-x:hidden}
+
+  /* ——— план 1: стена. Отдельный слой, а не фон body:
+       фон нельзя двигать трансформом, а background-attachment:fixed
+       на iOS не работает и на Android рвётся — поэтому слой. ——— */
+  .plane{position:fixed;left:0;right:0;top:-14vh;bottom:-14vh;z-index:-1;
+    background:var(--wall) var(--tex) repeat 0 0;background-size:110px 62px;
+    pointer-events:none}
+  @media(min-width:900px){ .plane{background-size:160px 88px} }
+
   img{display:block;max-width:100%}
   figure{margin:0}
   p{margin:0}
@@ -57,7 +83,8 @@
 
   a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px;
     transition:color .18s ease,text-decoration-color .18s ease,text-decoration-thickness .18s ease}
-  a:hover{color:var(--frame);text-decoration-thickness:3px}
+  a:hover{color:var(--accent);text-decoration-thickness:3px}
+  a:active{color:var(--profile)}
 
   :focus-visible{outline:3px solid var(--ink);outline-offset:2px}
   .plaque :focus-visible{outline-color:var(--on-dark)}
@@ -66,17 +93,23 @@
   .skip:focus{left:0;top:0;z-index:9;background:var(--dark);color:var(--on-dark);
     padding:14px 18px;font:700 14px/1 var(--body);text-decoration:none}
 
-  .wall{max-width:var(--max);margin:0 auto;padding:var(--edge) var(--edge) calc(var(--edge) + 12px)}
+  /* поле кладки по краям; в альбомной ориентации не заезжаем под вырез экрана */
+  .wall{max-width:var(--max);margin:0 auto;
+    padding:var(--edge)
+            max(var(--edge),env(safe-area-inset-right))
+            calc(var(--edge) + 12px + env(safe-area-inset-bottom))
+            max(var(--edge),env(safe-area-inset-left))}
 
-  /* ——— табличка «черновик»: не проём, а щит, привинченный к стене ——— */
-  .plaque{background:var(--dark);color:var(--on-dark);padding:var(--pad-o);
+  /* ——— табличка «черновик»: щит, привинченный к стене, а не проём ——— */
+  .plaque{background:var(--dark);color:var(--on-dark);padding:var(--pad);
     margin-bottom:var(--joint)}
-  .plaque .mark{margin:0;font:700 clamp(19px,2.4vw,26px)/1.05 var(--disp);
-    letter-spacing:.06em;text-transform:uppercase;color:var(--on-dark)}
-  .plaque p{margin-top:10px;font-size:14.5px;line-height:1.55;max-width:74ch;color:var(--on-dark)}
+  .plaque .mark{margin:0;font:400 clamp(20px,2.4vw,27px)/1.05 var(--disp);
+    letter-spacing:.05em;text-transform:uppercase;color:var(--on-dark)}
+  .plaque p{margin-top:10px;font-size:14.5px;line-height:1.6;max-width:70ch;color:var(--on-dark)}
   .plaque p+p{margin-top:8px}
   .plaque .who{color:var(--on-dark-2)}
-  .plaque a{color:var(--on-dark);text-decoration-color:var(--on-dark-2)}
+  .plaque a{display:inline-block;padding:6px 0;color:var(--on-dark);
+    text-decoration-color:var(--on-dark-2)}
   .plaque a:hover{color:var(--on-dark);text-decoration-color:var(--on-dark)}
   @media(min-width:900px){
     .plaque{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,9fr);
@@ -86,80 +119,83 @@
     .plaque p+p{margin-top:10px}
   }
 
-  /* ——— фасад ——— */
+  /* ——— план 2: проёмы ——— */
   .facade{display:grid;grid-template-columns:repeat(6,1fr);
     gap:var(--joint);align-items:start}
   @media(min-width:900px){ .facade{grid-template-columns:repeat(12,1fr)} }
 
-  /* проём: рама по кругу, откос толще сверху и слева */
+  /* Проём — это не рамка, нарисованная поверх стены, а ступень в кладке:
+     сверху и слева четверть уходит в тень, снизу и справа ловит свет.
+     Никакого толстого коричневого канта: он делал стену плотной. */
   .o{grid-column:1/-1;min-width:0;background:var(--glass);
-    border:2px solid var(--frame);
-    border-top-width:var(--rev);border-left-width:var(--rev)}
-  .o.t{padding:var(--pad-o)}
+    border-top:var(--rev) solid var(--wall-dk);
+    border-left:var(--rev) solid var(--wall-dk);
+    border-right:2px solid var(--wall-lt);
+    border-bottom:2px solid var(--wall-lt)}
+  .o.t{padding:var(--pad)}
 
-  .o h2{font:700 clamp(21px,2.5vw,31px)/1.06 var(--disp);letter-spacing:-.005em}
-  .o h3{font:700 15px/1.2 var(--body);letter-spacing:-.01em}
+  .o h2{font:400 clamp(22px,2.6vw,32px)/1.12 var(--disp);letter-spacing:-.004em}
   .o p+p{margin-top:11px}
-  .lo{font-size:13px;line-height:1.35;letter-spacing:.14em;text-transform:uppercase;
+  .o p{max-width:62ch}
+  .lo{font-size:12.5px;line-height:1.4;letter-spacing:.16em;text-transform:uppercase;
     color:var(--ink-2);font-weight:600}
-  .sm{font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+  .sm{font-size:14.5px;line-height:1.55;color:var(--ink-2)}
   .o h2+p{margin-top:12px}
-  .lo+h2,.lo+p{margin-top:12px}
+  .lo+h2,.lo+p{margin-top:10px}
 
-  /* остекление: фотография в проёме */
-  .ph img{width:100%;height:auto;object-fit:cover;background:var(--glass)}
-  .ph figcaption{padding:11px var(--pad-o) 13px;font-size:13.5px;line-height:1.4;color:var(--ink-2)}
+  /* ——— план 3: вид за стеклом.
+     Снимок крупнее проёма по высоте и ходит внутри него.
+     Так устроено остекление у Sky-Frame: кадр примерно в 1,5 раза выше
+     своего окна и подрезан рамой — края никогда не открываются. ——— */
+  .gl{position:relative;overflow:hidden;display:block;background:var(--glass)}
+  .gl>img{position:absolute;top:0;left:0;width:100%;height:128%;
+    object-fit:cover;transform:translate3d(0,-11%,0)}
+  .ph figcaption{padding:11px var(--pad) 13px;font-size:13.5px;line-height:1.45;
+    color:var(--ink-2);border-top:2px solid var(--profile)}
 
-  /* ——— опознание: имя на фасаде ——— */
-  .p-id h1{font:700 clamp(40px,7.6vw,72px)/.95 var(--disp);
-    letter-spacing:.01em;text-transform:uppercase}
-  .p-id .kind{margin-top:14px;font-size:16px;line-height:1.45}
-  .p-id .what{margin-top:9px;color:var(--ink-2);font-size:15px;line-height:1.5}
-  .p-id .tel{display:inline-block;margin-top:16px;padding:10px 0;
-    font:700 clamp(24px,3.4vw,34px)/1.05 var(--disp);letter-spacing:.005em;
-    text-decoration-thickness:2px;text-underline-offset:5px}
+  /* ——— имя на фасаде ——— */
+  .p-id h1{font:400 clamp(36px,6.6vw,64px)/1 var(--disp);letter-spacing:-.01em}
+  .p-id .kind{margin-top:14px;font-size:16px;line-height:1.5}
+  .p-id .what{margin-top:9px;color:var(--ink-2);font-size:15px;line-height:1.55}
+  .p-id .tel{display:inline-block;margin-top:14px;padding:10px 0;
+    font:400 clamp(23px,3.2vw,32px)/1.1 var(--disp);
+    text-decoration-thickness:2px;text-underline-offset:6px}
   .p-id .tel:hover{text-decoration-thickness:4px}
 
   /* ——— форточки: оценка и филиалы ——— */
-  .num{font:700 clamp(34px,6vw,54px)/.9 var(--disp);letter-spacing:-.01em;
-    font-variant-numeric:tabular-nums}
+  .num{font:400 clamp(34px,6vw,52px)/.95 var(--disp);letter-spacing:-.015em;
+    font-variant-numeric:tabular-nums;color:var(--accent)}
   .o .num+p{margin-top:10px}
 
-  /* ——— главный проём: рассрочка ——— */
-  .p-pay{background:var(--glass-lit)}
-  .p-pay.t{padding:calc(var(--pad-o) * 1.5) var(--pad-o) calc(var(--pad-o) * 1.6)}
-  .p-pay h2{font:700 clamp(29px,5.2vw,62px)/1.0 var(--disp);letter-spacing:-.012em;max-width:19ch}
-  .p-pay h2 b{color:var(--frame);font-weight:700}
+  /* ——— главный проём: рассрочка. Единственный, в котором зажигают свет ——— */
+  .p-pay{position:relative;isolation:isolate}
+  .p-pay::before{content:"";position:absolute;inset:0;z-index:-1;
+    background:var(--glass-lit);opacity:0}
+  .p-pay.t{padding:calc(var(--pad) * 1.5) var(--pad) calc(var(--pad) * 1.6)}
+  .p-pay h2{font:400 clamp(27px,4.6vw,54px)/1.08 var(--disp);letter-spacing:-.016em;max-width:19ch}
+  .p-pay h2 b{color:var(--accent);font-weight:400}
   .p-pay .cols{margin-top:clamp(20px,2.6vw,34px)}
-  .p-pay .cols p{max-width:56ch}
   .p-pay .reach{margin-top:clamp(22px,2.8vw,32px);
-    border-top:2px solid var(--frame);padding-top:16px}
+    border-top:2px solid var(--profile);padding-top:16px}
   .p-pay .reach a{display:inline-block;padding:11px 0;
-    font:700 clamp(20px,2.6vw,29px)/1.1 var(--disp);letter-spacing:.005em;
-    text-decoration-thickness:2px;text-underline-offset:5px}
+    font:400 clamp(20px,2.5vw,28px)/1.15 var(--disp);
+    text-decoration-thickness:2px;text-underline-offset:6px}
   .p-pay .reach a:hover{text-decoration-thickness:4px}
-  .p-pay .reach a+a{margin-left:0}
-  .p-pay .reach .sm{margin-top:6px}
+  .p-pay .reach .sm{margin-top:4px}
   @media(min-width:760px){
-    .p-pay .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:var(--joint)}
+    .p-pay .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--joint)}
     .p-pay .cols p+p{margin-top:0}
     .p-pay .reach{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--joint)}
   }
-  /* на широкой стене главный проём набирается в две колонки:
-     утверждение слева, разъяснение справа, связь по всей ширине снизу */
-  @media(min-width:900px) and (max-width:999px){
-    .p-pay h2{max-width:25ch}
-  }
+  @media(min-width:900px) and (max-width:999px){ .p-pay h2{max-width:25ch} }
   @media(min-width:1000px){
     .p-pay.t{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
       column-gap:var(--joint);align-items:start;
-      padding:calc(var(--pad-o) * 2) calc(var(--pad-o) * 1.3) calc(var(--pad-o) * 2.2)}
+      padding:calc(var(--pad) * 2) calc(var(--pad) * 1.3) calc(var(--pad) * 2.2)}
     .p-pay h2{grid-column:1;max-width:none}
     .p-pay .cols{grid-column:2;margin-top:0;display:block}
     .p-pay .cols p+p{margin-top:14px}
-    .p-pay .reach{grid-column:1/-1;
-      grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+    .p-pay .reach{grid-column:1/-1;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
   }
   @media(min-width:1000px) and (max-width:1199px){
     .p-pay.t,.p-pay .reach{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
@@ -168,11 +204,11 @@
   /* ——— контакты ——— */
   .p-cont dl{margin:16px 0 0}
   .p-cont .r{display:grid;grid-template-columns:1fr;gap:2px;
-    padding:12px 0;border-top:1px solid rgba(26,22,19,.22)}
+    padding:12px 0;border-top:1px solid rgba(25,21,18,.2)}
   .p-cont .r:first-child{border-top:0;padding-top:4px}
-  .p-cont dt{font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  .p-cont dt{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
     color:var(--ink-2);font-weight:600}
-  .p-cont dd{margin:0;font-size:17px;letter-spacing:-.01em}
+  .p-cont dd{margin:0;font-size:17px}
   .p-cont dd a{display:inline-block;padding:9px 0;font-weight:600}
   .p-cont dd .sm{display:block;padding-bottom:4px}
   @media(min-width:560px){
@@ -182,23 +218,24 @@
   /* ——— карта ——— */
   .p-map{padding:0}
   .p-map iframe{display:block;width:100%;height:300px;border:0;background:var(--glass)}
-  .p-map figcaption{padding:11px var(--pad-o) 13px;font-size:13.5px;line-height:1.4;color:var(--ink-2)}
+  .p-map figcaption{padding:11px var(--pad) 13px;font-size:13.5px;line-height:1.45;
+    color:var(--ink-2);border-top:2px solid var(--profile)}
   @media(min-width:900px){ .p-map iframe{height:360px} }
 
   /* ——— пропорции остекления ——— */
-  .p-house img{aspect-ratio:5/4}
-  .p-b1 img{aspect-ratio:16/10}
-  .p-o2 img{aspect-ratio:4/5;object-position:50% 42%}
-  .p-b2 img{aspect-ratio:1/1;object-position:100% 50%}
-  .p-floor img{aspect-ratio:16/10}
-  .p-o1 img{aspect-ratio:4/5;object-position:50% 50%}
+  .p-house .gl{aspect-ratio:5/4}
+  .p-b1 .gl{aspect-ratio:16/10}
+  /* кадрирование: в узкий проём берём ту часть снимка, где открытая створка
+     и зелень за ней, а не соседский простенок */
+  .p-o2 .gl{aspect-ratio:4/5}
+  .p-o2 .gl>img{object-position:26% 45%}
+  .p-b2 .gl{aspect-ratio:1/1}
+  .p-b2 .gl>img{object-position:100% 50%}   /* отражение человека остаётся за левым краем кадра */
+  .p-floor .gl{aspect-ratio:16/10}
+  .p-o1 .gl{aspect-ratio:4/5}
+  .p-o1 .gl>img{object-position:22% 50%}
 
-  /* ——— раскладка проёмов по фасаду ———
-     три разные развёртки одной стены: узкая, средняя и широкая.
-     меняется не только число колонок, но и величина проёмов          */
-
-  /* узкая стена: проёмы разной ширины, сдвинутые к левому и правому краю,
-     между ними остаются полосы кладки                                */
+  /* ——— раскладка проёмов: три развёртки одной стены ——— */
   .p-id   {grid-column:1/span 6; grid-row:1}
   .p-house{grid-column:1/span 6; grid-row:2}
   .p-rate {grid-column:1/span 4; grid-row:3}
@@ -217,7 +254,6 @@
   .p-o1   {grid-column:2/span 5; grid-row:16}
   .p-cont {grid-column:1/span 6; grid-row:17}
 
-  /* средняя стена: проёмы встают парами, появляется высокий узкий проём */
   @media(min-width:640px){
     .p-id   {grid-column:1/span 6; grid-row:1}
     .p-house{grid-column:1/span 6; grid-row:2}
@@ -237,13 +273,13 @@
     .p-o1   {grid-column:5/span 2; grid-row:10/span 2}
     .p-cont {grid-column:1/span 4; grid-row:11}
 
-    .p-house img{aspect-ratio:2/1;object-position:50% 62%}
-    .p-b1 img{aspect-ratio:1/1}
-    .p-floor img{aspect-ratio:4/3}
-    .p-o1 img{aspect-ratio:3/5}
+    .p-house .gl{aspect-ratio:2/1}
+    .p-house .gl>img{object-position:50% 62%}
+    .p-b1 .gl{aspect-ratio:1/1}
+    .p-floor .gl{aspect-ratio:4/3}
+    .p-o1 .gl{aspect-ratio:3/5}
   }
 
-  /* широкая стена: полная развёртка фасада */
   @media(min-width:900px){
     .p-id   {grid-column:1/span 5;  grid-row:1}
     .p-house{grid-column:6/span 7;  grid-row:1}
@@ -263,28 +299,81 @@
     .p-o1   {grid-column:8/span 5;  grid-row:8/span 2}
     .p-cont {grid-column:1/span 7;  grid-row:9}
 
-    .p-b1 img{aspect-ratio:21/9}
-    .p-b2 img{aspect-ratio:1/1}
-    .p-floor img{aspect-ratio:4/3}
-    .p-o1 img{aspect-ratio:4/5}
+    .p-b1 .gl{aspect-ratio:21/9}
+    .p-b2 .gl{aspect-ratio:1/1}
+    .p-floor .gl{aspect-ratio:4/3}
+    .p-o1 .gl{aspect-ratio:4/5}
   }
 
-  /* ——— подвал: текст прямо на стене ——— */
+  /* ——— подвал: текст прямо на кладке ——— */
   footer{margin-top:calc(var(--joint) + 6px);padding-top:16px;
-    border-top:1px solid rgba(26,22,19,.42);
-    font-size:13.5px;line-height:1.6;color:var(--ink)}
-  footer p{max-width:74ch}
+    border-top:1px solid rgba(25,21,18,.4);
+    font-size:13.5px;line-height:1.65;color:var(--ink-3)}
+  footer p{max-width:72ch}
   footer p+p{margin-top:6px}
 
-  /* ——— свет в проёмах загорается при загрузке ——— */
+  /* ================================================================
+     ДВИЖЕНИЕ.
+     Всё — только transform и opacity. Всё выключается по
+     prefers-reduced-motion. Ни один блок текста не спрятан:
+     если анимация не запустится, страница просто стоит на месте.
+     ================================================================ */
   @media(prefers-reduced-motion:no-preference){
-    .o{animation:lit .5s cubic-bezier(.2,.7,.3,1) both;
-      animation-delay:calc(var(--i,0) * 45ms)}
-    @keyframes lit{from{opacity:0}to{opacity:1}}
+
+    /* Табличка на фасаде — самый ближний план, за первый экран
+       уходит вверх чуть быстрее страницы. */
+    @supports (animation-timeline:scroll()){
+      @media(min-width:900px){
+        .p-id h1{animation:sign linear both;
+          animation-timeline:scroll(root block);animation-range:0 70vh}
+        @keyframes sign{
+          from{transform:translate3d(0,0,0)}
+          to{transform:translate3d(0,-24px,0)}
+        }
+      }
+
+      /* Стена отстаёт от проёмов на всю длину страницы. */
+      .plane{animation:wall linear both;
+        animation-timeline:scroll(root block);will-change:transform}
+      @keyframes wall{
+        from{transform:translate3d(0,0,0)}
+        to{transform:translate3d(0,var(--wall-run),0)}
+      }
+    }
+
+    @supports (animation-timeline:view()){
+      /* Вид за стеклом идёт своим ходом, пока проём проходит экран. */
+      .gl>img{animation:viewshift linear both;animation-timeline:view();
+        animation-range:cover 0% cover 100%;will-change:transform}
+      @keyframes viewshift{
+        from{transform:translate3d(0,var(--view-a),0)}
+        to{transform:translate3d(0,var(--view-b),0)}
+      }
+
+      /* В главном проёме зажигают свет — ровно когда он доезжает до глаз. */
+      .p-pay::before{animation:lamp linear both;animation-timeline:view();
+        animation-range:entry 25% cover 45%}
+      @keyframes lamp{from{opacity:0}to{opacity:1}}
+    }
+
+    /* Запасной вариант для браузеров без scroll-driven анимаций —
+       те же три плана, но считает JS. Классы вешает скрипт внизу. */
+    .fb .plane,.fb .gl>img{will-change:transform}
+    .fb .p-pay.on::before{opacity:1;transition:opacity .7s cubic-bezier(.3,.7,.4,1)}
+
+    /* Имя оседает в проёме при открытии страницы: одно короткое движение,
+       чтобы страница не встречала неподвижной. Текст при этом на месте. */
+    .p-id{animation:settle .65s cubic-bezier(.2,.75,.3,1) both}
+    @keyframes settle{
+      from{transform:translate3d(0,10px,0)}
+      to{transform:translate3d(0,0,0)}
+    }
   }
 </style>
 </head>
 <body>
+
+<div class="plane" aria-hidden="true"></div>
 
 <a class="skip" href="#facade">К содержанию</a>
 
@@ -293,9 +382,10 @@
   <div class="plaque" role="note" aria-label="Пометка о черновике">
     <p class="mark">Черновик</p>
     <div class="body">
-      <p>Демонстрационный вариант сайта, собранный для «Народных окон». Данные и фотографии
-        взяты из вашей открытой карточки в 2GIS — это ваши объекты, а не стоковые картинки.
-        Тексты, график работы и условия правим с ваших слов.</p>
+      <p>Демонстрационный вариант сайта, собранный для «Народных окон». Компания об этом
+        не просила и участия в работе не принимала. Данные и фотографии взяты из вашей
+        открытой карточки в 2GIS — это ваши объекты, а не стоковые картинки.
+        Тексты и график работы правим с ваших слов.</p>
       <p>Точка на карте поставлена по адресу «проспект Шакарим, 181» — подтвердите её,
         и укажем адреса остальных филиалов.</p>
       <p class="who">Сделал Владимир Гутман, веб-разработчик, Усть-Каменогорск —
@@ -306,7 +396,7 @@
 
   <main class="facade" id="facade">
 
-    <div class="o t p-id" style="--i:0">
+    <div class="o t p-id">
       <h1>Народные окна</h1>
       <p class="kind">Торгово-сервисная компания. Усть-Каменогорск, проспект Шакарим, 181.</p>
       <p class="what">Пластиковые окна, остекление и отделка балконов, витражи и мозаика,
@@ -314,26 +404,28 @@
       <a class="tel" href="tel:+77232706345">+7&nbsp;(7232)&nbsp;70-63-45</a>
     </div>
 
-    <figure class="o ph p-house" style="--i:1">
-      <img src="img/house.jpg" width="1920" height="1080" fetchpriority="high" decoding="async"
-        alt="Фасад частного дома из светлого кирпича: окна в эркерах, узкое высокое окно во фронтоне, маленькие окна под крышей и застеклённая веранда внизу — все рамы коричневого профиля">
+    <figure class="o ph p-house">
+      <span class="gl">
+        <img src="img/house.jpg" width="1920" height="1080" fetchpriority="high" decoding="async"
+          alt="Фасад частного дома из светлого кирпича: окна в эркерах, узкое высокое окно во фронтоне, маленькие окна под крышей и застеклённая веранда внизу — все рамы коричневого профиля">
+      </span>
       <figcaption>Дом целиком: эркеры, фронтон, веранда. Проёмы разного размера на одной
         стене — по такой же раскладке набрана эта страница.</figcaption>
     </figure>
 
-    <div class="o t p-rate" style="--i:2">
+    <div class="o t p-rate">
       <p class="num">4,8</p>
       <p class="sm">Средняя оценка при 97&nbsp;оценках и 85&nbsp;отзывах в справочнике 2GIS.
         Карточка открыта целиком.</p>
     </div>
 
-    <div class="o t p-bran" style="--i:3">
+    <div class="o t p-bran">
       <p class="num">3</p>
       <p class="sm">Филиала в Усть-Каменогорске. Головной — проспект Шакарим, 181.
         Открываемся с 08:00, график по дням уточним.</p>
     </div>
 
-    <section class="o t p-pay" style="--i:4" aria-labelledby="pay-h">
+    <section class="o t p-pay" aria-labelledby="pay-h">
       <h2 id="pay-h">Предоплата <b>30%</b>, рассрочка на <b>6 месяцев</b> от фирмы</h2>
       <div class="cols">
         <p>Рассрочку даёт сама фирма: треть суммы вперёд, остальное частями в течение
@@ -355,54 +447,62 @@
       </div>
     </section>
 
-    <section class="o t p-win" style="--i:5" aria-labelledby="win-h">
+    <section class="o t p-win" aria-labelledby="win-h">
       <p class="lo">Четыре направления</p>
       <h2 id="win-h">Окна</h2>
       <p class="sm">Пластиковые окна в квартиру и в частный дом — от одной створки
         до остекления всего фасада.</p>
     </section>
 
-    <figure class="o ph p-b1" style="--i:6">
-      <img src="img/balcony1.jpg" width="1920" height="1080" loading="lazy" decoding="async"
-        alt="Балкон, застеклённый белыми створками во всю высоту, за стеклом — крона дерева">
+    <figure class="o ph p-b1">
+      <span class="gl">
+        <img src="img/balcony1.jpg" width="1920" height="1080" loading="lazy" decoding="async"
+          alt="Балкон, застеклённый белыми створками во всю высоту, за стеклом — крона дерева">
+      </span>
       <figcaption>Балкон, остеклённый во всю высоту</figcaption>
     </figure>
 
-    <figure class="o ph p-o2" style="--i:7">
-      <img src="img/open2.jpg" width="1920" height="1080" loading="lazy" decoding="async"
-        alt="Балкон изнутри после отделки: открытая створка слева, белая обшивка стен, проём в комнату справа">
+    <figure class="o ph p-o2">
+      <span class="gl">
+        <img src="img/open2.jpg" width="1920" height="1080" loading="lazy" decoding="async"
+          alt="Балкон изнутри после отделки: открытая створка слева, белая обшивка стен, проём в комнату справа">
+      </span>
       <figcaption>Балкон после отделки, створка открыта</figcaption>
     </figure>
 
-    <section class="o t p-bal" style="--i:8" aria-labelledby="bal-h">
+    <section class="o t p-bal" aria-labelledby="bal-h">
       <h2 id="bal-h">Остекление и отделка балконов</h2>
       <p class="sm">Остекление, откосы, подоконники, обшивка стен и пол — балкон отдаём
         законченным, а не «со стеклом и голыми стенами».</p>
     </section>
 
-    <figure class="o ph p-b2" style="--i:9">
-      <img src="img/balcony2.jpg" width="1920" height="1080" loading="lazy" decoding="async"
-        alt="Крупный план: белый подоконник, откос и вертикальная стойка рамы, выше — окно с видом на деревья">
+    <figure class="o ph p-b2">
+      <span class="gl">
+        <img src="img/balcony2.jpg" width="1920" height="1080" loading="lazy" decoding="async"
+          alt="Крупный план: белый подоконник, откос и вертикальная стойка рамы, выше — окно с видом на деревья">
+      </span>
       <figcaption>Подоконник, откос и стойка рамы вблизи</figcaption>
     </figure>
 
-    <section class="o t p-vit" style="--i:10" aria-labelledby="vit-h">
+    <section class="o t p-vit" aria-labelledby="vit-h">
       <h2 id="vit-h">Витражи и мозаика</h2>
       <p class="sm">Витражное и мозаичное остекление.</p>
     </section>
 
-    <section class="o t p-door" style="--i:11" aria-labelledby="door-h">
+    <section class="o t p-door" aria-labelledby="door-h">
       <h2 id="door-h">Входные двери</h2>
       <p class="sm">Отдельное направление: подбираем дверь по вашему проёму.</p>
     </section>
 
-    <figure class="o ph p-floor" style="--i:12">
-      <img src="img/floor.jpg" width="1920" height="1080" loading="lazy" decoding="async"
-        alt="Пол балкона, отделанный покрытием под дерево, между белыми панелями стен">
+    <figure class="o ph p-floor">
+      <span class="gl">
+        <img src="img/floor.jpg" width="1920" height="1080" loading="lazy" decoding="async"
+          alt="Пол балкона, отделанный покрытием под дерево, между белыми панелями стен">
+      </span>
       <figcaption>Пол на балконе после отделки</figcaption>
     </figure>
 
-    <section class="o t p-addr" style="--i:13" aria-labelledby="addr-h">
+    <section class="o t p-addr" aria-labelledby="addr-h">
       <p class="lo">Куда приехать</p>
       <h2 id="addr-h">Проспект Шакарим, 181</h2>
       <p>Усть-Каменогорск. Рядом Дом дружбы — 300 метров. У входа 23 парковочных места.</p>
@@ -411,20 +511,22 @@
         полный график по дням недели уточним при обращении.</p>
     </section>
 
-    <figure class="o p-map" style="--i:14">
+    <figure class="o p-map">
       <iframe loading="lazy" title="Народные окна на карте Усть-Каменогорска"
         src="https://www.openstreetmap.org/export/embed.html?bbox=82.58366%2C49.97436%2C82.59266%2C49.97876&amp;layer=mapnik&amp;marker=49.97656%2C82.58816"></iframe>
       <figcaption>Точка поставлена по адресу через OpenStreetMap. Подтвердите её —
         и поставим отдельные точки на все три филиала.</figcaption>
     </figure>
 
-    <figure class="o ph p-o1" style="--i:15">
-      <img src="img/open1.jpg" width="1920" height="1080" loading="lazy" decoding="async"
-        alt="Открытая створка балконного остекления, за ней двор с деревьями">
+    <figure class="o ph p-o1">
+      <span class="gl">
+        <img src="img/open1.jpg" width="1920" height="1080" loading="lazy" decoding="async"
+          alt="Открытая створка балконного остекления, за ней двор с деревьями">
+      </span>
       <figcaption>Открытая створка, вид с балкона</figcaption>
     </figure>
 
-    <section class="o t p-cont" style="--i:16" aria-labelledby="cont-h">
+    <section class="o t p-cont" aria-labelledby="cont-h">
       <h2 id="cont-h">Связаться</h2>
       <dl>
         <div class="r">
@@ -438,11 +540,11 @@
         </div>
         <div class="r">
           <dt>Почта</dt>
-          <dd><a href="mailto:narodnyeoknafunke@mail.ru">narodnyeoknafunke@mail.ru</a></dd>
+          <dd><a href="mailto:narodnyeoknafunke@mail.ru" translate="no">narodnyeoknafunke@mail.ru</a></dd>
         </div>
         <div class="r">
           <dt>Instagram</dt>
-          <dd><a href="https://instagram.com/narodnyeokna.uka">@narodnyeokna.uka</a></dd>
+          <dd><a href="https://instagram.com/narodnyeokna.uka" translate="no">@narodnyeokna.uka</a></dd>
         </div>
         <div class="r">
           <dt>Оплата</dt>
@@ -461,6 +563,68 @@
   </footer>
 
 </div>
+
+<script>
+/* Запасной путь для браузеров без scroll-driven анимаций.
+   Ничего не показывает и не прячет — только двигает то, что и так видно.
+   Если скрипт не выполнится, страница остаётся полностью читаемой. */
+(function(){
+  var root=document.documentElement;
+  if(!window.matchMedia) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(window.CSS&&CSS.supports&&CSS.supports('animation-timeline','view()')) return;
+  if(!('IntersectionObserver' in window)||!window.requestAnimationFrame) return;
+
+  root.className+=' fb';
+
+  var plane=document.querySelector('.plane');
+  var lit=document.querySelector('.p-pay');
+  var live=[], queued=false;
+
+  function tick(){ if(!queued){ queued=true; requestAnimationFrame(frame); } }
+
+  function frame(){
+    queued=false;
+    var vh=window.innerHeight||root.clientHeight;
+    if(plane){
+      var span=Math.max(1,root.scrollHeight-vh);
+      var p=Math.min(1,Math.max(0,(window.pageYOffset||root.scrollTop||0)/span));
+      var run=parseFloat(getComputedStyle(root).getPropertyValue('--wall-run'))||-11;
+      plane.style.transform='translate3d(0,'+(run*p).toFixed(2)+'vh,0)';
+    }
+    for(var i=0;i<live.length;i++){
+      var box=live[i], r=box.getBoundingClientRect();
+      var t=(vh-r.top)/(vh+r.height);
+      t=t<0?0:(t>1?1:t);
+      var a=parseFloat(getComputedStyle(box).getPropertyValue('--view-a'))||-4;
+      var b=parseFloat(getComputedStyle(box).getPropertyValue('--view-b'))||-18;
+      var img=box.firstElementChild;
+      if(img) img.style.transform='translate3d(0,'+(a+(b-a)*t).toFixed(2)+'%,0)';
+    }
+  }
+
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      var e=entries[i], k=live.indexOf(e.target);
+      if(e.target===lit){
+        if(e.intersectionRatio>0.2) lit.classList.add('on');
+        continue;
+      }
+      if(e.isIntersecting){ if(k<0) live.push(e.target); }
+      else if(k>=0) live.splice(k,1);
+    }
+    tick();
+  },{threshold:[0,0.2,1]});
+
+  var boxes=document.querySelectorAll('.gl');
+  for(var i=0;i<boxes.length;i++) io.observe(boxes[i]);
+  if(lit) io.observe(lit);
+
+  addEventListener('scroll',tick,{passive:true});
+  addEventListener('resize',tick,{passive:true});
+  tick();
+})();
+</script>
 
 </body>
 </html>
