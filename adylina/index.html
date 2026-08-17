@@ -2,651 +2,615 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>АдыЛина — фабрика натяжных потолков в Усть-Каменогорске</title>
-<meta name="description" content="АдыЛина, Усть-Каменогорск, проспект Нурсултана Назарбаева, 54 — фабрика натяжных потолков. Натяжные потолки от производителя и тёплые полы. Приглашаем к сотрудничеству дилеров. Телефон и WhatsApp +7 705 149 13 33.">
-<meta property="og:title" content="АдыЛина — фабрика натяжных потолков">
-<meta property="og:description" content="Натяжные потолки от производителя и тёплые полы. Усть-Каменогорск, проспект Нурсултана Назарбаева, 54. Приглашаем к сотрудничеству дилеров.">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#e9e7e2">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23e9e7e2'/><rect x='0' y='6' width='32' height='3' fill='%231d33d1'/><text x='16' y='26' font-size='16' font-family='Segoe UI,Helvetica,Arial' font-weight='400' fill='%2317181b' text-anchor='middle'>АЛ</text></svg>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ebedea">
+<title>АдыЛина — фабрика натяжных потолков, Усть-Каменогорск</title>
+<meta name="description" content="Натяжные потолки от производителя в Усть-Каменогорске. Слева — частному заказчику, справа — монтажнику и дилеру. Демонстрационная страница.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23ebedea'/><rect x='18' width='14' height='32' fill='%231c1f1e'/><rect x='17.5' width='1' height='32' fill='%236d736e'/></svg>">
 <style>
-  :root{
-    --ink:#17181b;        /* текст и тёмное поле */
-    --paper:#e9e7e2;      /* поле страницы: штукатурка */
-    --plane:#fff;         /* белая плоскость: полотно потолка */
-    --mute:#65666a;       /* служебный текст на светлом */
-    --mute-d:#9b9c9f;     /* служебный текст на тёмном */
-    --acc:#1d33d1;        /* единственный акцент: холодный кобальт */
-    --acc-d:#93a4ff;      /* акцент на тёмном поле */
-    --rule:rgba(23,24,27,.22);
-    --rule-2:rgba(23,24,27,.55);
-    --rule-i:rgba(233,231,226,.24);
-    --rule-i2:rgba(233,231,226,.5);
-    --gap:20px; --pad:20px; --max:1400px;
-    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+:root{
+  --paper:#ebedea;
+  --ink:#1a1d1c;
+  --ink2:#565c58;
+  --rule:#7f857f;
+  --hair:#c3c8c3;
+
+  --gra:#1c1f1e;
+  --gtext:#d9ddd8;
+  --gmute:#939a94;
+  --grule:#6a716c;
+  --ghair:#656c65;
+
+  --seam:#6d736e;
+  --split:56%;
+  --splitr:44%;
+
+  --pl:clamp(20px,3.6vw,60px);
+  --gut:clamp(20px,2.4vw,38px);
+  --pr:clamp(20px,3.2vw,52px);
+
+  --serif:Georgia,"Iowan Old Style","Times New Roman",Times,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-size:17px;line-height:1.62;
+  overflow-wrap:break-word;
+}
+a,button{-webkit-tap-highlight-color:rgba(26,29,28,.18);touch-action:manipulation}
+h1,h2,h3{text-wrap:balance}
+#main{scroll-margin-top:72px}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,p,dl,dd,ul,figure{margin:0}
+ul{padding:0;list-style:none}
+
+/* — служебное — */
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:99;
+  background:var(--ink);color:var(--paper);padding:12px 18px;
+  font-family:var(--sans);font-size:13px;text-decoration:none;
+}
+.skip:focus{left:0}
+:focus{outline:2px solid var(--ink);outline-offset:3px}
+:focus:not(:focus-visible){outline:none}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.gra :focus,.foot :focus,.gra :focus-visible,.foot :focus-visible{outline-color:var(--gtext)}
+
+/* утилитарный шрифт: сухие метки, цифры, данные */
+.u{font-family:var(--sans);font-variant-numeric:tabular-nums}
+.lab{
+  font-family:var(--sans);font-size:11px;line-height:1.3;
+  letter-spacing:.19em;text-transform:uppercase;font-weight:600;
+}
+
+/* ——— плашка «черновик»: без заливки, только тяжёлое правило снизу ——— */
+.draft{
+  padding:clamp(18px,2.4vw,26px) var(--pr) clamp(16px,2vw,22px) var(--pl);
+  border-bottom:3px solid var(--ink);
+}
+.draft-in{display:grid;gap:6px 28px;align-items:baseline}
+@media(min-width:820px){.draft-in{grid-template-columns:auto 1fr}}
+.draft .lab{color:var(--ink);white-space:nowrap;padding-top:5px}
+.draft p{
+  font-family:var(--sans);font-size:13.5px;line-height:1.55;
+  color:var(--ink2);max-width:98ch;
+}
+.draft p+p{margin-top:5px}
+.draft b{color:var(--ink);font-weight:600}
+.draft a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:2px}
+.draft a:hover{text-decoration-thickness:2px}
+
+/* ——— шапка: два грунта встречаются, шов уходит вниз ——— */
+.band{position:relative;padding-bottom:clamp(26px,3.4vw,46px)}
+.band::before,.band::after{content:"";position:absolute;top:0;bottom:0;z-index:0}
+.band::before{left:0;right:var(--splitr);background:var(--paper);border-right:1px solid var(--seam)}
+.band::after{left:var(--split);right:0;background:var(--gra)}
+.band>*{position:relative;z-index:1}
+.brow{display:grid;grid-template-columns:var(--split) var(--splitr)}
+.cA{padding-left:var(--pl);padding-right:var(--gut)}
+.cB{padding-left:var(--gut);padding-right:var(--pr)}
+
+.brow-top{padding-top:clamp(24px,3vw,42px)}
+.wm{
+  font-family:var(--serif);font-size:clamp(28px,3.1vw,42px);line-height:1;
+  letter-spacing:-.015em;font-weight:400;
+}
+.wm-sub{margin-top:9px;color:var(--ink2)}
+.cB .lab{color:var(--gmute)}
+.cB .facts{margin-top:9px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--gtext)}
+.cB .facts span{display:block;color:var(--gmute)}
+
+/* заявление компании, разрезанное швом */
+.stmt{
+  position:relative;
+  margin-top:clamp(30px,4.4vw,64px);
+}
+.stmt span{
+  display:block;font-family:var(--serif);font-weight:400;
+  font-size:clamp(27px,4.55vw,61px);line-height:1.1;letter-spacing:-.02em;
+  padding-left:var(--pl);padding-right:var(--pr);
+}
+.stmt .s1{color:var(--ink)}
+.stmt .s2{
+  position:absolute;top:0;left:0;right:0;
+  color:var(--gtext);
+  clip-path:inset(0 0 0 var(--split));
+}
+@supports not (clip-path:inset(0 0 0 50%)){.stmt .s2{display:none}}
+.brow-note{margin-top:clamp(22px,2.6vw,34px)}
+.brow-note .cA p{color:var(--ink2);max-width:46ch}
+.brow-note .cB p{font-family:var(--sans);font-size:14.5px;line-height:1.55;color:var(--gmute);max-width:42ch}
+.brow-note .cB b{color:var(--gtext);font-weight:600}
+
+/* переключатель — только на узком экране и только при JS */
+.switch{display:none}
+
+/* ——— две дорожки ——— */
+.tracks{display:grid;grid-template-columns:var(--split) var(--splitr);align-items:stretch}
+.tA{
+  background:var(--paper);border-right:1px solid var(--seam);
+  padding:clamp(40px,5vw,86px) var(--gut) clamp(48px,5vw,96px) var(--pl);
+}
+.tB{
+  background:var(--gra);color:var(--gtext);
+  padding:clamp(96px,17vw,300px) var(--pr) clamp(48px,5vw,96px) var(--gut);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+
+/* — заголовки дорожек — */
+.thead{padding-bottom:clamp(20px,2.4vw,30px);border-bottom:1px solid var(--rule)}
+.tB .thead{border-bottom-color:var(--grule)}
+.thead h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(30px,3.5vw,46px);line-height:1.08;letter-spacing:-.02em;margin-top:12px;
+}
+.tB .thead h2{
+  font-family:var(--sans);font-weight:700;
+  font-size:clamp(21px,1.85vw,27px);line-height:1.16;letter-spacing:-.018em;
+}
+.tA .thead .lab{color:var(--ink2)}
+.tB .thead .lab{color:var(--gmute)}
+.thead .under{margin-top:12px;color:var(--ink2);font-size:16px}
+.tB .thead .under{font-family:var(--sans);font-size:14px;color:var(--gmute)}
+
+/* — левая дорожка: проза засечками — */
+.tA h3{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(22px,2vw,30px);line-height:1.18;letter-spacing:-.015em;
+}
+.blkA{margin-top:clamp(34px,3.6vw,56px)}
+.blkA p{max-width:60ch}
+.blkA p+p{margin-top:14px}
+.blkA h3+p{margin-top:16px}
+.tA .mute{color:var(--ink2)}
+
+.score{
+  margin-top:clamp(38px,4.4vw,72px);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:clamp(20px,2.4vw,30px) 0;
+  display:grid;gap:6px 26px;align-items:baseline;
+}
+@media(min-width:640px){.score{grid-template-columns:auto 1fr}}
+.score .big{
+  font-family:var(--sans);font-weight:700;font-variant-numeric:tabular-nums;
+  font-size:clamp(48px,5.4vw,76px);line-height:.86;letter-spacing:-.035em;
+}
+.score .txt{max-width:42ch}
+.score .txt em{font-style:normal;display:block;color:var(--ink2);font-size:15px;margin-top:7px;line-height:1.5}
+
+figure{margin-top:clamp(24px,2.6vw,38px)}
+figure img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#dfe1de}
+figcaption{
+  margin-top:9px;font-family:var(--sans);font-size:13px;line-height:1.45;
+  color:var(--ink2);max-width:56ch;
+}
+figcaption b{color:var(--ink);font-weight:600}
+.pairfig{display:grid;gap:clamp(16px,1.8vw,26px)}
+@media(min-width:900px){
+  .pairfig{grid-template-columns:1fr 1fr;align-items:start}
+  .pairfig figure:last-child{margin-top:clamp(38px,4vw,64px)}
+}
+@media(min-width:900px){
+  .fig-s{max-width:56%}
+  .fig-m{max-width:72%;margin-left:auto}
+  .fig-m figcaption{margin-left:0}
+}
+.srcnote{margin-top:16px;font-family:var(--sans);font-size:13px;line-height:1.5;color:var(--ink2);max-width:62ch}
+
+.map{margin-top:clamp(24px,2.6vw,38px);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.map iframe{display:block;width:100%;height:min(56vw,380px);border:0}
+.coords{margin-top:10px;font-family:var(--sans);font-size:13px;line-height:1.55;color:var(--ink2);max-width:62ch}
+.coords a{color:var(--ink);text-underline-offset:2px}
+.tB .map{margin-top:clamp(18px,2vw,26px);border-top-color:var(--grule);border-bottom-color:var(--grule)}
+.tB .map iframe{height:min(30vw,250px)}
+.tB .coords{color:var(--gmute);font-size:13px;line-height:1.55;max-width:46ch}
+.tB .coords a{color:var(--gtext);text-underline-offset:3px}
+.tB .coords a:hover{color:#fff}
+
+/* — левый вызов: подпись под чертой — */
+.actA{margin-top:clamp(40px,4.6vw,76px);border-top:3px solid var(--ink);padding-top:18px}
+.actA a{
+  position:relative;display:inline-block;font-family:var(--serif);
+  font-size:clamp(22px,2.2vw,32px);line-height:1.2;letter-spacing:-.015em;
+  text-decoration:none;padding-bottom:9px;
+}
+.actA a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--ink);
+  transform:scaleY(.334);transform-origin:0 100%;transition:transform .16s ease;
+}
+.actA a:hover::after{transform:none}
+.actA a:active{color:var(--ink2)}
+.actA a:active::after{background:var(--ink2)}
+.preset{
+  margin-top:16px;font-family:var(--sans);font-size:13px;line-height:1.55;color:var(--ink2);
+  border-left:1px solid var(--rule);padding-left:14px;max-width:46ch;
+}
+.preset b{display:block;color:var(--ink);font-weight:400;font-style:italic;margin-top:3px}
+
+/* — правая дорожка: сухая — */
+.tB p,.tB li,.tB dd,.tB dt{font-family:var(--sans)}
+.tB p{font-size:15px;line-height:1.6;max-width:46ch}
+.tB p+p{margin-top:12px}
+.tB h3{
+  font-family:var(--sans);font-weight:700;font-size:15px;line-height:1.3;letter-spacing:.01em;
+}
+.blkB{margin-top:clamp(30px,3vw,44px);border-top:1px solid var(--ghair);padding-top:18px}
+.blkB h3+p{margin-top:12px}
+.tB .gmute{color:var(--gmute)}
+.tB .quote{
+  font-family:var(--serif);font-size:clamp(17px,1.5vw,21px);line-height:1.4;
+  letter-spacing:-.01em;max-width:30ch;margin-top:14px;
+}
+
+.data{margin-top:16px}
+.data div{display:grid;gap:2px 20px;padding:13px 0;border-top:1px solid var(--ghair)}
+@media(min-width:520px){.data div{grid-template-columns:9.5em 1fr}}
+.data dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--gmute);padding-top:3px}
+.data dd{margin:0;font-size:14.5px;line-height:1.5;font-variant-numeric:tabular-nums}
+.data dd span{display:block;color:var(--gmute);font-size:13px;margin-top:3px}
+.data a{color:var(--gtext);text-underline-offset:3px;display:inline-block;padding:4px 0}
+.data a:hover{color:#fff}
+
+.asklist{margin-top:14px}
+.asklist li{
+  font-size:14.5px;line-height:1.5;padding:9px 0 9px 22px;position:relative;
+  border-top:1px solid var(--ghair);
+}
+.asklist li::before{content:"—";position:absolute;left:0;color:var(--gmute)}
+
+/* — правый вызов: светлая полоса на графите — */
+.tB .closer{
+  margin-top:clamp(34px,3.4vw,52px);max-width:16ch;
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(24px,2.4vw,36px);line-height:1.16;letter-spacing:-.02em;
+}
+.tB .closer span{display:block;color:var(--gmute)}
+.actB{margin-top:clamp(22px,2.4vw,34px)}
+.actB a{
+  display:block;background:var(--gtext);color:var(--gra);text-decoration:none;
+  font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:.02em;
+  padding:19px 20px;
+  transition:background .16s ease;
+}
+.actB a:hover{background:#fff}
+.actB a:active{background:var(--gmute)}
+.actB .preset{border-left-color:var(--grule);color:var(--gmute);font-family:var(--sans)}
+.actB .preset b{color:var(--gtext);font-style:italic}
+
+/* ——— общий подвал ——— */
+.foot{
+  background:var(--gra);color:var(--gtext);
+  padding:clamp(40px,4.6vw,78px) var(--pr) clamp(34px,3.6vw,56px) var(--pl);
+  border-top:1px solid var(--grule);
+}
+.foot-g{display:grid;gap:clamp(26px,3vw,44px)}
+@media(min-width:760px){.foot-g{grid-template-columns:1.15fr 1fr 1fr}}
+.foot h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.6vw,36px);line-height:1.1;letter-spacing:-.02em}
+.foot .lab{color:var(--gmute)}
+.foot p,.foot li{font-family:var(--sans);font-size:14.5px;line-height:1.6}
+.foot ul{margin-top:12px}
+.foot ul li{padding:7px 0;border-top:1px solid var(--ghair)}
+.foot ul li:first-child{border-top:0;padding-top:0}
+.foot a{color:var(--gtext);text-underline-offset:3px}
+.foot ul a{display:inline-block;padding:4px 0}
+.foot a:hover{color:#fff}
+.foot .sub{color:var(--gmute);font-size:13.5px;margin-top:10px;max-width:46ch}
+.foot .why{margin-top:10px;color:var(--gmute);font-size:13.5px;max-width:44ch}
+.foot-end{
+  margin-top:clamp(30px,3.4vw,52px);padding-top:20px;border-top:1px solid var(--ghair);
+  font-family:var(--sans);line-height:1.6;color:var(--gmute);max-width:96ch;
+}
+.foot .foot-end{font-size:12.5px}
+.foot-end a{color:var(--gtext)}
+
+/* ——— узкий экран: дорожки не рядом, а по выбору ——— */
+@media(max-width:899px){
+  :root{--split:100%;--splitr:0%}
+  .band::before{right:0;border-right:0}
+  .band::after{display:none}
+  .stmt .s2{display:none}
+  .brow{grid-template-columns:1fr}
+  .cA,.cB{padding-left:var(--pl);padding-right:var(--pr)}
+  .brow-top .cB{margin-top:22px;padding-top:18px;border-top:1px solid var(--hair)}
+  .cB .lab,.cB .facts span{color:var(--ink2)}
+  .cB .facts{color:var(--ink)}
+  .brow-note .cB{margin-top:16px}
+  .brow-note .cB p{color:var(--ink2)}
+  .brow-note .cB b{color:var(--ink)}
+
+  .tracks{grid-template-columns:1fr}
+  .tA{border-right:0;padding:clamp(34px,7vw,48px) var(--pr) clamp(40px,8vw,56px) var(--pl)}
+  .tB{
+    border-left:0;border-top:4px solid var(--seam);
+    padding:clamp(34px,7vw,48px) var(--pr) clamp(40px,8vw,56px) var(--pl);
   }
-  @media(min-width:1000px){ :root{ --gap:26px; --pad:48px } }
-  @media(min-width:1340px){ :root{ --pad:76px } }
 
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%;color-scheme:light}
-  body{margin:0;background:var(--paper);color:var(--ink);
-    font:400 16.5px/1.6 var(--sans);letter-spacing:-.008em;
-    padding-bottom:calc(60px + env(safe-area-inset-bottom));
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-    touch-action:manipulation;-webkit-tap-highlight-color:rgba(29,51,209,.2)}
-  @media(min-width:820px){ body{padding-bottom:0} }
-  img{max-width:100%;height:auto;display:block}
-  a{color:inherit}
-  p{margin:0}
-  figure{margin:0}
-
-  :focus-visible{outline:2px solid var(--acc);outline-offset:3px}
-  .band-i :focus-visible,.act-fill:focus-visible,.dock a.p:focus-visible,
-  .draft a:focus-visible,.skip:focus-visible{outline-color:var(--plane)}
-  .skip{position:absolute;left:-9999px;top:0}
-  .skip:focus{left:0;top:0;z-index:60;background:var(--acc);color:var(--plane);
-    padding:14px 18px;font:600 12.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
-
-  .shell{max-width:var(--max);margin:0 auto;
-    padding-left:max(var(--pad),env(safe-area-inset-left));
-    padding-right:max(var(--pad),env(safe-area-inset-right))}
-  .g{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--gap)}
-  .g>*{grid-column:1/-1}
-  @media(min-width:1000px){ .g{grid-template-columns:repeat(12,1fr)} }
-
-  /* ——— типографика: крупный светлый гротеск + плотный моношрифт ——— */
-  h1,h2,h3{margin:0;text-wrap:balance}
-  h1{font-weight:300;font-size:clamp(37px,8vw,116px);line-height:.93;letter-spacing:-.045em}
-  h2{font-weight:300;font-size:clamp(27px,4.6vw,62px);line-height:.98;letter-spacing:-.04em}
-  h3{font-weight:600;font-size:clamp(16.5px,1.35vw,19.5px);line-height:1.25;letter-spacing:-.022em}
-  .lede{font-size:clamp(17px,1.5vw,21px);line-height:1.5;letter-spacing:-.018em;max-width:58ch}
-  .mono{font:500 11.5px/1.45 var(--mono);letter-spacing:.18em;text-transform:uppercase;
-    font-variant-numeric:tabular-nums}
-  .mute{color:var(--mute)}
-  .acc{color:var(--acc)}
-  .sm{font-size:15.2px;line-height:1.55;letter-spacing:-.012em;max-width:62ch}
-  hr.rule{border:0;border-top:1px solid var(--rule);margin:0}
-
-  /* ——— действия: плоские прямоугольники, без скруглений и теней ——— */
-  .act{display:inline-flex;align-items:center;justify-content:space-between;gap:26px;
-    padding:17px 20px;text-decoration:none;border:1px solid var(--rule-2);white-space:nowrap;
-    font:600 12.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;
-    transition:background .18s ease,color .18s ease,border-color .18s ease}
-  .act .arw{font:400 13px/1 var(--mono)}
-  .act-fill{background:var(--acc);border-color:var(--acc);color:var(--plane)}
-  .act-fill:hover{background:var(--ink);border-color:var(--ink)}
-  .act-line:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-  .act:active{opacity:.85}
-  .band-i .act{border-color:var(--rule-i2);color:var(--paper)}
-  .band-i .act-line:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
-  .band-i .act-fill{background:var(--plane);border-color:var(--plane);color:var(--ink)}
-  .band-i .act-fill:hover{background:var(--acc-d);border-color:var(--acc-d)}
-
-  /* ——— плашка «черновик» ——— */
-  .draft{background:var(--ink);color:var(--paper)}
-  .draft .shell{padding-top:15px;padding-bottom:16px}
-  .draft .lab{color:var(--acc-d);margin-bottom:9px}
-  .draft .txt{font-size:13.6px;line-height:1.55;letter-spacing:-.004em;max-width:78ch}
-  .draft b{font-weight:600;color:var(--plane)}
-  .draft a{color:var(--plane);text-decoration-thickness:1px;text-underline-offset:2px;
-    padding:6px 0;transition:color .18s ease}
-  .draft a:hover{color:var(--acc-d)}
-  @media(min-width:1000px){
-    .draft .lab{grid-column:1/span 2;margin-bottom:0}
-    .draft .txt{grid-column:4/span 9}
+  .switch{
+    display:grid;grid-template-columns:1fr 1fr;
+    border-top:1px solid var(--hair);border-bottom:3px solid var(--ink);
+    background:var(--paper);position:sticky;top:0;z-index:20;
   }
-
-  /* ——— шапка ——— */
-  .top{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--rule)}
-  .top .shell{display:flex;align-items:center;gap:20px;height:62px}
-  .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;white-space:nowrap;
-    padding:15px 0}
-  .brand .nm{font:600 15px/1 var(--sans);letter-spacing:.02em}
-  .brand .sub{font:500 10.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
-  .top nav{display:none;gap:26px;margin-left:auto}
-  .top nav a{text-decoration:none;color:var(--mute);padding:14px 0;transition:color .18s ease}
-  .top nav a:hover{color:var(--acc)}
-  .top .tel{margin-left:auto;text-decoration:none;font:600 15.5px/1 var(--sans);letter-spacing:-.02em;
-    padding:15px 0;transition:color .18s ease}
-  .top .tel:hover{color:var(--acc)}
-  @media(min-width:1080px){ .top .shell{height:74px} .top nav{display:flex} .top .tel{margin-left:0} }
-  @media(max-width:1079px){ .brand .sub{display:none} }
-
-  /* ——— первый экран: широкий текстовый блок, кадр отдельной полосой ——— */
-  .hero{padding-top:clamp(38px,5.4vw,84px);padding-bottom:clamp(34px,4.4vw,64px)}
-  .hero .kick{margin-bottom:clamp(18px,2.2vw,30px)}
-  .hero .lede{margin-top:clamp(22px,2.6vw,34px)}
-  .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(26px,3vw,40px)}
-  .hero .cta .act{flex:1 1 240px}
-  @media(min-width:1000px){
-    .hero .kick{grid-column:1/span 3}
-    .hero h1{grid-column:4/span 9}
-    .hero .lede{grid-column:4/span 6}
-    .hero .cta{grid-column:4/span 7}
+  html:not(.js) .switch{display:none}
+  .switch button{
+    appearance:none;-webkit-appearance:none;border:0;background:transparent;color:var(--ink2);
+    font-family:var(--sans);font-size:12.5px;font-weight:600;line-height:1.3;
+    letter-spacing:.03em;text-align:left;
+    padding:14px var(--pl) 13px;cursor:pointer;
+    border-bottom:3px solid transparent;margin-bottom:-3px;
+    transition:color .16s ease,border-color .16s ease;
   }
-
-  /* ——— белая плоскость: кадр во всю ширину ——— */
-  .plane{background:var(--plane);padding:clamp(18px,2vw,28px) 0 clamp(20px,2.2vw,32px)}
-  .plane figure img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 42%}
-  @media(min-width:760px){ .plane figure img{aspect-ratio:2/1} }
-  @media(min-width:1200px){ .plane figure img{aspect-ratio:21/8} }
-  .cap{margin-top:11px;color:var(--mute)}
-  @media(min-width:1000px){
-    .plane .cap{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
-    .plane .cap span{grid-column:4/span 8}
-  }
-
-  /* ——— строка фактов ——— */
-  .facts{padding-top:clamp(34px,4vw,58px);row-gap:24px}
-  .facts>div{padding-top:14px;border-top:1px solid var(--rule)}
-  .facts div span{display:block;font-size:14.8px;line-height:1.4;letter-spacing:-.012em;margin-top:7px}
-  @media(min-width:1000px){ .facts>div{grid-column:span 3} }
-  @media(min-width:640px) and (max-width:999px){ .facts>div{grid-column:span 3} }
-
-  /* ——— развилка: два адресата ——— */
-  .fork{padding-top:clamp(46px,5.6vw,96px)}
-  .fork .b{border-top:1px solid var(--rule-2);padding-top:18px}
-  .fork .b .ft{margin:12px 0 0;font-weight:600;font-size:clamp(16.5px,1.35vw,19.5px);
-    line-height:1.25;letter-spacing:-.022em}
-  .fork .b p{margin-top:9px;color:var(--mute)}
-  .fork .b .go{display:inline-block;position:relative;margin-top:16px;text-decoration:none;color:var(--acc);
-    font:600 12.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;
-    border-bottom:1px solid var(--acc);padding-bottom:5px;
-    transition:color .18s ease,border-color .18s ease}
-  .fork .b .go::after{content:"";position:absolute;left:0;right:0;top:-14px;bottom:-14px}
-  .fork .b .go:hover{color:var(--ink);border-color:var(--ink)}
-  @media(min-width:1000px){
-    .fork .b1{grid-column:1/span 5}
-    .fork .b2{grid-column:7/span 5;margin-top:72px}
-  }
-  @media(max-width:999px){ .fork .b2{margin-top:38px} }
-
-  /* ——— секции: номер в левой служебной колонке, заголовок с отступом ——— */
-  section{padding-top:clamp(60px,8vw,152px)}
-  section[id]{scroll-margin-top:76px}
-  .head{padding-bottom:clamp(28px,3.4vw,58px);align-items:baseline}
-  .head .num{margin-bottom:12px;color:var(--mute)}
-  @media(min-width:1000px){
-    .head .num{grid-column:1/span 2;margin-bottom:0}
-    .head h2{grid-column:4/span 9}
-  }
-  .ind{grid-column:1/-1}
-  @media(min-width:1000px){ .ind{grid-column:4/span 8} }
-
-  /* ——— 01 направления: трёхчастные строки на волосяных линиях ——— */
-  .idx{border-bottom:1px solid var(--rule)}
-  .idx .row{display:grid;grid-template-columns:repeat(6,1fr);gap:4px var(--gap);
-    padding:clamp(16px,1.8vw,26px) 0;border-top:1px solid var(--rule);
-    transition:color .18s ease}
-  .idx .row:hover{color:var(--acc)}
-  .idx .row .n{grid-column:1/span 6;color:var(--mute);transition:color .18s ease}
-  .idx .row:hover .n{color:var(--acc)}
-  .idx .row .t{grid-column:1/span 6}
-  .idx .row .d{grid-column:1/span 6;color:var(--mute);font-size:15px;letter-spacing:-.012em;
-    max-width:46ch;transition:color .18s ease}
-  .idx .row:hover .d{color:var(--acc)}
-  @media(min-width:1000px){
-    .idx .row{grid-template-columns:repeat(12,1fr);align-items:baseline}
-    .idx .row .n{grid-column:1/span 2}
-    .idx .row .t{grid-column:4/span 4}
-    .idx .row .d{grid-column:8/span 5}
-  }
-  .note{margin-top:clamp(22px,2.6vw,36px);color:var(--mute)}
-
-  /* ——— 02 как выглядит: два кадра со сдвигом ——— */
-  .look figure img{width:100%;object-fit:cover}
-  .look .f1 img{aspect-ratio:3/2;object-position:50% 40%}
-  .look .f2 img{aspect-ratio:3/2;object-position:52% 46%}
-  @media(min-width:1000px){
-    .look .f1{grid-column:1/span 7}
-    .look .f2{grid-column:9/span 4;margin-top:112px}
-    .look .f2 img{aspect-ratio:4/5}
-  }
-  @media(max-width:999px){ .look .f2{margin-top:32px} }
-  .look .list{margin-top:clamp(40px,5vw,84px)}
-  .lines{border-bottom:1px solid var(--rule)}
-  .lines .l{display:grid;grid-template-columns:repeat(6,1fr);gap:6px var(--gap);
-    padding:clamp(15px,1.7vw,24px) 0;border-top:1px solid var(--rule);align-items:baseline}
-  .lines .l .n{grid-column:1/span 6;color:var(--mute)}
-  .lines .l .t{grid-column:1/span 6;font-weight:300;letter-spacing:-.03em;
-    font-size:clamp(21px,3vw,36px);line-height:1.06}
-  .lines .l .d{grid-column:1/span 6;color:var(--mute);font-size:14.8px;letter-spacing:-.012em;
-    max-width:40ch}
-  @media(min-width:1000px){
-    .lines .l{grid-template-columns:repeat(12,1fr)}
-    .lines .l .n{grid-column:1/span 2}
-    .lines .l .t{grid-column:4/span 5}
-    .lines .l .d{grid-column:9/span 4;justify-self:end;text-align:right}
-  }
-
-  /* ——— 03 тёплые полы ——— */
-  .warm figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
-  .warm .txt p+p{margin-top:16px}
-  @media(min-width:1000px){
-    .warm figure{grid-column:1/span 6}
-    .warm .txt{grid-column:8/span 5}
-  }
-  @media(max-width:999px){ .warm .txt{margin-top:26px} }
-
-  /* ——— 04 дилерам: инверсия во всю ширину ——— */
-  .band-i{background:var(--ink);color:var(--paper);margin-top:clamp(60px,8vw,152px);
-    padding-bottom:clamp(56px,6.4vw,116px)}
-  .band-i section{padding-top:clamp(48px,6vw,116px)}
-  .band-i .head .num{color:var(--acc-d)}
-  .band-i .mute{color:var(--mute-d)}
-  .band-i .lede{color:var(--paper)}
-  .band-i h2,.band-i h3{color:var(--plane)}
-  .deal .txt p+p{margin-top:17px}
-  .deal figure{margin-top:clamp(34px,4vw,60px)}
-  .deal figure img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 46%}
-  .deal .cap{color:var(--mute-d)}
-  @media(min-width:1000px){
-    .deal .txt{grid-column:4/span 8}
-    .deal figure{grid-column:1/span 12}
-  }
-  .drows{margin-top:clamp(38px,4.6vw,80px);border-bottom:1px solid var(--rule-i)}
-  .drows .r{display:grid;grid-template-columns:repeat(6,1fr);gap:5px var(--gap);
-    padding:clamp(15px,1.7vw,24px) 0;border-top:1px solid var(--rule-i);align-items:baseline}
-  .drows .r .n{grid-column:1/span 6;color:var(--acc-d)}
-  .drows .r .t{grid-column:1/span 6}
-  .drows .r .d{grid-column:1/span 6;color:var(--mute-d);font-size:15px;letter-spacing:-.012em;
-    max-width:52ch}
-  @media(min-width:1000px){
-    .drows .r{grid-template-columns:repeat(12,1fr)}
-    .drows .r .n{grid-column:1/span 2}
-    .drows .r .t{grid-column:4/span 3}
-    .drows .r .d{grid-column:8/span 5}
-  }
-  .deal .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(30px,3.6vw,56px)}
-  .deal .cta .act{flex:1 1 260px}
-  @media(min-width:1000px){ .deal .cta{grid-column:4/span 7} }
-
-  /* ——— 05 оценка ——— */
-  .score{border-top:1px solid var(--rule-2);padding-top:clamp(20px,2.4vw,32px);align-items:baseline}
-  .score .v{font-weight:300;font-size:clamp(76px,15vw,208px);line-height:.8;letter-spacing:-.06em;
-    color:var(--acc)}
-  .score .of{display:block;margin-top:20px;font-size:15.5px;line-height:1.4;letter-spacing:-.012em}
-  .score .src{color:var(--mute)}
-  @media(min-width:1000px){
-    .score .lab{grid-column:1/span 2}
-    .score .v{grid-column:4/span 4}
-    .score .src{grid-column:8/span 5;align-self:end}
-  }
-  @media(max-width:999px){ .score .src{margin-top:20px} .score .lab{margin-bottom:16px} }
-
-  /* ——— 06 контакты ——— */
-  .addr{font-weight:300;font-size:clamp(26px,3.5vw,46px);line-height:1.04;letter-spacing:-.035em;
-    max-width:20ch}
-  .addr span{display:block;margin-top:14px;font-size:clamp(15px,1.15vw,17px);line-height:1.3;
-    letter-spacing:.16em;text-transform:uppercase;font-family:var(--mono);font-weight:500;
-    color:var(--mute)}
-  @media(min-width:1000px){ .addr span{font-size:12px} }
-  .rows{margin-top:clamp(30px,3.6vw,54px);border-top:1px solid var(--rule-2)}
-  .rows .r{display:grid;grid-template-columns:repeat(6,1fr);gap:5px var(--gap);
-    padding:14px 0;border-bottom:1px solid var(--rule)}
-  .rows .r dt{grid-column:1/span 6;margin:0;color:var(--mute)}
-  .rows .r dd{grid-column:1/span 6;margin:0;font-size:16.5px;letter-spacing:-.015em}
-  .rows .r dd a{text-decoration:none;border-bottom:1px solid var(--rule-2);
-    display:inline-block;padding-bottom:2px;overflow-wrap:anywhere;
-    transition:color .18s ease,border-color .18s ease}
-  .rows .r dd a:hover{color:var(--acc);border-color:var(--acc)}
-  .rows .r dd em{display:block;font-style:normal;font-size:14.5px;color:var(--mute);
-    letter-spacing:-.01em;margin-top:4px}
-  @media(min-width:1000px){
-    .rows .r{grid-template-columns:repeat(12,1fr);padding:16px 0}
-    .rows .r dt{grid-column:1/span 2}
-    .rows .r dd{grid-column:4/span 8}
-  }
-  @media(max-width:999px){ .rows .r dd a{padding:12px 0 9px} }
-  .map-note a{padding:6px 0;display:inline-block}
-  .map{margin-top:clamp(30px,3.6vw,54px);border:1px solid var(--rule-2);background:var(--plane)}
-  .map iframe{display:block;width:100%;height:320px;border:0}
-  @media(min-width:1000px){ .map iframe{height:440px} }
-  .map-note{margin-top:10px;color:var(--mute)}
-  .map-note a{color:inherit}
-  .ccta{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(26px,3vw,42px)}
-  .ccta .act{flex:1 1 240px}
-  @media(min-width:1000px){ .contact .left{grid-column:1/span 12} .ccta{grid-column:4/span 7} }
-
-  footer{margin-top:clamp(58px,7vw,124px);border-top:1px solid var(--rule);
-    padding:22px 0 40px;color:var(--mute)}
-  footer .a,footer .b{font-size:12px;letter-spacing:.09em;line-height:1.65;max-width:62ch}
-  footer .b{margin-top:12px}
-  @media(min-width:1000px){
-    footer .a{grid-column:1/span 6}
-    footer .b{grid-column:8/span 5;margin-top:0}
-  }
-
-  /* ——— нижняя панель на телефоне ——— */
-  .dock{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;
-    border-top:1px solid var(--rule-2);background:var(--paper);
-    padding-bottom:env(safe-area-inset-bottom)}
-  .dock a{flex:1;text-align:center;padding:18px 8px;text-decoration:none;
-    font:600 12px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;
-    transition:background .18s ease,color .18s ease}
-  .dock a.p{background:var(--acc);color:var(--plane)}
-  .dock a:hover,.dock a:active{background:var(--ink);color:var(--paper)}
-  .dock a+a{border-left:1px solid var(--rule-2)}
-  @media(min-width:820px){ .dock{display:none} }
-
-  @media(prefers-reduced-motion:reduce){
-    *{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}
-  }
+  .switch button+button{padding-left:16px;border-left:1px solid var(--hair)}
+  .switch button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+  .switch button:hover{color:var(--ink)}
+  body[data-track="a"] .tB,body[data-track="b"] .tA{display:none}
+  body[data-track="b"] .switch{background:var(--gra);border-bottom-color:var(--seam);border-top-color:var(--ghair)}
+  body[data-track="b"] .switch button{color:var(--gmute)}
+  body[data-track="b"] .switch button+button{border-left-color:var(--grule)}
+  body[data-track="b"] .switch button[aria-pressed="true"]{color:var(--gtext);border-bottom-color:var(--gtext)}
+  body[data-track="b"] .switch button:hover{color:var(--gtext)}
+  body[data-track="b"] .switch :focus-visible{outline-color:var(--gtext)}
+  body[data-track="b"] .tB{border-top:0}
+}
+@media(max-width:520px){
+  .switch button{padding-left:var(--pl);padding-right:12px}
+  .switch button+button{padding-left:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition-duration:.001ms !important;animation-duration:.001ms !important}
+}
 </style>
 </head>
 <body>
 
-<a class="skip" href="#main">К содержанию</a>
+<a class="skip" href="#main">Перейти к содержанию</a>
 
-<div class="draft">
-  <div class="shell">
-    <div class="g">
-      <div class="lab mono">Черновик</div>
-      <div class="txt">
-        <b>Демонстрационный вариант сайта, сделанный для «АдыЛины».</b>
-        Данные и фотографии взяты из вашей открытой карточки в 2GIS — это ваши объекты,
-        а не стоковые картинки. Тексты и график работы правим с ваших слов: сейчас стоит
-        только время открытия. Точка на карте поставлена по адресу из справочника — если вход
-        не там, поправим. Сделал Владимир Гутман, веб-разработчик, Усть-Каменогорск —
-        <a href="tel:+77776722860"><b>+7&nbsp;777&nbsp;672&nbsp;28&nbsp;60</b></a>,
-        <a href="https://wa.me/77776722860">WhatsApp</a>.
-      </div>
+<aside class="draft">
+  <div class="draft-in">
+    <div class="lab">Черновик</div>
+    <div>
+      <p><b>Демонстрационный вариант страницы, сделанный для «АдыЛины».</b> Компания об этом не просила и участия в работе не принимала.</p>
+      <p>Данные и фотографии взяты из открытой карточки в <a href="https://2gis.kz/ust-kamenogorsk/firm/12807639721314315" rel="nofollow noopener" target="_blank">2GIS</a>. Тексты, график работы и перечень работ правим с ваших слов — здесь намеренно нет цен, сроков и гарантий, потому что их знает только фабрика. Точка на карте поставлена по адресу из справочника и требует проверки.</p>
+      <p>Сделал <b>Владимир Гутман</b>, веб-разработчик, Усть-Каменогорск. Телефон и WhatsApp: <a href="tel:+77776722860">+7&nbsp;777&nbsp;672&nbsp;28&nbsp;60</a> · <a href="https://wa.me/77776722860" rel="nofollow noopener" target="_blank">написать в WhatsApp</a></p>
     </div>
   </div>
-</div>
+</aside>
 
-<header class="top">
-  <div class="shell">
-    <a class="brand" href="#main"><span class="nm">АдыЛина</span><span class="sub">фабрика</span></a>
-    <nav class="mono" aria-label="Разделы страницы">
-      <a href="#work">Направления</a>
-      <a href="#look">Как выглядит</a>
-      <a href="#floor">Тёплые полы</a>
-      <a href="#dealers">Дилерам</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-    <a class="tel" href="tel:+77051491333">+7&nbsp;705&nbsp;149&nbsp;13&nbsp;33</a>
+<header class="band">
+  <div class="brow brow-top">
+    <div class="cA">
+      <h1 class="wm">АдыЛина</h1>
+      <p class="wm-sub">Фабрика натяжных потолков. Усть-Каменогорск.</p>
+    </div>
+    <div class="cB">
+      <div class="lab">Производство и приём</div>
+      <p class="facts">проспект Нурсултана Назарбаева,&nbsp;54<span>открывается с 08:00</span></p>
+    </div>
+  </div>
+
+  <p class="stmt">
+    <span class="s1">Натяжные потолки от производителя. Приглашаем к сотрудничеству дилеров</span>
+    <span class="s2" aria-hidden="true">Натяжные потолки от производителя. Приглашаем к сотрудничеству дилеров</span>
+  </p>
+
+  <div class="brow brow-note">
+    <div class="cA">
+      <p>Это собственные слова фабрики из справочника. В одной фразе — два разных разговора, поэтому страница разделена надвое. Слева всё, что важно хозяину квартиры.</p>
+    </div>
+    <div class="cB">
+      <p>Справа — то, что спрашивает монтажник: <b>производство, ассортимент, отгрузка</b>. Без фотографий и без лишних слов.</p>
+    </div>
   </div>
 </header>
 
-<main id="main">
-
-<div class="hero shell">
-  <div class="g">
-    <div class="kick mono acc">Усть-Каменогорск</div>
-    <h1>Натяжные потолки <span class="mute">от производителя</span></h1>
-    <p class="lede">Мы фабрика: делаем потолки сами и сами же их ставим. Поэтому здесь два
-      разговора — с хозяином квартиры и с мастером из области, которому нужен поставщик.
-      Оба идут на один номер.</p>
-    <div class="cta">
-      <a class="act act-fill" href="https://wa.me/77051491333">Написать в WhatsApp <span class="arw" aria-hidden="true">&#8594;</span></a>
-      <a class="act act-line" href="tel:+77051491333">Позвонить <span class="arw" aria-hidden="true">&#8594;</span></a>
-    </div>
-  </div>
+<div class="switch" role="group" aria-label="Кому показать страницу">
+  <button type="button" data-go="a" aria-pressed="true" aria-controls="track-a">Мне нужен потолок</button>
+  <button type="button" data-go="b" aria-pressed="false" aria-controls="track-b">Я монтажник, ищу поставщика</button>
 </div>
 
-<div class="plane">
-  <div class="shell">
-    <figure>
-      <img src="img/lightlines.jpg" width="1920" height="1080" fetchpriority="high"
-        alt="Белый натяжной потолок со встроенными светящимися линиями, образующими ломаный контур">
-      <figcaption class="cap mono"><span>Световые линии, врезанные в полотно</span></figcaption>
-    </figure>
-  </div>
-</div>
+<main id="main" class="tracks">
 
-<div class="shell">
-  <div class="g facts">
-    <div><div class="mono mute">Оценка</div><span>4,9 из 5 · 58 оценок в 2GIS</span></div>
-    <div><div class="mono mute">Адрес</div><span>проспект Нурсултана&nbsp;Назарбаева, 54</span></div>
-    <div><div class="mono mute">Часы</div><span>с 08:00, график по дням уточним</span></div>
-    <div><div class="mono mute">Оплата</div><span>Картой · Наличными · Через банк · Переводом с карты</span></div>
-  </div>
-
-  <div class="g fork">
-    <div class="b b1">
-      <div class="mono mute">Частному заказчику</div>
-      <h2 class="ft">Потолок в квартиру или дом</h2>
-      <p class="sm">Напишите, что за помещение и сколько комнат, пришлите фото — разберём
-        полотно, свет и порядок работ. Замер и расчёт обсуждаем в переписке.</p>
-      <a class="go" href="https://wa.me/77051491333">Написать в WhatsApp</a>
+  <!-- ===================== ЛЕВАЯ ДОРОЖКА ===================== -->
+  <section class="tA" id="track-a" aria-labelledby="h-a">
+    <div class="thead">
+      <div class="lab">Левая дорожка</div>
+      <h2 id="h-a">Хозяину квартиры</h2>
+      <p class="under">Потолок делают один раз и потом смотрят на него каждый день.</p>
     </div>
-    <div class="b b2">
-      <div class="mono mute">Дилеру и монтажнику</div>
-      <h2 class="ft">Поставка от фабрики</h2>
-      <p class="sm">Ставите потолки в районе или держите магазин отделочных материалов?
-        Мы приглашаем к сотрудничеству дилеров — работаете напрямую с производством,
-        без промежуточного звена.</p>
-      <a class="go" href="#dealers">К разделу для дилеров</a>
-    </div>
-  </div>
-</div>
 
-<section id="work">
-  <div class="shell">
-    <div class="g head"><div class="num mono">01 — Направления</div><h2>Чем занимается фабрика</h2></div>
-    <div class="idx">
-      <div class="row">
-        <div class="n mono">01</div>
-        <h3 class="t">Натяжные потолки</h3>
-        <div class="d">Основное направление. Производим сами и ставим сами.</div>
-      </div>
-      <div class="row">
-        <div class="n mono">02</div>
-        <h3 class="t">Тёплые полы</h3>
-        <div class="d">Второе направление фабрики — тот же телефон, те же люди.</div>
-      </div>
-      <div class="row">
-        <div class="n mono">03</div>
-        <h3 class="t">Электротехника</h3>
-        <div class="d">Направление, под которым фабрика значится в справочнике.</div>
-      </div>
-      <div class="row">
-        <div class="n mono">04</div>
-        <h3 class="t">Электронагревательное оборудование</h3>
-        <div class="d">Направление, под которым фабрика значится в справочнике.</div>
-      </div>
+    <div class="blkA">
+      <h3>Фабрика, а не выездная бригада</h3>
+      <p>«АдыЛина» держит собственное производство в Усть-Каменогорске. Разговор поэтому начинается не с прайса, а с комнаты: сколько окон, где будет свет, что уже висит на потолке и что вы хотите убрать.</p>
+      <p class="mute">Сроков, цен и обещаний на этой странице нет намеренно. Их называет фабрика по вашему объекту, а не сайт по чужой квартире.</p>
     </div>
-    <div class="g"><p class="ind note sm">Состав работ по каждому направлению зависит от объекта —
-      напишите, что за помещение, и мы ответим по нему конкретно, а не общими словами.</p></div>
-  </div>
-</section>
 
-<section id="look">
-  <div class="shell">
-    <div class="g head"><div class="num mono">02 — Объекты</div><h2>Как это выглядит<br>вживую</h2></div>
-    <div class="g look">
-      <figure class="f1">
-        <img src="img/gloss.jpg" width="1920" height="1080" loading="lazy"
-          alt="Чёрный глянцевый натяжной потолок, в котором отражаются окно, стены и мебель комнаты">
-        <figcaption class="cap mono">Чёрный глянец: комната отражается в потолке целиком</figcaption>
-      </figure>
-      <figure class="f2">
-        <img src="img/track.jpg" width="1920" height="1080" loading="lazy"
-          alt="Белый матовый натяжной потолок, чёрный трековый светильник и две подвесные люстры из шестиугольников">
-        <figcaption class="cap mono">Матовое полотно, трек и подвесы</figcaption>
-      </figure>
-      <div class="list">
-        <div class="lines">
-          <div class="l">
-            <div class="n mono">01</div>
-            <div class="t">Глянцевое полотно</div>
-            <div class="d">Зеркальная плоскость, комната кажется выше</div>
-          </div>
-          <div class="l">
-            <div class="n mono">02</div>
-            <div class="t">Матовое полотно</div>
-            <div class="d">Ровный белый свет без бликов</div>
-          </div>
-          <div class="l">
-            <div class="n mono">03</div>
-            <div class="t">Световые линии</div>
-            <div class="d">Свет врезан в само полотно</div>
-          </div>
-          <div class="l">
-            <div class="n mono">04</div>
-            <div class="t">Трек и подвесы</div>
-            <div class="d">Точки под светильники готовим заранее</div>
-          </div>
-        </div>
-        <div class="g"><p class="ind note sm">Все снимки на странице — с наших объектов.
-          Какой вариант подойдёт вашей комнате, скажем по фотографиям и размерам.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="floor">
-  <div class="shell">
-    <div class="g head"><div class="num mono">03 — Тёплые полы</div><h2>Второе направление</h2></div>
-    <div class="g warm">
-      <figure>
-        <img src="img/interior.jpg" width="1920" height="1080" loading="lazy"
-          alt="Светлая комната с рабочим столом у окна, книжными полками и зелёными фасадами шкафов">
-        <figcaption class="cap mono">Визуализация интерьера из нашей галереи</figcaption>
-      </figure>
+    <div class="score">
+      <div class="big u">4,9</div>
       <div class="txt">
-        <p class="lede">Тёплые полы — вторая рубрика, под которой фабрика работает
-          в справочнике города.</p>
-        <p class="sm mute">Удобно, когда потолок и пол делает одна и та же контора: один договор,
-          один ответственный и один телефон, по которому спрашивать. Что именно нужно вашему
-          помещению — разберём в переписке.</p>
+        <p>средняя оценка при <span class="u">58</span>&nbsp;оценках</p>
+        <em>Источник — карточка компании в 2GIS. Отзывы мы сюда не переписываем: в справочнике их видно вместе с датами, и это честнее подобранных цитат.</em>
       </div>
     </div>
-  </div>
-</section>
 
-<div class="band-i">
-<section id="dealers">
-  <div class="shell">
-    <div class="g head"><div class="num mono">04 — Дилерам</div><h2>Мы фабрика,<br>а не бригада</h2></div>
-    <div class="g deal">
-      <div class="txt">
-        <p class="lede">«Приглашаем к сотрудничеству дилеров» — это наша собственная строка
-          в справочнике, и написана она не для красоты.</p>
-        <p class="sm mute">Если вы монтируете потолки в районе области или держите магазин
-          отделочных материалов, вам нужен не очередной подрядчик, а поставщик, который
-          производит сам. Разница простая: между вами и производством нет никого, кто добавляет
-          свою наценку и свои сроки.</p>
-      </div>
-      <div class="drows">
-        <div class="r">
-          <div class="n mono">01</div>
-          <h3 class="t">Объём</h3>
-          <div class="d">Сколько нужно и с какой периодичностью — от этого зависит всё остальное.</div>
-        </div>
-        <div class="r">
-          <div class="n mono">02</div>
-          <h3 class="t">Условия</h3>
-          <div class="d">Цену и порядок работы обсуждаем в переписке: они разные под разный объём.</div>
-        </div>
-        <div class="r">
-          <div class="n mono">03</div>
-          <h3 class="t">Доставка</h3>
-          <div class="d">Забираете сами в Усть-Каменогорске или обсуждаем отправку в ваш город.</div>
-        </div>
-        <div class="r">
-          <div class="n mono">04</div>
-          <h3 class="t">Связь</h3>
-          <div class="d">Один номер и WhatsApp. Отвечает фабрика, а не отдел продаж посредника.</div>
-        </div>
-      </div>
+    <div class="blkA">
+      <h3>Как это выглядит</h3>
+      <p>Четыре кадра ниже — из их же карточки. Фотографий с фотостоков и чужих объектов здесь нет.</p>
+
       <figure>
-        <img src="img/showroom.jpg" width="1920" height="1080" loading="lazy"
-          alt="Помещение с панорамным остеклением, белым натяжным потолком и чёрным трековым светильником">
-        <figcaption class="cap mono">Коммерческий объект: белое полотно и трековый свет</figcaption>
+        <img src="img/lightlines.jpg" alt="Белый натяжной потолок со встроенными световыми линиями" width="1920" height="1080" decoding="async">
+        <figcaption>Белое полотно со встроенными световыми линиями: свет идёт в самом потолке, а не висит под ним.</figcaption>
       </figure>
-      <div class="cta">
-        <a class="act act-fill" href="https://wa.me/77051491333?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D1%83%3A%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%8E%20%D1%81%20%D0%BD%D0%B0%D1%82%D1%8F%D0%B6%D0%BD%D1%8B%D0%BC%D0%B8%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BB%D0%BA%D0%B0%D0%BC%D0%B8%20%D0%B8%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%B8%D0%BB%D0%B5%D1%80%D0%B0.">Написать как дилер <span class="arw" aria-hidden="true">&#8594;</span></a>
-        <a class="act act-line" href="tel:+77051491333">Позвонить на фабрику <span class="arw" aria-hidden="true">&#8594;</span></a>
+
+      <div class="pairfig">
+        <figure>
+          <img src="img/gloss.jpg" alt="Тёмный глянцевый натяжной потолок, в котором отражается окно" width="1920" height="1080" loading="lazy" decoding="async">
+          <figcaption>Тёмное глянцевое полотно — в нём отражается окно, и комната кажется выше.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/track.jpg" alt="Белый натяжной потолок с трековыми светильниками и подвесными люстрами" width="1920" height="1080" loading="lazy" decoding="async">
+          <figcaption>Белый потолок с трековыми светильниками и подвесами: свет размечают заранее, до натяжки.</figcaption>
+        </figure>
       </div>
-    </div>
-  </div>
-</section>
-</div>
 
-<section id="score">
-  <div class="shell">
-    <div class="g score">
-      <div class="lab mono mute">05 — Оценка</div>
-      <div class="v">4,9<span class="of mute">из 5 · 58 оценок</span></div>
-      <p class="src sm">Источник — карточка компании в 2GIS. Цифра живая: она меняется вместе
-        с отзывами, и это единственное число, которое мы ставим на страницу. Остальное —
-        то, что можно проверить глазами на снимках выше.</p>
-    </div>
-  </div>
-</section>
+      <figure class="fig-s">
+        <img src="img/interior.jpg" alt="Трёхмерная визуализация интерьера с натяжным потолком" width="1920" height="1080" loading="lazy" decoding="async">
+        <figcaption><b>Это 3D-визуализация, а не снимок готового объекта.</b> Подписываем прямо: смешивать рендеры с фотографиями и выдавать их за сделанную работу нельзя.</figcaption>
+      </figure>
 
-<section id="contacts">
-  <div class="shell">
-    <div class="g head"><div class="num mono">06 — Контакты</div><h2>Приехать<br>или написать</h2></div>
-    <div class="g contact">
-      <div class="left">
-        <p class="addr">проспект Нурсултана Назарбаева, 54<span>Усть-Каменогорск</span></p>
-        <dl class="rows">
-          <div class="r">
-            <dt class="mono">Телефон</dt>
-            <dd><a href="tel:+77051491333">+7&nbsp;705&nbsp;149&nbsp;13&nbsp;33</a>
-              <em>Он же WhatsApp — так быстрее всего</em></dd>
-          </div>
-          <div class="r">
-            <dt class="mono">WhatsApp</dt>
-            <dd><a href="https://wa.me/77051491333">wa.me/77051491333</a>
-              <em>Пришлите фото помещения и размеры</em></dd>
-          </div>
-          <div class="r">
-            <dt class="mono">Почта</dt>
-            <dd><a href="mailto:adylina888@mail.ru">adylina888@mail.ru</a></dd>
-          </div>
-          <div class="r">
-            <dt class="mono">Часы</dt>
-            <dd>Открываемся в 08:00<em>Полный график по дням уточним</em></dd>
-          </div>
-          <div class="r">
-            <dt class="mono">Оплата</dt>
-            <dd>Картой · Наличными · Через банк · Переводом с карты</dd>
-          </div>
-          <div class="r">
-            <dt class="mono">Ориентир</dt>
-            <dd>Парк «Металлургов» — 150 метров<em>Рядом шесть парковок</em></dd>
-          </div>
-        </dl>
-        <div class="map">
-          <iframe title="Карта: проспект Нурсултана Назарбаева, 54, Усть-Каменогорск"
-            loading="lazy"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=82.58606%2C49.96631%2C82.60206%2C49.97331&amp;layer=mapnik&amp;marker=49.9698113%2C82.5940573"></iframe>
+      <p class="srcnote">Все кадры — из открытой карточки 2GIS. Для рабочего сайта их лучше переснять: в карточке полсотни снимков, но большая часть — рекламные картинки с текстом внутри, для сайта они не годятся.</p>
+    </div>
+
+    <div class="blkA">
+      <h3>Тёплые полы — второе направление</h3>
+      <p>Рядом с потолками в справочнике стоят тёплые полы, электротехника и электронагревательное оборудование. Для квартиры это значит, что потолок, свет и тепло можно обсуждать в одном месте, а не собирать трёх подрядчиков и сводить их между собой.</p>
+      <p class="mute">Что именно из этого возьмут на ваш объект — вопрос к фабрике. Этот список мы не расширяем.</p>
+    </div>
+
+    <div class="blkA">
+      <h3>Приехать и посмотреть</h3>
+      <p>Полотно выбирают вживую: глянец, сатин и мат в комнате ведут себя по-разному, и на экране эта разница не читается.</p>
+
+      <figure class="fig-m">
+        <img src="img/showroom.jpg" alt="Светлое помещение с панорамными окнами" width="1920" height="1080" loading="lazy" decoding="async">
+        <figcaption>Помещение с панорамными окнами. Фото из карточки 2GIS.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px">Проспект Нурсултана Назарбаева,&nbsp;54. Парк «Металлургов» в ста пятидесяти метрах, рядом шесть парковок. Открывается с 08:00 — полный график по дням уточним и поставим сюда. Карта и координаты — на правой дорожке.</p>
+    </div>
+
+    <div class="actA">
+      <a href="https://wa.me/77051491333?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D0%BF%D0%BE%20%D0%BD%D0%B0%D1%82%D1%8F%D0%B6%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BB%D0%BA%D1%83%20%D0%B2%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D1%83." rel="nofollow noopener" target="_blank">Написать про потолок в квартиру</a>
+      <p class="preset">Откроется WhatsApp <span class="u">+7&nbsp;705&nbsp;149&nbsp;13&nbsp;33</span>, в сообщении уже будет набрано:<b>«Здравствуйте! Я по натяжному потолку в квартиру.»</b></p>
+    </div>
+  </section>
+
+  <!-- ===================== ПРАВАЯ ДОРОЖКА ===================== -->
+  <section class="tB gra" id="track-b" aria-labelledby="h-b">
+    <div class="thead">
+      <div class="lab">Правая дорожка</div>
+      <h2 id="h-b">Монтажнику и дилеру</h2>
+      <p class="under">Производство, ассортимент, отгрузка. Коротко.</p>
+    </div>
+
+    <div class="blkB">
+      <h3>Приглашение — их собственное</h3>
+      <p class="quote">«Приглашаем к сотрудничеству дилеров»</p>
+      <p class="gmute" style="margin-top:12px">Так фабрика описывает себя в справочнике. Эту строчку мы не сочиняли и не расширяли.</p>
+      <p>Производство и приём — Усть-Каменогорск, проспект Нурсултана Назарбаева,&nbsp;54. Полотно берётся у производителя, который стоит в вашем же городе.</p>
+    </div>
+
+    <div class="blkB">
+      <h3>Данные</h3>
+      <dl class="data">
+        <div>
+          <dt>Направления</dt>
+          <dd>Натяжные потолки. Тёплые полы. Электротехника. Электронагревательное оборудование.<span>Рубрики карточки 2GIS — так фабрика классифицирована в справочнике.</span></dd>
         </div>
-        <p class="map-note mono">Карта — OpenStreetMap ·
-          <a href="https://www.openstreetmap.org/?mlat=49.9698113&amp;mlon=82.5940573#map=17/49.96981/82.59406">Открыть крупнее</a></p>
-      </div>
-      <div class="ccta">
-        <a class="act act-fill" href="https://wa.me/77051491333">Написать в WhatsApp <span class="arw" aria-hidden="true">&#8594;</span></a>
-        <a class="act act-line" href="tel:+77051491333">Позвонить <span class="arw" aria-hidden="true">&#8594;</span></a>
-      </div>
+        <div>
+          <dt>Оплата</dt>
+          <dd>Картой. Наличными. Через банк. Переводом с карты.</dd>
+        </div>
+        <div>
+          <dt>Приём</dt>
+          <dd>С 08:00.<span>Полный график по дням уточним у владельца.</span></dd>
+        </div>
+        <div>
+          <dt>Связь</dt>
+          <dd><a href="tel:+77051491333">+7&nbsp;705&nbsp;149&nbsp;13&nbsp;33</a> — телефон и WhatsApp<span><a href="mailto:adylina888@mail.ru">adylina888@mail.ru</a></span></dd>
+        </div>
+      </dl>
     </div>
-  </div>
-</section>
+
+    <div class="blkB">
+      <h3>Куда ехать</h3>
+      <p>Приём и отгрузка — проспект Нурсултана Назарбаева,&nbsp;54. Заезд со стороны парка «Металлургов», шесть парковок рядом.</p>
+      <div class="map">
+        <iframe loading="lazy" title="АдыЛина на карте Усть-Каменогорска"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=82.58956%2C49.96761%2C82.59856%2C49.97201&amp;layer=mapnik&amp;marker=49.9698113%2C82.5940573"></iframe>
+      </div>
+      <p class="coords"><span class="u">49.9698113,&nbsp;82.5940573</span> — точка поставлена по адресу из справочника, перед выездом её стоит подтвердить. <a href="https://www.openstreetmap.org/?mlat=49.9698113&amp;mlon=82.5940573#map=17/49.9698113/82.5940573" rel="nofollow noopener" target="_blank">Открыть карту отдельно</a>.</p>
+    </div>
+
+    <div class="blkB">
+      <h3>Чего здесь нет</h3>
+      <p>Оптовых цен, минимальной партии, условий отгрузки и требований к дилеру на этой странице нет. Эти цифры знает только фабрика, и придумывать их за неё нельзя.</p>
+      <p class="gmute">На рабочем сайте это один экран: таблица условий и короткая форма заявки. Заполняется со слов владельца за один разговор.</p>
+    </div>
+
+    <div class="blkB">
+      <h3>Что написать в первом сообщении</h3>
+      <ul class="asklist">
+        <li>Город и как далеко везти.</li>
+        <li>Сколько потолков ставите в месяц.</li>
+        <li>Что нужно: полотно, комплектующие или всё вместе.</li>
+        <li>Как удобно забирать — самовывоз или отправка.</li>
+      </ul>
+      <p class="gmute" style="margin-top:16px">Четыре строки экономят три письма.</p>
+    </div>
+
+    <div>
+      <p class="closer">Один номер.<span>Два разных разговора.</span></p>
+    <div class="actB">
+      <a href="https://wa.me/77051491333?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BD%D0%B8%D0%BA%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%B4%D0%B8%D0%BB%D0%B5%D1%80%D1%81%D0%BA%D0%B8%D0%BC%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%D0%BC." rel="nofollow noopener" target="_blank">Написать по дилерским условиям</a>
+      <p class="preset">Тот же номер <span class="u">+7&nbsp;705&nbsp;149&nbsp;13&nbsp;33</span>, но текст другой:<b>«Здравствуйте! Я монтажник, пишу по дилерским условиям.»</b></p>
+    </div>
+    </div>
+  </section>
 
 </main>
 
-<footer>
-  <div class="shell">
-    <div class="g">
-      <div class="a mono">АдыЛина — фабрика натяжных потолков, Усть-Каменогорск,
-        проспект Нурсултана&nbsp;Назарбаева,&nbsp;54 · +7&nbsp;705&nbsp;149&nbsp;13&nbsp;33</div>
-      <div class="b mono">Демонстрационная страница. Сведения и фотографии — из открытой
-        карточки организации в 2GIS.</div>
+<footer class="foot">
+  <div class="foot-g">
+    <div>
+      <h2>АдыЛина</h2>
+      <p class="sub">Фабрика натяжных потолков. Проспект Нурсултана Назарбаева,&nbsp;54, Усть-Каменогорск. Парк «Металлургов» — 150&nbsp;метров, шесть парковок рядом.</p>
+      <p class="why">Здесь дорожки сходятся: номер один на двоих, но по преднабранному тексту сразу видно, кто пишет — хозяин квартиры или бригада.</p>
+    </div>
+    <div>
+      <div class="lab">Связь</div>
+      <ul>
+        <li><a href="tel:+77051491333" class="u">+7&nbsp;705&nbsp;149&nbsp;13&nbsp;33</a></li>
+        <li><a href="https://wa.me/77051491333" rel="nofollow noopener" target="_blank">WhatsApp на этот же номер</a></li>
+        <li><a href="mailto:adylina888@mail.ru">adylina888@mail.ru</a></li>
+        <li>Открывается с 08:00, график по дням уточним</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lab">Оплата и координаты</div>
+      <ul>
+        <li>Картой, наличными, через банк, переводом с карты</li>
+        <li class="u">49.9698113,&nbsp;82.5940573</li>
+        <li>Оценка <span class="u">4,9</span> при <span class="u">58</span>&nbsp;оценках — 2GIS</li>
+      </ul>
     </div>
   </div>
+  <p class="foot-end">Демонстрационная страница. Сведения и фотографии — из открытой карточки 2GIS, тексты и график правим с ваших слов, точка на карте поставлена по адресу из справочника. Цен, сроков и гарантий здесь нет намеренно. Сделал Владимир Гутман, веб-разработчик, Усть-Каменогорск — <a href="tel:+77776722860">+7&nbsp;777&nbsp;672&nbsp;28&nbsp;60</a>, <a href="https://wa.me/77776722860" rel="nofollow noopener" target="_blank">WhatsApp</a>.</p>
 </footer>
 
-<nav class="dock" aria-label="Быстрая связь">
-  <a class="p" href="https://wa.me/77051491333">WhatsApp</a>
-  <a href="tel:+77051491333">Позвонить</a>
-</nav>
+<script>
+(function(){
+  var h=document.documentElement;
+  h.className+=(h.className?' ':'')+'js';
+  var b=document.body, sw=document.querySelector('.switch');
+  if(!sw) return;
+  b.setAttribute('data-track','a');
+  sw.addEventListener('click',function(e){
+    var t=e.target.closest('button[data-go]');
+    if(!t) return;
+    b.setAttribute('data-track',t.getAttribute('data-go'));
+    [].forEach.call(sw.querySelectorAll('button[data-go]'),function(x){
+      x.setAttribute('aria-pressed', x===t?'true':'false');
+    });
+    var y=sw.getBoundingClientRect().top+window.pageYOffset-1;
+    if(window.pageYOffset>y) window.scrollTo(0,y);
+  });
+})();
+</script>
 
 </body>
 </html>
