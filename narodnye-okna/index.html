@@ -66,7 +66,10 @@
     -webkit-font-smoothing:antialiased;
     -webkit-tap-highlight-color:rgba(92,56,38,.22);
     touch-action:manipulation;
-    overflow-x:hidden}
+    /* clip, а не hidden: hidden делает body контейнером прокрутки, и тогда
+       view()-таймлайны считают своим скроллпортом его — неподвижный, —
+       из-за чего всё движение на странице молча выключается */
+    overflow-x:clip}
 
   /* ——— план 1: стена. Отдельный слой, а не фон body:
        фон нельзя двигать трансформом, а background-attachment:fixed
