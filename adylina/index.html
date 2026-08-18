@@ -6,7 +6,7 @@
 <title>АдыЛина — фабрика натяжных потолков в Усть-Каменогорске</title>
 <meta name="description" content="Натяжные потолки от производителя. Приглашаем к сотрудничеству дилеров. 4,9 при 58 оценках в 2GIS, проспект Нурсултана Назарбаева, 54.">
 <meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#070910">
+<meta name="theme-color" content="#0c0a08">
 <meta property="og:type" content="website">
 <meta property="og:title" content="АдыЛина — фабрика натяжных потолков">
 <meta property="og:description" content="Натяжные потолки от производителя. Приглашаем к сотрудничеству дилеров. Усть-Каменогорск, проспект Нурсултана Назарбаева, 54.">
@@ -14,24 +14,24 @@
 
 <style>
 /* ───────────────────────── токены ───────────────────────── */
-@property --lum{syntax:'<color>';inherits:true;initial-value:#fdf3e6}
+@property --lum{syntax:'<color>';inherits:true;initial-value:#ffc78c}
 
 :root{
-  --void:#070910;
-  --void-2:#0b0f19;
-  --void-3:#0f1523;
+  --void:#0c0a08;
+  --void-2:#13100c;
+  --void-3:#1b1611;
   --surf:rgba(255,255,255,.045);
-  --hair:rgba(150,175,215,.16);
-  --hair-2:rgba(150,175,215,.28);
-  --edge:rgba(180,205,240,.55);      /* граница интерактивного, 4,2:1 к фону */
-  --tx:#eef2f8;                      /* 18:1 к --void */
-  --tx-2:#9fb0c9;                    /* 9,0:1 к --void */
-  --sig:#5fd4ff;                     /* 12,9:1 к --void */
-  --on-sig:#04202b;                  /* 10,9:1 к --sig */
-  --sig-8:rgba(95,212,255,.08);
-  --sig-16:rgba(95,212,255,.16);
+  --hair:rgba(222,200,168,.16);
+  --hair-2:rgba(222,200,168,.28);
+  --edge:rgba(242,220,188,.55);      /* граница интерактивного, 4,2:1 к фону */
+  --tx:#f5efe6;                      /* 17,3:1 к --void */
+  --tx-2:#bcae9c;                    /* 9,1:1 к --void */
+  --sig:#ffd9a8;                     /* 14,8:1 к --void */
+  --on-sig:#2a1c08;                  /* 12,4:1 к --sig */
+  --sig-8:rgba(255,217,168,.08);
+  --sig-16:rgba(255,217,168,.16);
 
-  --lum:#fdf3e6;                     /* цвет света, переключается */
+  --lum:#ffc78c;                     /* цвет света, переключается */
 
   --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px;
   --s6:32px; --s7:48px; --s8:64px; --s9:96px;
@@ -107,7 +107,7 @@ b,strong{font-weight:600;color:var(--tx)}
 .btn{white-space:nowrap}
 .btn--p{background:var(--sig);color:var(--on-sig);
   box-shadow:0 12px 34px -12px rgba(95,212,255,.75)}
-.btn--p:hover{background:#8ce2ff;transform:translateY(-2px)}
+.btn--p:hover{background:#ffe8c8;transform:translateY(-2px)}
 .btn--p:active{transform:translateY(0) scale(.985)}
 .btn--s{border-color:var(--edge);color:var(--tx);background:rgba(255,255,255,.03)}
 .btn--s:hover{border-color:var(--sig);background:var(--sig-8);transform:translateY(-2px)}
@@ -148,7 +148,7 @@ b,strong{font-weight:600;color:var(--tx)}
 .ceil__img{width:100%;height:100%;object-fit:cover;object-position:50% 42%;
   filter:saturate(.4) contrast(1.16) brightness(.82)}
 /* «свет включается»: тёмная штора уходит, снизу разливается свечение */
-.ceil__dark{position:absolute;inset:0;background:#04060c;animation:lightsOn 2s var(--ease-out) both}
+.ceil__dark{position:absolute;inset:0;background:#070503;animation:lightsOn 2s var(--ease-out) both}
 @keyframes lightsOn{0%{opacity:.97}55%{opacity:.42}100%{opacity:.52}}
 .ceil__bloom{position:absolute;left:50%;top:38%;width:130%;aspect-ratio:1;
   border-radius:50%;pointer-events:none;mix-blend-mode:screen;margin:-65% 0 0 -65%;
@@ -231,7 +231,7 @@ b,strong{font-weight:600;color:var(--tx)}
   border-radius:var(--r-l) var(--r-l) 0 0;
   display:grid;grid-template-rows:auto 1fr;align-content:start}
 .scene--2{background:var(--void-3)}
-.scene__ph{position:relative;overflow:clip;aspect-ratio:16/11;background:#0a0d15}
+.scene__ph{position:relative;overflow:clip;aspect-ratio:16/11;background:#110e0a}
 .scene__ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
 .scene__ph::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(to bottom,rgba(7,9,16,.3) 0%,transparent 32%,rgba(7,9,16,.5) 100%)}
@@ -497,9 +497,9 @@ b,strong{font-weight:600;color:var(--tx)}
     <fieldset class="temp">
       <legend>Температура света — демонстрация</legend>
       <div class="temp__row">
-        <label class="opt"><input type="radio" name="temp" id="t27">
+        <label class="opt"><input type="radio" name="temp" id="t27" checked>
           <span>2700&nbsp;K <small>тёплый</small></span></label>
-        <label class="opt"><input type="radio" name="temp" id="t40" checked>
+        <label class="opt"><input type="radio" name="temp" id="t40">
           <span>4000&nbsp;K <small>нейтральный</small></span></label>
         <label class="opt"><input type="radio" name="temp" id="t60">
           <span>6000&nbsp;K <small>холодный</small></span></label>
@@ -597,20 +597,20 @@ b,strong{font-weight:600;color:var(--tx)}
             </linearGradient>
           </defs>
           <path d="M20 30h520" stroke="rgba(150,175,215,.35)" stroke-width="2" stroke-dasharray="4 6"/>
-          <text x="20" y="21" fill="#9fb0c9" font-family="ui-monospace,monospace" font-size="11">плита перекрытия</text>
+          <text x="20" y="21" fill="#bcae9c" font-family="ui-monospace,monospace" font-size="11">плита перекрытия</text>
           <path d="M40 30v130M520 30v130" stroke="rgba(150,175,215,.3)" stroke-width="2"/>
-          <path d="M40 88h34v10H52v10H40" fill="none" stroke="#5fd4ff" stroke-width="2.5" stroke-linejoin="round"/>
-          <path d="M520 88h-34v10h22v10h12" fill="none" stroke="#5fd4ff" stroke-width="2.5" stroke-linejoin="round"/>
-          <text x="40" y="128" fill="#5fd4ff" font-family="ui-monospace,monospace" font-size="11">багет</text>
-          <text x="474" y="128" fill="#5fd4ff" font-family="ui-monospace,monospace" font-size="11">багет</text>
+          <path d="M40 88h34v10H52v10H40" fill="none" stroke="#ffd9a8" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M520 88h-34v10h22v10h12" fill="none" stroke="#ffd9a8" stroke-width="2.5" stroke-linejoin="round"/>
+          <text x="40" y="128" fill="#ffd9a8" font-family="ui-monospace,monospace" font-size="11">багет</text>
+          <text x="474" y="128" fill="#ffd9a8" font-family="ui-monospace,monospace" font-size="11">багет</text>
           <g class="taut">
             <path d="M52 98h456" stroke="url(#g1)" stroke-width="5" stroke-linecap="round"/>
             <path d="M52 98h456" stroke="#fdf3e6" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
           </g>
-          <text x="238" y="82" fill="#eef2f8" font-family="ui-monospace,monospace" font-size="11">полотно</text>
+          <text x="238" y="82" fill="#f5efe6" font-family="ui-monospace,monospace" font-size="11">полотно</text>
           <rect x="238" y="95.5" width="84" height="5" rx="2.5" fill="#fdf3e6"/>
           <path d="M250 114h60M262 128h36" stroke="#fdf3e6" stroke-width="1.5" opacity=".3" stroke-linecap="round"/>
-          <text x="238" y="152" fill="#9fb0c9" font-family="ui-monospace,monospace" font-size="11">световая линия</text>
+          <text x="238" y="152" fill="#bcae9c" font-family="ui-monospace,monospace" font-size="11">световая линия</text>
         </svg>
         <figcaption>Разрез по периметру. Это общий принцип натяжного потолка —
           детали своего монтажа фабрика впишет сама.</figcaption>
