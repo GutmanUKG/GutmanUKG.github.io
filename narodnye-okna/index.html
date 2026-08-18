@@ -2,630 +2,1182 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08161c">
 <title>Народные окна — окна, балконы, витражи и двери в Усть-Каменогорске</title>
-<meta name="description" content="Народные окна, Усть-Каменогорск, проспект Шакарим, 181. Пластиковые окна, остекление и отделка балконов, витражи и мозаика, входные двери. Предоплата 30%, рассрочка на 6 месяцев от фирмы. Три филиала. Телефон +7 (7232) 70-63-45.">
-<meta name="color-scheme" content="light">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://gutmanukg.github.io/narodnye-okna/">
-<meta property="og:title" content="Народные окна — окна и остекление балконов, Усть-Каменогорск">
-<meta property="og:description" content="Предоплата 30%, рассрочка на 6 месяцев от фирмы. Три филиала, 4,8 при 97 оценках в 2GIS.">
-<meta property="og:image" content="https://gutmanukg.github.io/narodnye-okna/img/house.jpg">
-<meta name="theme-color" content="#b5ab91">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23b5ab91'/%3E%3Crect x='4' y='4' width='9' height='13' fill='%23f1efe8'/%3E%3Crect x='18' y='7' width='10' height='7' fill='%23f1efe8'/%3E%3Crect x='9' y='21' width='19' height='7' fill='%23f1efe8'/%3E%3Cpath d='M8.5 4V17 M18 10.5H28 M9 24.5H28' stroke='%235c3826' stroke-width='1.4'/%3E%3C/svg%3E">
+<meta name="description" content="Народные окна, Усть-Каменогорск: пластиковые окна, остекление и отделка балконов, витражи и мозаика, входные двери. Предоплата 30%, рассрочка на 6 месяцев от фирмы. Демонстрационная страница.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2308161c'/><rect x='6' y='5' width='20' height='22' rx='1.5' fill='none' stroke='%235fe0cf' stroke-width='2'/><path d='M16 5v22' stroke='%235fe0cf' stroke-width='2'/><path d='M6 16h20' stroke='%235fe0cf' stroke-width='2' opacity='.45'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@300;500;700&display=swap">
+<script>
+/* Режим движения выбирается до первой отрисовки.
+   Без JS ни один класс не ставится — вся вёрстка остаётся в конечном, видимом состоянии. */
+(function(){
+  var d = document.documentElement;
+  try{
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  }catch(e){ return; }
+  d.className += ' anim';
+  if (window.CSS && CSS.supports && CSS.supports('animation-timeline','view()')) d.className += ' sda';
+  else d.className += ' io';
+})();
+</script>
 <style>
-  /* ================================================================
-     Народные окна — страница собрана как фасад.
-     Три плана, физически разнесённые по глубине:
-       1. стена  — дальше всего, лежит под содержанием и едет медленнее
-       2. проёмы — вырезаны в стене, идут в обычном потоке
-       3. вид за стеклом — внутри проёма, движется относительно рамы
-     Отсюда и весь параллакс: он не наклеен, он и есть эта глубина.
-     ================================================================ */
-  :root{
-    --wall:#b5ab91;        /* кладка фасада */
-    --wall-dk:#736850;     /* откос в тени: верх и левая четверть */
-    --wall-lt:#d8cfb4;     /* освещённая четверть: низ и правая */
-    --rev:3px;             /* глубина откоса — вся «рама» проёма и есть он */
-    --glass:#f1efe8;       /* поле проёма */
-    --glass-lit:#fefdf9;   /* проём, в котором зажгли свет */
-    --profile:#5c3826;     /* профиль рамы — только на импостах */
-    --ink:#191512;
-    --ink-2:#544c40;
-    --ink-3:#14100e;       /* текст прямо на кладке */
-    --accent:#16423b;      /* торец стекла: оно зелёное, если смотреть с ребра */
-    --dark:#201a15;
-    --on-dark:#eceae2;
-    --on-dark-2:#aca492;
+/* ==========================================================================
+   Народные окна — демонстрационная страница
+   Направление: стекло. Тёмное «снаружи» и светлое «внутри», один акцент —
+   аквамарин кромки листового стекла. Движение: протирание запотевшего стекла,
+   закреплённый экран границы, раскрытие рассрочки.
+   ========================================================================== */
 
-    --joint:14px;          /* простенок между проёмами */
-    --edge:16px;           /* поле кладки по краям страницы */
-    --pad:18px;            /* воздух внутри проёма */
-    --max:1360px;
+:root{
+  /* улица, ночь за стеклом */
+  --bg:#08161c;
+  --bg2:#0d222a;
+  --ink:#e8f3f2;
+  --ink2:#a9c0c2;
+  --edge:#5fe0cf;          /* кромка стекла */
+  --hair:rgba(255,255,255,.13);
+  --hair2:rgba(255,255,255,.07);
+  --glass:rgba(255,255,255,.055);
 
-    --disp:Georgia,"Times New Roman",Times,serif;
-    --body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  /* комната, дневной свет */
+  --room:#e8f0f1;
+  --room2:#dbe7e8;
+  --rink:#0a1c22;
+  --rink2:#3f585e;
+  --racc:#0b6a60;
 
-    /* ход планов; переопределяется на узких экранах */
-    --wall-run:-11vh;      /* насколько стена отстаёт за всю страницу */
-    --view-a:-6%;          /* вид за стеклом: начало */
-    --view-b:-16%;         /* вид за стеклом: конец */
+  --sans:"Onest",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --disp:"Unbounded","Onest",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 
-    /* кладка в перевязку */
-    --tex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='88'%3E%3Cpath d='M0 .5H160 M0 44.5H160 M.5 0V44 M80.5 0V44 M40.5 44V88 M120.5 44V88' fill='none' stroke='rgba(25,21,18,.13)' stroke-width='1'/%3E%3C/svg%3E");
+  --pad:clamp(20px,5vw,64px);
+  --maxw:1240px;
+
+  --r-s:4px;
+  --r-m:12px;
+  --r-l:20px;
+
+  --ez:cubic-bezier(.22,.68,.24,1);
+  --ez-wipe:cubic-bezier(.72,0,.16,1);
+
+  --shadow:0 24px 60px -24px rgba(0,0,0,.75);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip;color-scheme:dark}
+/* липкая шапка не должна накрывать якорь или элемент, получивший фокус */
+[id],a,button,h1,h2,h3{scroll-margin-top:84px}
+body{
+  margin:0;
+  overflow-x:clip;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16.5px;
+  line-height:1.62;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  overflow-wrap:break-word;
+}
+img{display:block;max-width:100%}
+h1,h2,h3,p,ul,ol,dl,dd,figure,figcaption,blockquote{margin:0}
+ul{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+h1,h2,h3{text-wrap:balance;font-family:var(--disp);font-weight:500;letter-spacing:-.02em;line-height:1.02}
+p{text-wrap:pretty}
+
+a,button{-webkit-tap-highlight-color:rgba(95,224,207,.2);touch-action:manipulation}
+:focus-visible{outline:2px solid var(--edge);outline-offset:3px;border-radius:var(--r-s)}
+.sec--light :focus-visible{outline-color:var(--racc)}
+
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--edge);color:#04121a;padding:12px 20px;
+  font-weight:600;border-radius:0 0 var(--r-m) 0;
+}
+.skip:focus{left:0}
+
+/* ---------- служебные ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+.lab{
+  display:inline-block;
+  font-size:11.5px;line-height:1.4;letter-spacing:.2em;text-transform:uppercase;
+  font-weight:600;color:var(--edge);
+}
+.sec--light .lab{color:var(--racc)}
+.num{font-variant-numeric:tabular-nums}
+.mute{color:var(--ink2)}
+
+/* ==========================================================================
+   Плашка «черновик»
+   ========================================================================== */
+.draft{
+  position:relative;z-index:6;
+  background:
+    radial-gradient(120% 180% at 8% 0%, rgba(95,224,207,.14), transparent 62%),
+    var(--bg2);
+  border-bottom:1px solid var(--hair);
+}
+.draft__in{
+  max-width:var(--maxw);margin:0 auto;padding:clamp(18px,2.6vw,26px) var(--pad);
+  display:grid;gap:14px 40px;
+}
+@media(min-width:900px){.draft__in{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+.draft__pill{
+  display:inline-flex;align-items:center;gap:9px;
+  border:1px solid rgba(95,224,207,.4);border-radius:999px;
+  padding:5px 13px 5px 10px;margin-bottom:10px;
+  font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
+  color:var(--edge);
+}
+.draft__dot{width:6px;height:6px;border-radius:50%;background:var(--edge);flex:none}
+.draft p{font-size:14.5px;line-height:1.58;color:var(--ink2)}
+.draft p + p{margin-top:8px}
+.draft b{color:var(--ink);font-weight:600}
+.draft__me{border-left:2px solid rgba(95,224,207,.35);padding-left:18px}
+@media(max-width:899px){
+  .draft__me{border-left:0;border-top:1px solid var(--hair);padding-left:0;padding-top:14px}
+}
+.draft__me a{color:var(--edge);padding-block:3px;border-bottom:1px solid rgba(95,224,207,.35)}
+.draft__me a:hover{border-bottom-color:var(--edge)}
+
+/* ==========================================================================
+   Шапка
+   ========================================================================== */
+.hdr{
+  position:sticky;top:0;z-index:50;
+  background:rgba(8,22,28,.82);
+  border-bottom:1px solid var(--hair2);
+}
+@supports((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .hdr{background:rgba(8,22,28,.74);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%)}
+}
+.hdr__in{
+  max-width:var(--maxw);margin:0 auto;padding:11px var(--pad);
+  display:flex;align-items:center;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:11px;margin-right:auto;min-width:0}
+.brand svg{flex:none}
+.brand__n{font-family:var(--disp);font-weight:500;font-size:15px;letter-spacing:-.01em;white-space:nowrap}
+.brand__s{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);white-space:nowrap}
+@media(max-width:680px){.brand__s{display:none}}
+.hdr__tel{
+  font-weight:600;font-size:15px;white-space:nowrap;
+  border-bottom:1px solid transparent;transition:border-color .2s var(--ez),color .2s var(--ez);
+}
+.hdr__tel:hover{color:var(--edge);border-bottom-color:var(--edge)}
+@media(max-width:820px){.hdr__tel{display:none}}
+
+/* кнопки */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 22px;min-height:44px;border-radius:999px;border:1px solid transparent;
+  font-weight:600;font-size:15px;line-height:1;white-space:nowrap;cursor:pointer;
+  transition:transform .18s var(--ez),box-shadow .22s var(--ez),background-color .2s var(--ez),border-color .2s var(--ez),color .2s var(--ez);
+}
+.btn svg{flex:none}
+.btn--wa{background:var(--edge);color:#04141a;box-shadow:0 10px 30px -12px rgba(95,224,207,.75)}
+.btn--gh{border-color:var(--hair);background:var(--glass);color:var(--ink)}
+.btn--sm{padding:10px 17px;font-size:14px}
+@media(hover:hover){
+  .btn--wa:hover{transform:translateY(-2px);box-shadow:0 16px 38px -12px rgba(95,224,207,.85)}
+  .btn--gh:hover{border-color:rgba(95,224,207,.6);color:var(--edge);transform:translateY(-2px)}
+}
+.btn:active{transform:translateY(0)}
+.sec--light .btn--gh{border-color:rgba(10,28,34,.25);background:rgba(255,255,255,.55);color:var(--rink)}
+.sec--light .btn--wa{background:var(--racc);color:#eefaf8;box-shadow:0 10px 28px -14px rgba(11,106,96,.9)}
+
+/* ==========================================================================
+   Первый экран — сцена «протёрли стекло»
+   ========================================================================== */
+.hero{
+  position:relative;
+  min-height:min(100svh,880px);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero__view{position:absolute;inset:0;z-index:0;overflow:hidden}
+.lyr{position:absolute;inset:0}
+.lyr img{width:100%;height:100%;object-fit:cover;object-position:58% 46%}
+
+/* холодный, запотевший слой */
+.lyr--cold img{
+  filter:saturate(.22) brightness(.44) contrast(1.14) blur(7px);
+  transform:scale(1.08);
+}
+.lyr--cold::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,22,28,.55),rgba(8,22,28,.8));
+}
+/* чистый слой — раскрывается протиранием */
+.lyr--clear{overflow:hidden}
+.lyr--clear .lyr__in{position:absolute;inset:0}
+.lyr--clear img{filter:saturate(1.06) contrast(1.04)}
+.lyr--clear::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(4,14,19,.95) 0%,rgba(4,14,19,.9) 30%,rgba(4,14,19,.66) 48%,rgba(4,14,19,.14) 72%,rgba(4,14,19,0) 84%),
+    linear-gradient(180deg,rgba(4,14,19,.68) 0%,rgba(4,14,19,.2) 24%,rgba(4,14,19,.42) 64%,rgba(4,14,19,.88) 100%),
+    radial-gradient(70% 55% at 84% 14%, rgba(255,214,170,.14), transparent 62%);
+}
+@media(max-width:860px){
+  .lyr--clear::after{
+    background:
+      linear-gradient(180deg,rgba(4,14,19,.72) 0%,rgba(4,14,19,.3) 20%,rgba(4,14,19,.82) 52%,rgba(4,14,19,.95) 100%),
+      radial-gradient(80% 40% at 80% 10%, rgba(255,214,170,.14), transparent 62%);
   }
-  @media(min-width:640px){ :root{--joint:20px;--edge:28px;--pad:24px;--rev:4px} }
-  @media(min-width:900px){ :root{--joint:26px;--edge:36px;--pad:28px;--rev:5px} }
-  @media(min-width:1200px){ :root{--joint:32px;--edge:48px;--pad:34px} }
-  @media(max-width:639px){ :root{--wall-run:-6vh;--view-a:-8%;--view-b:-14%} }
+}
+/* световая полоса на кромке протирания */
+.squeegee{
+  position:absolute;top:-10%;right:-2px;width:120px;height:120%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.34));
+  opacity:0;pointer-events:none;
+}
 
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%;color-scheme:light only}
-  body{margin:0;color:var(--ink);background:var(--wall);
-    font:400 16.5px/1.6 var(--body);
-    -webkit-font-smoothing:antialiased;
-    -webkit-tap-highlight-color:rgba(92,56,38,.22);
-    touch-action:manipulation;
-    /* clip, а не hidden: hidden делает body контейнером прокрутки, и тогда
-       view()-таймлайны считают своим скроллпортом его — неподвижный, —
-       из-за чего всё движение на странице молча выключается */
-    overflow-x:clip}
+.hero__in{position:relative;z-index:2;width:100%;padding-block:clamp(28px,6vw,64px) clamp(26px,5vw,54px)}
+.hero__eyebrow{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin-bottom:clamp(16px,2.4vw,26px)}
+.hero__eyebrow .mute{font-size:13px}
+.hero h1{
+  font-size:clamp(33px,7.4vw,86px);
+  font-weight:500;
+  letter-spacing:-.035em;
+  line-height:.98;
+  max-width:14ch;
+}
+.hero h1 .ln{display:block;overflow:hidden;padding-block:.12em;margin-block:-.08em}
+.hero h1 .ln > span{display:block}
+.hero__lead{
+  margin-top:clamp(16px,2.2vw,24px);
+  font-size:clamp(16px,1.35vw,19px);
+  color:var(--ink2);
+  max-width:42ch;
+}
+.hero__acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(22px,3vw,32px)}
+@media(max-width:520px){
+  .hero__acts{gap:10px}
+  .hero__acts .btn{flex:1 1 100%}
+}
 
-  /* ——— план 1: стена. Отдельный слой, а не фон body:
-       фон нельзя двигать трансформом, а background-attachment:fixed
-       на iOS не работает и на Android рвётся — поэтому слой. ——— */
-  .plane{position:fixed;left:0;right:0;top:-14vh;bottom:-14vh;z-index:-1;
-    background:var(--wall) var(--tex) repeat 0 0;background-size:110px 62px;
-    pointer-events:none}
-  @media(min-width:900px){ .plane{background-size:160px 88px} }
+/* стеклянная карточка рейтинга */
+.rate{
+  position:relative;overflow:hidden;isolation:isolate;
+  margin-top:clamp(26px,3.6vw,40px);
+  max-width:620px;
+  border:1px solid var(--hair);border-radius:var(--r-l);
+  background:rgba(255,255,255,.08);
+  box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.12);
+  padding:clamp(16px,2.2vw,22px) clamp(18px,2.4vw,26px);
+  display:flex;flex-wrap:wrap;align-items:center;gap:14px 30px;
+}
+@supports((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .rate{background:rgba(255,255,255,.05);-webkit-backdrop-filter:blur(20px) saturate(150%);backdrop-filter:blur(20px) saturate(150%)}
+}
+.rate__big{font-family:var(--disp);font-weight:500;font-size:clamp(32px,4.2vw,44px);line-height:1;letter-spacing:-.03em}
+.rate__col{display:grid;gap:2px;min-width:0}
+.rate__t{font-size:14px;font-weight:500}
+.rate__s{font-size:12.5px;color:var(--ink2);line-height:1.45}
+.rate .sheen{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:inherit}
+.rate .sheen::after{
+  content:"";position:absolute;top:-60%;left:0;width:46%;height:220%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.18),transparent);
+  transform:translateX(-160%) rotate(8deg);
+}
 
-  img{display:block;max-width:100%}
-  figure{margin:0}
-  p{margin:0}
-  h1,h2,h3{margin:0;text-wrap:balance}
+.hero__hint{
+  display:flex;align-items:center;gap:10px;margin-top:clamp(22px,3vw,34px);
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);
+}
+.hero__hint i{
+  width:1px;height:26px;background:linear-gradient(180deg,var(--edge),transparent);
+  display:block;transform-origin:top;
+}
 
-  a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px;
-    transition:color .18s ease,text-decoration-color .18s ease,text-decoration-thickness .18s ease}
-  a:hover{color:var(--accent);text-decoration-thickness:3px}
-  a:active{color:var(--profile)}
-
-  :focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-  .plaque :focus-visible{outline-color:var(--on-dark)}
-
-  .skip{position:absolute;left:-9999px;top:0}
-  .skip:focus{left:0;top:0;z-index:9;background:var(--dark);color:var(--on-dark);
-    padding:14px 18px;font:700 14px/1 var(--body);text-decoration:none}
-
-  /* поле кладки по краям; в альбомной ориентации не заезжаем под вырез экрана */
-  .wall{max-width:var(--max);margin:0 auto;
-    padding:var(--edge)
-            max(var(--edge),env(safe-area-inset-right))
-            calc(var(--edge) + 12px + env(safe-area-inset-bottom))
-            max(var(--edge),env(safe-area-inset-left))}
-
-  /* ——— табличка «черновик»: щит, привинченный к стене, а не проём ——— */
-  .plaque{background:var(--dark);color:var(--on-dark);padding:var(--pad);
-    margin-bottom:var(--joint)}
-  .plaque .mark{margin:0;font:400 clamp(20px,2.4vw,27px)/1.05 var(--disp);
-    letter-spacing:.05em;text-transform:uppercase;color:var(--on-dark)}
-  .plaque p{margin-top:10px;font-size:14.5px;line-height:1.6;max-width:70ch;color:var(--on-dark)}
-  .plaque p+p{margin-top:8px}
-  .plaque .who{color:var(--on-dark-2)}
-  .plaque a{display:inline-block;padding:6px 0;color:var(--on-dark);
-    text-decoration-color:var(--on-dark-2)}
-  .plaque a:hover{color:var(--on-dark);text-decoration-color:var(--on-dark)}
-  @media(min-width:900px){
-    .plaque{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,9fr);
-      column-gap:var(--joint);align-items:start}
-    .plaque .body{grid-column:2}
-    .plaque p{margin-top:0}
-    .plaque p+p{margin-top:10px}
+/* ==========================================================================
+   Акт «Граница» — закреплённый экран
+   ========================================================================== */
+.pin{position:relative}
+.pin__stage{
+  position:relative;overflow:hidden;
+  min-height:min(86svh,760px);
+  display:flex;align-items:flex-end;
+  isolation:isolate;
+}
+.pin__lyr{position:absolute;inset:0;z-index:0}
+.pin__lyr img{width:100%;height:100%;object-fit:cover}
+.pin__lyr--out img{filter:saturate(.16) brightness(.4) contrast(1.2)}
+.pin__lyr--out::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,32,54,.5),rgba(6,20,34,.78));
+}
+.pin__lyr--in{overflow:hidden}
+.pin__lyr--in .pin__mv{position:absolute;inset:0}
+.pin__lyr--in img{filter:saturate(1.24) brightness(1.16) contrast(1.05)}
+.pin__seam{
+  position:absolute;left:0;right:0;top:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--edge) 22%,var(--edge) 78%,transparent);
+  box-shadow:0 0 26px 3px rgba(95,224,207,.55);
+}
+/* затемнение под текст живёт на сцене, а не на едущем слое */
+.pin__stage::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(5,16,21,.94) 0%,rgba(5,16,21,.86) 32%,rgba(5,16,21,.52) 52%,rgba(5,16,21,.08) 72%,rgba(5,16,21,0) 84%),
+    linear-gradient(180deg,rgba(5,16,21,.45) 0%,rgba(5,16,21,.06) 20%,rgba(5,16,21,.38) 58%,rgba(5,16,21,.82) 100%);
+}
+@media(max-width:860px){
+  .pin__stage::after{
+    background:linear-gradient(180deg,rgba(5,16,21,.6) 0%,rgba(5,16,21,.12) 18%,rgba(5,16,21,.6) 48%,rgba(5,16,21,.94) 82%,rgba(5,16,21,.97) 100%);
   }
+}
+.pin__txt{position:relative;z-index:2;width:100%;padding-block:clamp(34px,6vw,72px)}
+.pin__txt h2{font-size:clamp(28px,5.4vw,62px);max-width:16ch;margin-top:14px}
+.split{display:grid;gap:clamp(14px,2.4vw,28px);margin-top:clamp(24px,3.4vw,38px);max-width:820px}
+@media(min-width:760px){.split{grid-template-columns:1fr 1fr}}
+.split__c{border-top:1px solid var(--hair);padding-top:14px}
+.split__c b{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);font-weight:600;margin-bottom:6px}
+.split__c p{font-size:15.5px;color:var(--ink2)}
+.split__c--in{border-top-color:rgba(95,224,207,.55)}
+.split__c--in b{color:var(--edge)}
+.split__c--in p{color:var(--ink)}
 
-  /* ——— план 2: проёмы ——— */
-  .facade{display:grid;grid-template-columns:repeat(6,1fr);
-    gap:var(--joint);align-items:start}
-  @media(min-width:900px){ .facade{grid-template-columns:repeat(12,1fr)} }
+/* ==========================================================================
+   Общая рамка секций
+   ========================================================================== */
+.sec{position:relative;padding-block:clamp(64px,9vw,132px)}
+.sec--light{background:var(--room);color:var(--rink)}
+.sec--light h2,.sec--light h3{color:var(--rink)}
+.sec--light .mute{color:var(--rink2)}
+.sec__head{max-width:780px;margin-bottom:clamp(30px,4.4vw,54px)}
+.sec__head h2{font-size:clamp(27px,4.6vw,52px);margin-top:14px}
+.sec__head p{margin-top:16px;font-size:clamp(16px,1.3vw,18.5px);color:var(--ink2);max-width:56ch}
+.sec--light .sec__head p{color:var(--rink2)}
+.note{font-size:13.5px;color:var(--ink2);max-width:66ch;line-height:1.6}
+.sec--light .note{color:var(--rink2)}
 
-  /* Проём — это не рамка, нарисованная поверх стены, а ступень в кладке:
-     сверху и слева четверть уходит в тень, снизу и справа ловит свет.
-     Никакого толстого коричневого канта: он делал стену плотной. */
-  .o{grid-column:1/-1;min-width:0;background:var(--glass);
-    border-top:var(--rev) solid var(--wall-dk);
-    border-left:var(--rev) solid var(--wall-dk);
-    border-right:2px solid var(--wall-lt);
-    border-bottom:2px solid var(--wall-lt)}
-  .o.t{padding:var(--pad)}
+/* ==========================================================================
+   Направления
+   ========================================================================== */
+.dirs{display:grid;gap:clamp(12px,1.6vw,18px)}
+@media(min-width:620px){.dirs{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.dirs{grid-template-columns:repeat(4,1fr)}}
+.dir{
+  position:relative;overflow:hidden;
+  border:1px solid var(--hair);border-radius:var(--r-l);
+  background:linear-gradient(170deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+  padding:clamp(20px,2.4vw,26px);
+  min-height:210px;display:flex;flex-direction:column;
+  transition:transform .28s var(--ez),border-color .28s var(--ez),box-shadow .28s var(--ez);
+}
+.dir::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(95,224,207,.75),transparent);
+  opacity:0;transition:opacity .3s var(--ez);
+}
+@media(hover:hover){
+  .dir:hover{transform:translateY(-6px);border-color:rgba(95,224,207,.4);box-shadow:0 30px 60px -34px rgba(95,224,207,.55)}
+  .dir:hover::before{opacity:1}
+}
+.dir__ico{
+  width:46px;height:46px;border-radius:var(--r-m);
+  border:1px solid rgba(95,224,207,.32);
+  display:grid;place-items:center;color:var(--edge);
+  background:rgba(95,224,207,.08);
+  margin-bottom:auto;
+}
+.dir h3{font-size:19px;font-weight:500;letter-spacing:-.015em;margin-top:22px;line-height:1.16}
+.dir p{margin-top:8px;font-size:14.5px;color:var(--ink2);line-height:1.5}
+.dirs__note{margin-top:24px}
 
-  .o h2{font:400 clamp(22px,2.6vw,32px)/1.12 var(--disp);letter-spacing:-.004em}
-  .o p+p{margin-top:11px}
-  .o p{max-width:62ch}
-  .lo{font-size:12.5px;line-height:1.4;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--ink-2);font-weight:600}
-  .sm{font-size:14.5px;line-height:1.55;color:var(--ink-2)}
-  .o h2+p{margin-top:12px}
-  .lo+h2,.lo+p{margin-top:10px}
+/* ==========================================================================
+   Частный дом — широкая врезка
+   ========================================================================== */
+.house{padding-bottom:clamp(40px,5vw,72px)}
+.house__band{
+  position:relative;overflow:hidden;
+  margin-top:clamp(26px,3.6vw,44px);
+  border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+  aspect-ratio:4/3;
+}
+@media(min-width:720px){.house__band{aspect-ratio:21/9}}
+.house__band img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.house__band::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,22,28,.34) 0%,rgba(8,22,28,0) 32%,rgba(8,22,28,.62) 88%,rgba(8,22,28,.82) 100%);
+}
+.house__cap{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:clamp(14px,2vw,22px) var(--pad);
+  max-width:var(--maxw);margin:0 auto;
+  font-size:13.5px;color:#eaf4f3;
+}
 
-  /* ——— план 3: вид за стеклом.
-     Снимок крупнее проёма по высоте и ходит внутри него.
-     Так устроено остекление у Sky-Frame: кадр примерно в 1,5 раза выше
-     своего окна и подрезан рамой — края никогда не открываются. ——— */
-  .gl{position:relative;overflow:hidden;display:block;background:var(--glass)}
-  .gl>img{position:absolute;top:0;left:0;width:100%;height:128%;
-    object-fit:cover;transform:translate3d(0,-11%,0)}
-  .ph figcaption{padding:11px var(--pad) 13px;font-size:13.5px;line-height:1.45;
-    color:var(--ink-2);border-top:2px solid var(--profile)}
+/* ==========================================================================
+   Балкон — светлая секция
+   ========================================================================== */
+.balc{display:grid;gap:clamp(14px,2vw,22px)}
+@media(min-width:860px){
+  .balc{grid-template-columns:1.2fr 1fr}
+  .balc__a{grid-row:span 2}
+}
+.shot{
+  position:relative;overflow:hidden;border-radius:var(--r-l);
+  background:var(--room2);
+  box-shadow:0 22px 48px -30px rgba(10,28,34,.55);
+}
+.shot img{width:100%;height:100%;object-fit:cover}
+.shot--a{aspect-ratio:4/5}
+.shot--b,.shot--c{aspect-ratio:16/10}
+.shot--a img{object-position:44% 42%}
+/* balcony2: отражение человека в левой части кадра — уводим за границу кадрирования */
+.shot--b img{object-position:92% 46%;transform:scale(1.4) translateX(-8%)}
+.shot--c img{object-position:50% 62%}
+.shot figcaption{
+  position:absolute;left:12px;bottom:12px;
+  font-size:12px;color:#f2f7f7;
+  background:rgba(8,22,28,.72);border-radius:999px;padding:6px 14px;
+  max-width:calc(100% - 24px);
+}
+@supports((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .shot figcaption{background:rgba(8,22,28,.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+}
+.steps{display:grid;gap:12px;margin-top:clamp(28px,3.4vw,40px)}
+@media(min-width:700px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{
+  border:1px solid rgba(10,28,34,.14);border-radius:var(--r-m);
+  background:rgba(255,255,255,.6);padding:18px 20px;
+}
+.step b{display:block;font-size:15.5px;font-weight:600;margin-bottom:5px}
+.step p{font-size:14.5px;color:var(--rink2);line-height:1.5}
+.balc__note{margin-top:26px}
 
-  /* ——— имя на фасаде ——— */
-  .p-id h1{font:400 clamp(36px,6.6vw,64px)/1 var(--disp);letter-spacing:-.01em}
-  .p-id .kind{margin-top:14px;font-size:16px;line-height:1.5}
-  .p-id .what{margin-top:9px;color:var(--ink-2);font-size:15px;line-height:1.55}
-  .p-id .tel{display:inline-block;margin-top:14px;padding:10px 0;
-    font:400 clamp(23px,3.2vw,32px)/1.1 var(--disp);
-    text-decoration-thickness:2px;text-underline-offset:6px}
-  .p-id .tel:hover{text-decoration-thickness:4px}
+/* ==========================================================================
+   Рассрочка — денежный акт
+   ========================================================================== */
+.money{
+  overflow:hidden;
+  background:
+    radial-gradient(90% 70% at 15% 0%, rgba(95,224,207,.16), transparent 62%),
+    radial-gradient(70% 60% at 92% 100%, rgba(95,224,207,.1), transparent 60%),
+    var(--bg);
+  border-top:1px solid var(--hair2);border-bottom:1px solid var(--hair2);
+}
+.money__quote{
+  font-size:clamp(26px,4.8vw,58px);line-height:1.04;letter-spacing:-.03em;
+  max-width:19ch;margin-top:16px;
+}
+.money__quote em{font-style:normal;color:var(--edge)}
+.money__grid{display:grid;gap:clamp(24px,3vw,48px);margin-top:clamp(34px,4.6vw,58px);align-items:start}
+@media(min-width:820px){.money__grid{grid-template-columns:auto 1fr}}
+.money__big{
+  font-family:var(--disp);font-weight:500;
+  font-size:clamp(78px,15vw,180px);line-height:.8;letter-spacing:-.06em;
+  color:var(--edge);
+}
+.money__big span{font-size:.42em;letter-spacing:-.02em}
+.money__cap{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);margin-top:18px}
+.bars{display:grid;gap:6px}
+.bars__t{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.bars__t b{font-family:var(--disp);font-weight:500;font-size:clamp(28px,3.8vw,44px);letter-spacing:-.03em;line-height:1}
+.bars__t span{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2)}
+.bars__row{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:14px}
+.bar{
+  height:56px;border-radius:var(--r-s);
+  border:1px solid rgba(95,224,207,.3);
+  position:relative;overflow:hidden;
+}
+.bar::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(95,224,207,1),rgba(95,224,207,.8));
+  transform-origin:left center;
+}
+.bar i{
+  position:absolute;left:8px;bottom:6px;z-index:2;
+  font-style:normal;font-size:12px;font-weight:700;color:#04141a;
+  font-variant-numeric:tabular-nums;
+}
+@media(max-width:520px){.bar{height:44px}.bar i{left:6px;font-size:11px}}
+.money__note{margin-top:24px}
 
-  /* ——— форточки: оценка и филиалы ——— */
-  .num{font:400 clamp(34px,6vw,52px)/.95 var(--disp);letter-spacing:-.015em;
-    font-variant-numeric:tabular-nums;color:var(--accent)}
-  .o .num+p{margin-top:10px}
+/* ==========================================================================
+   Доверие, оплата, часы
+   ========================================================================== */
+.facts{display:grid;gap:clamp(12px,1.6vw,18px)}
+@media(min-width:760px){.facts{grid-template-columns:repeat(3,1fr)}}
+.fact{
+  border:1px solid var(--hair);border-radius:var(--r-l);
+  background:linear-gradient(170deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
+  padding:clamp(20px,2.4vw,28px);
+}
+.fact h3{
+  font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--edge);font-weight:600;margin-bottom:16px;
+}
+.fact .fact__k{font-family:var(--disp);font-weight:500;font-size:clamp(34px,4.4vw,50px);line-height:1;letter-spacing:-.03em;color:var(--ink);margin-top:0}
+.fact p{font-size:14.5px;color:var(--ink2);margin-top:14px;line-height:1.55}
+.fact ul{display:grid;gap:10px}
+.fact li{display:flex;gap:11px;font-size:15.5px;align-items:baseline}
+.fact li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--edge);flex:none;transform:translateY(-3px)}
 
-  /* ——— главный проём: рассрочка. Единственный, в котором зажигают свет ——— */
-  .p-pay{position:relative;isolation:isolate}
-  .p-pay::before{content:"";position:absolute;inset:0;z-index:-1;
-    background:var(--glass-lit);opacity:0}
-  .p-pay.t{padding:calc(var(--pad) * 1.5) var(--pad) calc(var(--pad) * 1.6)}
-  .p-pay h2{font:400 clamp(27px,4.6vw,54px)/1.08 var(--disp);letter-spacing:-.016em;max-width:19ch}
-  .p-pay h2 b{color:var(--accent);font-weight:400}
-  .p-pay .cols{margin-top:clamp(20px,2.6vw,34px)}
-  .p-pay .reach{margin-top:clamp(22px,2.8vw,32px);
-    border-top:2px solid var(--profile);padding-top:16px}
-  .p-pay .reach a{display:inline-block;padding:11px 0;
-    font:400 clamp(20px,2.5vw,28px)/1.15 var(--disp);
-    text-decoration-thickness:2px;text-underline-offset:6px}
-  .p-pay .reach a:hover{text-decoration-thickness:4px}
-  .p-pay .reach .sm{margin-top:4px}
-  @media(min-width:760px){
-    .p-pay .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--joint)}
-    .p-pay .cols p+p{margin-top:0}
-    .p-pay .reach{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--joint)}
+/* ==========================================================================
+   Где
+   ========================================================================== */
+.where{display:grid;gap:clamp(20px,3vw,40px)}
+@media(min-width:900px){.where{grid-template-columns:1.05fr 1fr}}
+.addr{font-family:var(--disp);font-weight:500;font-size:clamp(23px,3.2vw,38px);letter-spacing:-.03em;line-height:1.08}
+.where dl{display:grid;margin-top:26px}
+.where .row{display:grid;gap:4px 24px;padding:14px 0;border-top:1px solid var(--hair2)}
+@media(min-width:560px){.where .row{grid-template-columns:150px 1fr;align-items:baseline}}
+.where dt{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
+.where dd{margin:0;font-size:15.5px}
+.geo{
+  border:1px solid var(--hair);border-radius:var(--r-l);
+  background:linear-gradient(170deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+  padding:clamp(20px,2.4vw,28px);align-self:start;
+}
+.geo .geo__c{font-family:var(--disp);font-size:clamp(19px,2.2vw,26px);font-weight:300;letter-spacing:-.01em;margin-top:14px;color:var(--ink)}
+.geo p{font-size:13.5px;color:var(--ink2);margin-top:14px;line-height:1.55}
+.geo .btn{margin-top:22px}
+
+/* ==========================================================================
+   Контакты
+   ========================================================================== */
+.cta{
+  overflow:hidden;
+  background:radial-gradient(80% 90% at 78% 8%, rgba(95,224,207,.18), transparent 60%),var(--bg2);
+}
+.cta h2{font-size:clamp(28px,5vw,58px);max-width:15ch;margin-top:16px}
+.cta__acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(26px,3.4vw,38px)}
+@media(max-width:520px){.cta__acts .btn{flex:1 1 100%}}
+.cta__list{display:grid;margin-top:clamp(30px,4vw,46px);max-width:780px}
+.cta__row{display:grid;gap:2px 24px;padding:16px 0;border-top:1px solid var(--hair2)}
+@media(min-width:560px){.cta__row{grid-template-columns:170px 1fr;align-items:baseline}}
+.cta__row dt{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
+.cta__row dd{margin:0;font-size:16px}
+.cta__row a{padding-block:3px;border-bottom:1px solid rgba(95,224,207,.35);transition:border-color .2s var(--ez),color .2s var(--ez)}
+.cta__row a:hover{color:var(--edge);border-bottom-color:var(--edge)}
+.cta__row small{display:block;font-size:13px;color:var(--ink2);margin-top:4px}
+
+/* ==========================================================================
+   Подвал
+   ========================================================================== */
+.foot{border-top:1px solid var(--hair2);padding-block:clamp(34px,4.6vw,56px);background:var(--bg)}
+.foot__in{display:grid;gap:18px}
+@media(min-width:820px){.foot__in{grid-template-columns:1.25fr 1fr;align-items:start}}
+.foot p{font-size:13.5px;color:var(--ink2);line-height:1.6}
+.foot b{color:var(--ink)}
+.foot a{color:var(--edge);padding-block:3px;border-bottom:1px solid rgba(95,224,207,.35)}
+
+/* нижняя панель действий на телефоне */
+.dock{display:none}
+@media(max-width:760px){
+  .dock{
+    display:flex;gap:9px;position:fixed;z-index:60;
+    left:calc(10px + env(safe-area-inset-left,0px));
+    right:calc(10px + env(safe-area-inset-right,0px));
+    bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    padding:8px;border-radius:999px;border:1px solid var(--hair);
+    background:rgba(8,22,28,.9);box-shadow:0 18px 44px -18px rgba(0,0,0,.9);
   }
-  @media(min-width:900px) and (max-width:999px){ .p-pay h2{max-width:25ch} }
-  @media(min-width:1000px){
-    .p-pay.t{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
-      column-gap:var(--joint);align-items:start;
-      padding:calc(var(--pad) * 2) calc(var(--pad) * 1.3) calc(var(--pad) * 2.2)}
-    .p-pay h2{grid-column:1;max-width:none}
-    .p-pay .cols{grid-column:2;margin-top:0;display:block}
-    .p-pay .cols p+p{margin-top:14px}
-    .p-pay .reach{grid-column:1/-1;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .dock .btn{flex:1;padding:12px 10px;font-size:14px}
+  body{padding-bottom:80px}
+}
+@media(max-width:760px){
+  @supports((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+    .dock{background:rgba(8,22,28,.66);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%)}
   }
-  @media(min-width:1000px) and (max-width:1199px){
-    .p-pay.t,.p-pay .reach{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+
+/* ==========================================================================
+   ДВИЖЕНИЕ
+   Базовое состояние всей вёрстки — конечное и видимое.
+   Классы .anim / .sda / .io ставит скрипт; без JS ничего не прячется.
+   ========================================================================== */
+
+/* --- 1. Появление блоков --- */
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+html.sda .r{
+  animation:rise linear both;
+  animation-timeline:view();
+  animation-range:entry 6% entry 58%;
+}
+html.io .r{opacity:0;transform:translateY(26px);transition:opacity .72s var(--ez),transform .72s var(--ez)}
+html.io .r.is-in{opacity:1;transform:none}
+html.io .r[data-d="1"]{transition-delay:.09s}
+html.io .r[data-d="2"]{transition-delay:.18s}
+html.io .r[data-d="3"]{transition-delay:.27s}
+
+/* --- 2. Первый экран: протирание стекла и выход строк --- */
+@keyframes lineUp{from{transform:translateY(120%)}to{transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes wipeOut{from{transform:translateX(-101%)}to{transform:none}}
+@keyframes wipeIn{from{transform:translateX(101%)}to{transform:none}}
+@keyframes squeegee{0%{opacity:0}12%{opacity:.9}88%{opacity:.5}100%{opacity:0}}
+@keyframes sheen{0%{transform:translateX(-160%) rotate(8deg)}58%,100%{transform:translateX(330%) rotate(8deg)}}
+@keyframes hintPulse{0%,100%{transform:scaleY(.35);opacity:.45}50%{transform:scaleY(1);opacity:1}}
+
+html.anim .lyr--clear{animation:wipeOut 1.25s var(--ez-wipe) .18s both}
+html.anim .lyr--clear .lyr__in{animation:wipeIn 1.25s var(--ez-wipe) .18s both}
+html.anim .squeegee{animation:squeegee 1.25s var(--ez-wipe) .18s both}
+
+html.anim .hero h1 .ln > span{animation:lineUp .95s var(--ez) both}
+html.anim .hero h1 .ln:nth-child(1) > span{animation-delay:.72s}
+html.anim .hero h1 .ln:nth-child(2) > span{animation-delay:.82s}
+html.anim .hero h1 .ln:nth-child(3) > span{animation-delay:.92s}
+
+html.anim .hero__eyebrow,
+html.anim .hero__lead,
+html.anim .hero__acts,
+html.anim .rate,
+html.anim .hero__hint{animation:fadeUp .8s var(--ez) both}
+html.anim .hero__eyebrow{animation-delay:.5s}
+html.anim .hero__lead{animation-delay:1.06s}
+html.anim .hero__acts{animation-delay:1.16s}
+html.anim .rate{animation-delay:1.26s}
+html.anim .hero__hint{animation-delay:1.4s}
+html.anim .rate .sheen::after{animation:sheen 8s cubic-bezier(.4,0,.2,1) 2.4s 3}
+html.anim .hero__hint i{animation:hintPulse 2.6s ease-in-out 2s 5}
+
+/* --- 3. Первый экран: уход на прокрутке --- */
+@keyframes heroPark{to{transform:translateY(9%) scale(1.07)}}
+@keyframes heroFade{to{opacity:0;transform:translateY(-26px)}}
+html.sda .hero__view{animation:heroPark linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+html.sda .hero__in{animation:heroFade linear both;animation-timeline:view();animation-range:exit 12% exit 92%}
+
+/* --- 4. Акт «Граница»: закреплённый экран --- */
+@keyframes openUp{from{transform:translateY(100%)}to{transform:none}}
+@keyframes openUpIn{from{transform:translateY(-100%)}to{transform:none}}
+@keyframes seamRun{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes inTxt{from{opacity:.28}to{opacity:1}}
+
+html.sda .pin{height:250vh;view-timeline-name:--pin;view-timeline-axis:block}
+html.sda .pin__stage{position:sticky;top:0;height:100svh;min-height:0}
+html.sda .pin__lyr--in{
+  animation:openUp linear both;animation-timeline:--pin;animation-range:contain 4% contain 62%;
+}
+html.sda .pin__lyr--in .pin__mv{
+  animation:openUpIn linear both;animation-timeline:--pin;animation-range:contain 4% contain 62%;
+}
+html.sda .pin__seam{
+  animation:seamRun linear both;animation-timeline:--pin;animation-range:contain 4% contain 36%;
+}
+html.sda .split__c--in{
+  animation:inTxt linear both;animation-timeline:--pin;animation-range:contain 40% contain 70%;
+}
+
+html.io .pin__lyr--in{transform:translateY(100%);transition:transform 1.15s var(--ez-wipe)}
+html.io .pin__lyr--in .pin__mv{transform:translateY(-100%);transition:transform 1.15s var(--ez-wipe)}
+html.io .pin__seam{transform:scaleX(0);transition:transform .9s var(--ez) .1s}
+html.io .split__c--in{opacity:.3;transition:opacity .7s var(--ez) .55s}
+html.io .pin__stage.is-in .pin__lyr--in,
+html.io .pin__stage.is-in .pin__lyr--in .pin__mv{transform:none}
+html.io .pin__stage.is-in .pin__seam{transform:scaleX(1)}
+html.io .pin__stage.is-in .split__c--in{opacity:1}
+
+/* --- 5. Рассрочка: шесть месяцев --- */
+@keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes popIn{from{opacity:0;transform:translateY(30px) scale(.94)}to{opacity:1;transform:none}}
+
+html.sda .money{view-timeline-name:--money;view-timeline-axis:block}
+html.sda .money__big{
+  animation:popIn linear both;animation-timeline:--money;animation-range:entry 20% entry 60%;
+}
+html.sda .bar::after{animation:growX linear both;animation-timeline:--money}
+html.sda .bar:nth-child(1)::after{animation-range:entry 34% entry 46%}
+html.sda .bar:nth-child(2)::after{animation-range:entry 39% entry 51%}
+html.sda .bar:nth-child(3)::after{animation-range:entry 44% entry 56%}
+html.sda .bar:nth-child(4)::after{animation-range:entry 49% entry 61%}
+html.sda .bar:nth-child(5)::after{animation-range:entry 54% entry 66%}
+html.sda .bar:nth-child(6)::after{animation-range:entry 59% entry 71%}
+
+html.io .bar::after{transform:scaleX(0);transition:transform .6s var(--ez)}
+html.io .money.is-in .bar::after{transform:scaleX(1)}
+html.io .money.is-in .bar:nth-child(1)::after{transition-delay:.05s}
+html.io .money.is-in .bar:nth-child(2)::after{transition-delay:.14s}
+html.io .money.is-in .bar:nth-child(3)::after{transition-delay:.23s}
+html.io .money.is-in .bar:nth-child(4)::after{transition-delay:.32s}
+html.io .money.is-in .bar:nth-child(5)::after{transition-delay:.41s}
+html.io .money.is-in .bar:nth-child(6)::after{transition-delay:.5s}
+
+/* --- 6. Кадры: медленный наезд по мере прохода --- */
+@keyframes shotPan{from{transform:scale(1.14)}to{transform:scale(1)}}
+html.sda .shot--a img,html.sda .shot--c img,html.sda .house__band img{
+  animation:shotPan linear both;animation-timeline:view();animation-range:entry 0% cover 55%;
+}
+
+/* --- 7. Тише --- */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;scroll-behavior:auto !important;
   }
+  html.sda .pin{height:auto}
+  html.sda .pin__stage{position:relative;height:auto;min-height:min(86svh,760px)}
+}
 
-  /* ——— контакты ——— */
-  .p-cont dl{margin:16px 0 0}
-  .p-cont .r{display:grid;grid-template-columns:1fr;gap:2px;
-    padding:12px 0;border-top:1px solid rgba(25,21,18,.2)}
-  .p-cont .r:first-child{border-top:0;padding-top:4px}
-  .p-cont dt{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--ink-2);font-weight:600}
-  .p-cont dd{margin:0;font-size:17px}
-  .p-cont dd a{display:inline-block;padding:9px 0;font-weight:600}
-  .p-cont dd .sm{display:block;padding-bottom:4px}
-  @media(min-width:560px){
-    .p-cont .r{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:var(--joint);align-items:baseline}
-  }
-
-  /* ——— карта ——— */
-  .p-map{padding:0}
-  .p-map iframe{display:block;width:100%;height:300px;border:0;background:var(--glass)}
-  .p-map figcaption{padding:11px var(--pad) 13px;font-size:13.5px;line-height:1.45;
-    color:var(--ink-2);border-top:2px solid var(--profile)}
-  @media(min-width:900px){ .p-map iframe{height:360px} }
-
-  /* ——— пропорции остекления ——— */
-  .p-house .gl{aspect-ratio:5/4}
-  .p-b1 .gl{aspect-ratio:16/10}
-  /* кадрирование: в узкий проём берём ту часть снимка, где открытая створка
-     и зелень за ней, а не соседский простенок */
-  .p-o2 .gl{aspect-ratio:4/5}
-  .p-o2 .gl>img{object-position:26% 45%}
-  .p-b2 .gl{aspect-ratio:1/1}
-  .p-b2 .gl>img{object-position:100% 50%}   /* отражение человека остаётся за левым краем кадра */
-  .p-floor .gl{aspect-ratio:16/10}
-  .p-o1 .gl{aspect-ratio:4/5}
-  .p-o1 .gl>img{object-position:22% 50%}
-
-  /* ——— раскладка проёмов: три развёртки одной стены ——— */
-  .p-id   {grid-column:1/span 6; grid-row:1}
-  .p-house{grid-column:1/span 6; grid-row:2}
-  .p-rate {grid-column:1/span 4; grid-row:3}
-  .p-bran {grid-column:3/span 4; grid-row:4}
-  .p-pay  {grid-column:1/span 6; grid-row:5}
-  .p-win  {grid-column:1/span 5; grid-row:6}
-  .p-b1   {grid-column:1/span 6; grid-row:7}
-  .p-o2   {grid-column:1/span 4; grid-row:8}
-  .p-bal  {grid-column:2/span 5; grid-row:9}
-  .p-b2   {grid-column:3/span 4; grid-row:10}
-  .p-vit  {grid-column:1/span 4; grid-row:11}
-  .p-door {grid-column:3/span 4; grid-row:12}
-  .p-floor{grid-column:1/span 5; grid-row:13}
-  .p-addr {grid-column:1/span 6; grid-row:14}
-  .p-map  {grid-column:1/span 6; grid-row:15}
-  .p-o1   {grid-column:2/span 5; grid-row:16}
-  .p-cont {grid-column:1/span 6; grid-row:17}
-
-  @media(min-width:640px){
-    .p-id   {grid-column:1/span 6; grid-row:1}
-    .p-house{grid-column:1/span 6; grid-row:2}
-    .p-rate {grid-column:1/span 2; grid-row:3}
-    .p-bran {grid-column:3/span 4; grid-row:3}
-    .p-pay  {grid-column:1/span 6; grid-row:4}
-    .p-win  {grid-column:1/span 3; grid-row:5}
-    .p-b1   {grid-column:4/span 3; grid-row:5}
-    .p-o2   {grid-column:1/span 2; grid-row:6/span 2}
-    .p-bal  {grid-column:3/span 4; grid-row:6}
-    .p-vit  {grid-column:3/span 2; grid-row:7}
-    .p-door {grid-column:5/span 2; grid-row:7}
-    .p-b2   {grid-column:1/span 3; grid-row:8}
-    .p-floor{grid-column:4/span 3; grid-row:8}
-    .p-addr {grid-column:1/span 6; grid-row:9}
-    .p-map  {grid-column:1/span 4; grid-row:10}
-    .p-o1   {grid-column:5/span 2; grid-row:10/span 2}
-    .p-cont {grid-column:1/span 4; grid-row:11}
-
-    .p-house .gl{aspect-ratio:2/1}
-    .p-house .gl>img{object-position:50% 62%}
-    .p-b1 .gl{aspect-ratio:1/1}
-    .p-floor .gl{aspect-ratio:4/3}
-    .p-o1 .gl{aspect-ratio:3/5}
-  }
-
-  @media(min-width:900px){
-    .p-id   {grid-column:1/span 5;  grid-row:1}
-    .p-house{grid-column:6/span 7;  grid-row:1}
-    .p-rate {grid-column:1/span 3;  grid-row:2}
-    .p-bran {grid-column:4/span 5;  grid-row:2}
-    .p-pay  {grid-column:1/span 12; grid-row:3}
-    .p-win  {grid-column:1/span 4;  grid-row:4}
-    .p-b1   {grid-column:5/span 8;  grid-row:4}
-    .p-o2   {grid-column:1/span 4;  grid-row:5/span 2}
-    .p-bal  {grid-column:5/span 4;  grid-row:5}
-    .p-b2   {grid-column:9/span 4;  grid-row:5}
-    .p-vit  {grid-column:5/span 3;  grid-row:6}
-    .p-door {grid-column:8/span 5;  grid-row:6}
-    .p-floor{grid-column:1/span 4;  grid-row:7}
-    .p-addr {grid-column:5/span 8;  grid-row:7}
-    .p-map  {grid-column:1/span 7;  grid-row:8}
-    .p-o1   {grid-column:8/span 5;  grid-row:8/span 2}
-    .p-cont {grid-column:1/span 7;  grid-row:9}
-
-    .p-b1 .gl{aspect-ratio:21/9}
-    .p-b2 .gl{aspect-ratio:1/1}
-    .p-floor .gl{aspect-ratio:4/3}
-    .p-o1 .gl{aspect-ratio:4/5}
-  }
-
-  /* ——— подвал: текст прямо на кладке ——— */
-  footer{margin-top:calc(var(--joint) + 6px);padding-top:16px;
-    border-top:1px solid rgba(25,21,18,.4);
-    font-size:13.5px;line-height:1.65;color:var(--ink-3)}
-  footer p{max-width:72ch}
-  footer p+p{margin-top:6px}
-
-  /* ================================================================
-     ДВИЖЕНИЕ.
-     Всё — только transform и opacity. Всё выключается по
-     prefers-reduced-motion. Ни один блок текста не спрятан:
-     если анимация не запустится, страница просто стоит на месте.
-     ================================================================ */
-  @media(prefers-reduced-motion:no-preference){
-
-    /* Табличка на фасаде — самый ближний план, за первый экран
-       уходит вверх чуть быстрее страницы. */
-    @supports (animation-timeline:scroll()){
-      @media(min-width:900px){
-        .p-id h1{animation:sign linear both;
-          animation-timeline:scroll(root block);animation-range:0 70vh}
-        @keyframes sign{
-          from{transform:translate3d(0,0,0)}
-          to{transform:translate3d(0,-24px,0)}
-        }
-      }
-
-      /* Стена отстаёт от проёмов на всю длину страницы. */
-      .plane{animation:wall linear both;
-        animation-timeline:scroll(root block);will-change:transform}
-      @keyframes wall{
-        from{transform:translate3d(0,0,0)}
-        to{transform:translate3d(0,var(--wall-run),0)}
-      }
-    }
-
-    @supports (animation-timeline:view()){
-      /* Вид за стеклом идёт своим ходом, пока проём проходит экран. */
-      .gl>img{animation:viewshift linear both;animation-timeline:view();
-        animation-range:cover 0% cover 100%;will-change:transform}
-      @keyframes viewshift{
-        from{transform:translate3d(0,var(--view-a),0)}
-        to{transform:translate3d(0,var(--view-b),0)}
-      }
-
-      /* В главном проёме зажигают свет — ровно когда он доезжает до глаз. */
-      .p-pay::before{animation:lamp linear both;animation-timeline:view();
-        animation-range:entry 25% cover 45%}
-      @keyframes lamp{from{opacity:0}to{opacity:1}}
-    }
-
-    /* Запасной вариант для браузеров без scroll-driven анимаций —
-       те же три плана, но считает JS. Классы вешает скрипт внизу. */
-    .fb .plane,.fb .gl>img{will-change:transform}
-    .fb .p-pay.on::before{opacity:1;transition:opacity .7s cubic-bezier(.3,.7,.4,1)}
-
-    /* Имя оседает в проёме при открытии страницы: одно короткое движение,
-       чтобы страница не встречала неподвижной. Текст при этом на месте. */
-    .p-id{animation:settle .65s cubic-bezier(.2,.75,.3,1) both}
-    @keyframes settle{
-      from{transform:translate3d(0,10px,0)}
-      to{transform:translate3d(0,0,0)}
-    }
-  }
+@media(max-width:600px){
+  .draft__in{padding:14px var(--pad) 16px;gap:10px}
+  .draft__pill{margin-bottom:8px;padding:4px 11px 4px 8px;font-size:10.5px}
+  .draft p{font-size:13px;line-height:1.5}
+  .draft p + p{margin-top:6px}
+  .draft__me{padding-top:11px}
+  .hero{min-height:min(74svh,620px)}
+  .hero__in{padding-block:22px 26px}
+  .hero__eyebrow{margin-bottom:12px}
+  .hero__lead{margin-top:14px}
+  .hero__hint{margin-top:18px}
+}
+@media(max-width:420px){
+  body{font-size:16px}
+  .rate{gap:12px 20px}
+}
 </style>
 </head>
 <body>
 
-<div class="plane" aria-hidden="true"></div>
+<a class="skip" href="#main">К содержанию</a>
 
-<a class="skip" href="#facade">К содержанию</a>
+<!-- ======================= плашка «черновик» ======================= -->
+<aside class="draft" aria-label="О странице">
+  <div class="draft__in">
+    <div>
+      <span class="draft__pill"><span class="draft__dot" aria-hidden="true"></span>черновик</span>
+      <p>Демонстрационный вариант сайта для компании <b>«Народные окна»</b>. Компания об этом не просила и в работе не участвовала. Данные, оценка и фотографии взяты из открытой карточки 2GIS.</p>
+      <p>Тексты и график работы правим с ваших слов. Точка на карте поставлена по адресу — её и адреса остальных филиалов нужно подтвердить.</p>
+    </div>
+    <div class="draft__me">
+      <p><b>Владимир Гутман</b> — веб-разработчик, Усть-Каменогорск.</p>
+      <p><a class="num" href="tel:+77776722860">+7 777 672 28 60</a> · <a href="https://wa.me/77776722860" target="_blank" rel="noopener">WhatsApp</a></p>
+      <p>Напишите, если хотите продолжить — или если страницу нужно убрать.</p>
+    </div>
+  </div>
+</aside>
 
-<div class="wall">
+<!-- ======================= шапка ======================= -->
+<header class="hdr">
+  <div class="hdr__in">
+    <span class="brand">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+        <rect x="2.5" y="2.5" width="21" height="21" rx="2" stroke="#5fe0cf" stroke-width="1.6"/>
+        <path d="M13 2.5v21" stroke="#5fe0cf" stroke-width="1.6"/>
+        <path d="M2.5 13h21" stroke="#5fe0cf" stroke-width="1.6" opacity=".4"/>
+        <path d="M18.6 13.6v2.4" stroke="#5fe0cf" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span class="brand__n" translate="no">Народные окна</span>
+      <span class="brand__s">Усть-Каменогорск</span>
+    </span>
+    <a class="hdr__tel num" href="tel:+77232706345">+7 (7232) 70-63-45</a>
+    <a class="btn btn--wa btn--sm" href="https://wa.me/77051011076" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .8a7.2 7.2 0 0 0-6.2 10.8L.8 15.2l3.7-1a7.2 7.2 0 1 0 3.5-13.4Zm0 1.5a5.7 5.7 0 1 1-2.9 10.6l-.3-.2-2.2.6.6-2.1-.2-.3A5.7 5.7 0 0 1 8 2.3Zm-2.6 3c-.1 0-.3 0-.5.3-.2.2-.6.6-.6 1.4 0 .9.6 1.7.7 1.8.1.1 1.2 2 3 2.7 1.5.6 1.8.5 2.1.5.4 0 1.1-.4 1.3-.9.1-.4.1-.8.1-.9l-.4-.2-1.2-.6c-.2-.1-.3-.1-.4.1l-.6.7c-.1.1-.2.2-.4.1-.2-.1-.8-.3-1.5-1-.6-.5-1-1.1-1.1-1.3-.1-.2 0-.3.1-.4l.3-.4.2-.3v-.4l-.6-1.4c-.1-.3-.3-.3-.4-.3h-.2Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
 
-  <div class="plaque" role="note" aria-label="Пометка о черновике">
-    <p class="mark">Черновик</p>
-    <div class="body">
-      <p>Демонстрационный вариант сайта, собранный для «Народных окон». Компания об этом
-        не просила и участия в работе не принимала. Данные и фотографии взяты из вашей
-        открытой карточки в 2GIS — это ваши объекты, а не стоковые картинки.
-        Тексты и график работы правим с ваших слов.</p>
-      <p>Точка на карте поставлена по адресу «проспект Шакарим, 181» — подтвердите её,
-        и укажем адреса остальных филиалов.</p>
-      <p class="who">Сделал Владимир Гутман, веб-разработчик, Усть-Каменогорск —
-        <a href="tel:+77776722860">+7&nbsp;777&nbsp;672&nbsp;28&nbsp;60</a>,
-        <a href="https://wa.me/77776722860">WhatsApp</a>.</p>
+<main id="main">
+
+<!-- ======================= первый экран ======================= -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="hero__view" aria-hidden="true">
+    <div class="lyr lyr--cold">
+      <img src="img/balcony1.jpg" alt="" width="1920" height="1080" fetchpriority="high" decoding="async">
+    </div>
+    <div class="lyr lyr--clear">
+      <div class="lyr__in">
+        <img src="img/balcony1.jpg" alt="" width="1920" height="1080" fetchpriority="high" decoding="async">
+      </div>
+      <span class="squeegee"></span>
     </div>
   </div>
 
-  <main class="facade" id="facade">
+  <div class="hero__in wrap">
+    <p class="hero__eyebrow">
+      <span class="lab">торгово-сервисная компания</span>
+      <span class="mute">Усть-Каменогорск · три филиала</span>
+    </p>
 
-    <div class="o t p-id">
-      <h1>Народные окна</h1>
-      <p class="kind">Торгово-сервисная компания. Усть-Каменогорск, проспект Шакарим, 181.</p>
-      <p class="what">Пластиковые окна, остекление и отделка балконов, витражи и мозаика,
-        входные двери.</p>
-      <a class="tel" href="tel:+77232706345">+7&nbsp;(7232)&nbsp;70-63-45</a>
+    <h1 id="hero-h">
+      <span class="ln"><span>Улица</span></span>
+      <span class="ln"><span>остаётся</span></span>
+      <span class="ln"><span>за стеклом</span></span>
+    </h1>
+
+    <p class="hero__lead">Пластиковые окна, остекление и отделка балконов, витражи и мозаика, входные двери.</p>
+
+    <div class="hero__acts">
+      <a class="btn btn--wa" href="https://wa.me/77051011076" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .8a7.2 7.2 0 0 0-6.2 10.8L.8 15.2l3.7-1a7.2 7.2 0 1 0 3.5-13.4Zm0 1.5a5.7 5.7 0 1 1-2.9 10.6l-.3-.2-2.2.6.6-2.1-.2-.3A5.7 5.7 0 0 1 8 2.3Zm-2.6 3c-.1 0-.3 0-.5.3-.2.2-.6.6-.6 1.4 0 .9.6 1.7.7 1.8.1.1 1.2 2 3 2.7 1.5.6 1.8.5 2.1.5.4 0 1.1-.4 1.3-.9.1-.4.1-.8.1-.9l-.4-.2-1.2-.6c-.2-.1-.3-.1-.4.1l-.6.7c-.1.1-.2.2-.4.1-.2-.1-.8-.3-1.5-1-.6-.5-1-1.1-1.1-1.3-.1-.2 0-.3.1-.4l.3-.4.2-.3v-.4l-.6-1.4c-.1-.3-.3-.3-.4-.3h-.2Z"/></svg>
+        Написать в WhatsApp
+      </a>
+      <a class="btn btn--gh num" href="tel:+77232706345">+7 (7232) 70-63-45</a>
     </div>
 
-    <figure class="o ph p-house">
-      <span class="gl">
-        <img src="img/house.jpg" width="1920" height="1080" fetchpriority="high" decoding="async"
-          alt="Фасад частного дома из светлого кирпича: окна в эркерах, узкое высокое окно во фронтоне, маленькие окна под крышей и застеклённая веранда внизу — все рамы коричневого профиля">
+    <div class="rate">
+      <span class="sheen" aria-hidden="true"></span>
+      <span class="rate__big num">4,8</span>
+      <span class="rate__col">
+        <span class="rate__t"><span class="num">97</span> оценок, <span class="num">85</span> отзывов</span>
+        <span class="rate__s">Источник — 2GIS, на день сборки страницы</span>
       </span>
-      <figcaption>Дом целиком: эркеры, фронтон, веранда. Проёмы разного размера на одной
-        стене — по такой же раскладке набрана эта страница.</figcaption>
-    </figure>
-
-    <div class="o t p-rate">
-      <p class="num">4,8</p>
-      <p class="sm">Средняя оценка при 97&nbsp;оценках и 85&nbsp;отзывах в справочнике 2GIS.
-        Карточка открыта целиком.</p>
+      <span class="rate__col">
+        <span class="rate__t">Предоплата <span class="num">30%</span></span>
+        <span class="rate__s">Рассрочка на 6 месяцев от фирмы</span>
+      </span>
     </div>
 
-    <div class="o t p-bran">
-      <p class="num">3</p>
-      <p class="sm">Филиала в Усть-Каменогорске. Головной — проспект Шакарим, 181.
-        Открываемся с 08:00, график по дням уточним.</p>
-    </div>
+    <p class="hero__hint"><i aria-hidden="true"></i> Листайте — окно откроется</p>
+  </div>
+</section>
 
-    <section class="o t p-pay" aria-labelledby="pay-h">
-      <h2 id="pay-h">Предоплата <b>30%</b>, рассрочка на <b>6 месяцев</b> от фирмы</h2>
-      <div class="cols">
-        <p>Рассрочку даёт сама фирма: треть суммы вперёд, остальное частями в течение
-          шести месяцев. Окно ставят на годы, и растянуть платёж на полгода часто важнее,
-          чем сэкономить пару тысяч на профиле.</p>
-        <p class="sm">Сколько выйдет по вашим проёмам и как разложится платёж — скажем
-          по телефону или в WhatsApp, до того как вы что-то оплатите. Принимаем оплату
-          картой, наличными, через банк и по QR.</p>
+<!-- ======================= акт «граница» ======================= -->
+<section class="pin" aria-labelledby="border-h">
+  <div class="pin__stage">
+    <div class="pin__lyr pin__lyr--out" aria-hidden="true">
+      <img src="img/open1.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+    </div>
+    <div class="pin__lyr pin__lyr--in">
+      <div class="pin__mv">
+        <img src="img/open2.jpg" alt="Застеклённый балкон изнутри, одна створка открыта, за окном зелень" width="1920" height="1080" loading="lazy" decoding="async">
       </div>
-      <div class="reach">
-        <div>
-          <a href="https://wa.me/77051011076">Написать в WhatsApp</a>
-          <p class="sm">+7&nbsp;705&nbsp;101&nbsp;10&nbsp;76 — отдельный номер для сообщений</p>
+      <span class="pin__seam" aria-hidden="true"></span>
+    </div>
+
+    <div class="pin__txt wrap">
+      <span class="lab">граница</span>
+      <h2 id="border-h">Окно делит мир надвое</h2>
+      <div class="split">
+        <div class="split__c">
+          <b>снаружи</b>
+          <p>Двор, ветер, дерево под окном, пыль с дороги и чужие разговоры.</p>
         </div>
-        <div>
-          <a href="tel:+77232706345">Позвонить</a>
-          <p class="sm">+7&nbsp;(7232)&nbsp;70-63-45 — с 08:00</p>
+        <div class="split__c split__c--in">
+          <b>внутри</b>
+          <p>Тихо. А когда захочется — створка открывается, и лето заходит само.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="o t p-win" aria-labelledby="win-h">
-      <p class="lo">Четыре направления</p>
-      <h2 id="win-h">Окна</h2>
-      <p class="sm">Пластиковые окна в квартиру и в частный дом — от одной створки
-        до остекления всего фасада.</p>
-    </section>
+<!-- ======================= направления ======================= -->
+<section class="sec" aria-labelledby="dirs-h">
+  <div class="wrap">
+    <div class="sec__head r">
+      <span class="lab">что делаем</span>
+      <h2 id="dirs-h">Четыре направления</h2>
+      <p>Всё, что связано со стеклом и проёмом: от окна в квартире до витража и входной двери.</p>
+    </div>
 
-    <figure class="o ph p-b1">
-      <span class="gl">
-        <img src="img/balcony1.jpg" width="1920" height="1080" loading="lazy" decoding="async"
-          alt="Балкон, застеклённый белыми створками во всю высоту, за стеклом — крона дерева">
-      </span>
-      <figcaption>Балкон, остеклённый во всю высоту</figcaption>
-    </figure>
+    <div class="dirs">
+      <article class="dir r">
+        <span class="dir__ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M3 12h18" opacity=".45"/><path d="M16.6 12.6v2.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3>Пластиковые окна</h3>
+        <p>Для квартиры и для частного дома.</p>
+      </article>
 
-    <figure class="o ph p-o2">
-      <span class="gl">
-        <img src="img/open2.jpg" width="1920" height="1080" loading="lazy" decoding="async"
-          alt="Балкон изнутри после отделки: открытая створка слева, белая обшивка стен, проём в комнату справа">
-      </span>
-      <figcaption>Балкон после отделки, створка открыта</figcaption>
-    </figure>
+      <article class="dir r" data-d="1">
+        <span class="dir__ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 4v16h18V4"/><path d="M3 12h18"/><path d="M8 12v8" opacity=".45"/><path d="M13 12v8" opacity=".45"/><path d="M18 12v8" opacity=".45"/>
+          </svg>
+        </span>
+        <h3>Балконы</h3>
+        <p>Остекление и отделка — от холодного ящика до комнаты.</p>
+      </article>
 
-    <section class="o t p-bal" aria-labelledby="bal-h">
-      <h2 id="bal-h">Остекление и отделка балконов</h2>
-      <p class="sm">Остекление, откосы, подоконники, обшивка стен и пол — балкон отдаём
-        законченным, а не «со стеклом и голыми стенами».</p>
-    </section>
+      <article class="dir r" data-d="2">
+        <span class="dir__ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M12 3 3 12l9 9 9-9-9-9Z" opacity=".5"/><path d="M12 8.5 8.5 12 12 15.5 15.5 12 12 8.5Z"/>
+          </svg>
+        </span>
+        <h3>Витражи и мозаика</h3>
+        <p>Цветное стекло в проёме и в двери.</p>
+      </article>
 
-    <figure class="o ph p-b2">
-      <span class="gl">
-        <img src="img/balcony2.jpg" width="1920" height="1080" loading="lazy" decoding="async"
-          alt="Крупный план: белый подоконник, откос и вертикальная стойка рамы, выше — окно с видом на деревья">
-      </span>
-      <figcaption>Подоконник, откос и стойка рамы вблизи</figcaption>
-    </figure>
+      <article class="dir r" data-d="3">
+        <span class="dir__ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="5" y="2.5" width="14" height="19" rx="1.5"/><rect x="8.5" y="6" width="7" height="6" rx="1" opacity=".5"/><circle cx="15.6" cy="15.6" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <h3>Входные двери</h3>
+        <p>Вход в квартиру и в дом.</p>
+      </article>
+    </div>
 
-    <section class="o t p-vit" aria-labelledby="vit-h">
-      <h2 id="vit-h">Витражи и мозаика</h2>
-      <p class="sm">Витражное и мозаичное остекление.</p>
-    </section>
+    <p class="note dirs__note r">Список направлений — из карточки компании в 2GIS. Описания, состав работ и цены впишем с ваших слов: здесь мы ничего не придумывали.</p>
+  </div>
+</section>
 
-    <section class="o t p-door" aria-labelledby="door-h">
-      <h2 id="door-h">Входные двери</h2>
-      <p class="sm">Отдельное направление: подбираем дверь по вашему проёму.</p>
-    </section>
+<!-- ======================= частный дом ======================= -->
+<section class="sec house" aria-labelledby="house-h">
+  <div class="wrap">
+    <div class="sec__head r" style="margin-bottom:0">
+      <span class="lab">частный дом</span>
+      <h2 id="house-h">Не только квартиры</h2>
+      <p>Проём в частном доме больше, форма сложнее, а стекла в нём — на всю стену.</p>
+    </div>
+  </div>
+  <figure class="house__band r" data-d="1">
+    <img src="img/house.jpg" alt="Фасад частного дома: окна, высокое остеклённое полотно между эркерами и застеклённая входная группа" width="1920" height="1080" loading="lazy" decoding="async">
+    <figcaption class="house__cap">Фотография компании из карточки 2GIS. Что именно здесь делали «Народные окна» — подпишем с ваших слов.</figcaption>
+  </figure>
+</section>
 
-    <figure class="o ph p-floor">
-      <span class="gl">
-        <img src="img/floor.jpg" width="1920" height="1080" loading="lazy" decoding="async"
-          alt="Пол балкона, отделанный покрытием под дерево, между белыми панелями стен">
-      </span>
-      <figcaption>Пол на балконе после отделки</figcaption>
-    </figure>
+<!-- ======================= балкон: светлая секция ======================= -->
+<section class="sec sec--light" aria-labelledby="balc-h">
+  <div class="wrap">
+    <div class="sec__head r">
+      <span class="lab">балкон</span>
+      <h2 id="balc-h">Перестаёт быть кладовкой</h2>
+      <p>Остекление, обшивка стен, пол. Дальше это уже не «выйти на пять минут», а комната, в которой сидят.</p>
+    </div>
 
-    <section class="o t p-addr" aria-labelledby="addr-h">
-      <p class="lo">Куда приехать</p>
-      <h2 id="addr-h">Проспект Шакарим, 181</h2>
-      <p>Усть-Каменогорск. Рядом Дом дружбы — 300 метров. У входа 23 парковочных места.</p>
-      <p class="sm">Филиалов в городе три. Адрес ближайшего к вам подскажем по телефону —
-        на странице пока указан только головной офис. Открываемся с 08:00,
-        полный график по дням недели уточним при обращении.</p>
-    </section>
+    <div class="balc">
+      <figure class="shot shot--a balc__a r">
+        <img src="img/open2.jpg" alt="Застеклённый балкон изнутри: белые створки, одна открыта на проветривание" width="1920" height="1080" loading="lazy" decoding="async">
+        <figcaption>Остекление и створка на проветривание</figcaption>
+      </figure>
+      <figure class="shot shot--b r" data-d="1">
+        <img src="img/balcony2.jpg" alt="Угол застеклённого балкона: белый подоконник и обшивка стены" width="1920" height="1080" loading="lazy" decoding="async">
+        <figcaption>Подоконник и обшивка</figcaption>
+      </figure>
+      <figure class="shot shot--c r" data-d="2">
+        <img src="img/floor.jpg" alt="Пол на балконе после отделки, светлое покрытие под дерево" width="1920" height="1080" loading="lazy" decoding="async">
+        <figcaption>Пол после отделки</figcaption>
+      </figure>
+    </div>
 
-    <figure class="o p-map">
-      <iframe loading="lazy" title="Народные окна на карте Усть-Каменогорска"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=82.58366%2C49.97436%2C82.59266%2C49.97876&amp;layer=mapnik&amp;marker=49.97656%2C82.58816"></iframe>
-      <figcaption>Точка поставлена по адресу через OpenStreetMap. Подтвердите её —
-        и поставим отдельные точки на все три филиала.</figcaption>
-    </figure>
+    <div class="steps">
+      <div class="step r">
+        <b>Остекление</b>
+        <p>Профиль и створки по проёму — балкон закрывается от ветра и пыли.</p>
+      </div>
+      <div class="step r" data-d="1">
+        <b>Отделка</b>
+        <p>Стены и откосы зашиваются, голого бетона больше не видно.</p>
+      </div>
+      <div class="step r" data-d="2">
+        <b>Пол</b>
+        <p>Ровное покрытие вместо холодной плиты.</p>
+      </div>
+    </div>
 
-    <figure class="o ph p-o1">
-      <span class="gl">
-        <img src="img/open1.jpg" width="1920" height="1080" loading="lazy" decoding="async"
-          alt="Открытая створка балконного остекления, за ней двор с деревьями">
-      </span>
-      <figcaption>Открытая створка, вид с балкона</figcaption>
-    </figure>
+    <p class="note balc__note r">Все кадры на странице — фотографии компании из карточки 2GIS. Состав и порядок работ уточним у вас.</p>
+  </div>
+</section>
 
-    <section class="o t p-cont" aria-labelledby="cont-h">
-      <h2 id="cont-h">Связаться</h2>
-      <dl>
-        <div class="r">
-          <dt>Телефон</dt>
-          <dd><a href="tel:+77232706345">+7&nbsp;(7232)&nbsp;70-63-45</a></dd>
+<!-- ======================= рассрочка ======================= -->
+<section class="sec money" aria-labelledby="money-h">
+  <div class="wrap">
+    <div class="r">
+      <span class="lab">условия покупки</span>
+      <h2 id="money-h" class="money__quote">Предоплата <em>30%</em>, рассрочка на <em>6 месяцев</em> от фирмы</h2>
+    </div>
+
+    <div class="money__grid">
+      <div>
+        <div class="money__big num">30<span>%</span></div>
+        <p class="money__cap">вносится сразу</p>
+      </div>
+
+      <div class="bars">
+        <p class="bars__t">
+          <b class="num">6 месяцев</b>
+          <span>от фирмы</span>
+        </p>
+        <div class="bars__row" role="img" aria-label="Шесть месяцев рассрочки">
+          <span class="bar"><i>1</i></span>
+          <span class="bar"><i>2</i></span>
+          <span class="bar"><i>3</i></span>
+          <span class="bar"><i>4</i></span>
+          <span class="bar"><i>5</i></span>
+          <span class="bar"><i>6</i></span>
         </div>
-        <div class="r">
-          <dt>WhatsApp</dt>
-          <dd><a href="https://wa.me/77051011076">+7&nbsp;705&nbsp;101&nbsp;10&nbsp;76</a>
-            <span class="sm">Отдельный номер — звонки на него не идут, только сообщения</span></dd>
-        </div>
-        <div class="r">
-          <dt>Почта</dt>
-          <dd><a href="mailto:narodnyeoknafunke@mail.ru" translate="no">narodnyeoknafunke@mail.ru</a></dd>
-        </div>
-        <div class="r">
-          <dt>Instagram</dt>
-          <dd><a href="https://instagram.com/narodnyeokna.uka" translate="no">@narodnyeokna.uka</a></dd>
-        </div>
-        <div class="r">
-          <dt>Оплата</dt>
-          <dd>Картой, наличными, через банк, по QR</dd>
-        </div>
-      </dl>
-    </section>
+        <p class="note money__note">Это ваша собственная формулировка — «Предоплата 30%, рассрочка на 6 месяцев от фирмы». Мы её не расширяли: суммы, документы и порядок платежей опишем ровно так, как вы их ведёте.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </main>
+<!-- ======================= доверие ======================= -->
+<section class="sec" aria-labelledby="trust-h">
+  <div class="wrap">
+    <div class="sec__head r">
+      <span class="lab">чем подтверждается</span>
+      <h2 id="trust-h">Оценка, оплата, часы</h2>
+    </div>
 
-  <footer>
-    <p>Народные окна — торгово-сервисная компания, Усть-Каменогорск, проспект Шакарим, 181,
-      +7&nbsp;(7232)&nbsp;70-63-45.</p>
-    <p>Демонстрационная страница. Сведения, оценка и фотографии — из открытой карточки
-      организации в справочнике 2GIS. Точка на карте — OpenStreetMap по адресу.</p>
-  </footer>
+    <div class="facts">
+      <div class="fact r">
+        <h3>оценка</h3>
+        <p class="fact__k num">4,8</p>
+        <p>при <span class="num">97</span> оценках и <span class="num">85</span> отзывах. Источник — 2GIS, значение на день сборки страницы.</p>
+      </div>
+      <div class="fact r" data-d="1">
+        <h3>оплата</h3>
+        <ul>
+          <li>Картой</li>
+          <li>Наличными</li>
+          <li>Через банк</li>
+          <li>По QR</li>
+        </ul>
+      </div>
+      <div class="fact r" data-d="2">
+        <h3>часы</h3>
+        <p class="fact__k num">08:00</p>
+        <p>Открываетесь с восьми утра. График по дням уточним и поставим сюда точную таблицу.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-</div>
+<!-- ======================= где ======================= -->
+<section class="sec" aria-labelledby="where-h">
+  <div class="wrap">
+    <div class="sec__head r">
+      <span class="lab">где</span>
+      <h2 id="where-h">Проспект Шакарим, 181</h2>
+    </div>
+
+    <div class="where">
+      <div class="r">
+        <p class="addr">Три филиала в городе</p>
+        <dl>
+          <div class="row"><dt>адрес</dt><dd>проспект Шакарим, 181</dd></div>
+          <div class="row"><dt>ориентир</dt><dd>Дом дружбы — <span class="num">300</span> м</dd></div>
+          <div class="row"><dt>парковка</dt><dd><span class="num">23</span> места рядом</dd></div>
+          <div class="row"><dt>часы</dt><dd>с <span class="num">08:00</span>, график по дням уточним</dd></div>
+        </dl>
+      </div>
+
+      <div class="geo r" data-d="1">
+        <span class="lab">координаты</span>
+        <p class="geo__c num">49.97656, 82.58816</p>
+        <p>Точка поставлена по адресу из карточки 2GIS. Её нужно подтвердить, а адреса двух остальных филиалов — добавить: на странице их пока нет.</p>
+        <a class="btn btn--gh btn--sm" href="https://maps.google.com/?q=49.97656,82.58816" target="_blank" rel="noopener">Открыть на карте</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= контакты ======================= -->
+<section class="sec cta" aria-labelledby="cta-h">
+  <div class="wrap">
+    <div class="r">
+      <span class="lab">связаться</span>
+      <h2 id="cta-h">Позвонить или написать</h2>
+    </div>
+
+    <div class="cta__acts r" data-d="1">
+      <a class="btn btn--wa" href="https://wa.me/77051011076" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .8a7.2 7.2 0 0 0-6.2 10.8L.8 15.2l3.7-1a7.2 7.2 0 1 0 3.5-13.4Zm0 1.5a5.7 5.7 0 1 1-2.9 10.6l-.3-.2-2.2.6.6-2.1-.2-.3A5.7 5.7 0 0 1 8 2.3Zm-2.6 3c-.1 0-.3 0-.5.3-.2.2-.6.6-.6 1.4 0 .9.6 1.7.7 1.8.1.1 1.2 2 3 2.7 1.5.6 1.8.5 2.1.5.4 0 1.1-.4 1.3-.9.1-.4.1-.8.1-.9l-.4-.2-1.2-.6c-.2-.1-.3-.1-.4.1l-.6.7c-.1.1-.2.2-.4.1-.2-.1-.8-.3-1.5-1-.6-.5-1-1.1-1.1-1.3-.1-.2 0-.3.1-.4l.3-.4.2-.3v-.4l-.6-1.4c-.1-.3-.3-.3-.4-.3h-.2Z"/></svg>
+        Написать в WhatsApp
+      </a>
+      <a class="btn btn--gh num" href="tel:+77232706345">+7 (7232) 70-63-45</a>
+    </div>
+
+    <dl class="cta__list r" data-d="2">
+      <div class="cta__row"><dt>телефон</dt><dd><a class="num" href="tel:+77232706345">+7 (7232) 70-63-45</a></dd></div>
+      <div class="cta__row"><dt>whatsapp</dt><dd><a class="num" href="https://wa.me/77051011076" target="_blank" rel="noopener">+7 705 101 10 76</a><small>Другой номер — не тот, что для звонков.</small></dd></div>
+      <div class="cta__row"><dt>почта</dt><dd><a href="mailto:narodnyeoknafunke@mail.ru">narodnyeoknafunke@mail.ru</a></dd></div>
+      <div class="cta__row"><dt>instagram</dt><dd><a href="https://instagram.com/narodnyeokna.uka" target="_blank" rel="noopener">narodnyeokna.uka</a></dd></div>
+      <div class="cta__row"><dt>адрес</dt><dd>проспект Шакарим, 181 · три филиала в городе</dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <p><b>Народные окна</b> — торгово-сервисная компания, Усть-Каменогорск. Демонстрационная страница: компания её не заказывала и не согласовывала. Данные, фотографии и оценка взяты из открытой карточки 2GIS.</p>
+    <p>Собрал <b>Владимир Гутман</b>, веб-разработчик, Усть-Каменогорск.<br>
+      <a class="num" href="tel:+77776722860">+7 777 672 28 60</a> · <a href="https://wa.me/77776722860" target="_blank" rel="noopener">WhatsApp</a></p>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Быстрые действия">
+  <a class="btn btn--gh num" href="tel:+77232706345">Позвонить</a>
+  <a class="btn btn--wa" href="https://wa.me/77051011076" target="_blank" rel="noopener">WhatsApp</a>
+</nav>
 
 <script>
-/* Запасной путь для браузеров без scroll-driven анимаций.
-   Ничего не показывает и не прячет — только двигает то, что и так видно.
-   Если скрипт не выполнится, страница остаётся полностью читаемой. */
 (function(){
-  var root=document.documentElement;
-  if(!window.matchMedia) return;
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if(window.CSS&&CSS.supports&&CSS.supports('animation-timeline','view()')) return;
-  if(!('IntersectionObserver' in window)||!window.requestAnimationFrame) return;
+  var d = document.documentElement;
+  if (d.className.indexOf('anim') === -1) return;
 
-  root.className+=' fb';
+  var io = null;
 
-  var plane=document.querySelector('.plane');
-  var lit=document.querySelector('.p-pay');
-  var live=[], queued=false;
-
-  function tick(){ if(!queued){ queued=true; requestAnimationFrame(frame); } }
-
-  function frame(){
-    queued=false;
-    var vh=window.innerHeight||root.clientHeight;
-    if(plane){
-      var span=Math.max(1,root.scrollHeight-vh);
-      var p=Math.min(1,Math.max(0,(window.pageYOffset||root.scrollTop||0)/span));
-      var run=parseFloat(getComputedStyle(root).getPropertyValue('--wall-run'))||-11;
-      plane.style.transform='translate3d(0,'+(run*p).toFixed(2)+'vh,0)';
-    }
-    for(var i=0;i<live.length;i++){
-      var box=live[i], r=box.getBoundingClientRect();
-      var t=(vh-r.top)/(vh+r.height);
-      t=t<0?0:(t>1?1:t);
-      var a=parseFloat(getComputedStyle(box).getPropertyValue('--view-a'))||-4;
-      var b=parseFloat(getComputedStyle(box).getPropertyValue('--view-b'))||-18;
-      var img=box.firstElementChild;
-      if(img) img.style.transform='translate3d(0,'+(a+(b-a)*t).toFixed(2)+'%,0)';
-    }
+  function targets(){
+    return [].slice.call(document.querySelectorAll('.r, .pin__stage, .money'));
   }
 
-  var io=new IntersectionObserver(function(entries){
-    for(var i=0;i<entries.length;i++){
-      var e=entries[i], k=live.indexOf(e.target);
-      if(e.target===lit){
-        if(e.intersectionRatio>0.2) lit.classList.add('on');
-        continue;
-      }
-      if(e.isIntersecting){ if(k<0) live.push(e.target); }
-      else if(k>=0) live.splice(k,1);
+  function startIO(){
+    if (io) return;
+    var list = targets();
+    if (!('IntersectionObserver' in window)){
+      list.forEach(function(el){ el.classList.add('is-in'); });
+      return;
     }
-    tick();
-  },{threshold:[0,0.2,1]});
+    io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -10% 0px', threshold:0.1});
+    list.forEach(function(el){ io.observe(el); });
+  }
 
-  var boxes=document.querySelectorAll('.gl');
-  for(var i=0;i<boxes.length;i++) io.observe(boxes[i]);
-  if(lit) io.observe(lit);
+  function toFallback(){
+    d.classList.remove('sda');
+    d.classList.add('io');
+    startIO();
+  }
 
-  addEventListener('scroll',tick,{passive:true});
-  addEventListener('resize',tick,{passive:true});
-  tick();
+  /* Проверяем не поддержку, а факт: тикает ли реальный view()-таймлайн.
+     Если нет — уходим на IntersectionObserver. */
+  function verify(){
+    if (d.classList.contains('io')){ startIO(); return; }
+    var el = document.querySelector('.r');
+    var ok = false;
+    if (el && el.getAnimations){
+      var list = el.getAnimations();
+      for (var i = 0; i < list.length; i++){
+        var a = list[i];
+        if (a.timeline && a.timeline !== document.timeline && a.currentTime != null){ ok = true; break; }
+      }
+    }
+    if (!ok) toFallback();
+  }
+
+  function boot(){
+    /* В фоновой вкладке requestAnimationFrame может не сработать —
+       запасной путь включаем сразу, не дожидаясь кадра. */
+    if (d.classList.contains('io')) startIO();
+    else requestAnimationFrame(function(){ requestAnimationFrame(verify); });
+    /* Страховка: если через 2,5 с первый блок всё ещё невидим — показываем всё. */
+    setTimeout(function(){
+      var el = document.querySelector('.r');
+      if (el && getComputedStyle(el).opacity === '0'){
+        toFallback();
+        targets().forEach(function(n){ n.classList.add('is-in'); });
+      }
+    }, 2500);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
 })();
 </script>
 
