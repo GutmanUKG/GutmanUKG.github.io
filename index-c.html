@@ -8,22 +8,26 @@
      Значение живёт в localStorage, по умолчанию — как в системе. -->
 <script>
 (function(){
-  try{
-    var t = localStorage.getItem('gerat:theme');
-    if(t !== 'light' && t !== 'dark'){
-      t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    }
-    document.documentElement.dataset.theme = t;
-  }catch(e){ document.documentElement.dataset.theme = 'dark'; }
+  /* Настройки конструктора раскладываем до отрисовки: иначе первым
+     кадром видно тему и форму по умолчанию, а не выбранные. */
+  var d = document.documentElement, c = {};
+  try{ c = JSON.parse(localStorage.getItem('gerat:config') || '{}') || {}; }catch(e){}
+  var t = c.theme;
+  if(t !== 'light' && t !== 'dark'){
+    t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+  d.dataset.theme = t;
+  ['hero','tilecase','accent','radius','shadows','borders','width','density','motion','autoplay']
+    .forEach(function(k){ if(c[k] != null) d.setAttribute('data-cfg-' + k, String(c[k])); });
 })();
 </script>
-  <script type="module" crossorigin src="/assets/mainC-CYPAxp63.js"></script>
+  <script type="module" crossorigin src="/assets/mainC-DF6Qk7L_.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
   <link rel="modulepreload" crossorigin href="/assets/RoomEnvironment-CfYJcB9I.js">
   <link rel="modulepreload" crossorigin href="/assets/disc3d-Dd9EPsLx.js">
   <link rel="modulepreload" crossorigin href="/assets/catalog-data-C7nhRy30.js">
-  <link rel="modulepreload" crossorigin href="/assets/smart-search-Bu-Bdyey.js">
-  <link rel="stylesheet" crossorigin href="/assets/variant-c-main-CX2UMdbZ.css">
+  <link rel="modulepreload" crossorigin href="/assets/smart-search-DybrrszX.js">
+  <link rel="stylesheet" crossorigin href="/assets/variant-c-main-BwBcZAaF.css">
 </head>
 <body>
 
@@ -89,13 +93,13 @@
 
   <!-- Промо-слайдер стоит отдельной полосой, а не плиткой в сетке
        направлений: внутри категорий он забивал их собой. -->
-  <div class="promo-wrap">
+  <div class="promo-wrap" data-block="promo">
     <div class="promo" id="promo"></div>
   </div>
 </section>
 
 <!-- ============ СЛАЙДЕР ПОПУЛЯРНОГО ============ -->
-<section class="sec pop" id="pop">
+<section class="sec pop" id="pop" data-block="popular">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow"><span class="dot">●</span> Популярное</div>
@@ -118,7 +122,7 @@
 </section>
 
 <!-- ============ РАЗБОР · ТОРМОЗНЫЕ ДИСКИ ============ -->
-<section class="sec spot" id="lines">
+<section class="sec spot" id="lines" data-block="spots">
   <div class="wrap spot-grid">
     <div class="stage hot">
       <canvas id="disc2"></canvas>
@@ -159,7 +163,7 @@
 </section>
 
 <!-- ============ РАЗБОР · ТОРМОЗНЫЕ КОЛОДКИ ============ -->
-<section class="sec spot spot-alt">
+<section class="sec spot spot-alt" data-block="spots">
   <div class="wrap spot-grid">
     <div class="spot-copy">
       <div class="eyebrow"><span class="dot">●</span> Тормозные колодки · четыре серии</div>
@@ -200,7 +204,7 @@
 </section>
 
 <!-- ============ РАЗБОР · РАДИАТОРЫ ============ -->
-<section class="sec spot">
+<section class="sec spot" data-block="spots">
   <div class="wrap spot-grid">
     <div class="stage hot">
       <canvas id="rad2"></canvas>
@@ -240,7 +244,7 @@
 </section>
 
 <!-- ============ РАЗБОР · ФИЛЬТРЫ ============ -->
-<section class="sec spot spot-alt">
+<section class="sec spot spot-alt" data-block="spots">
   <div class="wrap spot-grid">
     <div class="spot-copy">
       <div class="eyebrow"><span class="dot">●</span> Фильтры · масляные, воздушные, салонные, топливные</div>
@@ -280,7 +284,7 @@
 </section>
 
 <!-- ============ ТЕХНОЛОГИИ ============ -->
-<section class="sec tech" id="tech">
+<section class="sec tech" id="tech" data-block="tech">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Производство и технологии</div>
@@ -299,7 +303,7 @@
 </section>
 
 <!-- ============ КОНТАКТЫ ============ -->
-<section class="sec" id="offices">
+<section class="sec" id="offices" data-block="offices">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Где нас найти</div>
@@ -329,7 +333,7 @@
 </section>
 
 <!-- ============ ПАРТНЁРАМ ============ -->
-<section class="sec" style="padding-top:0">
+<section class="sec" style="padding-top:0" data-block="band">
   <div class="wrap">
     <div class="band">
       <div class="eyebrow"><span class="dot">●</span> Партнёрам</div>

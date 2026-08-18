@@ -6,23 +6,27 @@
 <title>Тормозные диски Gerat — вариант C</title>
 <script>
 (function(){
-  try{
-    var t = localStorage.getItem('gerat:theme');
-    if(t !== 'light' && t !== 'dark'){
-      t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    }
-    document.documentElement.dataset.theme = t;
-  }catch(e){ document.documentElement.dataset.theme = 'dark'; }
+  /* Настройки конструктора раскладываем до отрисовки: иначе первым
+     кадром видно тему и форму по умолчанию, а не выбранные. */
+  var d = document.documentElement, c = {};
+  try{ c = JSON.parse(localStorage.getItem('gerat:config') || '{}') || {}; }catch(e){}
+  var t = c.theme;
+  if(t !== 'light' && t !== 'dark'){
+    t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+  d.dataset.theme = t;
+  ['hero','tilecase','accent','radius','shadows','borders','width','density','motion','autoplay']
+    .forEach(function(k){ if(c[k] != null) d.setAttribute('data-cfg-' + k, String(c[k])); });
 })();
 </script>
   <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
   <script type="module" crossorigin src="/assets/catalog-data-C7nhRy30.js"></script>
-  <script type="module" crossorigin src="/assets/smart-search-Bu-Bdyey.js"></script>
-  <script type="module" crossorigin src="/assets/catalog-c-C3vbvaEx.js"></script>
+  <script type="module" crossorigin src="/assets/smart-search-DybrrszX.js"></script>
+  <script type="module" crossorigin src="/assets/catalog-c-ZprY6WPX.js"></script>
   <script type="module" crossorigin src="/assets/catalog-CxzQ4CVx.js"></script>
   <script type="module" crossorigin src="/assets/RoomEnvironment-CfYJcB9I.js"></script>
   <script type="module" crossorigin src="/assets/disc3d-Dd9EPsLx.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/catalogCDisks-DeNNGQ7R.css">
+  <link rel="stylesheet" crossorigin href="/assets/catalogCDisks-tH3zIKAD.css">
 </head>
 <body class="cat-page">
 
