@@ -15,18 +15,18 @@
     t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
   }
   d.dataset.theme = t;
-  ['hero','herofull','tilecase','font','accent','radius','shadows','borders','width','density','motion','autoplay']
+  ['hero','herofull','tilecase','search','font','accent','radius','shadows','borders','width','density','motion','autoplay']
     .forEach(function(k){ if(c[k] != null) d.setAttribute('data-cfg-' + k, String(c[k])); });
 })();
 </script>
   <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
   <script type="module" crossorigin src="/assets/catalog-data-C7nhRy30.js"></script>
-  <script type="module" crossorigin src="/assets/smart-search-BGSiby2T.js"></script>
-  <script type="module" crossorigin src="/assets/catalog-c-bN4cyyiq.js"></script>
+  <script type="module" crossorigin src="/assets/smart-search-DmE7MY9n.js"></script>
+  <script type="module" crossorigin src="/assets/catalog-c-Bk86ULEB.js"></script>
   <script type="module" crossorigin src="/assets/catalog-CxzQ4CVx.js"></script>
   <script type="module" crossorigin src="/assets/RoomEnvironment-CfYJcB9I.js"></script>
   <script type="module" crossorigin src="/assets/disc3d-Dd9EPsLx.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/catalogCDisks-Cn5ojOTL.css">
+  <link rel="stylesheet" crossorigin href="/assets/catalogCDisks-pxqPA3Om.css">
 </head>
 <body class="cat-page">
 
@@ -354,6 +354,30 @@
           </div>
         </div>
       </div>
+
+        <!-- Второй вариант поиска: диалог с ассистентом, как в разделе.
+             Какой из двух показывать, решает конструктор. -->
+        <div class="aichat" id="aichat" hidden>
+          <div class="as-top">
+            <span class="sp-ava">G</span>
+            <div><b>Gerät Assist</b><small><i></i>онлайн · отвечает за ~2 сек</small></div>
+          </div>
+          <div class="as-body" id="as-body"></div>
+          <form class="as-bar" id="as-form" autocomplete="off">
+            <input id="as-input" type="text" enterkeyhint="send"
+                   placeholder="Марка, модель, артикул или размер…" aria-label="Запрос ассистенту">
+            <button type="button" class="s-ico" id="as-cam" aria-label="Снять техпаспорт" title="Снять техпаспорт">
+              <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg>
+            </button>
+            <button type="button" class="s-ico" id="as-mic" aria-label="Сказать голосом" title="Сказать голосом">
+              <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/></svg>
+            </button>
+            <button type="submit" class="as-send" aria-label="Отправить">
+              <svg viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6"/></svg>
+            </button>
+          </form>
+        </div>
+
   </div>
 </div>
 
