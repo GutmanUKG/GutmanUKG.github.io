@@ -1,804 +1,947 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="light">
-<meta name="theme-color" content="#e9ebe6">
-<title>АдыЛина — фабрика натяжных потолков, Усть-Каменогорск</title>
-<meta name="description" content="Натяжные потолки от производителя в Усть-Каменогорске. Ближняя дорожка — частному заказчику, дальняя — монтажнику и дилеру. Демонстрационная страница.">
-<meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23e9ebe6'/><rect x='18' width='14' height='32' fill='%23181b1c'/><rect x='17.5' width='1' height='32' fill='%23f4f1e8'/></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>АдыЛина — фабрика натяжных потолков в Усть-Каменогорске</title>
+<meta name="description" content="Натяжные потолки от производителя. Приглашаем к сотрудничеству дилеров. 4,9 при 58 оценках в 2GIS, проспект Нурсултана Назарбаева, 54.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#070910">
+<meta property="og:type" content="website">
+<meta property="og:title" content="АдыЛина — фабрика натяжных потолков">
+<meta property="og:description" content="Натяжные потолки от производителя. Приглашаем к сотрудничеству дилеров. Усть-Каменогорск, проспект Нурсултана Назарбаева, 54.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070910'/%3E%3Crect x='6' y='9' width='20' height='3' rx='1.5' fill='%235fd4ff'/%3E%3Crect x='6' y='16' width='13' height='3' rx='1.5' fill='%235fd4ff' opacity='.65'/%3E%3Crect x='6' y='23' width='8' height='3' rx='1.5' fill='%235fd4ff' opacity='.35'/%3E%3C/svg%3E">
+
 <style>
+/* ───────────────────────── токены ───────────────────────── */
+@property --lum{syntax:'<color>';inherits:true;initial-value:#fdf3e6}
+
 :root{
-  --paper:#e9ebe6;
-  --ink:#191c1b;
-  --ink2:#4f544f;
-  --rule:#767c76;
-  --hair:#c2c7c2;
+  --void:#070910;
+  --void-2:#0b0f19;
+  --void-3:#0f1523;
+  --surf:rgba(255,255,255,.045);
+  --hair:rgba(150,175,215,.16);
+  --hair-2:rgba(150,175,215,.28);
+  --edge:rgba(180,205,240,.55);      /* граница интерактивного, 4,2:1 к фону */
+  --tx:#eef2f8;                      /* 18:1 к --void */
+  --tx-2:#9fb0c9;                    /* 9,0:1 к --void */
+  --sig:#5fd4ff;                     /* 12,9:1 к --void */
+  --on-sig:#04202b;                  /* 10,9:1 к --sig */
+  --sig-8:rgba(95,212,255,.08);
+  --sig-16:rgba(95,212,255,.16);
 
-  --gra:#181b1c;
-  --gtext:#dee2dd;
-  --gmute:#9aa19b;
-  --grule:#6d746f;
-  --ghair:#5d6461;
+  --lum:#fdf3e6;                     /* цвет света, переключается */
 
-  --seam:#6d736e;
-  --light:#f4f1e8;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px;
+  --s6:32px; --s7:48px; --s8:64px; --s9:96px;
+  --r-s:10px; --r:18px; --r-l:28px; --pill:999px;
+  --max:1280px;
+  --pad:20px;
 
-  --split:56%;
-  --splitr:44%;
+  --disp:"Segoe UI Variable Display","Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --body:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
 
-  --pl:clamp(20px,3.6vw,60px);
-  --gut:clamp(20px,2.4vw,38px);
-  --pr:clamp(20px,3.2vw,52px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
 
-  --serif:Georgia,"Iowan Old Style","Times New Roman",Times,serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-
-  --ez:cubic-bezier(.22,.68,.28,1);
+  transition:--lum .45s var(--ease);
 }
+@media(min-width:700px){ :root{--pad:32px} }
+@media(min-width:1100px){ :root{--pad:48px} }
 
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+/* переключатель температуры света — работает и без JS, через :has() */
+:root:has(#t27:checked){--lum:#ffc78c}
+:root:has(#t40:checked){--lum:#fdf3e6}
+:root:has(#t60:checked){--lum:#d6e8ff}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}     /* именно clip: hidden делает body скроллпортом и глушит view() */
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;
+  scroll-padding-bottom:calc(86px + env(safe-area-inset-bottom))}
 body{
-  margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--serif);font-size:17px;line-height:1.62;
-  overflow-wrap:break-word;
+  margin:0;background:var(--void);color:var(--tx);
+  font:400 17px/1.6 var(--body);
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:calc(74px + env(safe-area-inset-bottom));
 }
-a,button{-webkit-tap-highlight-color:rgba(25,28,27,.18);touch-action:manipulation}
-h1,h2,h3{text-wrap:balance}
-#main{scroll-margin-top:72px}
+@media(min-width:860px){ body{padding-bottom:0} html{scroll-padding:78px 0 0} }
 img{max-width:100%;display:block}
-a{color:inherit}
-h1,h2,h3,p,dl,dd,ul,figure,figcaption{margin:0}
-ul{padding:0;list-style:none}
+a{color:inherit;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+h1,h2,h3,p,figure,fieldset,ul,ol,dl,dd,blockquote{margin:0;padding:0}
+ul,ol{list-style:none}
+fieldset{border:0}
+:focus-visible{outline:2px solid var(--sig);outline-offset:3px;border-radius:4px}
 
-.skip{
-  position:absolute;left:-9999px;top:0;z-index:99;
-  background:var(--ink);color:var(--paper);padding:12px 18px;
-  font-family:var(--sans);font-size:13px;text-decoration:none;
-}
-.skip:focus{left:0}
-:focus{outline:2px solid var(--ink);outline-offset:3px}
-:focus:not(:focus-visible){outline:none}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.tB :focus,.foot :focus,.tB :focus-visible,.foot :focus-visible{outline-color:var(--light)}
+.wrap{max-width:var(--max);margin:0 auto;
+  padding-inline:max(var(--pad),env(safe-area-inset-left)) max(var(--pad),env(safe-area-inset-right))}
+.skip{position:absolute;left:-9999px;top:0;z-index:99}
+.skip:focus{left:var(--pad);top:var(--pad);background:var(--sig);color:var(--on-sig);
+  padding:10px 16px;border-radius:var(--pill);font:600 14px/1 var(--body)}
 
-.u{font-family:var(--sans);font-variant-numeric:tabular-nums}
-.lab{
-  font-family:var(--sans);font-size:11px;line-height:1.3;
-  letter-spacing:.19em;text-transform:uppercase;font-weight:600;
-}
+/* ───────────────────────── типографика ───────────────────────── */
+.d1{font-family:var(--disp);font-weight:250;letter-spacing:-.035em;line-height:.94;
+  font-size:clamp(46px,13vw,146px)}
+.d2{font-family:var(--disp);font-weight:250;letter-spacing:-.03em;line-height:1.04;
+  font-size:clamp(31px,6.2vw,64px)}
+.d3{font-family:var(--disp);font-weight:300;letter-spacing:-.02em;line-height:1.14;
+  font-size:clamp(23px,3.1vw,31px)}
+.lead{font-size:clamp(17px,2.1vw,21px);line-height:1.55;color:var(--tx-2);max-width:56ch;
+  text-wrap:pretty}
+.p{color:var(--tx-2);max-width:60ch;text-wrap:pretty}
+.sm{font-size:14.5px;line-height:1.55;color:var(--tx-2);max-width:64ch}
+.kicker{font:500 11.5px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;
+  color:var(--sig);display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:22px;height:1px;background:var(--sig);opacity:.75;flex:none}
+b,strong{font-weight:600;color:var(--tx)}
+.mt4{margin-top:var(--s4)}.mt5{margin-top:var(--s5)}.mt6{margin-top:var(--s6)}.mt7{margin-top:var(--s7)}
 
-/* ——— плашка «черновик» ——— */
-.draft{
-  padding:clamp(16px,2.4vw,26px) var(--pr) clamp(15px,2vw,22px) var(--pl);
-  border-bottom:3px solid var(--ink);
-}
-.draft-in{display:grid;gap:6px 28px;align-items:baseline}
-@media(min-width:820px){.draft-in{grid-template-columns:auto 1fr}}
-.draft .lab{color:var(--ink);white-space:nowrap;padding-top:5px}
-.draft p{
-  font-family:var(--sans);font-size:13.5px;line-height:1.5;
-  color:var(--ink2);max-width:98ch;
-}
-.draft p+p{margin-top:5px}
-.draft b{color:var(--ink);font-weight:600}
-.draft a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:2px}
-.draft a:hover{text-decoration-thickness:2px}
+/* ───────────────────────── кнопки ───────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:50px;padding:0 22px;border-radius:var(--pill);
+  font:600 15.5px/1 var(--body);text-decoration:none;border:1px solid transparent;
+  cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  transition:transform .18s var(--ease),background-color .18s,border-color .18s}
+.btn svg{flex:none}
+.btn{white-space:nowrap}
+.btn--p{background:var(--sig);color:var(--on-sig);
+  box-shadow:0 12px 34px -12px rgba(95,212,255,.75)}
+.btn--p:hover{background:#8ce2ff;transform:translateY(-2px)}
+.btn--p:active{transform:translateY(0) scale(.985)}
+.btn--s{border-color:var(--edge);color:var(--tx);background:rgba(255,255,255,.03)}
+.btn--s:hover{border-color:var(--sig);background:var(--sig-8);transform:translateY(-2px)}
+.btn--s:active{transform:translateY(0) scale(.985)}
+.btns{display:flex;flex-wrap:wrap;gap:var(--s3)}
 
-/* ——— лист: два грунта — две плоскости на всю высоту ——— */
-.sheet{position:relative;background:var(--paper);overflow:clip}
-.sheet::before{
-  content:"";position:absolute;top:0;bottom:0;left:var(--split);right:0;
-  background:var(--gra);z-index:0;
-}
-.sheet>*{position:relative;z-index:1}
+/* ───────────────────────── плашка «черновик» ───────────────────────── */
+.draft{position:relative;z-index:5;padding-top:var(--s5)}
+.draft__card{
+  border:1px solid var(--hair-2);border-radius:var(--r);
+  background:linear-gradient(180deg,rgba(95,212,255,.07),rgba(255,255,255,.02));
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  padding:var(--s4) var(--s5) var(--s5);display:grid;gap:var(--s3)}
+.draft__top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.led{position:relative;width:8px;height:8px;border-radius:50%;background:var(--sig);flex:none}
+.led::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--sig);
+  animation:led 2.4s var(--ease) 8 both}
+@keyframes led{0%{transform:scale(1);opacity:.6}70%,100%{transform:scale(3.4);opacity:0}}
+.draft__tag{font:600 11.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--sig)}
+.draft__who{margin-left:auto;font:400 13px/1.4 var(--mono);color:var(--tx-2)}
+.draft p{font-size:14.5px;line-height:1.6;color:var(--tx-2);max-width:88ch}
+.draft a{color:var(--tx);text-decoration:underline;text-decoration-color:var(--hair-2);
+  text-underline-offset:3px;transition:text-decoration-color .18s,color .18s}
+.draft a:hover{color:var(--sig);text-decoration-color:var(--sig)}
+.draft__links{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);font:500 14px/1.4 var(--mono)}
+.draft__links a{display:inline-block;padding:5px 0}
 
-/* шов — единственное, что не едет; на нём меряется путь */
-.seam{
-  position:absolute;top:0;bottom:0;left:var(--split);width:1px;
-  background:var(--seam);z-index:6;pointer-events:none;
-  view-timeline-name:--seamline;view-timeline-axis:block;
-}
-.seam i{
-  position:absolute;inset:0;background:var(--light);
-  transform:scaleY(0);transform-origin:0 0;
-}
-@keyframes seam-draw{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+/* ───────────────────────── первый экран ───────────────────────── */
+.hero{position:relative;overflow:clip;padding-bottom:var(--s8)}
+.ceil{position:relative;height:clamp(230px,42svh,440px);margin-top:var(--s5);
+  perspective:1000px;perspective-origin:50% 100%;overflow:clip}
+.ceil__scrub{position:absolute;inset:0;transform-origin:50% 0}
+.ceil__in{position:absolute;inset:-12% -14% 0 -14%;transform-origin:50% 0;
+  transform:rotateX(11deg) scale(1.02);
+  animation:ceilIn 1.5s var(--ease-out) both}
+@keyframes ceilIn{from{transform:rotateX(19deg) scale(1.18);opacity:0}
+                  to  {transform:rotateX(11deg) scale(1.02);opacity:1}}
+.ceil__img{width:100%;height:100%;object-fit:cover;object-position:50% 42%;
+  filter:saturate(.4) contrast(1.16) brightness(.82)}
+/* «свет включается»: тёмная штора уходит, снизу разливается свечение */
+.ceil__dark{position:absolute;inset:0;background:#04060c;animation:lightsOn 2s var(--ease-out) both}
+@keyframes lightsOn{0%{opacity:.97}55%{opacity:.42}100%{opacity:.52}}
+.ceil__bloom{position:absolute;left:50%;top:38%;width:130%;aspect-ratio:1;
+  border-radius:50%;pointer-events:none;mix-blend-mode:screen;margin:-65% 0 0 -65%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--lum) 85%,transparent) 0%,
+             color-mix(in srgb,var(--lum) 26%,transparent) 34%,transparent 66%);
+  animation:bloom 2.3s var(--ease-out) both}
+@keyframes bloom{0%{transform:scale(.42);opacity:0}45%{opacity:.85}100%{transform:scale(1);opacity:.5}}
+.ceil__floor{position:absolute;inset:auto 0 0 0;height:58%;pointer-events:none;
+  background:linear-gradient(to top,var(--void) 12%,rgba(7,9,16,.72) 52%,transparent 100%)}
+/* световые линии — «зажигаются» по очереди, только transform и opacity */
+.ln{position:absolute;height:3px;border-radius:2px;background:var(--lum);
+  transform-origin:0 50%;opacity:0;
+  box-shadow:0 0 18px 2px color-mix(in srgb,var(--lum) 60%,transparent);
+  animation:ignite .75s var(--ease-out) both}
+.ln--1{left:8%;top:26%;width:46%;rotate:-3.2deg;animation-delay:.6s}
+.ln--2{left:12%;top:41%;width:34%;rotate:-2.4deg;animation-delay:.78s}
+.ln--3{left:52%;top:19%;width:30%;rotate:58deg;animation-delay:.96s}
+@keyframes ignite{from{opacity:0;scale:0 1}60%{opacity:1}to{opacity:.9;scale:1 1}}
 
-/* ——— шапка ——— */
-.band{padding-bottom:clamp(24px,3.2vw,44px)}
-.brow{display:grid;grid-template-columns:var(--split) var(--splitr)}
-.cA{padding-left:var(--pl);padding-right:var(--gut)}
-.cB{padding-left:var(--gut);padding-right:var(--pr)}
+/* световое пятно за курсором */
+.haze{position:absolute;left:0;top:0;width:46vmax;height:46vmax;margin:-23vmax 0 0 -23vmax;
+  pointer-events:none;opacity:0;mix-blend-mode:screen;display:none;
+  background:radial-gradient(circle,color-mix(in srgb,var(--lum) 22%,transparent) 0%,transparent 62%);
+  transform:translate3d(var(--px,50vw),var(--py,30vh),0)}
+@media(hover:hover) and (pointer:fine){ .haze{display:block;opacity:.85} }
 
-.brow-top{padding-top:clamp(22px,3vw,42px)}
-.wm{
-  font-family:var(--serif);font-size:clamp(28px,3.1vw,42px);line-height:1;
-  letter-spacing:-.015em;font-weight:400;
-}
-.wm-sub{margin-top:9px;color:var(--ink2)}
-.cB .lab{color:var(--gmute)}
-.cB .facts{margin-top:9px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--gtext)}
-.cB .facts span{display:block;color:var(--gmute)}
+.hero__body{position:relative;margin-top:calc(var(--s7) * -1);z-index:2}
+.hero__glow{position:absolute;left:50%;top:-16%;width:min(900px,120%);aspect-ratio:2/1;
+  margin-left:min(-450px,-60%);pointer-events:none;z-index:-1;mix-blend-mode:screen;
+  background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb,var(--lum) 22%,transparent),transparent 68%)}
+.hero h1{margin:0}
+.mask{display:block;overflow:clip}
+.mask > span{display:block;animation:rise 1.05s var(--ease-out) both}
+.mask:nth-of-type(1) > span{animation-delay:.18s}
+.mask:nth-of-type(2) > span{animation-delay:.3s}
+@keyframes rise{from{transform:translateY(105%)}to{transform:translateY(0)}}
 
-/* заявление фабрики, разрезанное швом; уходя за край — расходится */
-.stmt{position:relative;margin-top:clamp(28px,4.2vw,62px)}
-.stmt span{
-  display:block;font-family:var(--serif);font-weight:400;
-  font-size:clamp(27px,4.55vw,61px);line-height:1.1;letter-spacing:-.02em;
-  padding-left:var(--pl);padding-right:var(--pr);
-}
-.stmt .s1{color:var(--ink)}
-.stmt .s2{
-  position:absolute;top:0;left:0;right:0;
-  color:var(--gtext);
-  clip-path:inset(0 0 0 var(--split));
-}
-@supports not (clip-path:inset(0 0 0 50%)){.stmt .s2{display:none}}
-@keyframes cut-l{from{transform:translate3d(0,0,0)}to{transform:translate3d(-10px,0,0)}}
-@keyframes cut-r{from{transform:translate3d(0,0,0)}to{transform:translate3d(10px,0,0)}}
+.chips{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s5)}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 15px;border-radius:var(--pill);
+  border:1px solid var(--hair-2);background:var(--surf);font:500 13.5px/1.3 var(--body);color:var(--tx-2)}
+.chip b{color:var(--tx);font-weight:600}
+.chip .dot{width:5px;height:5px;border-radius:50%;background:var(--sig);flex:none}
 
-.brow-note{margin-top:clamp(20px,2.4vw,32px)}
-.brow-note .cA p{color:var(--ink2);max-width:46ch}
-.brow-note .cB p{font-family:var(--sans);font-size:14.5px;line-height:1.55;color:var(--gmute);max-width:42ch}
-.brow-note .cB b{color:var(--gtext);font-weight:600}
+/* переключатель температуры */
+.temp{margin-top:var(--s7);border:1px solid var(--hair);border-radius:var(--r);
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:var(--s4) var(--s5) var(--s5);max-width:560px}
+.temp legend{padding:0;font:500 11.5px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--sig);margin-bottom:var(--s4)}
+.temp__row{display:flex;gap:var(--s2);flex-wrap:wrap}
+.opt{position:relative;flex:1 1 130px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.opt input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.opt > span{display:flex;flex-direction:column;align-items:center;gap:7px;
+  padding:13px 10px;border-radius:var(--r-s);border:1px solid var(--edge);
+  font:600 14px/1 var(--body);color:var(--tx-2);text-align:center;
+  transition:border-color .2s,color .2s,background-color .2s}
+.opt > span::before{content:"";width:28px;height:28px;border-radius:50%;
+  box-shadow:0 0 16px 2px currentColor}
+.opt:nth-child(1) > span::before{background:#ffc78c;color:#ffc78c}
+.opt:nth-child(2) > span::before{background:#fdf3e6;color:#fdf3e6}
+.opt:nth-child(3) > span::before{background:#d6e8ff;color:#d6e8ff}
+.opt small{display:block;font:400 12px/1.2 var(--mono);opacity:.8;margin-top:3px}
+.opt input:hover + span{border-color:var(--sig);color:var(--tx)}
+.opt input:checked + span{border-color:var(--sig);background:var(--sig-8);color:var(--tx)}
+.opt input:focus-visible{outline:none}
+.opt input:focus-visible + span{outline:2px solid var(--sig);outline-offset:3px}
+.temp__note{margin-top:var(--s4);font-size:13.5px;line-height:1.55;color:var(--tx-2)}
 
-/* ——— кадры: рама стоит, полотно в ней съезжает ——— */
-.fr{position:relative;overflow:hidden;background:#dbdedb}
-.fr img{
-  position:absolute;left:0;top:0;width:100%;height:118%;
-  object-fit:cover;transform:translate3d(0,-7.6%,0);
-}
-@keyframes fr-drift{from{transform:translate3d(0,-15%,0)}to{transform:translate3d(0,0,0)}}
-@keyframes fr-open{
-  from{clip-path:inset(12% 7% 12% 7%);opacity:.42}
-  to{clip-path:inset(0% 0% 0% 0%);opacity:1}
-}
-.bleed .fr{aspect-ratio:21/8}
-.bleed .brow{margin-top:12px}
-.bleed figcaption{
-  font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink2);max-width:58ch;
-}
-.bleed .cB p{font-family:var(--sans);font-size:13px;line-height:1.5;color:var(--gmute);max-width:34ch}
+.cue{margin-top:var(--s7);display:flex;align-items:center;gap:12px;
+  font:500 11.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--tx-2)}
+.cue span{width:1px;height:34px;background:linear-gradient(var(--sig),transparent);
+  display:block;transform-origin:50% 0;animation:cue 2.2s var(--ease) 8 both}
+@keyframes cue{0%,100%{transform:scaleY(.35);opacity:.5}50%{transform:scaleY(1);opacity:1}}
 
-.switch{display:none}
+/* ───────────────────────── сцены: три поверхности ───────────────────────── */
+.scenes{position:relative}
+.scene{position:sticky;top:0;min-height:100svh;overflow:clip;
+  background:var(--void-2);border-top:1px solid var(--hair);
+  border-radius:var(--r-l) var(--r-l) 0 0;
+  display:grid;grid-template-rows:auto 1fr;align-content:start}
+.scene--2{background:var(--void-3)}
+.scene__ph{position:relative;overflow:clip;aspect-ratio:16/11;background:#0a0d15}
+.scene__ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
+.scene__ph::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(7,9,16,.3) 0%,transparent 32%,rgba(7,9,16,.5) 100%)}
+.scene__spill{position:absolute;inset:auto 0 -30% 0;height:60%;pointer-events:none;
+  mix-blend-mode:screen;z-index:1;
+  background:radial-gradient(ellipse at 50% 100%,color-mix(in srgb,var(--lum) 20%,transparent),transparent 70%)}
+.scene__tx{position:relative;z-index:2;padding:var(--s6) var(--pad) var(--s8);
+  display:grid;gap:var(--s4);align-content:start}
+.scene__no{font:250 clamp(52px,11vw,86px)/1 var(--disp);letter-spacing:-.04em;
+  color:transparent;-webkit-text-stroke:1px var(--hair-2);
+  position:absolute;right:var(--pad);top:calc(var(--s6) - 14px);z-index:1;pointer-events:none}
+.tags{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.tag{font:500 12px/1 var(--mono);letter-spacing:.05em;padding:8px 12px;border-radius:var(--pill);
+  border:1px solid var(--hair);color:var(--tx-2);background:var(--surf)}
 
-/* ——— две дорожки ——— */
-.tracks{display:grid;grid-template-columns:var(--split) var(--splitr);align-items:stretch}
-.tA{
-  background:var(--paper);
-  padding:clamp(40px,5vw,86px) var(--gut) clamp(48px,5vw,96px) var(--pl);
-}
-.tB{
-  background:var(--gra);color:var(--gtext);
-  padding:clamp(80px,14vw,240px) var(--pr) clamp(48px,5vw,96px) var(--gut);
-}
-@keyframes track-lag{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,48px,0)}}
-
-.thead{padding-bottom:clamp(18px,2.2vw,28px);border-bottom:1px solid var(--rule)}
-.tB .thead{
-  border-bottom-color:var(--grule);background:var(--gra);
-  position:sticky;top:0;z-index:3;padding-top:clamp(16px,1.8vw,24px);
-}
-.thead h2{
-  font-family:var(--serif);font-weight:400;
-  font-size:clamp(30px,3.5vw,46px);line-height:1.08;letter-spacing:-.02em;margin-top:12px;
-}
-.tB .thead h2{
-  font-family:var(--sans);font-weight:700;
-  font-size:clamp(21px,1.85vw,27px);line-height:1.16;letter-spacing:-.018em;
-}
-.tA .thead .lab{color:var(--ink2)}
-.tB .thead .lab{color:var(--gmute)}
-.thead .under{margin-top:12px;color:var(--ink2);font-size:16px}
-.tB .thead .under{font-family:var(--sans);font-size:14px;color:var(--gmute)}
-
-/* ближняя дорожка */
-.tA h3{
-  font-family:var(--serif);font-weight:400;
-  font-size:clamp(22px,2vw,30px);line-height:1.18;letter-spacing:-.015em;
-}
-.blkA{margin-top:clamp(34px,3.6vw,56px)}
-.blkA p{max-width:60ch}
-.blkA p+p{margin-top:14px}
-.blkA h3+p{margin-top:16px}
-.tA .mute{color:var(--ink2)}
-
-.score{
-  margin-top:clamp(38px,4.4vw,72px);
-  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  padding:clamp(20px,2.4vw,30px) 0;
-  display:grid;gap:6px 26px;align-items:baseline;
-}
-@media(min-width:640px){.score{grid-template-columns:auto 1fr}}
-.score .big{
-  font-family:var(--sans);font-weight:700;font-variant-numeric:tabular-nums;
-  font-size:clamp(48px,5.4vw,76px);line-height:.86;letter-spacing:-.035em;
-}
-.score .txt{max-width:42ch}
-.score .txt em{font-style:normal;display:block;color:var(--ink2);font-size:15px;margin-top:7px;line-height:1.5}
-
-figure{margin-top:clamp(24px,2.6vw,38px)}
-.tA .fr{aspect-ratio:16/9}
-figcaption{
-  margin-top:9px;font-family:var(--sans);font-size:13px;line-height:1.45;
-  color:var(--ink2);max-width:56ch;
-}
-figcaption b{color:var(--ink);font-weight:600}
-.pairfig{display:grid;gap:clamp(16px,1.8vw,26px)}
 @media(min-width:900px){
-  .pairfig{grid-template-columns:1fr 1fr;align-items:start}
-  .pairfig figure:last-child{margin-top:clamp(38px,4vw,64px)}
-  .fig-s{max-width:56%}
-  .fig-m{max-width:72%;margin-left:auto}
+  .scene{grid-template-rows:none;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .scene__ph{aspect-ratio:auto;height:100svh;order:2}
+  .scene__tx{align-content:center;padding:var(--s9) var(--s8) var(--s9) var(--pad);min-height:100svh}
+  .scene__no{right:auto;left:var(--pad);top:var(--s7)}
+  .scene__spill{inset:0 auto 0 -20%;width:44%;height:100%;
+    background:radial-gradient(ellipse at 100% 50%,color-mix(in srgb,var(--lum) 18%,transparent),transparent 70%)}
 }
-.srcnote{margin-top:16px;font-family:var(--sans);font-size:13px;line-height:1.5;color:var(--ink2);max-width:62ch}
+@media(min-width:1376px){ .scene__tx{padding-left:calc((100vw - var(--max))/2 + var(--pad))} }
 
-.map{margin-top:clamp(18px,2vw,26px);border-top:1px solid var(--grule);border-bottom:1px solid var(--grule)}
-.map iframe{display:block;width:100%;height:min(30vw,250px);border:0}
-.coords{margin-top:10px;font-family:var(--sans);font-size:13px;line-height:1.55;color:var(--gmute);max-width:46ch}
-.coords a{color:var(--gtext);text-underline-offset:3px}
-.coords a:hover{color:#fff}
+/* ───────────────────────── как держится ───────────────────────── */
+.mount{position:relative;background:var(--void);padding:var(--s9) 0;
+  border-top:1px solid var(--hair);border-radius:var(--r-l) var(--r-l) 0 0;overflow:clip}
+.mount__grid{display:grid;gap:var(--s7);margin-top:var(--s7)}
+@media(min-width:960px){ .mount__grid{grid-template-columns:1.05fr .95fr;gap:var(--s8);align-items:center} }
+.dia{border:1px solid var(--hair);border-radius:var(--r);
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01));padding:var(--s5)}
+.dia svg{width:100%;height:auto;display:block}
+.dia figcaption{margin-top:var(--s4);font:400 13px/1.55 var(--mono);color:var(--tx-2)}
+.steps{display:grid;gap:var(--s5)}
+.step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+.step__n{font:500 12px/1 var(--mono);color:var(--sig);border:1px solid var(--sig-16);
+  background:var(--sig-8);border-radius:var(--pill);padding:9px 11px}
+.step h3{font:600 17px/1.35 var(--body);margin-bottom:5px}
+.step p{font-size:15px;line-height:1.55;color:var(--tx-2)}
+.mount__ph{margin-top:var(--s8);border-radius:var(--r);overflow:clip;border:1px solid var(--hair);
+  position:relative}
+.mount__ph img{width:100%;height:auto;aspect-ratio:16/8;object-fit:cover;object-position:50% 40%}
+.cap{position:absolute;left:var(--s4);bottom:var(--s4);z-index:2;
+  padding:8px 14px;border-radius:var(--pill);font:500 12.5px/1.3 var(--mono);
+  background:rgba(7,9,16,.85);border:1px solid var(--hair-2);color:var(--tx);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 
-.actA{margin-top:clamp(40px,4.6vw,76px);border-top:3px solid var(--ink);padding-top:18px}
-.actA a{
-  position:relative;display:inline-block;font-family:var(--serif);
-  font-size:clamp(22px,2.2vw,32px);line-height:1.2;letter-spacing:-.015em;
-  text-decoration:none;padding-bottom:9px;
-}
-.actA a::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--ink);
-  transform:scaleY(.334);transform-origin:0 100%;transition:transform .18s var(--ez);
-}
-.actA a:hover::after{transform:none}
-.actA a:active{color:var(--ink2)}
-.actA a:active::after{background:var(--ink2)}
-.preset{
-  margin-top:16px;font-family:var(--sans);font-size:13px;line-height:1.55;color:var(--ink2);
-  border-left:1px solid var(--rule);padding-left:14px;max-width:46ch;
-}
-.preset b{display:block;color:var(--ink);font-weight:400;font-style:italic;margin-top:3px}
+/* ───────────────────────── направления ───────────────────────── */
+.dirs{background:var(--void-2);padding:var(--s9) 0;border-top:1px solid var(--hair);
+  border-radius:var(--r-l) var(--r-l) 0 0}
+.cards{display:grid;gap:var(--s4);margin-top:var(--s7)}
+@media(min-width:640px){ .cards{grid-template-columns:repeat(2,1fr)} }
+@media(min-width:1060px){ .cards{grid-template-columns:repeat(4,1fr)} }
+.card{position:relative;border:1px solid var(--hair);border-radius:var(--r);padding:var(--s5);
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.012));
+  display:grid;gap:var(--s3);align-content:start;overflow:clip;
+  transition:transform .3s var(--ease),border-color .3s}
+.card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:radial-gradient(420px circle at var(--cx,50%) var(--cy,0%),var(--sig-16),transparent 60%);
+  transition:opacity .35s}
+.card:hover{transform:translateY(-4px);border-color:var(--edge)}
+.card:hover::after{opacity:1}
+.card__ic{width:38px;height:38px;color:var(--sig)}
+.card h3{font:600 17.5px/1.3 var(--body)}
+.card p{font-size:14.5px;line-height:1.55;color:var(--tx-2)}
+.viz{margin-top:var(--s8);display:grid;gap:var(--s5);align-items:center}
+@media(min-width:900px){ .viz{grid-template-columns:1.1fr .9fr;gap:var(--s7)} }
+.viz figure{position:relative;border-radius:var(--r);overflow:clip;border:1px solid var(--hair)}
+.viz img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 
-/* дальняя дорожка */
-.tB p,.tB li,.tB dd,.tB dt{font-family:var(--sans)}
-.tB p{font-size:15px;line-height:1.6;max-width:46ch}
-.tB p+p{margin-top:12px}
-.tB h3{font-family:var(--sans);font-weight:700;font-size:15px;line-height:1.3;letter-spacing:.01em}
-.blkB{margin-top:clamp(30px,3vw,44px);border-top:1px solid var(--ghair);padding-top:18px}
-.blkB h3+p{margin-top:12px}
-.tB .gmute{color:var(--gmute)}
-.tB .quote{
-  font-family:var(--serif);font-size:clamp(17px,1.5vw,21px);line-height:1.4;
-  letter-spacing:-.01em;max-width:30ch;margin-top:14px;
-}
+/* ───────────────────────── дилерам ───────────────────────── */
+.deal{position:relative;padding:var(--s9) 0;border-top:1px solid var(--sig-16);
+  border-radius:var(--r-l) var(--r-l) 0 0;overflow:clip;
+  background:
+    linear-gradient(rgba(95,212,255,.05) 1px,transparent 1px) 0 0/100% 34px,
+    linear-gradient(90deg,rgba(95,212,255,.05) 1px,transparent 1px) 0 0/34px 100%,
+    var(--void-3)}
+.deal::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 20% 0%,rgba(95,212,255,.12),transparent 62%)}
+.deal .wrap{position:relative}
+.quote{margin-top:var(--s6);border-left:2px solid var(--sig);padding-left:var(--s5);max-width:640px}
+.quote p{font:250 clamp(26px,4.6vw,46px)/1.16 var(--disp);letter-spacing:-.025em;color:var(--tx);
+  text-wrap:balance}
+.quote cite{display:block;margin-top:var(--s4);font:400 13px/1.55 var(--mono);
+  color:var(--tx-2);font-style:normal;max-width:52ch}
+.blocks{display:grid;gap:var(--s4);margin-top:var(--s8)}
+@media(min-width:760px){ .blocks{grid-template-columns:repeat(3,1fr)} }
+.block{border:1px solid var(--hair-2);border-radius:var(--r);padding:var(--s5);
+  background:rgba(7,9,16,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.block h3{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sig);margin-bottom:var(--s3)}
+.block p{font-size:14.5px;line-height:1.55;color:var(--tx-2)}
 
-.data{margin-top:16px}
-.data div{display:grid;gap:2px 20px;padding:13px 0;border-top:1px solid var(--ghair)}
-@media(min-width:520px){.data div{grid-template-columns:9.5em 1fr}}
-.data dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--gmute);padding-top:3px}
-.data dd{margin:0;font-size:14.5px;line-height:1.5;font-variant-numeric:tabular-nums}
-.data dd span{display:block;color:var(--gmute);font-size:13px;margin-top:3px}
-.data a{color:var(--gtext);text-underline-offset:3px;display:inline-block;padding:4px 0}
-.data a:hover{color:#fff}
+/* ───────────────────────── контакты ───────────────────────── */
+.cont{background:var(--void);padding:var(--s9) 0 var(--s8);
+  border-top:1px solid var(--hair);border-radius:var(--r-l) var(--r-l) 0 0}
+.cont__grid{display:grid;gap:var(--s7);margin-top:var(--s7)}
+@media(min-width:980px){ .cont__grid{grid-template-columns:.9fr 1.1fr;gap:var(--s8)} }
+.dl{display:grid;gap:var(--s5)}
+.dl > div{display:grid;gap:6px;padding-bottom:var(--s5);border-bottom:1px solid var(--hair)}
+.dl dt{font:500 11.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--tx-2)}
+.dl dd{font-size:17px;line-height:1.5}
+.dl a{color:var(--tx);text-decoration:none;white-space:nowrap;border-bottom:1px solid var(--edge);
+  padding-bottom:1px;transition:color .18s,border-color .18s}
+.dl a:hover{color:var(--sig);border-color:var(--sig)}
+.rate{display:flex;align-items:baseline;gap:var(--s3);flex-wrap:wrap}
+.rate b{font:250 46px/1 var(--disp);letter-spacing:-.03em;color:var(--tx)}
+.map{border:1px solid var(--hair);border-radius:var(--r);overflow:clip;background:var(--void-2)}
+.map iframe{display:block;width:100%;height:330px;border:0}
+.map figcaption{padding:var(--s4) var(--s5);font:400 13px/1.55 var(--mono);color:var(--tx-2);
+  border-top:1px solid var(--hair)}
+@media(min-width:980px){ .map iframe{height:420px} }
 
-.asklist{margin-top:14px}
-.asklist li{
-  font-size:14.5px;line-height:1.5;padding:9px 0 9px 22px;position:relative;
-  border-top:1px solid var(--ghair);
-}
-.asklist li::before{content:"—";position:absolute;left:0;color:var(--gmute)}
+/* ───────────────────────── подвал ───────────────────────── */
+.foot{border-top:1px solid var(--hair);padding:var(--s7) 0 var(--s8);background:var(--void)}
+.foot__grid{display:grid;gap:var(--s5)}
+@media(min-width:820px){ .foot__grid{grid-template-columns:1.4fr 1fr;gap:var(--s8)} }
+.foot p{font-size:13.5px;line-height:1.65;color:var(--tx-2);max-width:70ch}
+.foot a{color:var(--tx);text-decoration:underline;text-decoration-color:var(--hair-2);
+  text-underline-offset:3px}
+.foot a:hover{color:var(--sig);text-decoration-color:var(--sig)}
+.foot__id{font:500 12.5px/1.75 var(--mono);color:var(--tx-2)}
+.foot__id a{display:inline-block;padding:5px 0}
 
-.tail{margin-top:clamp(34px,3.4vw,52px)}
-.tB .closer{
-  max-width:16ch;font-family:var(--serif);font-weight:400;
-  font-size:clamp(24px,2.4vw,36px);line-height:1.16;letter-spacing:-.02em;
-}
-.tB .closer span{display:block;color:var(--gmute)}
-.actB{margin-top:clamp(20px,2.2vw,32px)}
-.actB a{
-  display:block;background:var(--light);color:var(--gra);text-decoration:none;
-  font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:.02em;
-  padding:19px 20px;transition:background .18s var(--ez);
-}
-.actB a:hover{background:#fff}
-.actB a:active{background:var(--gmute)}
-.actB .preset{border-left-color:var(--grule);color:var(--gmute);font-family:var(--sans)}
-.actB .preset b{color:var(--gtext);font-style:italic}
-
-/* ——— подвал ——— */
-.foot{
-  background:var(--gra);color:var(--gtext);
-  padding:clamp(40px,4.6vw,78px) var(--pr) clamp(34px,3.6vw,56px) var(--pl);
-  border-top:1px solid var(--grule);
-}
-.foot-g{display:grid;gap:clamp(26px,3vw,44px)}
-@media(min-width:760px){.foot-g{grid-template-columns:1.15fr 1fr 1fr}}
-.foot h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.6vw,36px);line-height:1.1;letter-spacing:-.02em}
-.foot .lab{color:var(--gmute)}
-.foot p,.foot li{font-family:var(--sans);font-size:14.5px;line-height:1.6}
-.foot ul{margin-top:12px}
-.foot ul li{padding:7px 0;border-top:1px solid var(--ghair)}
-.foot ul li:first-child{border-top:0;padding-top:0}
-.foot a{color:var(--gtext);text-underline-offset:3px}
-.foot ul a{display:inline-block;padding:4px 0}
-.foot a:hover{color:#fff}
-.foot .sub{color:var(--gmute);font-size:13.5px;margin-top:10px;max-width:46ch}
-.foot .why{margin-top:10px;color:var(--gmute);font-size:13.5px;max-width:44ch}
-.foot-end{
-  margin-top:clamp(30px,3.4vw,52px);padding-top:20px;border-top:1px solid var(--ghair);
-  font-family:var(--sans);line-height:1.6;color:var(--gmute);max-width:96ch;font-size:12.5px;
-}
-.foot-end a{color:var(--gtext)}
-
-/* ═════════════════ ДВИЖЕНИЕ ═════════════════
-   всё моторное живёт только внутри этого блока: при
-   prefers-reduced-motion:reduce он целиком не применяется,
-   и каждый элемент остаётся в обычном видимом состоянии */
-@media (prefers-reduced-motion: no-preference){
-
-  /* — основной вариант: чистый CSS, привязка к прокрутке, JS не нужен — */
-  @supports (animation-timeline:view()) and (animation-timeline:scroll()){
-
-    .seam i{
-      animation:seam-draw linear both;
-      animation-timeline:--seamline;
-      animation-range:contain 0% contain 100%;
-    }
-
-    .fr img{
-      animation:fr-drift linear both;
-      animation-timeline:view();
-      animation-range:cover 0% cover 100%;
-    }
-    .rv{
-      animation:fr-open linear both;
-      animation-timeline:view();
-      animation-range:entry 14% cover 40%;
-    }
-
-    @media (min-width:900px){
-      /* дальняя плоскость отстаёт от ближней */
-      .tin{
-        animation:track-lag linear both;
-        animation-timeline:scroll(root);
-      }
-      /* фраза цела, пока её читают, и расходится, уходя за край */
-      .stmt .s1{
-        animation:cut-l linear both;
-        animation-timeline:view();animation-range:exit 0% exit 100%;
-      }
-      .stmt .s2{
-        animation:cut-r linear both;
-        animation-timeline:view();animation-range:exit 0% exit 100%;
-      }
-    }
-
-    @media (max-width:899px){
-      /* на телефоне шов ложится под липкий переключатель */
-      .switch::after{
-        animation:seam-x linear both;
-        animation-timeline:scroll(root);
-      }
-    }
-  }
-
-  /* — запасной вариант: тоже от прокрутки, через rAF; включается только с JS — */
-  .sda .seam i{transform:scaleY(var(--prog,0))}
-  .sda .fr img{transform:translate3d(0,var(--d,-7.6%),0)}
-  .sda .switch::after{transform:scaleX(var(--prog,0))}
-  @media (min-width:900px){
-    .sda .tin{transform:translate3d(0,calc(var(--prog,0) * 48px),0)}
-    .sda .stmt .s1{transform:translate3d(calc(var(--hprog,0) * -10px),0,0)}
-    .sda .stmt .s2{transform:translate3d(calc(var(--hprog,0) * 10px),0,0)}
-  }
-  /* раскрытие кадра в запасном варианте — по IntersectionObserver */
-  .sda .rv{
-    opacity:.42;clip-path:inset(12% 7% 12% 7%);
-    transition:opacity .75s var(--ez),clip-path .95s var(--ez);
-  }
-  .sda .rv.seen{opacity:1;clip-path:inset(0% 0% 0% 0%)}
-
-  @keyframes seam-x{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-}
-/* подчёркивание под ссылкой — тоже движение, при reduce его нет */
-@media (prefers-reduced-motion: reduce){
-  .actA a::after{transition:none}
-  .actA a:hover::after{transform:scaleY(.334)}
+/* ───────────────────────── панель действий ───────────────────────── */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;
+  padding:10px max(var(--pad),env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom))
+          max(var(--pad),env(safe-area-inset-left));
+  background:rgba(7,9,16,.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-top:1px solid var(--hair-2);display:flex;gap:var(--s2)}
+.bar .btn{flex:1;min-height:48px;padding:0 14px;font-size:15px}
+@media(min-width:860px){
+  .bar{left:auto;right:var(--pad);bottom:auto;top:var(--s4);border-radius:var(--pill);
+    border:1px solid var(--hair-2);padding:7px;gap:7px;width:auto;
+    box-shadow:0 18px 50px -20px rgba(0,0,0,.9)}
+  .bar .btn{flex:none;min-height:42px;font-size:14.5px}
 }
 
-/* ——— узкий экран ——— */
-@media(max-width:899px){
-  :root{--split:100%;--splitr:0%}
-  .seam{display:none}
-  .stmt .s2{display:none}
-  .brow{grid-template-columns:1fr}
-  .cA,.cB{padding-left:var(--pl);padding-right:var(--pr)}
-  .brow-top .cB{margin-top:22px;padding-top:18px;border-top:1px solid var(--hair)}
-  .cB .lab{color:var(--ink2)}
-  .cB .facts{color:var(--ink)}
-  .cB .facts span{color:var(--ink2)}
-  .brow-note .cB{margin-top:16px}
-  .brow-note .cB p{color:var(--ink2)}
-  .brow-note .cB b{color:var(--ink)}
-  .bleed .fr{aspect-ratio:4/3}
-  .bleed .cB{margin-top:8px}
-  .bleed .cB p{color:var(--ink2)}
+/* ───────── страховка: через 3 с все вступительные анимации досчитаны ─────────
+   если браузер их почему-то не проиграл (фоновая вкладка, экономия энергии),
+   элементы всё равно оказываются в конечном, видимом состоянии             */
+.lit .mask > span{animation:none;transform:none}
+.lit .ln{animation:none;opacity:.9;scale:1 1}
+.lit .ceil__in{animation:none;opacity:1;transform:rotateX(11deg) scale(1.02)}
+.lit .ceil__dark{animation:none;opacity:.52}
+.lit .ceil__bloom{animation:none;opacity:.5;transform:scale(1)}
 
-  .tracks{grid-template-columns:1fr}
-  .tA{padding:clamp(34px,7vw,48px) var(--pr) clamp(40px,8vw,56px) var(--pl)}
-  .tB{
-    border-top:4px solid var(--seam);
-    padding:clamp(34px,7vw,48px) var(--pr) clamp(40px,8vw,56px) var(--pl);
-  }
-  .tB .thead{position:static;padding-top:0}
-  .fig-s,.fig-m{max-width:none}
+/* ───────── появление блоков: скрываем только когда JS точно есть ───────── */
+.html-js .r{opacity:0;transform:translateY(20px);
+  transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);
+  transition-delay:calc(var(--i,0) * 70ms)}
+.html-js .r.in{opacity:1;transform:none}
 
-  .switch{
-    display:grid;grid-template-columns:1fr 1fr;
-    border-top:1px solid var(--hair);border-bottom:3px solid var(--hair);
-    background:var(--paper);position:sticky;top:0;z-index:20;
-  }
-  html:not(.js) .switch{display:none}
-  .switch::after{
-    content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;
-    background:var(--ink);transform:scaleX(0);transform-origin:0 50%;
-  }
-  .switch button{
-    appearance:none;-webkit-appearance:none;border:0;background:transparent;color:var(--ink2);
-    font-family:var(--sans);font-size:12.5px;font-weight:600;line-height:1.3;
-    letter-spacing:.03em;text-align:left;
-    padding:14px var(--pl) 13px;cursor:pointer;
-    border-bottom:3px solid transparent;margin-bottom:-3px;
-    transition:color .18s var(--ez),border-color .18s var(--ez);
-  }
-  .switch button+button{padding-left:16px;border-left:1px solid var(--hair)}
-  .switch button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--ink)}
-  .switch button:hover{color:var(--ink)}
-  body[data-track="a"] .tB,body[data-track="b"] .tA{display:none}
-  body[data-track="b"] .switch{background:var(--gra);border-top-color:var(--ghair);border-bottom-color:var(--ghair)}
-  body[data-track="b"] .switch::after{background:var(--gtext)}
-  body[data-track="b"] .switch button{color:var(--gmute)}
-  body[data-track="b"] .switch button+button{border-left-color:var(--grule)}
-  body[data-track="b"] .switch button[aria-pressed="true"]{color:var(--gtext);border-bottom-color:var(--gtext)}
-  body[data-track="b"] .switch button:hover{color:var(--gtext)}
-  body[data-track="b"] .switch :focus-visible{outline-color:var(--light)}
-  body[data-track="b"] .tB{border-top:0}
+/* ───────── scroll-driven: включается, только если таймлайн реально тикает ───────── */
+.sda .prog{position:fixed;left:0;top:0;height:2px;width:100%;z-index:60;transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--sig),color-mix(in srgb,var(--lum) 70%,transparent));
+  animation:prog linear both;animation-timeline:scroll(root);scale:0 1}
+@keyframes prog{from{scale:0 1}to{scale:1 1}}
 
-  /* смена дорожки — смена плоскости */
-  @media (prefers-reduced-motion: no-preference){
-    body[data-track="a"] .tA{animation:plane-l .26s var(--ez) both}
-    body[data-track="b"] .tB{animation:plane-r .26s var(--ez) both}
-  }
-  @keyframes plane-l{from{opacity:0;transform:translate3d(-18px,0,0)}to{opacity:1;transform:none}}
-  @keyframes plane-r{from{opacity:0;transform:translate3d(18px,0,0)}to{opacity:1;transform:none}}
-}
-@media(max-width:520px){
-  .switch button{padding-left:var(--pl);padding-right:12px}
-  .switch button+button{padding-left:12px}
+.sda .ceil__scrub{animation:ceilScrub linear both;animation-timeline:scroll(root);
+  animation-range:0 100svh}
+@keyframes ceilScrub{from{transform:translateY(0) scale(1);opacity:1}
+                     to  {transform:translateY(-9%) scale(1.14);opacity:.42}}
+
+.sda .scene__ph img{animation:pz linear both;animation-timeline:view();animation-range:cover}
+@keyframes pz{from{transform:translate3d(0,-5%,0) scale(1.14)}
+              to  {transform:translate3d(0,5%,0) scale(1.14)}}
+
+.sda .taut{animation:taut linear both;animation-timeline:view();
+  animation-range:entry 20% cover 40%;transform-box:fill-box;transform-origin:50% 50%}
+@keyframes taut{from{transform:scaleX(.05)}to{transform:scaleX(1)}}
+
+/* ───────────────────────── меньше движения ───────────────────────── */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  :root{transition:none}
+  *,*::before,*::after{animation-duration:1ms!important;animation-delay:0ms!important;
+    animation-iteration-count:1!important;transition-duration:1ms!important}
+  .scene{position:static;min-height:0}
+  .scene__ph{aspect-ratio:16/10}
+  @media(min-width:900px){ .scene__ph{aspect-ratio:auto;height:auto;min-height:60svh} }
+  .haze{display:none}
+  .html-js .r{opacity:1;transform:none}
+  /* конечные состояния задаём напрямую, не полагаясь на fill анимации */
+  .mask > span{animation:none;transform:none}
+  .ln{animation:none;opacity:.9;scale:1 1}
+  .ceil__in{animation:none;opacity:1;transform:rotateX(11deg) scale(1.02)}
+  .ceil__dark{animation:none;opacity:.52}
+  .ceil__bloom{animation:none;opacity:.5;transform:scale(1)}
+  .cue span{animation:none;transform:scaleY(1);opacity:.8}
+  .led::after{animation:none;opacity:0}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">К содержанию</a>
+<div class="prog" aria-hidden="true"></div>
 
-<a class="skip" href="#main">Перейти к содержанию</a>
-
-<aside class="draft">
-  <div class="draft-in">
-    <div class="lab">Черновик</div>
-    <div>
-      <p><b>Демонстрационный вариант страницы, сделанный для «АдыЛины».</b> Компания об этом не просила и участия в работе не принимала.</p>
-      <p>Данные и фотографии взяты из открытой карточки в <a href="https://2gis.kz/ust-kamenogorsk/firm/12807639721314315" rel="nofollow noopener" target="_blank">2GIS</a>. Тексты, график работы и перечень работ правим с ваших слов — здесь намеренно нет цен, сроков и гарантий, потому что их знает только фабрика. Точка на карте поставлена по адресу из справочника и требует проверки.</p>
-      <p>Сделал <b>Владимир Гутман</b>, веб-разработчик, Усть-Каменогорск. Телефон и WhatsApp: <a href="tel:+77776722860">+7&nbsp;777&nbsp;672&nbsp;28&nbsp;60</a> · <a href="https://wa.me/77776722860" rel="nofollow noopener" target="_blank">написать в WhatsApp</a></p>
+<!-- плашка «черновик» ───────────────────────────────────────── -->
+<aside class="draft wrap" aria-labelledby="draft-h">
+  <div class="draft__card">
+    <div class="draft__top">
+      <span class="led" aria-hidden="true"></span>
+      <span class="draft__tag" id="draft-h">Черновик · демонстрация</span>
+      <span class="draft__who">Владимир Гутман · веб-разработчик · Усть-Каменогорск</span>
+    </div>
+    <p>Это демонстрационная страница для «АдыЛины». Компания об этом не просила и в работе
+      не участвовала. Сведения, оценка и фотографии взяты из открытой карточки организации
+      в справочнике 2GIS. Тексты и график работы правим с ваших слов, точка на карте
+      поставлена по адресу из справочника — её тоже стоит подтвердить.</p>
+    <div class="draft__links">
+      <a href="tel:+77776722860">+7 777 672 28 60</a>
+      <a href="https://wa.me/77776722860" rel="noopener">WhatsApp разработчика</a>
     </div>
   </div>
 </aside>
 
-<div class="sheet">
-  <i class="seam" aria-hidden="true"><i></i></i>
+<main id="main" tabindex="-1">
 
-  <header class="band">
-    <div class="brow brow-top">
-      <div class="cA">
-        <h1 class="wm">АдыЛина</h1>
-        <p class="wm-sub">Фабрика натяжных потолков. Усть-Каменогорск.</p>
-      </div>
-      <div class="cB">
-        <div class="lab">Производство и приём</div>
-        <p class="facts">проспект Нурсултана Назарбаева,&nbsp;54<span>открывается с 08:00</span></p>
-      </div>
-    </div>
-
-    <p class="stmt">
-      <span class="s1">Натяжные потолки от производителя. Приглашаем к сотрудничеству дилеров</span>
-      <span class="s2" aria-hidden="true">Натяжные потолки от производителя. Приглашаем к сотрудничеству дилеров</span>
-    </p>
-
-    <div class="brow brow-note">
-      <div class="cA">
-        <p>Это собственные слова фабрики из справочника. В одной фразе — два разных разговора, поэтому страница разделена надвое. Слева всё, что важно хозяину квартиры.</p>
-      </div>
-      <div class="cB">
-        <p>Справа — то, что спрашивает монтажник: <b>производство, ассортимент, отгрузка</b>. Без фотографий и без лишних слов.</p>
+<!-- первый экран ────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="ceil" aria-hidden="true">
+    <div class="ceil__scrub">
+      <div class="ceil__in">
+        <img class="ceil__img" src="img/lightlines.jpg" width="1920" height="1080" alt=""
+             fetchpriority="high" decoding="async">
+        <div class="ceil__dark"></div>
+        <div class="ceil__bloom"></div>
+        <span class="ln ln--1"></span>
+        <span class="ln ln--2"></span>
+        <span class="ln ln--3"></span>
       </div>
     </div>
-  </header>
-
-  <figure class="bleed">
-    <div class="fr rv">
-      <img src="img/lightlines.jpg" alt="Белый натяжной потолок со встроенными световыми линиями" width="1920" height="1080" decoding="async">
-    </div>
-    <div class="brow">
-      <figcaption class="cA">Белое полотно со встроенными световыми линиями: свет идёт в самом потолке, а не висит под ним. Одно полотно на всю ширину — и шов, который делит страницу надвое, проходит прямо по нему.</figcaption>
-      <div class="cB"><p>Фото из открытой карточки 2GIS.</p></div>
-    </div>
-  </figure>
-
-  <div class="switch" role="group" aria-label="Кому показать страницу">
-    <button type="button" data-go="a" aria-pressed="true" aria-controls="track-a">Мне нужен потолок</button>
-    <button type="button" data-go="b" aria-pressed="false" aria-controls="track-b">Я монтажник, ищу поставщика</button>
+    <div class="haze"></div>
+    <div class="ceil__floor"></div>
   </div>
 
-  <main id="main" class="tracks">
+  <div class="hero__body wrap">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <p class="kicker">Усть-Каменогорск · фабрика</p>
+    <h1 class="d1 mt5">
+      <span class="mask"><span>Свет живёт</span></span>
+      <span class="mask"><span>в потолке</span></span>
+    </h1>
+    <p class="lead mt5">«АдыЛина» — натяжные потолки от производителя. Плюс тёплые полы,
+      электротехника и электронагревательное оборудование.</p>
 
-    <!-- ====== БЛИЖНЯЯ ДОРОЖКА ====== -->
-    <section class="tA" id="track-a" aria-labelledby="h-a">
-      <div class="thead">
-        <div class="lab">Ближняя дорожка</div>
-        <h2 id="h-a">Хозяину квартиры</h2>
-        <p class="under">Потолок делают один раз и потом смотрят на него каждый день.</p>
+    <ul class="chips" role="list">
+      <li class="chip"><span class="dot"></span><span><b>4,9</b> при 58&nbsp;оценках · 2GIS</span></li>
+      <li class="chip">проспект Нурсултана Назарбаева, 54</li>
+      <li class="chip">открываются с 08:00</li>
+    </ul>
+
+    <div class="btns mt6">
+      <a class="btn btn--p" href="https://wa.me/77051491333" rel="noopener">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.25 8.24a8.24 8.24 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.26-8.24Zm-2.6 4.02c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03 0 1.2.87 2.35.99 2.51.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.19 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.2-1.44-1.34-1.68-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.53-1.32-.73-1.8-.19-.47-.39-.4-.53-.41h-.46Z"/></svg>
+        Написать в WhatsApp
+      </a>
+      <a class="btn btn--s" href="tel:+77051491333">+7 705 149 13 33</a>
+    </div>
+
+    <fieldset class="temp">
+      <legend>Температура света — демонстрация</legend>
+      <div class="temp__row">
+        <label class="opt"><input type="radio" name="temp" id="t27">
+          <span>2700&nbsp;K <small>тёплый</small></span></label>
+        <label class="opt"><input type="radio" name="temp" id="t40" checked>
+          <span>4000&nbsp;K <small>нейтральный</small></span></label>
+        <label class="opt"><input type="radio" name="temp" id="t60">
+          <span>6000&nbsp;K <small>холодный</small></span></label>
       </div>
+      <p class="temp__note">Переключатель меняет свет на всей странице — так видно
+        разницу между тёплым и холодным. Какие именно ленты и профили ставит
+        «АдыЛина», впишем сюда с их слов.</p>
+    </fieldset>
 
-      <div class="blkA">
-        <h3>Фабрика, а не выездная бригада</h3>
-        <p>«АдыЛина» держит собственное производство в Усть-Каменогорске. Разговор поэтому начинается не с прайса, а с комнаты: сколько окон, где будет свет, что уже висит на потолке и что вы хотите убрать.</p>
-        <p class="mute">Сроков, цен и обещаний на этой странице нет намеренно. Их называет фабрика по вашему объекту, а не сайт по чужой квартире.</p>
+    <p class="cue"><span aria-hidden="true"></span> Листайте — покажем полотно</p>
+  </div>
+</header>
+
+<!-- три поверхности ─────────────────────────────────────────── -->
+<section class="scenes" id="svet" aria-label="Как ведёт себя полотно">
+
+  <article class="scene scene--1">
+    <div class="scene__ph">
+      <img src="img/gloss.jpg" width="1920" height="1080" loading="lazy" decoding="async"
+           alt="Чёрный глянцевый натяжной потолок, в котором отражается окно комнаты">
+      <div class="scene__spill" aria-hidden="true"></div>
+    </div>
+    <div class="scene__tx">
+      <span class="scene__no" aria-hidden="true">01</span>
+      <p class="kicker r">Глянец</p>
+      <h2 class="d2 r" style="--i:1">Полотно,<br>которое отражает</h2>
+      <p class="p r" style="--i:2">На этом снимке чёрное полотно работает зеркалом:
+        в нём целиком видно окно, откосы и часть соседней комнаты. Кадр из карточки
+        «АдыЛины» — не рендер и не сток.</p>
+      <ul class="tags r" role="list" style="--i:3">
+        <li class="tag">зеркальная поверхность</li>
+        <li class="tag">тёмные цвета</li>
+        <li class="tag">точечные светильники</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="scene scene--2">
+    <div class="scene__ph">
+      <img src="img/showroom.jpg" width="1920" height="1080" loading="lazy" decoding="async"
+           alt="Белый матовый натяжной потолок в помещении с витражами и трековыми светильниками">
+      <div class="scene__spill" aria-hidden="true"></div>
+    </div>
+    <div class="scene__tx">
+      <span class="scene__no" aria-hidden="true">02</span>
+      <p class="kicker r">Мат</p>
+      <h2 class="d2 r" style="--i:1">Полотно,<br>которое гасит блики</h2>
+      <p class="p r" style="--i:2">Матовая поверхность не отражает — свет ложится ровно,
+        и потолок читается единой плоскостью без стыков. Здесь по нему пущен трек
+        со светильниками, а полотно заведено вплотную к витражам.</p>
+      <ul class="tags r" role="list" style="--i:3">
+        <li class="tag">без бликов</li>
+        <li class="tag">трековые системы</li>
+        <li class="tag">коммерческие помещения</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="scene scene--3">
+    <div class="scene__ph">
+      <img src="img/lightlines.jpg" width="1920" height="1080" loading="lazy" decoding="async"
+           alt="Световые линии, врезанные в само полотно натяжного потолка">
+      <div class="scene__spill" aria-hidden="true"></div>
+    </div>
+    <div class="scene__tx">
+      <span class="scene__no" aria-hidden="true">03</span>
+      <p class="kicker r">Свет внутри полотна</p>
+      <h2 class="d2 r" style="--i:1">Светильник —<br>сам потолок</h2>
+      <p class="p r" style="--i:2">Световые линии врезаны в полотно и светят сквозь него:
+        под потолком ничего не висит, источник — сама плоскость. По периметру видно
+        короб, в который линия и заведена.</p>
+      <ul class="tags r" role="list" style="--i:3">
+        <li class="tag">световые линии</li>
+        <li class="tag">парящий контур</li>
+        <li class="tag">свет из плоскости</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- как держится ────────────────────────────────────────────── -->
+<section class="mount" aria-labelledby="mount-h" id="kak">
+  <div class="wrap">
+    <p class="kicker r">Устройство</p>
+    <h2 class="d2 r mt4" id="mount-h" style="--i:1">Держит натяжение,<br>а не подвесы</h2>
+
+    <div class="mount__grid">
+      <figure class="dia r" style="--i:2">
+        <svg viewBox="0 0 560 190" role="img" aria-label="Разрез по периметру: плита перекрытия, багет на стене с двух сторон и полотно, натянутое между багетами, со световой линией внутри">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#fdf3e6" stop-opacity=".15"/>
+              <stop offset=".5" stop-color="#fdf3e6" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#fdf3e6" stop-opacity=".15"/>
+            </linearGradient>
+          </defs>
+          <path d="M20 30h520" stroke="rgba(150,175,215,.35)" stroke-width="2" stroke-dasharray="4 6"/>
+          <text x="20" y="21" fill="#9fb0c9" font-family="ui-monospace,monospace" font-size="11">плита перекрытия</text>
+          <path d="M40 30v130M520 30v130" stroke="rgba(150,175,215,.3)" stroke-width="2"/>
+          <path d="M40 88h34v10H52v10H40" fill="none" stroke="#5fd4ff" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M520 88h-34v10h22v10h12" fill="none" stroke="#5fd4ff" stroke-width="2.5" stroke-linejoin="round"/>
+          <text x="40" y="128" fill="#5fd4ff" font-family="ui-monospace,monospace" font-size="11">багет</text>
+          <text x="474" y="128" fill="#5fd4ff" font-family="ui-monospace,monospace" font-size="11">багет</text>
+          <g class="taut">
+            <path d="M52 98h456" stroke="url(#g1)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M52 98h456" stroke="#fdf3e6" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+          </g>
+          <text x="238" y="82" fill="#eef2f8" font-family="ui-monospace,monospace" font-size="11">полотно</text>
+          <rect x="238" y="95.5" width="84" height="5" rx="2.5" fill="#fdf3e6"/>
+          <path d="M250 114h60M262 128h36" stroke="#fdf3e6" stroke-width="1.5" opacity=".3" stroke-linecap="round"/>
+          <text x="238" y="152" fill="#9fb0c9" font-family="ui-monospace,monospace" font-size="11">световая линия</text>
+        </svg>
+        <figcaption>Разрез по периметру. Это общий принцип натяжного потолка —
+          детали своего монтажа фабрика впишет сама.</figcaption>
+      </figure>
+
+      <ol class="steps" role="list">
+        <li class="step r" style="--i:1">
+          <span class="step__n" aria-hidden="true">01</span>
+          <div><h3>Багет по периметру</h3>
+            <p>Профиль крепится к стене или к перекрытию и задаёт линию будущей плоскости.
+              Всё, что должно оказаться внутри — короба, закладные под светильники —
+              ставится до полотна.</p></div>
+        </li>
+        <li class="step r" style="--i:2">
+          <span class="step__n" aria-hidden="true">02</span>
+          <div><h3>Полотно заводят в багет</h3>
+            <p>Раскроенное по комнате полотно закрепляют по всему периметру. Держит его
+              собственное натяжение, поэтому под потолком нет ни подвесов, ни стыков.</p></div>
+        </li>
+        <li class="step r" style="--i:3">
+          <span class="step__n" aria-hidden="true">03</span>
+          <div><h3>Свет ставят в саму плоскость</h3>
+            <p>Точечные светильники, трек или световая линия — источник оказывается
+              на уровне потолка, а не под ним. Это и даёт кадры вроде первого экрана.</p></div>
+        </li>
+      </ol>
+    </div>
+
+    <figure class="mount__ph r" style="--i:2">
+      <img src="img/track.jpg" width="1920" height="1080" loading="lazy" decoding="async"
+           alt="Матовый натяжной потолок с трековым светильником и подвесными лампами">
+      <figcaption class="cap">Трек и подвесы на готовом полотне · фото из карточки 2GIS</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- направления ─────────────────────────────────────────────── -->
+<section class="dirs" aria-labelledby="dirs-h" id="chto">
+  <div class="wrap">
+    <p class="kicker r">Направления</p>
+    <h2 class="d2 r mt4" id="dirs-h" style="--i:1">Чем занимается фабрика</h2>
+    <p class="lead r mt5" style="--i:2">Четыре рубрики, под которыми «АдыЛина» значится
+      в справочнике 2GIS. Что внутри каждой — распишем с их слов.</p>
+
+    <div class="cards">
+      <article class="card r" style="--i:1">
+        <svg class="card__ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M5 12h30M8 12v3a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-3"/>
+          <path d="M12 23h16M15 29h10" stroke-linecap="round" opacity=".55"/>
+        </svg>
+        <h3>Натяжные потолки</h3>
+        <p>Основное направление и собственное производство: «от производителя»
+          написано в их же карточке.</p>
+      </article>
+      <article class="card r" style="--i:2">
+        <svg class="card__ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M6 31h28" stroke-linecap="round"/>
+          <path d="M11 25c0-4 4-4 4-8s-4-4-4-8M20 25c0-4 4-4 4-8s-4-4-4-8M29 25c0-4 4-4 4-8s-4-4-4-8" stroke-linecap="round" opacity=".85"/>
+        </svg>
+        <h3>Тёплые полы</h3>
+        <p>Второе направление из справочника. Тип систем и условия уточним
+          у фабрики.</p>
+      </article>
+      <article class="card r" style="--i:3">
+        <svg class="card__ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M22 5 10 22h9l-1 13 12-17h-9z" stroke-linejoin="round"/>
+        </svg>
+        <h3>Электротехника</h3>
+        <p>Рубрика 2GIS. Что именно продают и монтируют — впишем после
+          разговора.</p>
+      </article>
+      <article class="card r" style="--i:4">
+        <svg class="card__ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <rect x="7" y="9" width="26" height="22" rx="3"/>
+          <path d="M12 16h16M12 21h16M12 26h10" stroke-linecap="round" opacity=".6"/>
+        </svg>
+        <h3>Электронагревательное оборудование</h3>
+        <p>Четвёртая рубрика. Ассортимент подтвердим прежде, чем
+          публиковать.</p>
+      </article>
+    </div>
+
+    <div class="viz">
+      <figure class="r" style="--i:1">
+        <img src="img/interior.jpg" width="1920" height="1080" loading="lazy" decoding="async"
+             alt="Трёхмерная визуализация комнаты с рабочим столом у окна и ровным белым потолком">
+        <figcaption class="cap">3D-визуализация, а не снимок объекта</figcaption>
+      </figure>
+      <div class="r" style="--i:2">
+        <h3 class="d3">Визуализации помечаем честно</h3>
+        <p class="p mt4">Этот кадр — компьютерная сцена, а не фотография сделанного
+          потолка. На готовой странице такие изображения подписаны отдельно и никогда
+          не выдаются за объекты: заказчик потолка проверяет это первым делом,
+          и подпись экономит доверие.</p>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="score">
-        <div class="big u">4,9</div>
-        <div class="txt">
-          <p>средняя оценка при <span class="u">58</span>&nbsp;оценках</p>
-          <em>Источник — карточка компании в 2GIS. Отзывы мы сюда не переписываем: в справочнике их видно вместе с датами, и это честнее подобранных цитат.</em>
+<!-- дилерам ─────────────────────────────────────────────────── -->
+<section class="deal" aria-labelledby="deal-h" id="dileram">
+  <div class="wrap">
+    <p class="kicker r">Свет выключен · режим схемы</p>
+    <h2 class="d2 r mt4" id="deal-h" style="--i:1">Второй адресат — дилер</h2>
+
+    <blockquote class="quote r" style="--i:2">
+      <p>Приглашаем к сотрудничеству дилеров</p>
+      <cite>Формулировка «АдыЛины» из собственной карточки в 2GIS. Полностью:
+        «Натяжные потолки от производителя. Приглашаем к сотрудничеству дилеров».</cite>
+    </blockquote>
+
+    <p class="p r mt6" style="--i:3">Хозяин квартиры ищет красивый потолок, монтажник
+      из области ищет поставщика полотна и багета. Это два разных разговора, и второй
+      в нише почти никто не отрабатывает: дилеру обычно показывают тот же экран, что
+      и частнику. Здесь для него отдельный вход — без света и картинок, сразу по делу.</p>
+
+    <div class="blocks">
+      <div class="block r" style="--i:1">
+        <h3>Что показать</h3>
+        <p>Ассортимент полотна и профиля, ширины, фактуры, наличие. Это собирается
+          из ваших данных: у нас их нет, поэтому блок оставлен пустым по смыслу.</p>
+      </div>
+      <div class="block r" style="--i:2">
+        <h3>Что спросят</h3>
+        <p>Условия отгрузки в область, минимальная партия, обучение монтажу, образцы.
+          Каждый пункт — вашей формулировкой, а не нашей догадкой.</p>
+      </div>
+      <div class="block r" style="--i:3">
+        <h3>Куда ведёт</h3>
+        <p>В тот же WhatsApp, но с понятной темой разговора: чтобы вы сразу видели,
+          кто пишет — хозяин квартиры или бригада.</p>
+      </div>
+    </div>
+
+    <div class="btns mt7">
+      <a class="btn btn--p" href="https://wa.me/77051491333" rel="noopener">Написать о дилерстве</a>
+      <a class="btn btn--s" href="tel:+77051491333">+7 705 149 13 33</a>
+    </div>
+  </div>
+</section>
+
+<!-- контакты ────────────────────────────────────────────────── -->
+<section class="cont" aria-labelledby="cont-h" id="kontakty">
+  <div class="wrap">
+    <p class="kicker r">Как найти</p>
+    <h2 class="d2 r mt4" id="cont-h" style="--i:1">Проспект Нурсултана<br>Назарбаева, 54</h2>
+
+    <div class="cont__grid">
+      <dl class="dl">
+        <div class="r" style="--i:1">
+          <dt>Оценка</dt>
+          <dd class="rate"><b>4,9</b><span>при 58&nbsp;оценках в справочнике 2GIS</span></dd>
         </div>
-      </div>
-
-      <div class="blkA">
-        <h3>Как это выглядит</h3>
-        <p>Кадры ниже — из их же карточки. Фотографий с фотостоков и чужих объектов здесь нет.</p>
-
-        <div class="pairfig">
-          <figure>
-            <div class="fr rv">
-              <img src="img/gloss.jpg" alt="Тёмный глянцевый натяжной потолок, в котором отражается окно" width="1920" height="1080" loading="lazy" decoding="async">
-            </div>
-            <figcaption>Тёмное глянцевое полотно — в нём отражается окно, и комната кажется выше. Отражение съезжает, когда идёшь по комнате; здесь оно съезжает, пока вы листаете.</figcaption>
-          </figure>
-          <figure>
-            <div class="fr rv">
-              <img src="img/track.jpg" alt="Белый натяжной потолок с трековыми светильниками и подвесными люстрами" width="1920" height="1080" loading="lazy" decoding="async">
-            </div>
-            <figcaption>Белый потолок с трековыми светильниками и подвесами: свет размечают заранее, до натяжки.</figcaption>
-          </figure>
+        <div class="r" style="--i:2">
+          <dt>Рядом</dt>
+          <dd>Парк «Металлургов» в 150&nbsp;метрах, шесть парковок поблизости.</dd>
         </div>
-
-        <figure class="fig-s">
-          <div class="fr rv">
-            <img src="img/interior.jpg" alt="Трёхмерная визуализация интерьера с натяжным потолком" width="1920" height="1080" loading="lazy" decoding="async">
-          </div>
-          <figcaption><b>Это 3D-визуализация, а не снимок готового объекта.</b> Подписываем прямо: смешивать рендеры с фотографиями и выдавать их за сделанную работу нельзя.</figcaption>
-        </figure>
-
-        <p class="srcnote">Все кадры — из открытой карточки 2GIS. Для рабочего сайта их лучше переснять: в карточке полсотни снимков, но большая часть — рекламные картинки с текстом внутри, для сайта они не годятся.</p>
-      </div>
-
-      <div class="blkA">
-        <h3>Тёплые полы — второе направление</h3>
-        <p>Рядом с потолками в справочнике стоят тёплые полы, электротехника и электронагревательное оборудование. Для квартиры это значит, что потолок, свет и тепло можно обсуждать в одном месте, а не собирать трёх подрядчиков и сводить их между собой.</p>
-        <p class="mute">Что именно из этого возьмут на ваш объект — вопрос к фабрике. Этот список мы не расширяем.</p>
-      </div>
-
-      <div class="blkA">
-        <h3>Приехать и посмотреть</h3>
-        <p>Полотно выбирают вживую: глянец, сатин и мат в комнате ведут себя по-разному, и на экране эта разница не читается.</p>
-
-        <figure class="fig-m">
-          <div class="fr rv">
-            <img src="img/showroom.jpg" alt="Светлое помещение с панорамными окнами" width="1920" height="1080" loading="lazy" decoding="async">
-          </div>
-          <figcaption>Помещение с панорамными окнами. Фото из карточки 2GIS.</figcaption>
-        </figure>
-
-        <p style="margin-top:22px">Проспект Нурсултана Назарбаева,&nbsp;54. Парк «Металлургов» в ста пятидесяти метрах, рядом шесть парковок. Открывается с 08:00 — полный график по дням уточним и поставим сюда. Карта и координаты — на дальней дорожке.</p>
-      </div>
-
-      <div class="actA">
-        <a href="https://wa.me/77051491333?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D0%BF%D0%BE%20%D0%BD%D0%B0%D1%82%D1%8F%D0%B6%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BB%D0%BA%D1%83%20%D0%B2%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D1%83." rel="nofollow noopener" target="_blank">Написать про потолок в квартиру</a>
-        <p class="preset">Откроется WhatsApp <span class="u">+7&nbsp;705&nbsp;149&nbsp;13&nbsp;33</span>, в сообщении уже будет набрано:<b>«Здравствуйте! Я по натяжному потолку в квартиру.»</b></p>
-      </div>
-    </section>
-
-    <!-- ====== ДАЛЬНЯЯ ДОРОЖКА ====== -->
-    <section class="tB" id="track-b" aria-labelledby="h-b">
-      <div class="thead">
-        <div class="lab">Дальняя дорожка</div>
-        <h2 id="h-b">Монтажнику и дилеру</h2>
-        <p class="under">Производство, ассортимент, отгрузка. Коротко.</p>
-      </div>
-
-      <div class="tin">
-        <div class="blkB">
-          <h3>Приглашение — их собственное</h3>
-          <p class="quote">«Приглашаем к сотрудничеству дилеров»</p>
-          <p class="gmute" style="margin-top:12px">Так фабрика описывает себя в справочнике. Эту строчку мы не сочиняли и не расширяли.</p>
-          <p>Производство и приём — Усть-Каменогорск, проспект Нурсултана Назарбаева,&nbsp;54. Полотно берётся у производителя, который стоит в вашем же городе.</p>
+        <div class="r" style="--i:3">
+          <dt>Часы</dt>
+          <dd>Открываются с 08:00. График по дням уточним и поставим сюда.</dd>
         </div>
-
-        <div class="blkB">
-          <h3>Данные</h3>
-          <dl class="data">
-            <div>
-              <dt>Направления</dt>
-              <dd>Натяжные потолки. Тёплые полы. Электротехника. Электронагревательное оборудование.<span>Рубрики карточки 2GIS — так фабрика классифицирована в справочнике.</span></dd>
-            </div>
-            <div>
-              <dt>Оплата</dt>
-              <dd>Картой. Наличными. Через банк. Переводом с карты.</dd>
-            </div>
-            <div>
-              <dt>Приём</dt>
-              <dd>С 08:00.<span>Полный график по дням уточним у владельца.</span></dd>
-            </div>
-            <div>
-              <dt>Связь</dt>
-              <dd><a href="tel:+77051491333">+7&nbsp;705&nbsp;149&nbsp;13&nbsp;33</a> — телефон и WhatsApp<span><a href="mailto:adylina888@mail.ru">adylina888@mail.ru</a></span></dd>
-            </div>
-          </dl>
+        <div class="r" style="--i:4">
+          <dt>Оплата</dt>
+          <dd>Картой, наличными, через банк, переводом с карты.</dd>
         </div>
-
-        <div class="blkB">
-          <h3>Куда ехать</h3>
-          <p>Приём и отгрузка — проспект Нурсултана Назарбаева,&nbsp;54. Заезд со стороны парка «Металлургов», шесть парковок рядом.</p>
-          <div class="map">
-            <iframe loading="lazy" title="АдыЛина на карте Усть-Каменогорска"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=82.58956%2C49.96761%2C82.59856%2C49.97201&amp;layer=mapnik&amp;marker=49.9698113%2C82.5940573"></iframe>
-          </div>
-          <p class="coords"><span class="u">49.9698113,&nbsp;82.5940573</span> — точка поставлена по адресу из справочника, перед выездом её стоит подтвердить. <a href="https://www.openstreetmap.org/?mlat=49.9698113&amp;mlon=82.5940573#map=17/49.9698113/82.5940573" rel="nofollow noopener" target="_blank">Открыть карту отдельно</a>.</p>
+        <div class="r" style="--i:5">
+          <dt>Телефон и WhatsApp</dt>
+          <dd><a href="tel:+77051491333">+7 705 149 13 33</a></dd>
         </div>
-
-        <div class="blkB">
-          <h3>Чего здесь нет</h3>
-          <p>Оптовых цен, минимальной партии, условий отгрузки и требований к дилеру на этой странице нет. Эти цифры знает только фабрика, и придумывать их за неё нельзя.</p>
-          <p class="gmute">На рабочем сайте это один экран: таблица условий и короткая форма заявки. Заполняется со слов владельца за один разговор.</p>
+        <div class="r" style="--i:6">
+          <dt>Почта</dt>
+          <dd><a href="mailto:adylina888@mail.ru">adylina888@mail.ru</a></dd>
         </div>
+      </dl>
 
-        <div class="blkB">
-          <h3>Что написать в первом сообщении</h3>
-          <ul class="asklist">
-            <li>Город и как далеко везти.</li>
-            <li>Сколько потолков ставите в месяц.</li>
-            <li>Что нужно: полотно, комплектующие или всё вместе.</li>
-            <li>Как удобно забирать — самовывоз или отправка.</li>
-          </ul>
-          <p class="gmute" style="margin-top:16px">Четыре строки экономят три письма.</p>
-        </div>
+      <figure class="map r" style="--i:2">
+        <iframe loading="lazy" title="АдыЛина на карте Усть-Каменогорска"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=82.58956%2C49.96761%2C82.59856%2C49.97201&amp;layer=mapnik&amp;marker=49.96981%2C82.59406"></iframe>
+        <figcaption>Точка поставлена по адресу из справочника через OpenStreetMap
+          (49.9698113, 82.5940573). Подтвердите её — если вход со двора,
+          передвинем и подпишем.</figcaption>
+      </figure>
+    </div>
 
-        <div class="tail">
-          <p class="closer">Один номер.<span>Два разных разговора.</span></p>
-          <div class="actB">
-            <a href="https://wa.me/77051491333?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BD%D0%B8%D0%BA%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%B4%D0%B8%D0%BB%D0%B5%D1%80%D1%81%D0%BA%D0%B8%D0%BC%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%D0%BC." rel="nofollow noopener" target="_blank">Написать по дилерским условиям</a>
-            <p class="preset">Тот же номер <span class="u">+7&nbsp;705&nbsp;149&nbsp;13&nbsp;33</span>, но текст другой:<b>«Здравствуйте! Я монтажник, пишу по дилерским условиям.»</b></p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="btns mt7">
+      <a class="btn btn--p" href="https://wa.me/77051491333" rel="noopener">Написать в WhatsApp</a>
+      <a class="btn btn--s" href="tel:+77051491333">Позвонить</a>
+    </div>
+  </div>
+</section>
 
-  </main>
-</div>
+</main>
 
 <footer class="foot">
-  <div class="foot-g">
-    <div>
-      <h2>АдыЛина</h2>
-      <p class="sub">Фабрика натяжных потолков. Проспект Нурсултана Назарбаева,&nbsp;54, Усть-Каменогорск. Парк «Металлургов» — 150&nbsp;метров, шесть парковок рядом.</p>
-      <p class="why">Здесь дорожки сходятся: номер один на двоих, но по преднабранному тексту сразу видно, кто пишет — хозяин квартиры или бригада.</p>
-    </div>
-    <div>
-      <div class="lab">Связь</div>
-      <ul>
-        <li><a href="tel:+77051491333" class="u">+7&nbsp;705&nbsp;149&nbsp;13&nbsp;33</a></li>
-        <li><a href="https://wa.me/77051491333" rel="nofollow noopener" target="_blank">WhatsApp на этот же номер</a></li>
-        <li><a href="mailto:adylina888@mail.ru">adylina888@mail.ru</a></li>
-        <li>Открывается с 08:00, график по дням уточним</li>
-      </ul>
-    </div>
-    <div>
-      <div class="lab">Оплата и координаты</div>
-      <ul>
-        <li>Картой, наличными, через банк, переводом с карты</li>
-        <li class="u">49.9698113,&nbsp;82.5940573</li>
-        <li>Оценка <span class="u">4,9</span> при <span class="u">58</span>&nbsp;оценках — 2GIS</li>
-      </ul>
-    </div>
+  <div class="wrap foot__grid">
+    <p><b>Демонстрационная страница.</b> Сделана без участия «АдыЛины»: компания об этом
+      не просила и материалов не передавала. Сведения, оценка и фотографии — из открытой
+      карточки организации в справочнике 2GIS, один кадр помечен как 3D-визуализация.
+      Тексты, график работы и точку на карте правим с ваших слов. Сроков, гарантий, цен
+      и числа объектов здесь нет намеренно: мы их не знаем.</p>
+    <p class="foot__id">
+      Владимир Гутман<br>
+      веб-разработчик, Усть-Каменогорск<br>
+      <a href="tel:+77776722860">+7 777 672 28 60</a><br>
+      <a href="https://wa.me/77776722860" rel="noopener">wa.me/77776722860</a>
+    </p>
   </div>
-  <p class="foot-end">Демонстрационная страница. Сведения и фотографии — из открытой карточки 2GIS, тексты и график правим с ваших слов, точка на карте поставлена по адресу из справочника. Цен, сроков и гарантий здесь нет намеренно. Сделал Владимир Гутман, веб-разработчик, Усть-Каменогорск — <a href="tel:+77776722860">+7&nbsp;777&nbsp;672&nbsp;28&nbsp;60</a>, <a href="https://wa.me/77776722860" rel="nofollow noopener" target="_blank">WhatsApp</a>.</p>
 </footer>
+
+<nav class="bar" aria-label="Быстрая связь">
+  <a class="btn btn--p" href="https://wa.me/77051491333" rel="noopener">WhatsApp</a>
+  <a class="btn btn--s" href="tel:+77051491333">Позвонить</a>
+</nav>
 
 <script>
 (function(){
-  var h=document.documentElement;
-  h.className+=(h.className?' ':'')+'js';
+  var h = document.documentElement;
+  h.className = (h.className.replace('no-js','') + ' html-js').trim();
 
-  /* переключатель дорожек на узком экране */
-  var b=document.body, sw=document.querySelector('.switch');
-  if(sw){
-    b.setAttribute('data-track','a');
-    sw.addEventListener('click',function(e){
-      var t=e.target.closest('button[data-go]');
-      if(!t) return;
-      b.setAttribute('data-track',t.getAttribute('data-go'));
-      [].forEach.call(sw.querySelectorAll('button[data-go]'),function(x){
-        x.setAttribute('aria-pressed', x===t?'true':'false');
-      });
-      var y=sw.getBoundingClientRect().top+window.pageYOffset-1;
-      if(window.pageYOffset>y) window.scrollTo(0,y);
-    });
-  }
+  var mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduce = mqReduce.matches;
 
-  /* запасной вариант движения — только если родных scroll-driven анимаций нет
-     и пользователь не просил убрать движение */
-  var mq=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)');
-  if(mq&&mq.matches) return;
-  var native=window.CSS&&CSS.supports
-    &&CSS.supports('animation-timeline','view()')
-    &&CSS.supports('animation-timeline','scroll()');
-  if(native) return;
+  /* Вступительные анимации первого экрана длятся 2,3 с. Через 3 с фиксируем
+     их конечное состояние: если браузер анимации не проигрывал, заголовок
+     и световые линии всё равно окажутся видимыми. */
+  setTimeout(function(){ h.classList.add('lit'); }, 3000);
 
-  h.className+=' sda';
-
-  var frames=[].slice.call(document.querySelectorAll('.fr'));
-  var revs=[].slice.call(document.querySelectorAll('.rv'));
-
-  if(window.IntersectionObserver){
-    var io=new IntersectionObserver(function(es){
-      for(var i=0;i<es.length;i++){
-        if(es[i].isIntersecting){es[i].target.classList.add('seen');io.unobserve(es[i].target);}
-      }
-    },{rootMargin:'0px 0px -8% 0px',threshold:.12});
-    revs.forEach(function(el){io.observe(el)});
+  /* 1. Появление блоков. Без JS всё видно сразу — класс html-js добавлен выше. */
+  var items = document.querySelectorAll('.r');
+  var showAll = function(){
+    for (var n = 0; n < items.length; n++) items[n].classList.add('in');
+  };
+  if (reduce || !('IntersectionObserver' in window)) {
+    showAll();
   } else {
-    revs.forEach(function(el){el.classList.add('seen')});
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -10% 0px', threshold:0.03});
+    for (var j = 0; j < items.length; j++) io.observe(items[j]);
+    /* страховка: если наблюдатель почему-то не сработал (фоновая вкладка,
+       отключённый rAF), через 3 секунды показываем всё безусловно */
+    setTimeout(showAll, 3000);
   }
 
-  var sheet=document.querySelector('.sheet'), band=document.querySelector('.band'), queued=false;
-  function clamp01(v){return v<0?0:v>1?1:v}
-
-  function paint(){
-    queued=false;
-    var vh=window.innerHeight||1;
-    if(sheet){
-      var r=sheet.getBoundingClientRect(), span=r.height-vh;
-      h.style.setProperty('--prog', span>0?clamp01(-r.top/span):(r.top<=0?1:0));
-    }
-    if(band){
-      var br=band.getBoundingClientRect();
-      h.style.setProperty('--hprog', br.height>0?clamp01(-br.top/br.height):0);
-    }
-    for(var i=0;i<frames.length;i++){
-      var f=frames[i], fb=f.getBoundingClientRect();
-      if(fb.bottom<-40||fb.top>vh+40) continue;
-      f.style.setProperty('--d', (-15+15*clamp01((vh-fb.top)/(vh+fb.height))).toFixed(2)+'%');
+  /* 2. Scroll-driven включаем, только если таймлайн реально тикает.
+        CSS.supports здесь врёт: отвечает true и там, где таймлайны стоят. */
+  if (!reduce) {
+    var tries = 0, poll = null;
+    /* Каждая попытка создаёт свежий таймлайн: созданный до раскладки
+       остаётся неактивным навсегда (currentTime === null) и на живой
+       странице больше не оживает. CSS.supports здесь не годится —
+       он отвечает true и там, где таймлайны стоят. */
+    var probeSda = function(){
+      if (h.classList.contains('sda')) { stopPoll(); return true; }
+      var probe = null, an = null, live = false;
+      try {
+        probe = document.createElement('div');
+        probe.setAttribute('aria-hidden','true');
+        probe.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:1px;opacity:0;pointer-events:none';
+        document.body.appendChild(probe);
+        an = probe.animate([{opacity:0},{opacity:1}], {duration:1, fill:'both'});
+        an.timeline = new ScrollTimeline({source: document.scrollingElement});
+        var t = an.timeline;
+        live = !!(t && t.currentTime !== null && t.currentTime !== undefined);
+      } catch (e) { live = false; }
+      if (an) { try { an.cancel(); } catch (e2) {} }
+      if (probe && probe.parentNode) probe.parentNode.removeChild(probe);
+      if (live) { h.classList.add('sda'); stopPoll(); }
+      return live;
+    };
+    var stopPoll = function(){
+      if (poll) { clearInterval(poll); poll = null; }
+      window.removeEventListener('scroll', probeSda);
+    };
+    if (!probeSda()) {
+      window.addEventListener('scroll', probeSda, {passive:true});
+      window.addEventListener('load', probeSda, {once:true});
+      poll = setInterval(function(){ if (!probeSda() && ++tries > 15) stopPoll(); }, 300);
     }
   }
-  function onScroll(){ if(!queued){queued=true;requestAnimationFrame(paint);} }
 
-  paint();
-  addEventListener('scroll',onScroll,{passive:true});
-  addEventListener('resize',onScroll,{passive:true});
+  /* Пользователь может включить «меньше движения» уже после загрузки:
+     тогда гасим scroll-driven, доводим вступление и глушим указатель. */
+  var onReduceChange = function(e){
+    reduce = e.matches;
+    if (!reduce) return;
+    h.classList.remove('sda');
+    h.classList.add('lit');
+    showAll();
+  };
+  if (mqReduce.addEventListener) mqReduce.addEventListener('change', onReduceChange);
+  else if (mqReduce.addListener) mqReduce.addListener(onReduceChange);
+
+  var fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+  /* 3. Световое пятно за курсором на первом экране. */
+  var ceil = document.querySelector('.ceil');
+  if (fine && ceil) {
+    var x = 0, y = 0, queued = false;
+    ceil.addEventListener('pointermove', function(e){
+      if (reduce) return;
+      var r = ceil.getBoundingClientRect();
+      x = e.clientX - r.left; y = e.clientY - r.top;
+      if (!queued) {
+        queued = true;
+        requestAnimationFrame(function(){
+          ceil.style.setProperty('--px', x + 'px');
+          ceil.style.setProperty('--py', y + 'px');
+          queued = false;
+        });
+      }
+    }, {passive:true});
+  }
+
+  /* 4. Подсветка карточек под курсором. */
+  if (fine) {
+    var cards = document.querySelectorAll('.card');
+    for (var k = 0; k < cards.length; k++) {
+      (function(c){
+        c.addEventListener('pointermove', function(e){
+          if (reduce) return;
+          var r = c.getBoundingClientRect();
+          c.style.setProperty('--cx', ((e.clientX - r.left) / r.width * 100) + '%');
+          c.style.setProperty('--cy', ((e.clientY - r.top) / r.height * 100) + '%');
+        }, {passive:true});
+      })(cards[k]);
+    }
+  }
 })();
 </script>
-
 </body>
 </html>
