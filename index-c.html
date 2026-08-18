@@ -21,13 +21,13 @@
     .forEach(function(k){ if(c[k] != null) d.setAttribute('data-cfg-' + k, String(c[k])); });
 })();
 </script>
-  <script type="module" crossorigin src="/assets/mainC-B7RQ9fh7.js"></script>
+  <script type="module" crossorigin src="/assets/mainC-FeczGYuO.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
   <link rel="modulepreload" crossorigin href="/assets/RoomEnvironment-CfYJcB9I.js">
   <link rel="modulepreload" crossorigin href="/assets/disc3d-Dd9EPsLx.js">
   <link rel="modulepreload" crossorigin href="/assets/catalog-data-C7nhRy30.js">
-  <link rel="modulepreload" crossorigin href="/assets/smart-search-D7Bk3bmq.js">
-  <link rel="stylesheet" crossorigin href="/assets/variant-c-main-uO9tUXid.css">
+  <link rel="modulepreload" crossorigin href="/assets/smart-search-CoS21Tyt.js">
+  <link rel="stylesheet" crossorigin href="/assets/variant-c-main-B2j2FzDA.css">
 </head>
 <body>
 
@@ -394,37 +394,44 @@
         <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
-  <div class="smart" id="smart">
-        <div class="smart-tabs" role="tablist" aria-label="Способ подбора">
-          <button class="smart-tab on" role="tab" aria-selected="true" data-mode="vin">
-            <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 11h2M12 11h5"/></svg>По VIN</button>
-          <button class="smart-tab" role="tab" aria-selected="false" data-mode="oem">
-            <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>OEM / артикул</button>
-          <button class="smart-tab" role="tab" aria-selected="false" data-mode="car">
-            <svg viewBox="0 0 24 24"><path d="M5 16l1.5-5A2 2 0 018.4 9.5h7.2a2 2 0 011.9 1.5L19 16M5 16h14M7 19h2M15 19h2"/></svg>По автомобилю</button>
-          <button class="smart-tab" role="tab" aria-selected="false" data-mode="voice">
-            <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>Голосом</button>
+  <div class="smart" id="smart" data-mode="ask">
+        <!-- Главное здесь — ассистент, а не фильтр: сначала строка, в
+             которую можно сказать или написать словами, и только потом
+             точный ввод по VIN, артикулу и марке-модели. -->
+        <div class="smart-top">
+          <span class="sp-ava">G</span>
+          <div>
+            <b>Gerät Assist</b>
+            <small>Скажите или напишите словами, что у вас за машина и что нужно — подберу по каталогу и покажу остатки</small>
+          </div>
         </div>
 
         <div class="smart-row">
-          <svg class="smart-ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <svg class="smart-ic" viewBox="0 0 24 24"><path d="M12 3l1.7 4.6L18.3 9.3l-4.6 1.7L12 15.6l-1.7-4.6L5.7 9.3l4.6-1.7z"/><path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>
           <input id="sinput" type="text" autocomplete="off"
-                 placeholder="Введите VIN, например WVWZZZ1KZAW123456"
-                 aria-label="Строка подбора">
+                 placeholder="Например: нужны передние диски на Октавию 2019"
+                 aria-label="Запрос ассистенту">
           <button class="s-ico" id="scam" aria-label="Снять техпаспорт" title="Снять техпаспорт">
             <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg>
           </button>
-          <button class="s-ico" id="smic" aria-label="Голосовой ввод" title="Сказать голосом">
+          <button class="s-mic" id="smic" aria-label="Сказать голосом" title="Сказать голосом">
             <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/></svg>
           </button>
-          <button class="btn btn-p" id="sgo">Найти</button>
+          <button class="btn btn-p" id="sgo">Подобрать</button>
         </div>
 
         <div class="smart-hints" id="shints">
-          <button class="chip" data-q="Skoda Octavia · передние диски">Skoda Octavia · передние диски</button>
-          <button class="chip" data-q="BMW X5 · тормозные диски">BMW X5 · тормозные диски</button>
-          <button class="chip" data-q="DSK-F001P">DSK-F001P</button>
-          <button class="chip" data-q="Range Rover Sport · диски">Range Rover Sport · диски</button>
+          <button class="chip" data-q="Передние диски на Skoda Octavia">Передние диски на Skoda Octavia</button>
+          <button class="chip" data-q="Что подойдёт на BMW X5">Что подойдёт на BMW X5</button>
+          <button class="chip" data-q="Есть DSK-F001P в наличии">Есть DSK-F001P в наличии</button>
+          <button class="chip" data-q="Диски на Range Rover Sport">Диски на Range Rover Sport</button>
+        </div>
+
+        <div class="smart-exact" role="group" aria-label="Точный ввод">
+          <span>Знаете точно:</span>
+          <button class="smart-tab" data-mode="vin">по VIN</button>
+          <button class="smart-tab" data-mode="oem">по артикулу</button>
+          <button class="smart-tab" data-mode="car">по марке и модели</button>
         </div>
 
         <!-- ответ ассистента: та же выдача, что и в каталоге, но без ухода со страницы -->
