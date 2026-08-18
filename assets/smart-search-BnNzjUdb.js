@@ -45,4 +45,4 @@ import{D as q}from"./catalog-data-C7nhRy30.js";const T="gerat:config",M=[{group:
             <span class="rc-fits">${A(f.brands.slice(0,3).join(", "))}${f.brands.length>3?" и др.":""} · ${f.fits} модификаций</span>
           </span>
           <span class="rc-stock ${w?"ok":""}">${w?`${w} шт.`:"под заказ"}</span>
-        </a>`}).join("")},620))}}export{V as a,z as b,S as g,U as i,j as s};
+        </a>`}).join("")},620))}}export{V as a,z as b,S as g,U as i};

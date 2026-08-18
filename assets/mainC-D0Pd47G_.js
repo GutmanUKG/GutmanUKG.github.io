@@ -1,0 +1,47 @@
+import"./modulepreload-polyfill-B5Qt9EMX.js";/* empty css                       */import"./disc3d-Dd9EPsLx.js";import{D as S}from"./catalog-data-C7nhRy30.js";import{i as D,a as O,g as M,b as B}from"./smart-search-BnNzjUdb.js";import"./RoomEnvironment-CfYJcB9I.js";const p=(i,t=document)=>t.querySelector(i),w=(i,t=document)=>[...t.querySelectorAll(i)],d=i=>String(i).replace(/[&<>"]/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[t]),C={Performance:"Перформанс",Platinum:"Платинум",Composite:"Композит",Racing:"Рейсинг",Normal:"Нормал"},R=i=>C[i]||i,I=i=>i.map(t=>[Math.random(),t]).sort((t,n)=>t[0]-n[0]).map(t=>t[1]);D();O();(function(){const t=p("#nav");t&&addEventListener("scroll",()=>t.classList.toggle("solid",scrollY>30),{passive:!0});const n=new IntersectionObserver(l=>{l.forEach(h=>{h.isIntersecting&&(h.target.classList.add("in"),n.unobserve(h.target))})},{threshold:.14});w(".head, .spot-copy, .stage, .num, .ocard, .band, .tiles, .tiles-more").forEach(l=>{l.classList.add("reveal"),n.observe(l)})})();(function(){const t=p("#tiles");if(!t)return;const n='<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',l=[{cls:"t-disks",tone:"light",img:"cut/disks",t:"Тормозные<br>диски",href:"/catalog-c-disks.html",s:"Перформанс · Платинум · Композит · Рейсинг"},{cls:"t-pads",tone:"dark",img:"cut/pads",t:"Тормозные<br>колодки",href:"https://gerat.kz/catalog/tormoznye-kolodki/",s:"Нормал · Перформанс · Платинум"},{cls:"t-shocks",tone:"light",img:"cut/shocks-render",t:"Амортизаторы",href:"https://gerat.kz/catalog/shockabsorber/",s:"Платинум · Перформанс"},{cls:"t-rad",tone:"dark",img:"cut/radiators",t:"Радиаторы<br>охлаждения",href:"https://gerat.kz/catalog/radiatory/",s:"Ленточные, цельноалюминиевые, трубчатые"},{cls:"t-filters",tone:"light",img:"cut/filters",t:"Фильтры",href:"https://gerat.kz/catalog/filtry/",s:"Масляные, воздушные, салонные, топливные"},{cls:"t-hoses",tone:"dark",img:"cut/hoses",t:"Тормозные<br>шланги",href:"https://gerat.kz/catalog/tormoznye-shlangy/",s:"Армированные тормозные линии"},{cls:"t-fluids",tone:"light",img:"fluids",t:"Технические<br>жидкости",href:"https://gerat.kz/catalog/tekhnicheskie_zhidkosti/",s:"Тормозная жидкость DOT 5.1"}],h=(s,o)=>`
+    <a class="tile ${s.cls}" data-tone="${s.tone}" href="${d(s.href)}">
+      <h3>${s.t}</h3>
+      <span class="tile-sub">${d(s.s)}</span>
+      <span class="tile-go">Смотреть каталог ${n}</span>
+      <span class="tile-shot">
+        <img src="/img/${s.img}.webp" alt=""
+             ${o===0?'fetchpriority="high"':'loading="lazy"'} decoding="async">
+      </span>
+      <i class="tile-glow" aria-hidden="true"></i>
+    </a>`,$=[{kind:"cover",img:"banner-racing",t:"Тормозные диски<br>серии Рейсинг",s:"Плавающие боббинсы · хонингование «рыбья чешуя»",href:"/catalog-c-disks.html"},...I(S).slice(0,4).map(s=>({kind:"shot",img:"cut/disks",t:`Тормозные диски<br>серии ${R(s.line)}`,s:`${s.art} · Ø${s.d} × ${s.t} мм · ${s.pos} · ${s.fits} модификаций`,href:"/catalog-c-disks.html"})),{kind:"shot",img:"cut/pads",t:"Тормозные колодки<br>серии Платинум",s:"Керамический компаунд · μ 0,42 (FF) · без скрипа",href:"https://gerat.kz/catalog/tormoznye-kolodki/"},{kind:"shot",img:"cut/filters",t:"Фильтры<br>серии Перформанс",s:"Свыше 99% очистки на 30 мк по ISO 4548-12",href:"https://gerat.kz/catalog/filtry/"},{kind:"shot",img:"cut/radiators",t:"Радиаторы<br>охлаждения",s:"Цельные бачки, паяное полотно, механический шов",href:"https://gerat.kz/catalog/radiatory/"}],m=[$[0],...I($.slice(1)).slice(0,4)],T=`
+      <div class="bslides" id="bslides">
+        ${m.map((s,o)=>`
+        <a class="bslide b-${s.kind} ${o===0?"on":""}" href="${d(s.href)}"
+           ${o===0?"":'tabindex="-1" aria-hidden="true"'}>
+          <span class="bslide-shot"><img src="/img/${s.img}.webp" alt=""
+                ${o===0?"":'loading="lazy"'} decoding="async"></span>
+          <span class="bslide-copy">
+            <b>${s.t}</b>
+            <em>${d(s.s)}</em>
+            <span class="tile-go">Смотреть каталог ${n}</span>
+          </span>
+        </a>`).join("")}
+      </div>
+      <div class="bdots" id="bdots" role="tablist" aria-label="Слайды">
+        ${m.map((s,o)=>`<button class="bdot ${o===0?"on":""}" aria-label="Слайд ${o+1}"></button>`).join("")}
+      </div>`;t.innerHTML=l.map(h).join("");const y=p("#promo");y&&(y.innerHTML=T);function E(s){if(s<2)return;const o=p("#bslides"),b=w(".bdot"),L=w(".bslide");let k=0,f=null;const e=z=>{k=(z+s)%s,L.forEach((g,v)=>{const x=v===k;g.classList.toggle("on",x),g.tabIndex=x?0:-1,g.setAttribute("aria-hidden",String(!x))}),b.forEach((g,v)=>g.classList.toggle("on",v===k))};b.forEach((z,g)=>z.addEventListener("click",v=>{v.preventDefault(),e(g),W()}));const r=matchMedia("(prefers-reduced-motion: reduce)").matches||M().autoplay==="off"||M().motion==="off";function a(){r||f||(f=setInterval(()=>{document.hidden||e(k+1)},5e3))}function c(){clearInterval(f),f=null}function W(){c(),a()}o.addEventListener("pointerenter",c),o.addEventListener("pointerleave",a),o.addEventListener("focusin",c),o.addEventListener("focusout",a),new IntersectionObserver((z,g)=>{z.forEach(v=>{v.isIntersecting&&(a(),g.disconnect())})},{threshold:.3}).observe(o)}function u(s){t.dataset.layout=s,t.parentElement&&(t.parentElement.dataset.layout=s);const o=document.querySelector(".promo-wrap");o&&(o.dataset.layout=s)}addEventListener("gerat:config",s=>u(s.detail.hero)),u(M().hero),E(m.length)})();B();(function(){const t=p("#pop-rail"),n=p("#pop-track");if(!t||!n)return;const l=[{t:"Тормозные колодки",img:"cut/pads",s:"Нормал · Перформанс · Платинум",href:"https://gerat.kz/catalog/tormoznye-kolodki/"},{t:"Радиаторы охлаждения",img:"cut/radiators",s:"Ленточные, цельноалюминиевые, трубчатые",href:"https://gerat.kz/catalog/radiatory/"},{t:"Амортизаторы",img:"cut/shocks-render",s:"Платинум · Перформанс",href:"https://gerat.kz/catalog/shockabsorber/"},{t:"Фильтры",img:"cut/filters",s:"Масляные, воздушные, салонные, топливные",href:"https://gerat.kz/catalog/filtry/"},{t:"Тормозные шланги",img:"cut/hoses",s:"Армированные тормозные линии",href:"https://gerat.kz/catalog/tormoznye-shlangy/"},{t:"Технические жидкости",img:"fluids",s:"Тормозная жидкость DOT 5.1",href:"https://gerat.kz/catalog/tekhnicheskie_zhidkosti/"}],h=I(S).slice(0,6).map(e=>({kind:"disc",d:e})),$=I(l).map(e=>({kind:"dir",x:e})),m=[];for(let e=0;e<Math.max(h.length,$.length);e++)h[e]&&m.push(h[e]),$[e]&&m.push($[e]);n.innerHTML=m.map(e=>{if(e.kind==="disc"){const a=e.d,c=a.stock.ast+a.stock.alm;return`
+      <a class="popcard" href="/catalog-c-disks.html">
+        <span class="pc-shot"><img src="/img/cut/disks.webp" alt="" loading="lazy"></span>
+        <span class="pc-tag">Серия ${d(R(a.line))}</span>
+        <span class="pc-name">${d(a.art)}</span>
+        <span class="pc-meta">Ø${a.d} × ${a.t} мм · ${d(a.pos)} · ${a.fits} модификаций</span>
+        <span class="pc-bottom">
+          <span class="pc-stock ${c?"ok":""}">${c?`${c} шт. на складе`:"под заказ"}</span>
+          <span class="pc-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>`}const r=e.x;return`
+      <a class="popcard pc-dir" href="${d(r.href)}">
+        <span class="pc-shot"><img src="/img/${r.img}.webp" alt="" loading="lazy"></span>
+        <span class="pc-tag">Направление</span>
+        <span class="pc-name">${d(r.t)}</span>
+        <span class="pc-meta">${d(r.s)}</span>
+        <span class="pc-bottom">
+          <span class="pc-stock">Смотреть каталог</span>
+          <span class="pc-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>`}).join("");const T=()=>{const e=n.firstElementChild;if(!e)return t.clientWidth;const r=parseFloat(getComputedStyle(n).columnGap)||0;return e.getBoundingClientRect().width+r},y=()=>t.scrollWidth-t.clientWidth;function E(e){const r=t.scrollLeft+e*T();e>0&&t.scrollLeft>=y()-4?t.scrollTo({left:0,behavior:"smooth"}):e<0&&t.scrollLeft<=4?t.scrollTo({left:y(),behavior:"smooth"}):t.scrollTo({left:r,behavior:"smooth"})}p("#pnext").addEventListener("click",()=>{E(1),f()}),p("#pprev").addEventListener("click",()=>{E(-1),f()});const u=p("#pop-dots");function s(){const e=Math.max(1,Math.ceil(t.scrollWidth/t.clientWidth));u.childElementCount!==e&&(u.innerHTML=Array.from({length:e},(a,c)=>`<button class="pdot" aria-label="Страница ${c+1}"></button>`).join(""),w(".pdot",u).forEach((a,c)=>a.addEventListener("click",()=>{t.scrollTo({left:c*t.clientWidth,behavior:"smooth"}),f()})));const r=Math.round(t.scrollLeft/t.clientWidth);w(".pdot",u).forEach((a,c)=>a.classList.toggle("on",c===r))}t.addEventListener("scroll",s,{passive:!0}),addEventListener("resize",s),s();const o=matchMedia("(prefers-reduced-motion: reduce)").matches||M().autoplay==="off"||M().motion==="off";let b=null,L=!1;function k(){o||b||(b=setInterval(()=>{!L&&!document.hidden&&E(1)},3800))}function f(){clearInterval(b),b=null,setTimeout(k,6e3)}["pointerenter","focusin","pointerdown"].forEach(e=>t.addEventListener(e,()=>L=!0)),["pointerleave","focusout","pointerup"].forEach(e=>t.addEventListener(e,()=>L=!1)),new IntersectionObserver((e,r)=>{e.forEach(a=>{a.isIntersecting&&(k(),r.disconnect())})},{threshold:.2}).observe(t)})();(function(){const t=p("#mq");if(!t)return;const n=["Toyota","Mercedes-Benz","Volkswagen","Audi","Nissan","Mitsubishi","BMW","Hyundai","KIA","Bosch","Mann","Mahle","TRW","Textar","Denso","Delphi"];t.innerHTML=n.concat(n).map(l=>`<span>${l}</span>`).join("")})();
