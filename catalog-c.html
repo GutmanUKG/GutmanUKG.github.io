@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Каталог Gerat — вариант C</title>
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('gerat:theme');
+    if(t !== 'light' && t !== 'dark'){
+      t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+    document.documentElement.dataset.theme = t;
+  }catch(e){ document.documentElement.dataset.theme = 'dark'; }
+})();
+</script>
+  <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+  <script type="module" crossorigin src="/assets/catalog-data-C7nhRy30.js"></script>
+  <script type="module" crossorigin src="/assets/smart-search-C5piLFLc.js"></script>
+  <script type="module" crossorigin src="/assets/catalog-c-mM12nJ-e.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/smart-search-QN-vMK4L.css">
+  <link rel="stylesheet" crossorigin href="/assets/styles-D0Sq2hdf.css">
+</head>
+<body class="cat-page cats-only">
+
+<!-- Вариант C в переключателе не показываем: он открывается только
+     по прямой ссылке. Ссылки на A и B оставлены, чтобы можно было
+     вернуться к прежним концептам. -->
+<div class="ribbon">Вариант <a href="/">A</a><a href="/index-b.html">B</a></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav solid" id="nav">
+  <div class="nav-in">
+    <a href="/index-c.html" class="logo"><img src="/img/logo-gerat.png" alt="Gerät" width="480" height="135"></a>
+    <nav class="menu">
+      <a href="/catalog-c.html" class="on">Каталог</a>
+      <a href="/index-c.html#lines">Линейки</a>
+      <a href="/index-c.html#pop">Популярное</a>
+      <a href="/index-c.html#tech">Технологии</a>
+      <a href="/index-c.html#offices">Контакты</a>
+    </nav>
+    <div class="nav-act">
+      <span class="lang"><b>RU</b> / KZ</span>
+      <button class="icobtn" data-search-open aria-label="Поиск по каталогу" title="Поиск  ·  Ctrl + K">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+      <button class="icobtn theme" id="theme" aria-label="Сменить тему" title="Светлая / тёмная тема">
+        <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.2 8.2 0 019.5 4 8.3 8.3 0 1020 14.5z"/></svg>
+      </button>
+      <button class="icobtn" aria-label="Избранное"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.5-7 9-7 9z"/></svg></button>
+      <button class="icobtn cart" aria-label="Корзина"><svg viewBox="0 0 24 24"><path d="M5 7h14l-1.2 11.2a2 2 0 01-2 1.8H8.2a2 2 0 01-2-1.8z"/><path d="M9 7V5.5a3 3 0 016 0V7"/></svg><span>2</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- =======================================================================
+     ВСЕ НАПРАВЛЕНИЯ
+     Секция переехала сюда с главной варианта C: каталог целиком живёт
+     на странице каталога, а первый экран отдан плиткам направлений.
+======================================================================= -->
+<section class="sec catall" id="cats">
+  <div class="wrap">
+    <div class="crumbs">
+      <a href="/index-c.html">Главная</a><span>/</span><b>Каталог</b>
+    </div>
+
+    <div class="head">
+      <div class="eyebrow">Каталог</div>
+      <h2>Безопасность и надёжность<br>в каждой детали</h2>
+      <p>Тормозная система, охлаждение, подвеска, фильтрация и технические жидкости — под одной маркой.</p>
+    </div>
+
+    <div class="cats" id="cats-grid"></div>
+  </div>
+</section>
+
+<!-- ============ ПОДВАЛ ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="/index-c.html" class="logo"><img src="/img/logo-gerat.png" alt="Gerät" width="480" height="135"></a>
+        <p class="fabout">Тормозные диски и колодки, радиаторы, амортизаторы, фильтры и шланги. Казахстан и СНГ.</p>
+      </div>
+      <div><h5>Каталог</h5>
+        <a href="/catalog-c-disks.html">Тормозные диски</a>
+        <a href="https://gerat.kz/catalog/tormoznye-kolodki/">Тормозные колодки</a>
+        <a href="https://gerat.kz/catalog/radiatory/">Радиаторы</a>
+        <a href="https://gerat.kz/catalog/filtry/">Фильтры</a>
+        <a href="https://gerat.kz/catalog/shockabsorber/">Амортизаторы</a>
+        <a href="https://gerat.kz/catalog/tekhnicheskie_zhidkosti/">Технические жидкости</a>
+      </div>
+      <div><h5>Компания</h5>
+        <a href="/index-c.html#tech">Производство и технологии</a>
+        <a href="#">О компании</a>
+        <a href="#">Гарантийная политика</a>
+        <a href="#">Список партнёров</a>
+        <a href="#">Отзывы</a>
+      </div>
+      <div><h5>Контакты</h5>
+        <a href="tel:+77472509848">+7 747 250 9848</a>
+        <a href="tel:+77273100249">+7 727 310 02 49</a>
+        <a href="#">WhatsApp +7 707 129 3848</a>
+        <a href="#">Обратный звонок</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Gerat. Концепт-макет редизайна, вариант C.</span>
+      <span>Алматы · Астана</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- =======================================================================
+     ПОИСК
+     Отдельной секции подбора на первом экране нет: поиск открывается
+     иконкой в шапке, по Ctrl/⌘+K и по «/». Внутри — те же способы ввода,
+     что были у блока подбора, и выдача по выгрузке каталога.
+======================================================================= -->
+<div class="searchlay" id="searchlay" hidden>
+  <div class="sl-back" data-search-close></div>
+  <div class="sl-win" role="dialog" aria-modal="true" aria-label="Подбор запчасти">
+    <div class="sl-head">
+      <span>Подбор запчасти</span>
+      <button class="sl-x" data-search-close aria-label="Закрыть поиск">
+        <kbd>Esc</kbd>
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  <div class="smart" id="smart">
+        <div class="smart-tabs" role="tablist" aria-label="Способ подбора">
+          <button class="smart-tab on" role="tab" aria-selected="true" data-mode="vin">
+            <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 11h2M12 11h5"/></svg>По VIN</button>
+          <button class="smart-tab" role="tab" aria-selected="false" data-mode="oem">
+            <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>OEM / артикул</button>
+          <button class="smart-tab" role="tab" aria-selected="false" data-mode="car">
+            <svg viewBox="0 0 24 24"><path d="M5 16l1.5-5A2 2 0 018.4 9.5h7.2a2 2 0 011.9 1.5L19 16M5 16h14M7 19h2M15 19h2"/></svg>По автомобилю</button>
+          <button class="smart-tab" role="tab" aria-selected="false" data-mode="voice">
+            <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>Голосом</button>
+        </div>
+
+        <div class="smart-row">
+          <svg class="smart-ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="sinput" type="text" autocomplete="off"
+                 placeholder="Введите VIN, например WVWZZZ1KZAW123456"
+                 aria-label="Строка подбора">
+          <button class="s-ico" id="scam" aria-label="Снять техпаспорт" title="Снять техпаспорт">
+            <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg>
+          </button>
+          <button class="s-ico" id="smic" aria-label="Голосовой ввод" title="Сказать голосом">
+            <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/></svg>
+          </button>
+          <button class="btn btn-p" id="sgo">Найти</button>
+        </div>
+
+        <div class="smart-hints" id="shints">
+          <button class="chip" data-q="Skoda Octavia · передние диски">Skoda Octavia · передние диски</button>
+          <button class="chip" data-q="BMW X5 · тормозные диски">BMW X5 · тормозные диски</button>
+          <button class="chip" data-q="DSK-F001P">DSK-F001P</button>
+          <button class="chip" data-q="Range Rover Sport · диски">Range Rover Sport · диски</button>
+        </div>
+
+        <!-- ответ ассистента: та же выдача, что и в каталоге, но без ухода со страницы -->
+        <div class="smart-panel" id="spanel" hidden>
+          <div class="sp-head">
+            <div class="sp-who">
+              <span class="sp-ava">G</span>
+              <b>Gerät Assist</b>
+              <small id="sp-state">подбирает…</small>
+            </div>
+            <button class="sp-close" id="sclose" aria-label="Закрыть подбор">
+              <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+          </div>
+          <p class="sp-say" id="sp-say"></p>
+          <div class="sp-res" id="sp-res"></div>
+          <div class="sp-foot">
+            <span>Показываю только то, что есть в каталоге и на складе.</span>
+            <a href="/catalog-c-disks.html">Открыть каталог →</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+</body>
+</html>
