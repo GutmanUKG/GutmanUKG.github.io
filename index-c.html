@@ -27,13 +27,13 @@
   });
 })();
 </script>
-  <script type="module" crossorigin src="/assets/mainC-DXFR0okE.js"></script>
+  <script type="module" crossorigin src="/assets/mainC-DrbvYRbN.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
   <link rel="modulepreload" crossorigin href="/assets/RoomEnvironment-CfYJcB9I.js">
   <link rel="modulepreload" crossorigin href="/assets/disc3d-Dd9EPsLx.js">
   <link rel="modulepreload" crossorigin href="/assets/catalog-data-C7nhRy30.js">
   <link rel="modulepreload" crossorigin href="/assets/smart-search-oJ0TgDCD.js">
-  <link rel="stylesheet" crossorigin href="/assets/variant-c-main-2BEzMD7c.css">
+  <link rel="stylesheet" crossorigin href="/assets/variant-c-main-VnY8Rj1E.css">
 </head>
 <body>
 
@@ -99,10 +99,18 @@
 <!-- ============ СЛАЙДЕР ПОПУЛЯРНОГО ============ -->
 <section class="sec pop" id="pop" data-block="popular">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow"><span class="dot">●</span> Популярное</div>
-      <h2>Что чаще всего<br>берут со склада</h2>
-      <p>Подборка собирается заново при каждом заходе — артикулы, размеры и остатки из каталога Gerat.</p>
+    <!-- Стрелки стоят у заголовка, а не под лентой: внизу справа висит
+         кнопка конструктора и накрывала их собой. -->
+    <div class="head pop-head">
+      <div class="pop-head-txt">
+        <div class="eyebrow"><span class="dot">●</span> Популярное</div>
+        <h2>Что чаще всего<br>берут со склада</h2>
+        <p>Подборка собирается заново при каждом заходе — артикулы, размеры и остатки из каталога Gerat.</p>
+      </div>
+      <div class="pop-arrows">
+        <button class="parr" id="pprev" aria-label="Назад"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="parr" id="pnext" aria-label="Вперёд"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
     </div>
   </div>
 
@@ -112,10 +120,6 @@
 
   <div class="wrap pop-nav">
     <div class="pop-dots" id="pop-dots"></div>
-    <div class="pop-arrows">
-      <button class="parr" id="pprev" aria-label="Назад"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <button class="parr" id="pnext" aria-label="Вперёд"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-    </div>
   </div>
 </section>
 
