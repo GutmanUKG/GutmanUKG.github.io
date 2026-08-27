@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=1360">
+<title>Шины и диски в Казахстане — интернет-магазин ЭЙКОС</title>
+<meta name="theme-color" content="#141419">
+<meta name="description" content="AIKOS — шины и диски: 10 000 наименований, 40 торгово-сервисных центров в 18 городах Казахстана. Подбор по автомобилю и параметрам, шиномонтаж, сезонное хранение.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<!-- ТОПБАР → Битрикс: include-области + sale.location.selector -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="geo">Ваш город: <button type="button" id="cityPick">Алматы</button></span>
+    <a href="/contacts/stores/">40 центров в 18&nbsp;городах</a>
+    <span class="sp"></span>
+    <a href="/dilerskaya-set/">Дилерам и оптовикам</a>
+    <a href="/about/licenses/">Сертификаты</a>
+    <a href="/info/faq/">Помощь</a>
+    <nav class="lang" aria-label="Язык сайта">
+      <a href="/" aria-current="true">ru</a><a href="/kz/">kz</a><a href="/en/">en</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ШАПКА → Битрикс: search.title, sale.basket.basket.line -->
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="/">
+      <img src="assets/img/logo-aikos.webp" alt="AIKOS — шины и диски" width="196" height="73">
+      <span class="sl">с 1996</span>
+    </a>
+
+    <form class="search" action="/search/" method="get" role="search">
+      <select name="section" aria-label="Раздел поиска">
+        <option>Весь каталог</option>
+        <option>Шины</option>
+        <option>Диски</option>
+        <option>Масла</option>
+      </select>
+      <input type="search" name="q" autocomplete="off" spellcheck="false" placeholder="Размер, бренд, модель или артикул — например 205/55 R16" aria-label="Поиск">
+      <button type="submit">Найти</button>
+    </form>
+
+    <nav class="hacts" aria-label="Действия">
+      <a class="hact" href="/catalog/compare/">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h13M4 8l3-3M4 8l3 3M20 16H7m13 0-3-3m3 3-3 3"/></svg><span class="cnt">2</span></span>Сравнить</a>
+      <a class="hact" href="/personal/favorites/">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.5-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.5 12 20 12 20Z"/></svg></span>Избранное</a>
+      <a class="hact" href="/personal/cart/">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2.2l2.2 10.2a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.5L20.5 8H6"/><circle cx="10" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg><span class="cnt">4</span></span>Корзина</a>
+      <a class="hact" href="/personal/">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.8 20a7.2 7.2 0 0 1 14.4 0"/></svg></span>Кабинет</a>
+    </nav>
+
+    <div class="hphone">
+      <b><a href="tel:2710">2710</a></b>
+      <span>единый номер по РК</span>
+    </div>
+  </div>
+</header>
+
+<!-- НАВПОЛОСА → Битрикс: bitrix:menu -->
+<div class="navbar">
+  <div class="wrap">
+    <a class="cat-btn" href="/catalog/tyres/"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Весь каталог</a>
+    <nav>
+      <a href="/catalog/tyres/">Шины</a>
+      <a href="/catalog/disks/">Диски</a>
+      <a href="/catalog/gruz/">Грузовые</a>
+      <a href="/catalog/oils/">Масла</a>
+      <a href="/contacts/stores/">Шиномонтаж</a>
+      <a href="/news/sezonnoe-khranenie-shin.html">Хранение</a>
+      <a href="/calculator/">Калькулятор</a>
+      <a href="/articles/">Статьи</a>
+    </nav>
+    <span class="sp"></span>
+    <span class="promo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11h17v9.5h-17zM2.5 7h19v4h-19zM12 7v13.5"/><path d="M12 7S10.8 3.5 8.6 3.5A2.2 2.2 0 0 0 8.6 7Zm0 0s1.2-3.5 3.4-3.5A2.2 2.2 0 0 1 15.4 7Z"/></svg>Шиномонтаж в подарок — 5 акций</span>
+  </div>
+</div>
+
+<!-- ГЕРОЙ С ПАРАЛЛАКСОМ
+     Три слоя глубины, нарезанные из одного кадра дрон-съёмки.
+     Двигаются с разной скоростью от мыши и от прокрутки. -->
+<section class="hero" id="main">
+  <div class="hero-parallax" id="heroPx" aria-hidden="true">
+    <div class="px px--base" data-depth="1"><img src="assets/img/hero-base.webp" alt="" width="2400" height="1350" fetchpriority="high"></div>
+    <div class="px px--mid"  data-depth="2"><img src="assets/img/hero-mid.webp"  alt="" width="2400" height="889"></div>
+    <div class="px px--fore" data-depth="3"><img src="assets/img/hero-fore.webp" alt="" width="2400" height="647"></div>
+    <div class="px-veil"></div>
+  </div>
+
+  <div class="wrap">
+    <!-- левая колонка разделов, как в Autoparts -->
+    <aside class="cats" aria-label="Разделы каталога">
+      <div class="t">Разделы каталога</div>
+      <a href="/catalog/tyres/"><span>Легковые шины</span><i aria-hidden="true">›</i></a>
+      <a href="/catalog/lgruz/"><span>Легкогрузовые</span><i aria-hidden="true">›</i></a>
+      <a href="/catalog/gruz/"><span>Грузовые шины</span><i aria-hidden="true">›</i></a>
+      <a href="/catalog/sh/"><span>Сельхоз шины</span><i aria-hidden="true">›</i></a>
+      <a href="/catalog/kgsh/"><span>КГШ</span><i aria-hidden="true">›</i></a>
+      <a href="/catalog/disks/"><span>Колёсные диски</span><i aria-hidden="true">›</i></a>
+      <a href="/catalog/oils/"><span>Моторные масла</span><i aria-hidden="true">›</i></a>
+      <a href="/catalog/other/"><span>Коврики</span><i aria-hidden="true">›</i></a>
+    </aside>
+
+    <div class="hero-main">
+      <span class="hero-kicker">Официальный дистрибьютор · 29 лет в Казахстане</span>
+      <h1>Держим дорогу <em>по всей стране</em></h1>
+      <p class="lead">10&nbsp;000 наименований на складах в 18 городах. Michelin, Goodyear, Continental, Bridgestone, Pirelli и ещё 25 брендов. Подбор по автомобилю или по параметрам — за два шага.</p>
+
+      <!-- ПОДБОР → Битрикс: собственный компонент -->
+      <div class="finder" id="finder">
+        <div class="ftabs" role="tablist" aria-label="Способ подбора">
+          <button type="button" role="tab" aria-selected="true" aria-controls="pane-p" id="tab-p">По параметрам</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="pane-a" id="tab-a">По автомобилю</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="pane-d" id="tab-d">Диски</button>
+        </div>
+
+        <div class="fpane on" id="pane-p" role="tabpanel" aria-labelledby="tab-p">
+          <div class="frow">
+            <div class="fld"><label for="w">Ширина</label>
+              <select id="w"><option>Все</option><option>175</option><option>185</option><option>195</option><option selected>205</option><option>215</option><option>225</option><option>235</option><option>245</option><option>255</option><option>265</option><option>275</option><option>285</option></select></div>
+            <div class="fld"><label for="h">Высота</label>
+              <select id="h"><option>Все</option><option>40</option><option>45</option><option>50</option><option selected>55</option><option>60</option><option>65</option><option>70</option><option>75</option></select></div>
+            <div class="fld"><label for="d">Диаметр</label>
+              <select id="d"><option>Все</option><option>14</option><option>15</option><option selected>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>22</option></select></div>
+            <a class="fgo" id="goTyres" href="/catalog/tyres/search/shirina-profilya-is-205/vysota-profilya-is-55/posadochnyy-diametr-is-16/">Подобрать</a>
+          </div>
+          <div class="fchips" role="group" aria-label="Сезон">
+            <button type="button" class="chip on" data-season="">Все сезоны</button>
+            <button type="button" class="chip" data-season="winter">Зимние</button>
+            <button type="button" class="chip" data-season="summer">Летние</button>
+            <button type="button" class="chip" data-season="all-season">Всесезонные</button>
+            <button type="button" class="chip" data-flag="stud">Шипованные</button>
+            <button type="button" class="chip" data-flag="stock">Только в наличии</button>
+          </div>
+          <p class="fnote">Размер написан на боковине шины: ширина / высота R диаметр. Например 205/55 R16.</p>
+        </div>
+
+        <div class="fpane" id="pane-a" role="tabpanel" aria-labelledby="tab-a" hidden>
+          <div class="frow">
+            <div class="fld"><label for="mk">Марка</label>
+              <select id="mk"><option>Выберите марку</option><option>Toyota</option><option>Hyundai</option><option>Kia</option><option>Chevrolet</option><option>Lada</option><option>Volkswagen</option><option>BMW</option><option>Mercedes-Benz</option><option>Lexus</option><option>Chery</option><option>Geely</option><option>BYD</option></select></div>
+            <div class="fld"><label for="md">Модель</label><select id="md"><option>Сначала марку</option></select></div>
+            <div class="fld"><label for="yr">Год</label><select id="yr"><option>Все</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option></select></div>
+            <div class="fld"><label for="mo">Модификация</label><select id="mo"><option>Все</option></select></div>
+            <a class="fgo" href="/catalog/tyres/">Показать</a>
+          </div>
+          <p class="fnote">Показываем только те размеры, которые допускает завод-изготовитель для вашей комплектации.</p>
+        </div>
+
+        <div class="fpane" id="pane-d" role="tabpanel" aria-labelledby="tab-d" hidden>
+          <div class="frow">
+            <div class="fld"><label for="dw">Ширина</label><select id="dw"><option>Все</option><option>6.0</option><option>6.5</option><option>7.0</option><option>7.5</option><option>8.0</option><option>8.5</option></select></div>
+            <div class="fld"><label for="dd">Диаметр</label><select id="dd"><option>Все</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option></select></div>
+            <div class="fld"><label for="dp">PCD</label><select id="dp"><option>Все</option><option>5×100</option><option>5×108</option><option>5×112</option><option>5×114.3</option><option>5×120</option><option>6×139.7</option></select></div>
+            <div class="fld"><label for="de">Вылет ET</label><select id="de"><option>Все</option><option>30</option><option>35</option><option>40</option><option>45</option><option>50</option></select></div>
+            <a class="fgo" href="/catalog/disks/">Подобрать</a>
+          </div>
+          <p class="fnote">Параметры выбиты на внутренней стороне диска. Не уверены — подбирайте по автомобилю.</p>
+        </div>
+      </div>
+
+      <div class="sizes">
+        <span class="cap">Часто ищут</span>
+        <a href="/catalog/tyres/search/shirina-profilya-is-185/vysota-profilya-is-65/posadochnyy-diametr-is-15/">185/65 R15</a>
+        <a href="/catalog/tyres/search/shirina-profilya-is-195/vysota-profilya-is-65/posadochnyy-diametr-is-15/">195/65 R15</a>
+        <a href="/catalog/tyres/search/shirina-profilya-is-205/vysota-profilya-is-55/posadochnyy-diametr-is-16/">205/55 R16</a>
+        <a href="/catalog/tyres/search/shirina-profilya-is-215/vysota-profilya-is-60/posadochnyy-diametr-is-17/">215/60 R17</a>
+        <a href="/catalog/tyres/search/shirina-profilya-is-225/vysota-profilya-is-60/posadochnyy-diametr-is-18/">225/60 R18</a>
+        <a href="/catalog/tyres/search/shirina-profilya-is-235/vysota-profilya-is-55/posadochnyy-diametr-is-18/">235/55 R18</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПРЕИМУЩЕСТВА -->
+<div class="usp">
+  <div class="wrap">
+    <div>
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h6.4a4 4 0 0 1 0 8H6m0-4h9M4.5 12h11M9 12v8"/></svg></span>
+      <div class="tx"><b>Низкие цены</b><span>Прямые поставки от заводов</span></div>
+    </div>
+    <div>
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.2 19 6v5.4c0 4.2-2.8 7.4-7 9.4-4.2-2-7-5.2-7-9.4V6Z"/><path d="m8.8 12 2.2 2.3 4.2-4.6"/></svg></span>
+      <div class="tx"><b>Гарантия качества</b><span>Весь товар сертифицирован</span></div>
+    </div>
+    <div>
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15.6 4.6a4.6 4.6 0 0 0-5.9 5.8L4 16.1 7.9 20l5.7-5.7a4.6 4.6 0 0 0 5.8-5.9l-2.7 2.7-2.5-.6-.6-2.5Z"/></svg></span>
+      <div class="tx"><b>Скидка на шиномонтаж</b><span>При покупке шин и дисков</span></div>
+    </div>
+    <div>
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 6h10.8v10H2.5zM13.3 9.4h3.9l3.3 3.2V16h-7.2z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.2" cy="18" r="1.8"/></svg></span>
+      <div class="tx"><b>Доставка по Казахстану</b><span>Или самовывоз из 40 центров</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- СПОТЛАЙТ ПОПУЛЯРНЫХ ТОВАРОВ → Битрикс: catalog.top -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>Популярные <em>товары</em></h2>
+      <span class="ln"></span>
+      <a class="all" href="/catalog/tyres/">Смотреть все →</a>
+    </div>
+
+    <div class="spotlight" id="spotlight" role="group" aria-roledescription="карусель" aria-label="Популярные товары">
+      <!-- два слоя фона: нижний держит текущий градиент, верхний проявляет следующий -->
+      <div class="spot-bg" id="spBg" aria-hidden="true"><span style="background-image:linear-gradient(135deg,#E8541E 0%,#F0982F 100%)"></span><span></span></div>
+
+      <div class="spot-stage">
+
+      <article class="spot on" style="--grad:linear-gradient(135deg,#E8541E 0%,#F0982F 100%)">
+        <div class="spot-txt">
+          <span class="spot-brand">Michelin</span>
+          <h3>Pilot Sport 4 SUV</h3>
+          <p>Летняя шина для мощных кроссоверов: короткий тормозной путь на мокром, устойчивость в скоростном повороте, тихий протектор на трассе.</p>
+          <a class="spot-cta" href="/catalog/tyres/275-40r22-pilot-sport-4-suv-108y-michelin-b-k-dr.html">Подробнее о шине ›</a>
+        </div>
+        <div class="spot-pic"><img src="assets/img/michelin-pilot-sport-4-suv.webp" alt="Michelin Pilot Sport 4 SUV" width="380" height="380"></div>
+        <div class="spot-buy">
+          <div class="spot-price">189 000 <small>тг</small></div>
+          <span class="spot-old">205 000 тг</span>
+          <div class="spot-sizes">
+            <div class="cap">Выберите размер</div>
+            <div class="row">
+              <button type="button" class="on">275/40 R22</button>
+              <button type="button">265/45 R21</button>
+              <button type="button">255/50 R20</button>
+            </div>
+          </div>
+          <button class="spot-add" type="button">В корзину</button>
+          <div class="spot-stock low">менее 8 шт на складе</div>
+          <div class="spot-art">Арт. 00-00002311</div>
+        </div>
+      </article>
+
+      <article class="spot" style="--grad:linear-gradient(135deg,#2B3542 0%,#6E7F92 100%)">
+        <div class="spot-txt">
+          <span class="spot-brand">MAK</span>
+          <h3>Panorama 7.5J18</h3>
+          <p>Литой диск в отделке black mirror. Разболтовка 5×114.3, вылет ET45, ступица 60.1 — подходит на большинство кроссоверов японской и корейской сборки.</p>
+          <a class="spot-cta" href="/catalog/disks/disk-p-18-panorama-mak-7-5j18-5bmw114-3-et45-dia60-1-black-mirror.html">Подробнее о диске ›</a>
+        </div>
+        <div class="spot-pic"><img src="assets/img/disk-mak-panorama.webp" alt="Диск MAK Panorama 7.5J18" width="380" height="380" loading="lazy"></div>
+        <div class="spot-buy">
+          <div class="spot-price">73 100 <small>тг</small></div>
+          <span class="spot-old">81 000 тг</span>
+          <div class="spot-sizes">
+            <div class="cap">Посадочный диаметр</div>
+            <div class="row">
+              <button type="button" class="on">R18</button>
+              <button type="button">R19</button>
+              <button type="button">R20</button>
+            </div>
+          </div>
+          <button class="spot-add" type="button">В корзину</button>
+          <div class="spot-stock">более 8 шт на складе</div>
+          <div class="spot-art">Арт. 0005650480</div>
+        </div>
+      </article>
+
+      <article class="spot" style="--grad:linear-gradient(135deg,#12704E 0%,#3FBF8F 100%)">
+        <div class="spot-txt">
+          <span class="spot-brand">Ikon</span>
+          <h3>Autograph Eco 3</h3>
+          <p>Летняя шина для города: пониженное сопротивление качению, экономия топлива и уверенное поведение на мокрой дороге. Самый ходовой размер в Казахстане.</p>
+          <a class="spot-cta" href="/catalog/tyres/205-55r16-autograph-eco-3-94h-ikon-b-k-dr.html">Подробнее о шине ›</a>
+        </div>
+        <div class="spot-pic"><img src="assets/img/ikon-autograph-eco-3.png" alt="Ikon Autograph Eco 3" width="380" height="380" loading="lazy"></div>
+        <div class="spot-buy">
+          <div class="spot-price">36 900 <small>тг</small></div>
+          <span class="spot-old">41 500 тг</span>
+          <div class="spot-sizes">
+            <div class="cap">Выберите размер</div>
+            <div class="row">
+              <button type="button" class="on">205/55 R16</button>
+              <button type="button">195/65 R15</button>
+              <button type="button">215/60 R17</button>
+            </div>
+          </div>
+          <button class="spot-add" type="button">В корзину</button>
+          <div class="spot-stock">более 8 шт на складе</div>
+          <div class="spot-art">Арт. 00-00054041</div>
+        </div>
+      </article>
+
+      <article class="spot" style="--grad:linear-gradient(135deg,#173F73 0%,#4A90D9 100%)">
+        <div class="spot-txt">
+          <span class="spot-brand">Sailun</span>
+          <h3>Atrezzo Elite</h3>
+          <p>Разумный баланс цены и ресурса. Широкие водоотводящие канавки, спокойное поведение на трассе, ходовой размер для седанов и компактных кроссоверов.</p>
+          <a class="spot-cta" href="/catalog/tyres/215-55r17-atrezzo-elite-94v-sailun-b-k-dr.html">Подробнее о шине ›</a>
+        </div>
+        <div class="spot-pic"><img src="assets/img/sailun-atrezzo-elite.webp" alt="Sailun Atrezzo Elite" width="380" height="380" loading="lazy"></div>
+        <div class="spot-buy">
+          <div class="spot-price">33 950 <small>тг</small></div>
+          <span class="spot-old">37 200 тг</span>
+          <div class="spot-sizes">
+            <div class="cap">Выберите размер</div>
+            <div class="row">
+              <button type="button" class="on">215/55 R17</button>
+              <button type="button">205/55 R16</button>
+              <button type="button">225/60 R18</button>
+            </div>
+          </div>
+          <button class="spot-add" type="button">В корзину</button>
+          <div class="spot-stock">более 8 шт на складе</div>
+          <div class="spot-art">Арт. 0005660461</div>
+        </div>
+      </article>
+
+      <article class="spot" style="--grad:linear-gradient(135deg,#6E2A10 0%,#C8641F 100%)">
+        <div class="spot-txt">
+          <span class="spot-brand">TOMOIL</span>
+          <h3>Engine Oil 5W-40</h3>
+          <p>Синтетическое моторное масло класса C3. Держит вязкость в казахстанскую жару и запускает двигатель зимой. Берут вместе с сезонной переобувкой.</p>
+          <a class="spot-cta" href="/catalog/oils/maslo-motornoe-tomoil-engine-oil-5w-40-c3-1l.html">Подробнее о масле ›</a>
+        </div>
+        <div class="spot-pic"><img src="assets/img/tomoil-5w40.webp" alt="Моторное масло TOMOIL 5W-40" width="380" height="380" loading="lazy"></div>
+        <div class="spot-buy">
+          <div class="spot-price">2 580 <small>тг</small></div>
+          <span class="spot-old">2 900 тг</span>
+          <div class="spot-sizes">
+            <div class="cap">Объём</div>
+            <div class="row">
+              <button type="button" class="on">1 л</button>
+              <button type="button">4 л</button>
+              <button type="button">5 л</button>
+            </div>
+          </div>
+          <button class="spot-add" type="button">В корзину</button>
+          <div class="spot-stock">более 8 шт на складе</div>
+          <div class="spot-art">Арт. 00-00044636</div>
+        </div>
+      </article>
+
+      </div><!-- /.spot-stage -->
+
+      <div class="spot-nav">
+        <button type="button" id="spPrev" aria-label="Предыдущий товар">‹</button>
+        <button type="button" id="spNext" aria-label="Следующий товар">›</button>
+      </div>
+      <button type="button" class="spot-next" id="spPeek">
+        <span class="t">Следующий<b></b></span>
+        <span class="th"><img src="" alt="" width="64" height="64"></span>
+      </button>
+      <div class="spot-dots" id="spDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- РАЗДЕЛЫ ПЛИТКАМИ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>Каталог</h2>
+      <span class="ln"></span>
+      <a class="all" href="/catalog/tyres/">Весь каталог →</a>
+    </div>
+    <div class="tiles">
+      <a class="tile" href="/catalog/tyres/"><span class="k">Легковые</span><h3>Шины для авто и кроссоверов</h3><span class="go">Перейти →</span></a>
+      <a class="tile" href="/catalog/disks/"><span class="k">Литые и штампованные</span><h3>Колёсные диски</h3><span class="go">Перейти →</span></a>
+      <a class="tile" href="/catalog/gruz/"><span class="k">Магистральные</span><h3>Грузовые шины</h3><span class="go">Перейти →</span></a>
+      <a class="tile" href="/catalog/lgruz/"><span class="k">Лёгкий коммерческий</span><h3>Легкогрузовые шины</h3><span class="go">Перейти →</span></a>
+      <a class="tile" href="/catalog/sh/"><span class="k">Агро</span><h3>Сельхоз шины</h3><span class="go">Перейти →</span></a>
+      <a class="tile" href="/catalog/kgsh/"><span class="k">Индустрия</span><h3>КГШ крупногабаритные</h3><span class="go">Перейти →</span></a>
+      <a class="tile" href="/catalog/oils/"><span class="k">Расходники</span><h3>Моторные масла</h3><span class="go">Перейти →</span></a>
+      <a class="tile" href="/catalog/other/"><span class="k">Аксессуары</span><h3>Коврики в салон</h3><span class="go">Перейти →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- СЕТКА ТОВАРОВ С ТАБАМИ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>В наличии <em>сейчас</em></h2>
+      <span class="ln"></span>
+      <div class="ptabs" role="tablist" aria-label="Фильтр по категории">
+        <button type="button" role="tab" aria-selected="true" data-f="all">Все</button>
+        <button type="button" role="tab" aria-selected="false" data-f="tyres">Шины</button>
+        <button type="button" role="tab" aria-selected="false" data-f="disks">Диски</button>
+        <button type="button" role="tab" aria-selected="false" data-f="oils">Масла</button>
+      </div>
+    </div>
+
+    <div class="goods" id="goods">
+      <article class="card" data-cat="tyres">
+        <a class="pic" href="/catalog/tyres/275-40r22-pilot-sport-4-suv-108y-michelin-b-k-dr.html">
+          <span class="bdg"><span class="bd bd--hit">Хит</span><span class="bd bd--off">−8%</span></span>
+          <img src="assets/img/michelin-pilot-sport-4-suv.webp" alt="Michelin Pilot Sport 4 SUV" loading="lazy" width="260" height="260">
+        </a>
+        <div class="body">
+          <div class="stars">★★★★★</div>
+          <span class="sz">275/40 R22 108Y</span>
+          <p class="nm"><a href="/catalog/tyres/275-40r22-pilot-sport-4-suv-108y-michelin-b-k-dr.html"><b>Michelin</b> Pilot Sport 4 SUV</a></p>
+          <span class="st low">менее 8 шт</span>
+          <div class="foot"><span class="pr">189 000 <small>тг</small></span><button class="buy" type="button" aria-label="В корзину">+</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="disks">
+        <a class="pic" href="/catalog/disks/disk-p-18-panorama-mak-7-5j18-5bmw114-3-et45-dia60-1-black-mirror.html">
+          <span class="bdg"><span class="bd bd--sale">Скидка</span><span class="bd bd--off">−10%</span></span>
+          <img src="assets/img/disk-mak-panorama.webp" alt="Диск MAK Panorama" loading="lazy" width="260" height="260">
+        </a>
+        <div class="body">
+          <div class="stars">★★★★<i>★</i></div>
+          <span class="sz">7.5J18 5×114.3 ET45</span>
+          <p class="nm"><a href="/catalog/disks/disk-p-18-panorama-mak-7-5j18-5bmw114-3-et45-dia60-1-black-mirror.html"><b>MAK</b> Panorama, black mirror</a></p>
+          <span class="st">более 8 шт</span>
+          <div class="foot"><span class="pr">73 100 <small>тг</small></span><button class="buy" type="button" aria-label="В корзину">+</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="tyres">
+        <a class="pic" href="/catalog/tyres/205-55r16-autograph-eco-3-94h-ikon-b-k-dr.html">
+          <span class="bdg"><span class="bd bd--new">Новинка</span><span class="bd bd--off">−11%</span></span>
+          <img src="assets/img/ikon-autograph-eco-3.png" alt="Ikon Autograph Eco 3" loading="lazy" width="260" height="260">
+        </a>
+        <div class="body">
+          <div class="stars">★★★★★</div>
+          <span class="sz">205/55 R16 94H</span>
+          <p class="nm"><a href="/catalog/tyres/205-55r16-autograph-eco-3-94h-ikon-b-k-dr.html"><b>Ikon</b> Autograph Eco 3</a></p>
+          <span class="st">более 8 шт</span>
+          <div class="foot"><span class="pr">36 900 <small>тг</small></span><button class="buy" type="button" aria-label="В корзину">+</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="tyres">
+        <a class="pic" href="/catalog/tyres/215-55r17-atrezzo-elite-94v-sailun-b-k-dr.html">
+          <span class="bdg"><span class="bd bd--sale">Скидка</span><span class="bd bd--off">−9%</span></span>
+          <img src="assets/img/sailun-atrezzo-elite.webp" alt="Sailun Atrezzo Elite" loading="lazy" width="260" height="260">
+        </a>
+        <div class="body">
+          <div class="stars">★★★★<i>★</i></div>
+          <span class="sz">215/55 R17 94V</span>
+          <p class="nm"><a href="/catalog/tyres/215-55r17-atrezzo-elite-94v-sailun-b-k-dr.html"><b>Sailun</b> Atrezzo Elite</a></p>
+          <span class="st">более 8 шт</span>
+          <div class="foot"><span class="pr">33 950 <small>тг</small></span><button class="buy" type="button" aria-label="В корзину">+</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="oils">
+        <a class="pic" href="/catalog/oils/maslo-motornoe-tomoil-engine-oil-5w-40-c3-1l.html">
+          <span class="bdg"><span class="bd bd--hit">Хит</span><span class="bd bd--off">−11%</span></span>
+          <img src="assets/img/tomoil-5w40.webp" alt="Масло TOMOIL 5W-40" loading="lazy" width="260" height="260">
+        </a>
+        <div class="body">
+          <div class="stars">★★★★<i>★</i></div>
+          <span class="sz">5W-40 C3 · 1 л</span>
+          <p class="nm"><a href="/catalog/oils/maslo-motornoe-tomoil-engine-oil-5w-40-c3-1l.html"><b>TOMOIL</b> Engine Oil</a></p>
+          <span class="st">более 8 шт</span>
+          <div class="foot"><span class="pr">2 580 <small>тг</small></span><button class="buy" type="button" aria-label="В корзину">+</button></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- АКЦИЯ С ТАЙМЕРОМ + СПИСОК АКЦИЙ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>Акции</h2>
+      <span class="ln"></span>
+      <a class="all" href="/sale/">Все акции →</a>
+    </div>
+    <div class="deal">
+      <div class="deal-box">
+        <span class="k">Заканчивается</span>
+        <h3>Шиномонтаж в подарок</h3>
+        <p>При покупке зимних и летних шин Attar в любом центре сети AIKOS.</p>
+        <div class="timer" id="timer">
+          <div><b data-t="d">00</b><span>дней</span></div>
+          <div><b data-t="h">00</b><span>часов</span></div>
+          <div><b data-t="m">00</b><span>минут</span></div>
+          <div><b data-t="s">00</b><span>секунд</span></div>
+        </div>
+        <a class="btn" href="/sale/">К акции</a>
+      </div>
+
+      <ul class="plist">
+        <li><a href="/sale/"><span class="d">30.04.2026</span><span class="t">Шиномонтаж в подарок от бренда Torero / Cordiant</span><span class="tag">Подарок</span></a></li>
+        <li><a href="/sale/"><span class="d">10.04.2026</span><span class="t">Премиальная гарантия на грузовые шины GOODYEAR</span><span class="tag">Гарантия</span></a></li>
+        <li><a href="/sale/"><span class="d">10.04.2026</span><span class="t">Шиномонтаж в подарок на ЦМК шины Goodyear, Fulda</span><span class="tag">Подарок</span></a></li>
+        <li><a href="/sale/"><span class="d">30.03.2026</span><span class="t">Шиномонтаж в подарок при покупке зимних и летних шин Attar</span><span class="tag">Подарок</span></a></li>
+        <li><a href="/sale/"><span class="d">03.03.2026</span><span class="t">Шиномонтаж в подарок при покупке летних шин Pirelli</span><span class="tag">Подарок</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- БРЕНДЫ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>Бренды</h2>
+      <span class="ln"></span>
+      <a class="all" href="/catalog/tyres/">Все производители →</a>
+    </div>
+    <div class="brands" translate="no">
+      <a href="/catalog/tyres/michelin/">Michelin</a><a href="/catalog/tyres/goodyear/">Goodyear</a>
+      <a href="/catalog/tyres/continental/">Continental</a><a href="/catalog/tyres/bridgestone/">Bridgestone</a>
+      <a href="/catalog/tyres/pirelli/">Pirelli</a><a href="/catalog/tyres/nokian/">Nokian</a>
+      <a href="/catalog/tyres/ikon/">Ikon</a><a href="/catalog/tyres/hankook/">Hankook</a>
+      <a href="/catalog/tyres/yokohama/">Yokohama</a><a href="/catalog/tyres/dunlop/">Dunlop</a>
+      <a href="/catalog/tyres/bfgoodrich/">BFGoodrich</a><a href="/catalog/tyres/falken/">Falken</a>
+      <a href="/catalog/tyres/kumho/">Kumho</a><a href="/catalog/tyres/laufenn/">Laufenn</a>
+      <a href="/catalog/tyres/maxxis/">Maxxis</a><a href="/catalog/tyres/nitto/">Nitto</a>
+      <a href="/catalog/tyres/gislaved/">Gislaved</a><a href="/catalog/tyres/cordiant/">Cordiant</a>
+      <a href="/catalog/tyres/torero/">Torero</a><a href="/catalog/tyres/tunga/">Tunga</a>
+      <a href="/catalog/tyres/sailun/">Sailun</a><a href="/catalog/tyres/lassa/">Lassa</a>
+      <a href="/catalog/tyres/landsail/">Landsail</a><a href="/catalog/tyres/rovelo/">Rovelo</a>
+      <a href="/catalog/tyres/attar/">Attar</a><a href="/catalog/tyres/formula/">Formula</a>
+      <a href="/catalog/tyres/nordman-character/">Nordman</a><a href="/catalog/tyres/belshina/">Белшина</a>
+      <a href="/catalog/tyres/voltayr-prom/">Волтайр</a><a href="/catalog/tyres/nkshz/">НКШЗ</a>
+    </div>
+  </div>
+</section>
+
+<!-- СЕТЬ -->
+<section class="sec">
+  <div class="wrap net">
+    <div>
+      <h2>Сеть по всей стране</h2>
+      <p>С 1996 года. Официальный дистрибьютор ведущих мировых производителей шин, входит в топ-50 частных компаний Казахстана по версии Forbes.</p>
+      <div class="nums">
+        <div><b>18</b><span>городов</span></div>
+        <div><b>40</b><span>центров</span></div>
+        <div><b>1300</b><span>сотрудников</span></div>
+        <div><b>29</b><span>лет на рынке</span></div>
+      </div>
+      <a class="fgo" href="/contacts/stores/">Адреса и контакты</a>
+    </div>
+    <div class="cities">
+      <a href="/contacts/stores/">Алматы</a><a href="/contacts/stores/">Астана</a><a href="/contacts/stores/">Шымкент</a>
+      <a href="/contacts/stores/">Караганда</a><a href="/contacts/stores/">Актобе</a><a href="/contacts/stores/">Атырау</a>
+      <a href="/contacts/stores/">Семей</a><a href="/contacts/stores/">Павлодар</a><a href="/contacts/stores/">Усть-Каменогорск</a>
+      <a href="/contacts/stores/">Петропавловск</a><a href="/contacts/stores/">Кокшетау</a><a href="/contacts/stores/">Кызылорда</a>
+      <a href="/contacts/stores/">Тараз</a><a href="/contacts/stores/">Уральск</a><a href="/contacts/stores/">Темиртау</a>
+      <a href="/contacts/stores/">Туркестан</a><a href="/contacts/stores/">Степногорск</a><a href="/contacts/stores/">Экибастуз</a>
+    </div>
+  </div>
+</section>
+
+<!-- SEO -->
+<section class="sec">
+  <div class="wrap seo">
+    <h2>Интернет-магазин шин и дисков AIKOS</h2>
+    <p>Компания «Эйкос» представлена на рынке с 1996 года и за это время зарекомендовала себя как крупнейший поставщик шинной продукции в Казахстане. Сегодня «Эйкос» — официальный дистрибьютор ведущих мировых производителей шин.</p>
+    <h3>Ассортимент</h3>
+    <p>В 40 торгово-сервисных и логистических центрах в 18 городах Казахстана представлен каталог из более чем 10&nbsp;000 наименований: шины для легковых автомобилей, внедорожников, коммерческого транспорта, грузовой, сельскохозяйственной и индустриальной техники. Среди востребованных брендов — Michelin, Bridgestone, Continental, Nokian, Pirelli, Yokohama, Hankook.</p>
+    <h3>Услуги</h3>
+    <p>При каждом филиале работает сервисная зона: шиномонтаж, балансировка, диагностика и сезонное хранение колёс — от покупки до обслуживания в одном месте.</p>
+  </div>
+</section>
+
+<!-- ПОДВАЛ -->
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div class="fbrand">
+        <img src="assets/img/logo-aikos.webp" alt="AIKOS" width="180" height="67">
+        <p>Шины, диски и обслуживание для всего Казахстана. С 1996 года.</p>
+        <div class="fsoc">
+          <a href="https://wa.me/+77057524738">WA</a>
+          <a href="https://www.instagram.com/aikos.kz/">IG</a>
+        </div>
+      </div>
+      <div>
+        <h4>Каталог</h4>
+        <ul>
+          <li><a href="/catalog/tyres/">Легковые шины</a></li>
+          <li><a href="/catalog/lgruz/">Легкогрузовые</a></li>
+          <li><a href="/catalog/gruz/">Грузовые шины</a></li>
+          <li><a href="/catalog/sh/">Сельхоз шины</a></li>
+          <li><a href="/catalog/kgsh/">КГШ</a></li>
+          <li><a href="/catalog/disks/">Диски</a></li>
+          <li><a href="/catalog/oils/">Масла</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Покупателю</h4>
+        <ul>
+          <li><a href="/info/faq/">FAQ</a></li>
+          <li><a href="/about/buyer/oplata/">Как оплатить</a></li>
+          <li><a href="/about/buyer/dostavka/">Доставка</a></li>
+          <li><a href="/about/buyer/vozvrat-tovara.php">Возврат</a></li>
+          <li><a href="/news/sezonnoe-khranenie-shin.html">Хранение шин</a></li>
+          <li><a href="/about/buyer/warranty/">Гарантия услуг</a></li>
+          <li><a href="/about/buyer/oferta/">Оферта</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Компания</h4>
+        <ul>
+          <li><a href="/about/">О компании</a></li>
+          <li><a href="/contacts/stores/">Адреса и контакты</a></li>
+          <li><a href="/dilerskaya-set/">Дилерская сеть</a></li>
+          <li><a href="/news/">Новости</a></li>
+          <li><a href="/articles/">Статьи</a></li>
+          <li><a href="/about/requisites/">Реквизиты</a></li>
+          <li><a href="/about/reviews/">Отзывы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Связаться</h4>
+        <a class="ftel" href="tel:2710">2710</a>
+        <ul>
+          <li>Единый номер по Казахстану</li>
+          <li><a href="mailto:e-shop@aikos.kz">e-shop@aikos.kz</a></li>
+          <li><a href="https://wa.me/+77057524738">+7 705 752-47-38</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 1996—2026 ТОО «Эйкос»</span>
+      <span class="sp"></span>
+      <a href="/include/licenses-detail.php">Политика конфиденциальности</a>
+      <a href="/about/buyer/consumer-rights-protection/app-2-ru.php">Защита прав потребителей</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
