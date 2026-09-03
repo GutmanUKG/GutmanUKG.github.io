@@ -13,8 +13,22 @@
       rel="stylesheet"
     />
     <title>ЭЙКОС — шины и диски</title>
-    <script type="module" crossorigin src="./assets/index-D5cXLedI.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DVtVKF1h.css">
+    <script>
+      // Тема выставляется до первой отрисовки, иначе моргает не та.
+      // localStorage в приватном окне может бросать — поэтому try/catch.
+      (function () {
+        var theme = null;
+        try {
+          theme = localStorage.getItem('aikos-theme');
+        } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-B4bPPRmx.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DXHhmZru.css">
   </head>
   <body>
     <div id="root"></div>
