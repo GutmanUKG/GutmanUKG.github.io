@@ -168,6 +168,62 @@
           </div>
           <p class="fnote">Параметры выбиты на внутренней стороне диска. Не уверены — подбирайте по автомобилю.</p>
         </div>
+
+        <!-- ИИ-ПОДБОР → Битрикс: AJAX-обработчик к вебхуку ассистента.
+             Строка запроса всегда видна под подбором по параметрам:
+             кто знает типоразмер — работает селектами выше,
+             кто не знает — описывает задачу словами здесь. -->
+        <div class="ai" id="ai">
+          <form class="ai-bar" id="aiForm" autocomplete="off">
+            <div class="ai-top">
+              <span class="ai-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+              <label class="ai-lbl" for="aiInput">Не знаете размер — спросите словами</label>
+            </div>
+            <div class="ai-line">
+              <input class="ai-input" id="aiInput" type="text" name="q" spellcheck="false"
+                     placeholder="Например: что взять на камри 2018 на зиму"
+                     aria-describedby="aiHint">
+              <button class="ai-clip" id="aiClip" type="button" aria-label="Прикрепить фото боковины шины">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5 12.3 19a4.6 4.6 0 0 1-6.5-6.5l7.9-7.9a3 3 0 0 1 4.3 4.3l-7.9 7.9a1.5 1.5 0 0 1-2.1-2.1l7.2-7.2"/></svg>
+              </button>
+              <input class="vh" id="aiPhoto" type="file" accept="image/*" tabindex="-1" aria-hidden="true">
+              <button class="ai-send" id="aiSend" type="submit" aria-label="Спросить ассистента">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14m-5-6 6 6-6 6"/></svg>
+              </button>
+            </div>
+            <p class="ai-hint" id="aiHint">
+              <span>Спросите так:</span>
+              <button class="ai-ex" type="button">205/55 R16 подешевле</button>
+              <button class="ai-ex" type="button">шипы на кроссовер</button>
+              <button class="ai-ex" type="button">не знаю размер</button>
+            </p>
+          </form>
+
+          <!-- Панель диалога: переписка, применённый фильтр и выдача.
+               Раскрывается только после первого запроса. -->
+          <div class="ai-panel" id="aiPanel" hidden>
+            <div class="ai-head">
+              <span class="ai-ttl">Подбор ассистентом</span>
+              <span class="ai-note">Демонстрация: ответ собирается на стороне браузера</span>
+              <button class="ai-close" id="aiClose" type="button">Свернуть</button>
+            </div>
+
+            <div class="ai-log" id="aiLog" role="log" aria-live="polite" aria-atomic="false"
+                 aria-label="Переписка с ассистентом подбора" tabindex="0"></div>
+
+            <div class="ai-out" id="aiOut" hidden>
+              <div class="ai-filter">
+                <span class="ai-filter-cap">Применён фильтр</span>
+                <span class="ai-filter-val mono" id="aiFilterVal"></span>
+                <a class="ai-filter-go" id="aiFilterGo" href="https://aikos.kz/catalog/tyres/">Показать в каталоге →</a>
+              </div>
+              <div class="ai-goods" id="aiGoods"></div>
+              <p class="ai-empty" id="aiEmpty" hidden>
+                Подходящих позиций в наличии нет. Позвоните на <a href="tel:2710">2710</a> — подберём замену и привезём из другого центра.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="sizes">
@@ -634,6 +690,7 @@
   </div>
 </footer>
 
+<script src="assets/js/assistant.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>

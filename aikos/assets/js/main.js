@@ -302,6 +302,254 @@
     raf = requestAnimationFrame(tick);
   }
 
+  /* ---------- ИИ-подбор: связка вёрстки с ассистентом ----------
+     Здесь только работа с DOM. Вся логика ответа — в assistant.js,
+     за данными ходим одной функцией AikosAssistant.ask(). Когда
+     появится вебхук, меняется только она, этот блок остаётся как есть.
+
+     Текст ассистента ставим строго через textContent: в демо-режиме
+     ответ собирается из пользовательского ввода, и подстановка HTML
+     была бы дырой для XSS. */
+  var aiBlock = document.getElementById('ai');
+  if (aiBlock && window.AikosAssistant) {
+    var aiForm   = document.getElementById('aiForm');
+    var aiInput  = document.getElementById('aiInput');
+    var aiSend   = document.getElementById('aiSend');
+    var aiClip   = document.getElementById('aiClip');
+    var aiPhoto  = document.getElementById('aiPhoto');
+    var aiPanel  = document.getElementById('aiPanel');
+    var aiLog    = document.getElementById('aiLog');
+    var aiClose  = document.getElementById('aiClose');
+    var aiOut    = document.getElementById('aiOut');
+    var aiGoods  = document.getElementById('aiGoods');
+    var aiEmpty  = document.getElementById('aiEmpty');
+    var aiFVal   = document.getElementById('aiFilterVal');
+    var aiFGo    = document.getElementById('aiFilterGo');
+
+    var aiSession = null;      /* выдаётся ассистентом на первом ответе */
+    var aiFilter  = {};        /* фильтр последнего шага — контекст диалога */
+    var aiPhotoData = null;    /* dataURI прикреплённого снимка */
+    var aiBusy = false;
+
+    function el(tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text != null) n.textContent = text;
+      return n;
+    }
+
+    function setClipLabel(attached) {
+      aiClip.setAttribute('aria-label', attached
+        ? 'Фото боковины прикреплено. Выбрать другое'
+        : 'Прикрепить фото боковины шины');
+    }
+
+    function openPanel() {
+      if (!aiPanel.hasAttribute('hidden')) return;
+      aiPanel.removeAttribute('hidden');
+      /* панель раскрывается в потоке и удлиняет первый экран — подводим её к глазам */
+      var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      aiPanel.scrollIntoView({ block: 'nearest', behavior: smooth ? 'smooth' : 'auto' });
+    }
+
+    function closePanel() {
+      aiPanel.setAttribute('hidden', '');
+      aiInput.focus();
+    }
+
+    /* --- сообщение в переписке --- */
+    function addMsg(who, text, photo) {
+      var row = el('div', 'ai-msg ai-msg--' + (who === 'ai' ? 'ai' : 'me'));
+      row.appendChild(el('span', 'ai-who', who === 'ai' ? 'Ассистент AIKOS' : 'Вы'));
+      row.appendChild(el('p', 'ai-tx', text));
+      if (photo) {
+        var img = document.createElement('img');
+        img.className = 'ai-photo';
+        img.src = photo;
+        img.alt = 'Прикреплённое фото боковины';
+        img.width = 64; img.height = 64;
+        row.appendChild(img);
+      }
+      aiLog.appendChild(row);
+      aiLog.scrollTop = aiLog.scrollHeight;
+      return row;
+    }
+
+    /* --- состояние «подбираю» --- */
+    function addThinking() {
+      var row = el('div', 'ai-msg ai-msg--ai');
+      row.appendChild(el('span', 'ai-who', 'Ассистент AIKOS'));
+      var box = el('div', 'ai-think');
+      var mark = el('span', 'ai-mark');
+      mark.setAttribute('aria-hidden', 'true');
+      mark.appendChild(document.createElement('i'));
+      mark.appendChild(document.createElement('i'));
+      mark.appendChild(document.createElement('i'));
+      box.appendChild(mark);
+      box.appendChild(el('span', null, 'Подбираю по складам…'));
+      row.appendChild(box);
+      aiLog.appendChild(row);
+      aiLog.scrollTop = aiLog.scrollHeight;
+      return row;
+    }
+
+    /* --- карточка товара --- */
+    function productCard(p) {
+      /* Придуманные позиции помечаем прямо в карточке: цену и остаток
+         у них показывать как настоящие нельзя — макет смотрит заказчик. */
+      var demo = window.AikosAssistant.isDemo(p);
+      var a = el('a', 'ai-card' + (demo ? ' ai-card--demo' : ''));
+      a.href = p.url || '/catalog/tyres/';
+
+      if (p.image) {
+        var pic = el('span', 'pic');
+        var img = document.createElement('img');
+        img.src = p.image;
+        img.alt = p.name;
+        img.loading = 'lazy';
+        img.width = 120; img.height = 120;
+        pic.appendChild(img);
+        if (demo) pic.appendChild(el('span', 'ai-demo', 'пример'));
+        a.appendChild(pic);
+      } else {
+        /* Фотографии нет: подложка с рисунком протектора. На придуманной
+           позиции подпись «фото уточняется» не ставим — на плитке в 128px
+           две серые пометки спорят друг с другом, а «пример» важнее. */
+        var ph = el('span', 'ai-ph');
+        if (demo) ph.appendChild(el('span', 'ai-demo', 'пример'));
+        else ph.appendChild(el('span', null, 'фото уточняется'));
+        a.appendChild(ph);
+      }
+
+      var body = el('span', 'body');
+      body.appendChild(el('span', 'sz', p.size || ''));
+
+      var nm = el('span', 'nm');
+      var bnd = el('b', null, p.brand || '');
+      bnd.setAttribute('translate', 'no');
+      nm.appendChild(bnd);
+      nm.appendChild(document.createTextNode(' ' + String(p.name || '').replace(p.brand + ' ', '')));
+      body.appendChild(nm);
+
+      /* остаток у демо-позиции не выдуман, а честно не назван */
+      var st;
+      if (demo) {
+        st = el('span', 'st st--na', 'остаток не указан');
+      } else {
+        st = el('span', 'st' + (/^менее/.test(p.availability || '') ? ' low' : ''), p.availability || '');
+      }
+      body.appendChild(st);
+
+      /* цену примера показываем приблизительной и приглушённой, с подписью:
+         в ряду с настоящими карточками разница видна сразу */
+      var pr = el('span', 'pr' + (demo ? ' pr--demo' : ''),
+        (demo ? '≈ ' : '') + Number(p.price || 0).toLocaleString('ru-RU') + ' ');
+      pr.appendChild(el('small', null, 'тг'));
+      body.appendChild(pr);
+      if (demo) body.appendChild(el('span', 'ai-cap-demo', 'цена для примера'));
+
+      a.appendChild(body);
+      return a;
+    }
+
+    /* --- применённый фильтр и выдача --- */
+    function renderResult(res) {
+      var f = res.filter || {};
+      var hasFilter = false;
+      for (var k in f) { if (Object.prototype.hasOwnProperty.call(f, k) && f[k] !== null && f[k] !== '') hasFilter = true; }
+
+      if (!hasFilter && !(res.products && res.products.length)) return;   /* уточнение — прежнюю выдачу не трогаем */
+
+      aiFilter = f;
+      aiFVal.textContent = window.AikosAssistant.filterLabel(f) || 'Весь каталог';
+      aiFGo.href = window.AikosAssistant.catalogUrl(f);
+
+      aiGoods.textContent = '';
+      var list = res.products || [];
+      list.forEach(function (p) { aiGoods.appendChild(productCard(p)); });
+
+      if (list.length) { aiGoods.hidden = false; aiEmpty.hidden = true; }
+      else { aiGoods.hidden = true; aiEmpty.hidden = false; }
+
+      aiOut.hidden = false;
+    }
+
+    /* --- отправка запроса --- */
+    function send(text) {
+      if (aiBusy) return;
+      var msg = String(text == null ? aiInput.value : text).trim();
+      var photo = aiPhotoData;
+
+      /* пустой запрос тоже отправляем: подсказку человек должен
+         услышать словами ассистента, а не увидеть как ошибку формы */
+      var said = msg;
+      if (!said) said = photo ? '(фото без описания)' : '(пустой запрос)';
+
+      aiBusy = true;
+      aiSend.disabled = true;
+      aiPanel.setAttribute('aria-busy', 'true');
+      openPanel();
+      addMsg('me', said, photo);
+
+      aiInput.value = '';
+      aiPhotoData = null;
+      aiPhoto.value = '';
+      aiClip.classList.remove('on');
+      setClipLabel(false);
+
+      var thinking = addThinking();
+
+      window.AikosAssistant.ask({
+        message: msg,
+        session_id: aiSession,
+        context: { page: 'main', section: 'tyres', filter: aiFilter },
+        photo: photo
+      }).then(function (res) {
+        thinking.parentNode && thinking.parentNode.removeChild(thinking);
+        if (!res || !res.ok) {
+          addMsg('ai', 'Подбор сейчас недоступен. Позвоните на 2710 — подскажем по телефону.');
+          return;
+        }
+        aiSession = res.session_id;
+        addMsg('ai', res.message);
+        renderResult(res);
+      })['catch'](function () {
+        thinking.parentNode && thinking.parentNode.removeChild(thinking);
+        addMsg('ai', 'Подбор сейчас недоступен. Позвоните на 2710 — подскажем по телефону.');
+      }).then(function () {
+        aiBusy = false;
+        aiSend.disabled = false;
+        aiPanel.removeAttribute('aria-busy');
+        aiInput.focus();
+      });
+    }
+
+    aiForm.addEventListener('submit', function (e) { e.preventDefault(); send(); });
+
+    [].slice.call(aiBlock.querySelectorAll('.ai-ex')).forEach(function (b) {
+      b.addEventListener('click', function () { send(b.textContent.trim()); });
+    });
+
+    aiClip.addEventListener('click', function () { aiPhoto.click(); });
+    aiPhoto.addEventListener('change', function () {
+      var file = aiPhoto.files && aiPhoto.files[0];
+      if (!file) { aiPhotoData = null; aiClip.classList.remove('on'); setClipLabel(false); return; }
+      var reader = new FileReader();
+      reader.onload = function () {
+        aiPhotoData = String(reader.result);
+        aiClip.classList.add('on');
+        setClipLabel(true);
+        aiInput.focus();
+      };
+      reader.readAsDataURL(file);
+    });
+
+    aiClose.addEventListener('click', closePanel);
+    aiBlock.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !aiPanel.hasAttribute('hidden')) { e.preventDefault(); closePanel(); }
+    });
+  }
+
   /* ---------- Заглушки под Битрикс ---------- */
   [].slice.call(document.querySelectorAll('.buy, .spot-add')).forEach(function (b) {
     var txt = b.textContent;
